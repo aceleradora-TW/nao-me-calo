@@ -1,0 +1,41 @@
+<%= form_for(@establishment) do |f| %>
+  <% if @establishment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@establishment.errors.count, "error") %> prohibited this establishment from being saved:</h2>
+
+      <ul>
+      <% @establishment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :average_rating %><br>
+    <%= f.text_field :average_rating %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br>
+    <%= f.text_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :lng %><br>
+    <%= f.text_field :lng %>
+  </div>
+  <div class="field">
+    <%= f.label :id_places %><br>
+    <%= f.text_field :id_places %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

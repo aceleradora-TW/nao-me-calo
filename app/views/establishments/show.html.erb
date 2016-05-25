@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @establishment.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @establishment.address %>
+</p>
+
+<p>
+  <strong>Average rating:</strong>
+  <%= @establishment.average_rating %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @establishment.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @establishment.lng %>
+</p>
+
+<p>
+  <strong>Id places:</strong>
+  <%= @establishment.id_places %>
+</p>
+
+<%= link_to 'Edit', edit_establishment_path(@establishment) %> |
+<%= link_to 'Back', establishments_path %>

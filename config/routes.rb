@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :establishments
+  resources :users
   root 'welcome#index'
 
   get '/dicas' => 'help#index'
