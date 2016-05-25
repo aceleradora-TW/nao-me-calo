@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "twitter-bootstrap-rails"
 gem 'jquery-ui-rails'
+gem 'google_places'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
