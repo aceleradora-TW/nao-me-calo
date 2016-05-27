@@ -3,6 +3,10 @@
   color: #f0f028;
   padding-bottom: 20px;
   padding-top: 20px;
-  top: 64px;
+  top: 61px;
   vertical-align: initial !important;
+}
+
+.footer-border {
+  border-top: solid 2px #C9BDD4;
 }
