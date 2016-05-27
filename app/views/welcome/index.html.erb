@@ -1,14 +1,22 @@
 <% javascript_include_tag "welcome" %>
 
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+<form>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input  type="text" class="form-control" onFocus="geolocate()" placeholder="Search for..." id="campoBusca">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
 
-<div id="locationField">
-  <input id="autocomplete" placeholder="Enter your address"
-  onFocus="geolocate()" type="text"></input>
-</div>
+  </div><!-- /.row -->
+
+</form>
 
 <table id="address">
-
   <tr>
     <td class="label">Name</td>
     <td class="wideField" colspan="3">

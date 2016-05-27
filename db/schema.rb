@@ -29,14 +29,12 @@ ActiveRecord::Schema.define(version: 20160527162958) do
 
   create_table "ratings", force: :cascade do |t|
     t.float    "grade"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "user_id"
-    t.integer  "establishment_id"
-    t.float    "black"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "lgbt"
     t.float    "old"
     t.float    "woman"
-    t.float    "lgbt"
+    t.integer  "black"
     t.float    "pcd"
   end
 
