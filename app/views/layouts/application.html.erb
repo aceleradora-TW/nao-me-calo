@@ -8,7 +8,11 @@
 </head>
 <body>
 <%= render 'layouts/header' %>
-<%= yield %>
 
+<section class="min-height">
+  <%= yield %>
+</section>
+
+<%= render 'layouts/footer' %>
 </body>
 </html>
