@@ -1,20 +1,22 @@
 <% javascript_include_tag "welcome" %>
 
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-<form>
-  <div class="row">
-    <div class="col-lg-6">
+
+<div class="row">
+  <div class="col-lg-6">
+    <form>
       <div class="input-group">
-        <input  type="text" class="form-control" onFocus="geolocate()" placeholder="Search for..." id="campoBusca">
+        <input  type="text" class="form-control" onFocus="geolocate()" placeholder="Busque um local" id="campoBusca">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Go!</button>
+          <!-- o botão não faz nada -->
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
         </span>
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-
-  </div><!-- /.row -->
-
-</form>
+      </div>
+    </form>
+  </div>
+</div>
 
 <table id="address">
   <tr>
