@@ -1,34 +1,27 @@
 <p id="notice"><%= notice %></p>
+<div class ="col-lg-6 col-lg-offset-3">
+  <div class ="col-lg-6">
+    <h1>
+      <%=  @establishment.name %>
+    </h1>
+    <p>
+      <strong>Endereço:</strong>
+      <%= @establishment.address %>
+    </p>
+    <p>
+      <strong>E-mail:</strong>
+      <!-- establishment.email -->
+    </p>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @establishment.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @establishment.address %>
-</p>
-
-<p>
-  <strong>Average rating:</strong>
-  <%= @establishment.average_rating %>
-</p>
-
-<p>
-  <strong>Lat:</strong>
-  <%= @establishment.lat %>
-</p>
-
-<p>
-  <strong>Lng:</strong>
-  <%= @establishment.lng %>
-</p>
-
-<p>
-  <strong>Id places:</strong>
-  <%= @establishment.id_places %>
-</p>
-
-<%= link_to 'Edit', edit_establishment_path(@establishment) %> |
-<%= link_to 'Back', establishments_path %>
+  <div class ="col-lg-6">
+    <h1><%= @establishment.average_rating %><span>☆</span><h1>
+      <div class="btn btn-primary">Avaliação</div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="row">
+      <%= link_to 'Edit', edit_establishment_path(@establishment) %> |
+      <%= link_to 'Back', establishments_path %>
+    </div>
+  </div>
