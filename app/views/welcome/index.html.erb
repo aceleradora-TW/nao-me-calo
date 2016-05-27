@@ -1,9 +1,39 @@
 <% javascript_include_tag "welcome" %>
 
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
-<p>Buscar Estabelecimento<br>
-  <input id="search" type="text" placeholder="Nome do estabelecimento">
-  <input id="search-value" type="text" name="code">
-</p>
+<div id="locationField">
+  <input id="autocomplete" placeholder="Enter your address"
+  onFocus="geolocate()" type="text"></input>
+</div>
+
+<table id="address">
+  <tr>
+    <td class="label">Street address</td>
+    <td class="slimField"><input class="field" id="street_number"
+      disabled="true"></input></td>
+    <td class="wideField" colspan="2"><input class="field" id="route"
+      disabled="true"></input></td>
+  </tr>
+  <tr>
+    <td class="label">City</td>
+    <td class="wideField" colspan="3"><input class="field" id="locality"
+      disabled="true"></input></td>
+  </tr>
+  <tr>
+    <td class="label">State</td>
+    <td class="slimField"><input class="field"
+      id="administrative_area_level_1" disabled="true"></input></td>
+    <td class="label">Zip code</td>
+    <td class="wideField"><input class="field" id="postal_code"
+      disabled="true"></input></td>
+  </tr>
+  <tr>
+    <td class="label">Country</td>
+    <td class="wideField" colspan="3"><input class="field"
+      id="country" disabled="true"></input></td>
+  </tr>
+</table>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"
+async defer></script>
