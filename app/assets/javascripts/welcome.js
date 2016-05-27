@@ -8,6 +8,7 @@ var API_KEY = "AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8";
 
 var placeSearch, autocomplete;
 var componentForm = {
+  name: 'name',
   street_number: 'short_name',
   route: 'long_name',
   locality: 'long_name',
@@ -25,11 +26,11 @@ function initAutocomplete() {
 
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
-    autocomplete.addListener('place_changed', fillInAddress);
+    autocomplete.addListener('place_changed', fillData);
   }
 
   // [START region_fillform]
-  function fillInAddress() {
+  function fillData() {
     // Get the place details from the autocomplete object.
     var place = autocomplete.getPlace();
 
@@ -38,6 +39,12 @@ function initAutocomplete() {
       document.getElementById(component).disabled = false;
     }
 
+    fillAddress(place);
+    fillName(place);
+  }
+
+
+  function fillAddress(place){
     // Get each component of the address from the place details
     // and fill the corresponding field on the form.
     for (var i = 0; i < place.address_components.length; i++) {
@@ -48,6 +55,12 @@ function initAutocomplete() {
       }
     }
   }
+
+  function fillName(place){
+    document.getElementById("name").value = place.name;
+  }
+
+
   // [END region_fillform]
 
   // [START region_geolocation]
