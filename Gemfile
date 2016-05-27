@@ -14,8 +14,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
-
+#Esta gem, é responsavel, pelo sistema de rating
+gem 'ratyrate'
+#Esta gem, é responsavel, pelo sistema de rating
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

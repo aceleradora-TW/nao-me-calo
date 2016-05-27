@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'evaluation/index'
+
   resources :establishments
   resources :users
   root 'welcome#index'
