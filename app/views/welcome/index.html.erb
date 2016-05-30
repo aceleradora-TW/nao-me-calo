@@ -2,61 +2,75 @@
 
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
-<div class="row">
-  <div class="col-lg-6">
-    <form>
-      <div class="input-group">
-        <input  type="text" class="form-control" onFocus="geolocate()" placeholder="Busque um local" id="campoBusca">
-        <span class="input-group-btn">
-          <!-- o botão não faz nada -->
-          <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </button>
-        </span>
-      </div>
-    </form>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+      <form>
+        <div class="input-group">
+          <input  type="text" class="form-control" onFocus="geolocate()" placeholder="Busque um local" id="campoBusca">
+          <span class="input-group-btn">
+            <!-- o botão não faz nada -->
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="col-lg-12">
+
+      <table id="address">
+        <tr>
+          <td class="label">Name</td>
+          <td class="wideField" colspan="3">
+            <input class="field" id="name" disabled="true"></input>
+          </td>
+        </trd class="label">Street address</td>
+        <td class="slimField"><input class="field" id="street_number" disabled="true"></input></td>
+        <td class="wideField" colspan="2"><input class="field" id="route" disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">City</td>
+        <td class="wideField" colspan="3"><input class="field" id="locality" disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">State</td>
+        <td class="slimField"><input class="field" id="administrative_area_level_1" disabled="true"></input></td>
+        <td class="label">Zip code</td>
+        <td class="wideField"><input class="field" id="postal_code" disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">Country</td>
+        <td class="wideField" colspan="3"><input class="field"
+          id="country" disabled="true"></input></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-lg-12">
+      <ul class="list-group">
+        <% @cont = 1%>
+        <% @establishments.each do |establishment| %>
+          <a href="/establishments/<%= @cont %>" class="list-group-item">
+            <h4 class="list-group-item-heading">
+              <%= establishment.name %>
+            </h4>
+            <p class="list-group-item-text">
+              <%= establishment.address %>
+            </p>
+          </a>
+          <% @cont = @cont + 1%>
+        <% end %>
+
+      </ul>
+    </div>
+aquela pagina /establishments é só a lista dos locais, a pagina que eles fizeram mesmo é essa
   </div>
 </div>
 
-<table id="address">
-  <tr>
-    <td class="label">Name</td>
-    <td class="wideField" colspan="3">
-      <input class="field" id="name" disabled="true"></input>
-    </td>
-  </tr>
-  <tr>
-    <td class="label">Street address</td>
-    <td class="slimField"><input class="field" id="street_number" disabled="true"></input></td>
-    <td class="wideField" colspan="2"><input class="field" id="route" disabled="true"></input></td>
-  </tr>
-  <tr>
-    <td class="label">City</td>
-    <td class="wideField" colspan="3"><input class="field" id="locality" disabled="true"></input></td>
-  </tr>
-  <tr>
-    <td class="label">State</td>
-    <td class="slimField"><input class="field" id="administrative_area_level_1" disabled="true"></input></td>
-    <td class="label">Zip code</td>
-    <td class="wideField"><input class="field" id="postal_code" disabled="true"></input></td>
-  </tr>
-  <tr>
-    <td class="label">Country</td>
-    <td class="wideField" colspan="3"><input class="field"
-      id="country" disabled="true"></input></td>
-    </tr>
-  </table>
-
-<div class="container">
-  <div class="list-group">
-  <button type="button" class="list-group-item" onClick="location.href ='/establishments'">Cras justo odio</button> 
-  <button type="button" class="list-group-item" onClick="location.href ='/establishments'">Dapibus ac facilisis in</button>
-  <button type="button" class="list-group-item" onClick="location.href ='/establishments'">Morbi leo risus</button>
-  <button type="button" class="list-group-item" onClick="location.href ='/establishments'">Porta ac consectetur ac</button>
-  <button type="button" class="list-group-item" onClick="location.href ='/establishments'">Vestibulum at eros</button>
-
-</div>
-</div>
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"
-  async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"
+async defer></script>
