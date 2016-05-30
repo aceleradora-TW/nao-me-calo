@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'evaluation/index'
 
   resources :establishments
   resources :users
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/dicas' => 'help#index'
 
-  post '/avaliar' => 'evaluation#index'
+  get '/avaliar' => 'evaluation#index'
 
   post '/search' => 'welcome#search'
 
