@@ -7,15 +7,6 @@ var API_KEY = "AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8";
 // of the Google Places API to help users fill in the information.
 
 var placeSearch, autocomplete;
-var componentForm = {
-  name: 'name',
-  street_number: 'short_name',
-  route: 'long_name',
-  locality: 'long_name',
-  administrative_area_level_1: 'short_name',
-  country: 'long_name',
-  postal_code: 'short_name'
-};
 
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
@@ -26,38 +17,12 @@ function initAutocomplete() {
 
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
-    autocomplete.addListener('place_changed', fillData);
+    autocomplete.addListener('place_changed', fillName);
   }
 
-  // [START region_fillform]
-  function fillData() {
-    // Get the place details from the autocomplete object.
+  function fillName(){
     var place = autocomplete.getPlace();
-
-    for (var component in componentForm) {
-      document.getElementById(component).value = '';
-      document.getElementById(component).disabled = false;
-    }
-
-    fillAddress(place);
-    fillName(place);
-  }
-
-
-  function fillAddress(place){
-    // Get each component of the address from the place details
-    // and fill the corresponding field on the form.
-    for (var i = 0; i < place.address_components.length; i++) {
-      var addressType = place.address_components[i].types[0];
-      if (componentForm[addressType]) {
-        var val = place.address_components[i][componentForm[addressType]];
-        document.getElementById(addressType).value = val;
-      }
-    }
-  }
-
-  function fillName(place){
-    document.getElementById("name").value = place.name;
+    document.getElementById("place_id").value = place.place_id;
   }
 
 
@@ -83,12 +48,10 @@ function initAutocomplete() {
   }
   // [END region_geolocation]
 
-  document.getElementById('campoBusca').onkeypress = function(e) {
-    var event = e || window.event;
-    var charCode = event.which || event.keyCode;
-
-    if ( charCode == '13' ) {
-      // Enter pressed
-      return false;
-    }
-  }
+$(document).ready(function(){
+  $('#teste').submit(function(e){
+    if($('#place_id').val() == ''){
+     e.preventDefault();
+   }
+  })
+});
