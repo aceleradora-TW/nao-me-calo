@@ -1,3 +1,27 @@
 // Place all the styles related to the help controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.hold-link-help > a:hover, a:visited,a:link{
+  color: #955B92 !important;
+  background-color: rgba(0,0,0,0) !important;
+}
+.hold-link-title-help > a:hover{
+  color: #000;
+  background-color: rgba(0,0,0,0);
+  text-decoration: none;
+}
+
+
+.blockquote-color {
+  background-color: #EEC5FB;
+  color: #3f458d;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.paragraph{
+  padding-left: 25px;
+}

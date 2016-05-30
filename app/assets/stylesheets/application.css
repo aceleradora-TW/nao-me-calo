@@ -21,3 +21,6 @@ body, html {
 .min-height{
   min-height: 61% !important;
 }
+.padding-bottom{
+  padding-bottom: 20px !important;
+}
