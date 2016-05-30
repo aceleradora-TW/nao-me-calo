@@ -33,7 +33,6 @@ function initAutocomplete() {
   function fillSearch(){
     var place = searchBox.getPlace();
     document.getElementById("place_id_2").value = place.place_id;
-    alert(place.place_id);
   }
 
 
