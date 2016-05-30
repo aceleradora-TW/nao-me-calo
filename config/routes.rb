@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   resources :establishments
   resources :users
+  
   root 'welcome#index'
 
   get '/dicas' => 'help#index'
-
 
 
     # The priority is based upon order of creation: first created -> highest priority.
