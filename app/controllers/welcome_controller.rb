@@ -22,6 +22,9 @@ class WelcomeController < ApplicationController
         address: "Exemplo"
       }]
     )
+  end
 
+  def search
+    
   end
 end
