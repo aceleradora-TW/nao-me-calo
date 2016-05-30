@@ -2,6 +2,12 @@
 
 <div class="container">
 
+<% if !flash[:error].nil? %>
+  <div class="alert alert-danger">
+    <p id="alert" class="text-center"><%= flash[:error] %></p>
+  </div>
+<%end%>
+
   <div class="row">
     <div class="col-lg-6 col-lg-offset-3 form-group">
       <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
