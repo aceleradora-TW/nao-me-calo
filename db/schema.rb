@@ -33,11 +33,6 @@ ActiveRecord::Schema.define(version: 20160530182234) do
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
     t.integer  "establishment_id"
-    t.float    "black"
-    t.float    "old"
-    t.float    "woman"
-    t.float    "lgbt"
-    t.float    "pcd"
     t.date     "rating_date"
   end
 

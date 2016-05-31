@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get '/dicas' => 'help#index'
+  get '/dicas' => 'welcome#help'
 
   get '/avaliar' => 'evaluation#index'
 

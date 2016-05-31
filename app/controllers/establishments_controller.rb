@@ -29,10 +29,8 @@ class EstablishmentsController < ApplicationController
     respond_to do |format|
       if @establishment.save
         format.html { redirect_to @establishment, notice: 'Establishment was successfully created.' }
-        format.json { render :show, status: :created, location: @establishment }
       else
         format.html { render :new }
-        format.json { render json: @establishment.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +41,8 @@ class EstablishmentsController < ApplicationController
     respond_to do |format|
       if @establishment.update(establishment_params)
         format.html { redirect_to @establishment, notice: 'Establishment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @establishment }
       else
         format.html { render :edit }
-        format.json { render json: @establishment.errors, status: :unprocessable_entity }
       end
     end
   end
