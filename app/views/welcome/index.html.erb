@@ -1,6 +1,5 @@
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
-<div class="container-fluid">
 
 <% if !flash[:error].nil? %>
   <div class="alert alert-danger">
@@ -23,7 +22,7 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 form-group">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
       <%= form_tag('/search', :id => 'formSearch', :onsubmit => "fillSearch()") do %>
       <div class="input-group">
         <input type="text" class="form-control" onFocus="geolocate()" placeholder="Busque um local para visitar" id="buscarLocal">
