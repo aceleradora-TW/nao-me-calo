@@ -1,6 +1,6 @@
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
-<div class="container">
+<div class="container-fluid">
 
 <% if !flash[:error].nil? %>
   <div class="alert alert-danger">
@@ -9,7 +9,7 @@
 <%end%>
 
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 form-group">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 form-group">
       <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
       <div class="input-group">
         <input type="text" class="form-control" onFocus="geolocate()" placeholder="Avalie um local" id="campoBusca">
@@ -23,7 +23,7 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 form-group">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 form-group">
       <%= form_tag('/search', :id => 'formSearch', :onsubmit => "fillSearch()") do %>
       <div class="input-group">
         <input type="text" class="form-control" onFocus="geolocate()" placeholder="Busque um local para visitar" id="buscarLocal">
