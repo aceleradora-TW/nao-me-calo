@@ -1,0 +1,61 @@
+<%= form_for(@rating) do |f| %>
+  <% if @rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+
+      <ul>
+      <% @rating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :woman %><br>
+    <%= f.text_field :woman %>
+  </div>
+  <div class="field">
+    <%= f.label :lgbtqia %><br>
+    <%= f.text_field :lgbtqia %>
+  </div>
+  <div class="field">
+    <%= f.label :black %><br>
+    <%= f.text_field :black %>
+  </div>
+  <div class="field">
+    <%= f.label :disability %><br>
+    <%= f.text_field :disability %>
+  </div>
+  <div class="field">
+    <%= f.label :elder %><br>
+    <%= f.text_field :elder %>
+  </div>
+  <div class="field">
+    <%= f.label :obese %><br>
+    <%= f.text_field :obese %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :rating_date %><br>
+    <%= f.date_select :rating_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

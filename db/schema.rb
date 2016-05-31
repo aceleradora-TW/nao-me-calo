@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530182234) do
+ActiveRecord::Schema.define(version: 20160531182125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,26 +28,20 @@ ActiveRecord::Schema.define(version: 20160530182234) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.float    "grade"
+    t.float    "woman"
+    t.float    "lgbtqia"
+    t.float    "black"
+    t.float    "disability"
+    t.float    "elder"
+    t.float    "obese"
+    t.string   "name"
+    t.string   "cpf"
+    t.string   "email"
+    t.string   "phone"
+    t.date     "rating_date"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "user_id"
     t.integer  "establishment_id"
-    t.float    "black"
-    t.float    "old"
-    t.float    "woman"
-    t.float    "lgbt"
-    t.float    "pcd"
-    t.date     "rating_date"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "cpf"
-    t.string   "telephone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
