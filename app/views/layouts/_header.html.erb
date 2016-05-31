@@ -1,8 +1,17 @@
-<nav class="navbar navbar-default header-background-color">
-  <div class="container-fluid">
-    <h1 class="title-header text-center"><a href="/"><%= image_tag("logo.jpg", size: "90x90",:id => "img_logo_site", :alt => "Logo do site, imagem de uma mulher mostrando a força no braço") %></a>Não me calo!</h1>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav header-menu">
+<nav class="navbar navbar-default navbar-static-top header-background-color">
+  <div class="container">
+
+    <%= image_tag("logo.jpg", size: "90x90",:id => "img_logo_site", :alt => "Logo do site, imagem de uma mulher mostrando a força no braço") %>
+  
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse logo-text" id="navbar-menu-collapse">
+      <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(root_path) %>"><a href="/">Home</a></li>
         <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Dicas", dicas_path %></li>
       </ul>
