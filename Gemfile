@@ -58,3 +58,5 @@ group :development do
   gem 'spring'
   gem 'faker'
 end
+
+ruby "2.3.1"
