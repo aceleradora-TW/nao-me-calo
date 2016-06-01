@@ -2,11 +2,12 @@
   <!-- Linha abaixo removivel sem problemas :D -->
   <h1 class='text-center'><%= image_tag(@spot.icon, size: "30x30") %> <%= @spot.name %></h1>
 </div>
-</div class='row'>
-  <h5 class='text-center'>Endereço: <%= @spot.formatted_address %></h3>
+<div class='row'>
+  <h5 class='text-center'>Endereço: <%= @spot.formatted_address %></h5>
 </div>
 
-
-<%= render 'form' %>
+<div class="col-lg-6 col-lg-offset-3">
+  <%= render 'form' %>
+</div>
 
 <%= link_to 'Back', ratings_path %>
