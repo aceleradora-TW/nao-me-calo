@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/perfil' => 'establishments#show'
+
   get '/dicas' => 'welcome#help'
 
   get '/avaliar' => 'ratings#new'
