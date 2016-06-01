@@ -1,3 +1,20 @@
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: #f0e500 !important;
+  color: #6312B9 !important;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: #3f458d !important;
+}
+.navbar-default .navbar-nav > li > a{
+  color: #f0e500 !important;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #f0e500;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+  border-top: 0px !important;
+}
+
 .title-header {
   font-style: italic;
   color: #f0f028;
@@ -9,28 +26,19 @@
 .header-menu{
   color: #f0f028 !important;
 }
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
-  background-color: #f0e500 !important;
-  color: #6312B9 !important;
-}
-.navbar-default .navbar-nav > li > a:hover{
-  color: #3f458d !important;
-}
-.navbar-default .navbar-nav > li > a{
-  color: #f0e500 !important;
-}
-
-
 .button-header-style{
   border-color: #f0e500 !important;
   background-color: : #f0e500 !important;
+
 }
 .button-header-style:hover{
   background-color: #574EA7 !important;
 }
 
-.a{
+.button-header-style:focus{
+  background-color: #574EA7 !important;
+}
+.link_logo{
     margin:0 auto;
     display:table;
 }
