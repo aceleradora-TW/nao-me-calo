@@ -12,28 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :woman %><br>
-    <%= f.text_field :woman %>
+    <%= f.label 'Mulher' %><br>
+    <% (1..5).each do |i| %>
+      <%= f.radio_button :woman, "#{i}" %>
+    <% end %>
+
   </div>
   <div class="field">
-    <%= f.label :lgbtqia %><br>
-    <%= f.text_field :lgbtqia %>
+    <%= f.label 'LGBTQIA' %><br>
+    <% (1..5).each do |i| %>
+      <%= f.radio_button :lgbtqia, "#{i}" %>
+    <% end %>
   </div>
   <div class="field">
-    <%= f.label :black %><br>
-    <%= f.text_field :black %>
+    <%= f.label 'Negro' %><br>
+    <% (1..5).each do |i| %>
+      <%= f.radio_button :black, "#{i}" %>
+    <% end %>
   </div>
   <div class="field">
-    <%= f.label :disability %><br>
-    <%= f.text_field :disability %>
+    <%= f.label 'Deficiente' %><br>
+    <% (1..5).each do |i| %>
+      <%= f.radio_button :disability, "#{i}" %>
+    <% end %>
   </div>
   <div class="field">
-    <%= f.label :elder %><br>
-    <%= f.text_field :elder %>
+    <%= f.label 'Idoso' %><br>
+    <% (1..5).each do |i| %>
+      <%= f.radio_button :elder, "#{i}" %>
+    <% end %>
   </div>
   <div class="field">
-    <%= f.label :obese %><br>
-    <%= f.text_field :obese %>
+    <%= f.label 'Obeso' %><br>
+    <% (1..5).each do |i| %>
+      <%= f.radio_button :obese, "#{i}" %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
