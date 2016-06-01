@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/dicas' => 'welcome#help'
 
-  post '/avaliar' => 'evaluation#index'
+  get '/avaliar' => 'ratings#new'
 
   post '/search' => 'welcome#search'
 
