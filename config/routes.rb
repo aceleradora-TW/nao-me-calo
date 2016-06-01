@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get '/perfil' => 'establishments#show'
+  get '/perfil/:id' => 'establishments#show'
 
   get '/dicas' => 'welcome#help'
 
