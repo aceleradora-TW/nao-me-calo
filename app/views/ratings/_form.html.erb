@@ -65,10 +65,11 @@
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :rating_date %><br>
-    <%= f.date_select :rating_date %>
+    <%= f.label 'Data do Evento' %><br>
+    <%#= f.date_select :rating_date %>
+    <%= f.date_select :rating_date, {:use_month_names => ['janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro','Dezembro']} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Enviar avaliação' %>
   </div>
 <% end %>
