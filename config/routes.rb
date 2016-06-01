@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/dicas' => 'welcome#help'
 
-  get '/avaliar' => 'ratings#new'
+  post '/avaliar' => 'ratings#new'
 
   post '/search' => 'welcome#search'
 

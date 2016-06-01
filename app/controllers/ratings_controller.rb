@@ -15,6 +15,12 @@ class RatingsController < ApplicationController
   # GET /ratings/new
   def new
     @rating = Rating.new
+    @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
+    if params[:place_id] != nil
+      @spot = @client.spot(params[:place_id])
+    else
+      redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
+    end
   end
 
   # GET /ratings/1/edit
