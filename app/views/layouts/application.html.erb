@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>NaoMeCalo</title>
+  <title>Não Me Calo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,11 +9,13 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
+  <section class="min-height">
   <div class="container-fluid">
-    <section class="min-height">
+
       <%= yield %>
-    </section>
   </div>
+</section>
+
   <%= render 'layouts/footer' %>
 </body>
 </html>
