@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @establishments = Establishment.all
+    @establishments = Establishment.includes(:ratings).order("ratings.rating_date desc").limit(5)
   end
 
   def search

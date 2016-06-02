@@ -77,4 +77,6 @@ class RatingsController < ApplicationController
     def rating_params
       params.require(:rating).permit(:woman, :lgbtqia, :black, :disability, :elder, :obese, :name, :cpf, :email, :phone, :rating_date)
     end
+
+    
 end

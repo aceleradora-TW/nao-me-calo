@@ -6,30 +6,30 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-     Establishment.create(
-        name: 'Cavanhas',
-        address: Faker::Address.street_name,
-        average_rating: Faker::Number.between(1, 5),
-        lat: Faker::Address.latitude,
-        lng: Faker::Address.longitude,
-        id_places: 'ChIJ-ZgW_AB5GZUR-LPwX7gPUNs'
-      )
 
 
-      Establishment.create(
-         name: 'Beco 203',
-         address: Faker::Address.street_name,
-         average_rating: Faker::Number.between(1, 5),
-         lat: Faker::Address.latitude,
-         lng: Faker::Address.longitude,
-         id_places: 'ChIJj2J3iGOCGZUR5XT38N2pANQ'
-       )
+50.times do
+  establishment = Establishment.create({
+    name: Faker::Name.name,
+    address: Faker::Address.street_name,
+    average_rating: Faker::Number.between(1, 5),
+    lat: Faker::Address.latitude,
+    lng: Faker::Address.longitude,
+    id_places: 'ChIJ-ZgW_AB5GZUR-LPwX7gPUNs'
+    })
 
-       Establishment.create(
-          name: 'Shopping Iguatemi',
-          address: Faker::Address.street_name,
-          average_rating: Faker::Number.between(1, 5),
-          lat: Faker::Address.latitude,
-          lng: Faker::Address.longitude,
-          id_places: 'ChIJV9G_oJl3GZURDBaCCfFPGEo'
-        )
+    puts "Criado o estabelecimento #{establishment.id}"
+
+    5.times do
+      rating = Rating.create({
+        establishment_id: establishment.id,
+        black: 2,
+        elder: 4,
+        woman: 4.5,
+        lgbtqia: 3.8,
+        rating_date: Faker::Date.between(50.days.ago, Date.today)
+        })
+
+        puts "Criado a avaliação #{rating.id}"
+      end
+    end
