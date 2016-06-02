@@ -16,12 +16,11 @@
  */
 body, html {
   height: 100%;
+  width: 100%;
 }
-
-.min-height{
-  min-height: 72.7% !important;
-}
-
 .padding-bottom{
   padding-bottom: 20px !important;
+}
+body {
+    display: table;
 }

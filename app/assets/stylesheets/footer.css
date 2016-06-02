@@ -3,9 +3,12 @@
   color: #f0f028;
   padding-bottom: 20px;
   padding-top: 20px;
-
-}
-
-.footer-border {
+  bottom: 0;
+  width: 100%;
+  height: 60px;
   border-top: solid 2px #C9BDD4;
+  display: table-row;
+}
+.footer-text{
+  padding-top: 20px;
 }
