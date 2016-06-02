@@ -15,6 +15,7 @@
 
       <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
       <%= submit_tag "Avaliação", :class => 'btn btn-primary' %>
+      <%= hidden_field_tag 'id' %>
       <% end %>
 
     </div>

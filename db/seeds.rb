@@ -6,13 +6,30 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times do
      Establishment.create(
-        name: Faker::Name.name,
+        name: 'Cavanhas',
         address: Faker::Address.street_name,
         average_rating: Faker::Number.between(1, 5),
         lat: Faker::Address.latitude,
         lng: Faker::Address.longitude,
-        id_places: Faker::Number.between(1, 1000)
+        id_places: 'ChIJ-ZgW_AB5GZUR-LPwX7gPUNs'
       )
-end
+
+
+      Establishment.create(
+         name: 'Beco 203',
+         address: Faker::Address.street_name,
+         average_rating: Faker::Number.between(1, 5),
+         lat: Faker::Address.latitude,
+         lng: Faker::Address.longitude,
+         id_places: 'ChIJj2J3iGOCGZUR5XT38N2pANQ'
+       )
+
+       Establishment.create(
+          name: 'Shopping Iguatemi',
+          address: Faker::Address.street_name,
+          average_rating: Faker::Number.between(1, 5),
+          lat: Faker::Address.latitude,
+          lng: Faker::Address.longitude,
+          id_places: 'ChIJV9G_oJl3GZURDBaCCfFPGEo'
+        )
