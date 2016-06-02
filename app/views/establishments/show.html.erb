@@ -1,23 +1,22 @@
 <p id="notice"><%= notice %></p>
-<div class ="col-lg-6 col-lg-offset-3">
+<div class ="col-lg-8 col-lg-offset-4">
   <div class ="col-lg-6 ">
     <h1 class="padding-bottom">
-      <%=  @establishment.name %>
-    </h1>
-    <p>
-      <strong>Endereço:</strong>
-      <%= @establishment.address %>
-    </p>
-    <p>
-      <strong>Nota média:</strong>
-      <%= @average_rating %>
-    </p>
-  </div>
+      <div class='row'>
+        <h1 class='text-center'><%= image_tag(@spot.icon, size: "30x30") %> <%= @spot.name %></h1>
+      </div>
+      <div class='row'>
+        <h5 class='text-center'><%= @spot.formatted_address %></h5>
+      </div>
 
-      <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
-      <%= submit_tag "Avaliação", :class => 'btn btn-primary' %>
-      <%= hidden_field_tag 'place_id' , @establishment.id_places %>
-      <% end %>
+      <div class ="col-lg-6 col-lg-offset-4">
+        <h1><%= @establishment.average_rating %><span>☆</span><h1>
 
+          <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
+          <%= submit_tag "Avaliação", :class => 'btn btn-primary' %>
+          <%= hidden_field_tag 'place_id' , @establishment.id_places %>
+          <% end %>
+
+        </div>
+      </div>
     </div>
-  </div>
