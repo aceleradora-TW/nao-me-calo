@@ -4,8 +4,8 @@ RSpec.describe EstablishmentsController, type: :controller do
 
   describe "#index" do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", average_rating:5.0, lat:"0", lng:"0", id_places:"321")
-      @est2 = Establishment.create!(name:"Teste2", address:"Logo Ali2", average_rating:6.0, lat:"0", lng:"0", id_places:"121")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
+      @est2 = Establishment.create!(name:"Teste2", address:"Logo Ali2", lat:"0", lng:"0", id_places:"121")
     end
 
     it "expect @establishments to be all Establishments" do
@@ -28,7 +28,6 @@ RSpec.describe EstablishmentsController, type: :controller do
       {
         name: "teste",
         address: "logo ali",
-        average_rating: 5.0,
         lat: "0",
         lng: "0",
         id_places: "321"
@@ -41,7 +40,6 @@ RSpec.describe EstablishmentsController, type: :controller do
       post :create, {establishment:
       {
         name: "Teste",
-        average_rating: "5.0",
         lat: "0",
         lng: "0",
         id_places: "321"
@@ -53,7 +51,7 @@ RSpec.describe EstablishmentsController, type: :controller do
 
   describe "#update" do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", average_rating:5.0, lat:"0", lng:"0", id_places:"321")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
     end
 
     it "expect to flash notice when the establishment is updated " do
@@ -62,7 +60,6 @@ RSpec.describe EstablishmentsController, type: :controller do
         {
           name: "testedo teste",
           address: "logo ali",
-          average_rating: 5.0,
           lat: "0",
           lng: "0",
           id_places: "321"
@@ -77,7 +74,6 @@ RSpec.describe EstablishmentsController, type: :controller do
         {
           name: "testedo teste",
           address: "logo ali",
-          average_rating: 5.0,
           lat: "0",
           lng: "0",
           id_places: "321"
@@ -92,7 +88,6 @@ RSpec.describe EstablishmentsController, type: :controller do
         {
           name: "",
           address: "logo ali",
-          average_rating: 5.0,
           lat: "0",
           lng: "0",
           id_places: "321"
@@ -104,7 +99,7 @@ RSpec.describe EstablishmentsController, type: :controller do
 
   describe '#destroy' do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", average_rating:5.0, lat:"0", lng:"0", id_places:"321")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
     end
 
     it 'flash notice when establishment is destroyed' do
