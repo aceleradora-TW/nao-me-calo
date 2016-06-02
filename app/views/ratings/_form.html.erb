@@ -1,4 +1,3 @@
-
 <%= form_for(@rating) do |f| %>
 <% if @rating.errors.any? %>
 <div id="error_explanation">
@@ -13,44 +12,88 @@
 <% end %>
 
 <div class="field">
-  <%= f.label 'Mulher' %><br>
+  <%= f.label 'Mulher' %>
+  <br>
+  <span>Ruim</span>
   <% (1..5).each do |i| %>
   <%= f.radio_button :woman, "#{i}" %>
+  <%= f.label "#{i}" %>
   <% end %>
+  <span>Excelente</span>
+  <br>
+  <%= f.radio_button :woman, nil %>
+  <span>Não avaliado</span>
 </div>
 <div class="field">
-  <%= f.label 'LGBTQIA' %><br>
+  <%= f.label 'LGBTQIA' %>
+  <br>
+  <span>Ruim</span>
   <% (1..5).each do |i| %>
   <%= f.radio_button :lgbtqia, "#{i}" %>
+  <%= f.label "#{i}" %>
   <% end %>
+  <span>Excelente</span>
+  <br>
+  <%= f.radio_button :lgbtqia, nil %>
+  <span>Não avaliado</span>
 </div>
+
 <div class="field">
-  <%= f.label 'Negro' %><br>
+  <%= f.label 'Raça' %>
+  <br>
+  <span>Ruim</span>
   <% (1..5).each do |i| %>
   <%= f.radio_button :black, "#{i}" %>
+  <%= f.label "#{i}" %>
   <% end %>
+  <span>Excelente</span>
+  <br>
+  <%= f.radio_button :black, nil %>
+  <span>Não avaliado</span>
 </div>
+
 <div class="field">
-  <%= f.label 'Deficiente' %><br>
+  <%= f.label 'Deficiente' %>
+  <br>
+  <span>Ruim</span>
   <% (1..5).each do |i| %>
   <%= f.radio_button :disability, "#{i}" %>
+  <%= f.label "#{i}" %>
   <% end %>
+  <span>Excelente</span>
+  <br>
+  <%= f.radio_button :disability, nil %>
+  <span>Não avaliado</span>
 </div>
 <div class="field">
-  <%= f.label 'Idoso' %><br>
+  <%= f.label 'Idoso' %>
+  <br>
+  <span>Ruim</span>
   <% (1..5).each do |i| %>
   <%= f.radio_button :elder, "#{i}" %>
+  <%= f.label "#{i}" %>
   <% end %>
+  <span>Excelente</span>
+  <br>
+  <%= f.radio_button :elder, nil %>
+  <span>Não avaliado</span>
 </div>
 <div class="field">
-  <%= f.label 'Obeso' %><br>
+  <%= f.label 'Obeso' %>
+  <br>
+  <span>Ruim</span>
   <% (1..5).each do |i| %>
   <%= f.radio_button :obese, "#{i}" %>
+  <%= f.label "#{i}" %>
   <% end %>
+  <span>Excelente</span>
+  <br>
+  <%= f.radio_button :obese, nil %>
+  <span>Não avaliado</span>
 </div>
 <div class="form-group">
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label "nome" %><br>
     <%= f.text_field :name, :class => "form-control" %>
   </div>
 </div>
@@ -63,12 +106,13 @@
   <%= f.text_field :email %>
 </div>
 <div class="field">
-  <%= f.label :phone %><br>
+  <%= f.label "telefone" %><br>
   <%= f.text_field :phone %>
 </div>
 <div class="field">
   <%= f.label 'Data do Evento' %><br>
-  <%= f.date_select :rating_date, {:use_month_names => ['janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro','Dezembro']} %>
+  <%= f.date_field :rating_date %>
+
 </div>
 <div class="actions">
   <%= f.submit 'Enviar avaliação' %>

@@ -16,6 +16,7 @@ class RatingsController < ApplicationController
   def new
     @rating = Rating.new
     @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
+
     if params[:place_id] != nil
       @spot = @client.spot(params[:place_id])
     else
