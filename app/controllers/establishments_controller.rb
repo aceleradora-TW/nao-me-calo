@@ -10,6 +10,13 @@ class EstablishmentsController < ApplicationController
   # GET /establishments/1
   # GET /establishments/1.json
   def show
+    general_average = []
+    @establishment.ratings.each do |rating|
+      general_average.push(rating.average_rating) unless rating.average_rating.nil?
+    end
+
+    @average_rating = general_average.sum/general_average.size #media geral do estabelicimento
+
   end
 
   # GET /establishments/new

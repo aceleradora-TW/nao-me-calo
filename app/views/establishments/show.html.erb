@@ -8,10 +8,11 @@
       <strong>Endereço:</strong>
       <%= @establishment.address %>
     </p>
+    <p>
+      <strong>Nota média:</strong>
+      <%= @average_rating %>
+    </p>
   </div>
-
-  <div class ="col-lg-6">
-    <h1><%= @establishment.average_rating %><span>☆</span><h1>
 
       <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
       <%= submit_tag "Avaliação", :class => 'btn btn-primary' %>
