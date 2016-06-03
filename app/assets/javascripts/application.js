@@ -16,3 +16,4 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//= require maskedinput

@@ -34,6 +34,7 @@ gem "twitter-bootstrap-rails"
 gem 'jquery-ui-rails'
 gem 'google_places'
 gem 'pg_search'
+gem 'maskedinput-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

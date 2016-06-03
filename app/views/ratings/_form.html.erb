@@ -102,23 +102,22 @@
 </div>
 <div class="field">
   <%= f.label :cpf %><br>
-  <%= f.text_field :cpf %>
+  <%= f.text_field :cpf, :class => "form-control", :id => "cpfAvaliacao" %>
 </div>
 <div class="field">
   <%= f.label :email %><br>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, :class => "form-control", :id => "emailAvaliacao" %>
 </div>
 <div class="field">
   <%= f.label "telefone" %><br>
-  <%= f.text_field :phone %>
+  <%= f.text_field :phone, :class => "form-control", :id => "telefoneAvaliacao" %>
 </div>
 <div class="field">
   <%= f.label 'Data do Evento' %><br>
-  <%= f.date_field :rating_date, selected: Date.today, min: 5.months.ago, max: 0.day.from_now%>
+  <%= f.text_field :rating_date, :class => "form-control", :id => "dataAvaliacao" %>
 </div>
-
-<div class="actions">
-  <%= f.submit 'Enviar avaliação' %>
+<div class="actions text-center">
+  <%= f.submit 'Enviar avaliação', :class => "btn btn-primary" %>
 </div>
 
 
