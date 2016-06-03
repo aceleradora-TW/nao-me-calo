@@ -39,10 +39,10 @@
     <ul class="list-group">
       <% @establishments.each do |establishment| %>
       <a href="/perfil/<%= establishment.id %>" class="list-group-item">
-
         <h4 class="list-group-item-heading">
           <%= establishment.name %>
           <%= establishment.ratings.try(:first).try(:rating_date) %>
+          <%= calculate_average_establishment(establishment) %>
         </h4>
         <p class="list-group-item-text">
           <%= establishment.address %>

@@ -15,6 +15,7 @@ class EstablishmentsController < ApplicationController
       general_average.push(rating.average_rating) unless rating.average_rating.nil?
     end
     @average_rating = general_average.sum/general_average.size #media geral do estabelicimento
+    
     @simb = Establishment.find(@establishment.id)
     @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
     @spot = @client.spot(@simb.id_places)

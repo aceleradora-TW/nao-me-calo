@@ -1,6 +1,9 @@
 class WelcomeController < ApplicationController
+  helper_method :calculate_average_establishment
+  
   def index
     @establishments = Establishment.includes(:ratings).order("ratings.rating_date desc").limit(5)
+
   end
 
   def search
@@ -13,6 +16,16 @@ class WelcomeController < ApplicationController
   end
 
   def help
+  end
+
+  def calculate_average_establishment(establishment)
+    todasNotas = establishment.ratings.map do |rating|
+      rating.average_rating
+    end
+
+    todasNotas.delete_if {|x| x == nil}
+
+    return (todasNotas.sum/todasNotas.length).round(1)
   end
 
 end
