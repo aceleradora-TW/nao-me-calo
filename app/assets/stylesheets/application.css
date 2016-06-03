@@ -28,3 +28,7 @@ body {
   background-color: #574EA7 !important;
   border-color: #574EA7 !important;
 }
+.center-element{
+    margin:0 auto;
+    display:table;
+}

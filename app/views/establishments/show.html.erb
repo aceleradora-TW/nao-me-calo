@@ -1,21 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-
-<div class ="col-lg-8 col-lg-offset-2">
+<div class ="col-lg-8 col-lg-offset-2 ">
   <div class ="col-lg-12 padding-bottom">
     <div class='row'>
       <h1 class='text-center'>
-        <%= image_tag(@establishment.try(:icon), size: "30x30") %>
-        <%= @establishment.name %>
+        <%= image_tag(@spot.icon, size: "30x30") %>
+        <%= @spot.name %>
         <span class="paragraph"><%= @average_rating.round(2) %>☆</span>
-        <%= submit_tag "Avaliar", :class => 'btn btn-primary' %>
       </h1>
     </div>
     <div class='row'>
-      <h5 class='text-center'><%= @establishment.try(:formatted_address) %></h5>
+      <h5 class='text-center'><%= @spot.formatted_address %></h5>
     </div>
-    <div class ="col-lg-6 col-lg-offset-3">
+    <div class="center-element" >
       <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
+      <%= submit_tag "Avaliar", :class => 'btn btn-primary' %>
       <%= hidden_field_tag 'place_id' , @establishment.id_places %>
       <% end %>
     </div>
