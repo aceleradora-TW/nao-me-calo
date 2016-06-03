@@ -90,7 +90,7 @@ class RatingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rating_params
-      params.require(:rating).permit(:woman, :lgbtqia, :black, :disability, :elder, :obese, :name, :cpf, :email, :phone, :rating_date, :establishment_id)
+      params.require(:rating).permit(:woman, :lgbtqia, :race, :disability, :elder, :obese, :name, :cpf, :email, :phone, :rating_date, :establishment_id)
     end
 
 
