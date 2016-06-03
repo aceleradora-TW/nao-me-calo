@@ -1,37 +1,36 @@
 <p id="notice"><%= notice %></p>
-<div class ="col-lg-8 col-lg-offset-4">
-  <div class ="col-lg-6 ">
-    <h1 class="padding-bottom">
-      <div class='row'>
-        <h1 class='text-center'><%= image_tag(@establishment.icon, size: "30x30") %> <%= @establishment.name %></h1>
-      </div>
-      <div class='row'>
-        <h5 class='text-center'><%= @spot.formatted_address %></h5>
-      </div>
-
-      <div class ="col-lg-6 col-lg-offset-4">
-        <h1><%= @average_rating %><span>☆</span><h1>
-          <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
-          <h1 class='text-center'><%= @average_rating %></h5>
-          <%= submit_tag "Avaliação", :class => 'btn btn-primary' %>
-          <%= hidden_field_tag 'place_id' , @establishment.id_places %>
-          <% end %>
 
 
-        </div>
-
-        <div class="col-lg-12">
-          <ul class="list-group">
-            <% @ratings.each do |rating| %>
-              <h4 class="list-group-item-heading">
-                <%= rating.rating_date %>
-                <%= rating.average_rating %>
-              </h4>
-            </a>
-            <% end %>
-          </ul>
-        </div>
-
-
-      </div>
+<div class ="col-lg-8 col-lg-offset-2">
+  <div class ="col-lg-12 padding-bottom">
+    <div class='row'>
+      <h1 class='text-center'>
+        <%= image_tag(@establishment.icon, size: "30x30") %>
+        <%= @establishment.name %>
+        <span class="paragraph"><%= @average_rating.round(2) %>☆</span>
+        <%= submit_tag "Avaliar", :class => 'btn btn-primary' %>
+      </h1>
     </div>
+    <div class='row'>
+      <h5 class='text-center'><%= @establishment.formatted_address %></h5>
+    </div>
+    <div class ="col-lg-6 col-lg-offset-3">
+      <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
+      <%= hidden_field_tag 'place_id' , @establishment.id_places %>
+      <% end %>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+      <h2>Ultimas avaliações:</h2>
+    </div>
+    <div class="col-lg-4 col-lg-offset-4">
+      <ul class="list-group">
+        <% @ratings.each do |rating| %>
+        <h4 class="list-group-item list-show-style">
+          <span class="text-data"><%= rating.rating_date.strftime("%d/%m/%Y")%></span>
+          <p class="text-right text-data-rating"><%= rating.average_rating %></p>
+        </h4>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

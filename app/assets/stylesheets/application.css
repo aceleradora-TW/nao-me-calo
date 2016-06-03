@@ -24,3 +24,7 @@ body, html {
 body {
     display: table;
 }
+.btn-primary{
+  background-color: #574EA7 !important;
+  border-color: #574EA7 !important;
+}
