@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
+  helper_method :calculate_average_establishment
 
   def index
-    @establishments = Establishment.includes(:ratings).reverse_order.limit(5)
+    @establishments = Establishment.includes(:ratings).order("ratings.rating_date desc").limit(5)
   end
 
   def search
@@ -15,4 +16,5 @@ class WelcomeController < ApplicationController
 
   def help
   end
+
 end
