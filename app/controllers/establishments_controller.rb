@@ -18,6 +18,10 @@ class EstablishmentsController < ApplicationController
     @simb = Establishment.find(@establishment.id)
     @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
     @spot = @client.spot(@simb.id_places)
+
+    @ratings = @establishment.ratings.reverse_order.limit(5)
+    
+
   end
 
   # GET /establishments/new

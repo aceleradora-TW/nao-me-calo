@@ -12,7 +12,6 @@
   establishment = Establishment.create({
     name: Faker::Name.name,
     address: Faker::Address.street_name,
-    average_rating: Faker::Number.between(1, 5),
     lat: Faker::Address.latitude,
     lng: Faker::Address.longitude,
     id_places: 'ChIJ-ZgW_AB5GZUR-LPwX7gPUNs'
@@ -20,13 +19,13 @@
 
     puts "Criado o estabelecimento #{establishment.id}"
 
-    5.times do
+    10.times do
       rating = Rating.create({
         establishment_id: establishment.id,
-        black: 2,
-        elder: 4,
-        woman: 4.5,
-        lgbtqia: 3.8,
+        black: Faker::Number.between(1, 5),
+        elder: Faker::Number.between(1, 5),
+        woman: Faker::Number.between(1, 5),
+        lgbtqia:Faker::Number.between(1, 5),
         rating_date: Faker::Date.between(50.days.ago, Date.today)
         })
 
