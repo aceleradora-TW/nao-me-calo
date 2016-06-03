@@ -114,9 +114,9 @@
 </div>
 <div class="field">
   <%= f.label 'Data do Evento' %><br>
-  <%= f.date_field :rating_date %>
-
+  <%= f.date_field :rating_date, selected: Date.today, min: 5.months.ago, max: 1.year.from_now%>
 </div>
+
 <div class="actions">
   <%= f.submit 'Enviar avaliação' %>
 </div>
