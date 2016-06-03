@@ -2,55 +2,54 @@
 
 
 <% if !flash[:error].nil? %>
-  <div class="alert alert-danger">
-    <p id="alert" class="text-center"><%= flash[:error] %></p>
-  </div>
+<div class="alert alert-danger">
+  <p id="alert" class="text-center"><%= flash[:error] %></p>
+</div>
 <%end%>
 
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
-      <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
-      <div class="input-group">
-        <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local" onFocus="geolocate()" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onchange="fillName()" placeholder="Avalie um local" id="campoBusca">
-        <span class="input-group-btn">
-          <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
-        </span>
-      </div>
-      <%= hidden_field_tag 'place_id' %>
-      <% end %>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
+    <%= form_tag('/avaliar', :id => 'formAvaliar', :onsubmit => "fillName()") do %>
+    <div class="input-group">
+      <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local" onFocus="geolocate()" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onchange="fillName()" placeholder="Avalie um local" id="campoBusca">
+      <span class="input-group-btn">
+        <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
+      </span>
     </div>
+    <%= hidden_field_tag 'place_id' %>
+    <% end %>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
-      <%= form_tag('/search', :id => 'formSearch', :onsubmit => "fillSearch()") do %>
-      <div class="input-group">
-        <input type="text" class="form-control" aria-label="Campo para buscar local" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onFocus="geolocate()" onchange="fillSearch()" placeholder="Busque um local para visitar" id="buscarLocal">
-        <span class="input-group-btn">
-          <%= submit_tag "Buscar", :class => 'btn btn-success' %>
-        </span>
-      </div>
-      <%= hidden_field_tag 'place_id_2' %>
-      <% end %>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
+    <%= form_tag('/search', :id => 'formSearch', :onsubmit => "fillSearch()") do %>
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="Campo para buscar local" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onFocus="geolocate()" onchange="fillSearch()" placeholder="Busque um local para visitar" id="buscarLocal">
+      <span class="input-group-btn">
+        <%= submit_tag "Buscar", :class => 'btn btn-success' %>
+      </span>
     </div>
+    <%= hidden_field_tag 'place_id_2' %>
+    <% end %>
   </div>
+</div>
 
-  <div class="col-lg-12">
-    <ul class="list-group">
-      <% @establishments.each do |establishment| %>
-      <a href="/perfil/<%= establishment.id %>" class="list-group-item">
-        <h4 class="list-group-item-heading">
-          <%= establishment.name %>
-          <%= establishment.ratings.try(:first).try(:rating_date) %>
-          <%= calculate_average_establishment(establishment) %>
-        </h4>
-        <p class="list-group-item-text">
-          <%= establishment.address %>
-        </p>
-      </a>
-      <% end %>
-    </ul>
-  </div>
+<div class="col-lg-8 col-lg-offset-2">
+  <ul class="list-group">
+    <% @establishments.each do |establishment| %>
+    <a href="/perfil/<%= establishment.id %>" class="list-group-item">
+      <h4 class="list-group-item-heading">
+        <%= establishment.name %>
+        <span class="grade_on_list"><%= calculate_average_establishment(establishment) %></span>
+      </h4>
+      <p class="list-group-item-text">
+        <%= establishment.address %>
+      </p>
+    </a>
+    <% end %>
+  </ul>
+</div>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"
-  async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"
+async defer></script>
