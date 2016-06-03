@@ -22,7 +22,7 @@
     10.times do
       rating = Rating.create({
         establishment_id: establishment.id,
-        black: Faker::Number.between(1, 5),
+        race: Faker::Number.between(1, 5),
         elder: Faker::Number.between(1, 5),
         woman: Faker::Number.between(1, 5),
         lgbtqia:Faker::Number.between(1, 5),
