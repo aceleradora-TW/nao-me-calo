@@ -1,5 +1,6 @@
 class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: [:show, :edit, :update, :destroy]
+  before_action :set_client, only: [:show]
 
   # GET /establishments
   # GET /establishments.json
@@ -15,14 +16,7 @@ class EstablishmentsController < ApplicationController
       general_average.push(rating.average_rating) unless rating.average_rating.nil?
     end
     @average_rating = general_average.sum/general_average.size #media geral do estabelicimento
-    
-    @simb = Establishment.find(@establishment.id)
-    @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
-    @spot = @client.spot(@simb.id_places)
-
     @ratings = @establishment.ratings.reverse_order.limit(5)
-    
-
   end
 
   # GET /establishments/new
@@ -73,6 +67,10 @@ class EstablishmentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_establishment
       @establishment = Establishment.find(params[:id])
+    end
+
+    def set_client
+      @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
