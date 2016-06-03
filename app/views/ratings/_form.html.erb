@@ -1,4 +1,4 @@
-<%= form_for(@rating) do |f| %>
+<%= form_for(@rating, :id => "form-rating") do |f| %>
 <% if @rating.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
@@ -10,6 +10,8 @@
   </ul>
 </div>
 <% end %>
+
+<input type="hidden" id="place_id" name="place_id" value="<%= @place_id %>">
 
 <div class="field">
   <%= f.label 'Mulher' %>
