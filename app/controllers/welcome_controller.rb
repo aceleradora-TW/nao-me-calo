@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @establishments = Establishment.includes(:ratings).order("ratings.rating_date").last(5).reverse!
+    @establishments = Establishment.includes(:ratings).last(5).reverse
   end
 
   def search
