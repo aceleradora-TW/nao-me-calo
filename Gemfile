@@ -44,6 +44,7 @@ gem 'maskedinput-rails'
 
 gem 'rails_12factor', group: :production
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,7 +58,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'faker'
 end
 
 ruby "2.3.1"
