@@ -20,8 +20,7 @@
 <div class="field">
   <%= f.label 'Mulher' %>
   <br>
-  <%aria: {label: "Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo. "}%>
-  <span>Ruim</span>
+  <spanalt="Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo.">Ruim</span>
   <% (1..5).each do |i| %>
   <%= f.radio_button :woman, "#{i}", aria: {label: "#{i}"} %>
   <%= f.label "#{i}" %>
