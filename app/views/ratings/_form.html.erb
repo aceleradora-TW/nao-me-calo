@@ -97,24 +97,25 @@
 <div class="form-group">
   <div class="field">
     <%= f.label "nome" %><br>
-    <%= f.text_field :name, :class => "form-control" %>
+    <%= f.text_field :name, :class => "form-control form-textfield" %>
   </div>
 </div>
 <div class="field">
   <%= f.label :cpf %><br>
-  <%= f.text_field :cpf, :class => "form-control", :id => "cpfAvaliacao" %>
+  <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfAvaliacao" %>
 </div>
 <div class="field">
-  <%= f.label :email %><br>
-  <%= f.text_field :email, :class => "form-control", :id => "emailAvaliacao" %>
+  <%= f.label :email %>
+  <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailAvaliacao" %>
 </div>
 <div class="field">
-  <%= f.label "telefone" %><br>
-  <%= f.text_field :phone, :class => "form-control", :id => "telefoneAvaliacao" %>
+  <%= f.label "telefone" %>
+  <%= f.text_field :phone, :class => "form-control form-textfield", :id => "telefoneAvaliacao" %>
 </div>
-<div class="field">
+<div class="field" >
   <%= f.label 'Data do Evento' %><br>
-  <%= f.text_field :rating_date, :class => "form-control", :id => "dataAvaliacao" %>
+  <%= f.date_field :rating_date, selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield" %>
+  <%#= f.date_field :rating_date, :class => "form-control", :id => "dataAvaliacao" %>
 </div>
 <div class="actions text-center">
   <%= f.submit 'Enviar avaliação', :class => "btn btn-primary" %>
