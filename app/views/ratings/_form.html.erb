@@ -1,4 +1,4 @@
-<%= form_for(@rating, :id => "form-rating") do |f| %>
+<%= form_for(@rating, :id => "form-rating" ) do |f| %>
 <% if @rating.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
@@ -124,6 +124,4 @@
 <div class="actions text-center">
   <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton" %>
 </div>
-
-
 <% end %>
