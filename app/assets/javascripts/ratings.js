@@ -5,6 +5,10 @@ $(document).ready(function(){
 
   errors = {name: false, cpfAvaliacao: false, dataAvaliacao: false};
 
+  if ( $('[type="date"]').prop('type') != 'date' ) {
+    $('[type="date"]').datepicker();
+  }
+
   $('#rating_name').focusout(function(){
     validaNome();
   });

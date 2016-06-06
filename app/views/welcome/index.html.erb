@@ -41,7 +41,7 @@
     <a href="/perfil/<%= establishment.id %>" class="list-group-item">
       <h4 class="list-group-item-heading">
         <%= establishment.name %>
-        <span class="grade_on_list"><%= calculate_average_establishment(establishment) %></span>
+        <span class="grade_on_list"><span>Nota média: </span><%= calculate_average_establishment(establishment) %></span>
       </h4>
       <p class="list-group-item-text">
         <%= establishment.address %>

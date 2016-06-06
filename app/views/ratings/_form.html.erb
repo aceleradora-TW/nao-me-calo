@@ -119,7 +119,7 @@
 <div class="field" >
   <%= f.label 'Data do Evento' %><br>
   <%= f.date_field :rating_date, selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
-  <%#= f.date_field :rating_date, :class => "form-control", :id => "dataAvaliacao" %>
+  <%#= f.text_field :rating_date, :class => "form-control", :class => "form-control form-textfield", :id => "dataAvaliacao", aria: {label: "Data do evento"}  %>
 </div>
 <div class="actions text-center">
   <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton", aria: {label: "Botão de enviar"} %>
