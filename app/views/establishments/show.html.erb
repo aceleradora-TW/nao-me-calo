@@ -18,15 +18,17 @@
       <% end %>
     </div>
     <div class="col-lg-10 col-lg-offset-1 text-center">
-      <h2>Ultimas avaliações:</h2>
+      <h2>Últimas avaliações:</h2>
     </div>
     <div class="col-lg-4 col-lg-offset-4">
       <ul class="list-group">
         <% @ratings.each do |rating| %>
-        <h4 class="list-group-item list-show-style">
-          <span class="text-data"><%= rating.rating_date.strftime("%d/%m/%Y")%></span>
-          <p class="text-right text-data-rating"><%= rating.average_rating %></p>
-        </h4>
+          <%if rating.rating_date!=nil%>
+          <h4 class="list-group-item list-show-style">
+            <span class="text-field"><%= rating.rating_date.strftime("%d/%m/%Y")%></span>
+            <p class="text-right text-data-rating"><%= rating.average_rating %></p>
+          </h4>
+          <%end%>
         <% end %>
       </ul>
     </div>
