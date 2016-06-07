@@ -1,24 +1,24 @@
 $(document).ready(function(){
-  $("#phoneEvaluate").mask("(99) 9999-9999");
-  $("#dateEvaluate").mask("99/99/9999");
-  $('#cpfEvaluate').mask('999.999.999-99');
+  $("#telefoneAvaliacao").mask("(99) 9999-9999");
+  $("#dataAvaliacao").mask("99/99/9999");
+  $('#cpfAvaliacao').mask('999.999.999-99');
 
-  errors = {name: false, cpfEvaluate: false, dateEvaluate: false};
+  errors = {name: false, cpfAvaliacao: false, dataAvaliacao: false};
 
   if ( $('[type="date"]').prop('type') != 'date' ) {
     $('[type="date"]').datepicker();
   }
 
   $('#rating_name').focusout(function(){
-    reviewName();
+    validaNome();
   });
 
-  $('#cpfEvaluate').focusout(function(){
-    reviewCPF();
+  $('#cpfAvaliacao').focusout(function(){
+    validaCPF();
   });
 
-  $('#dateEvaluate').focusout(function(){
-    reviewDate();
+  $('#dataAvaliacao').focusout(function(){
+    validaData();
   });
 
   function showMessage(){
@@ -33,7 +33,7 @@ $(document).ready(function(){
     $('#submitButton').prop("disabled", false);
   }
 
-  function reviewName(){
+  function validaNome(){
     if($('#rating_name').val() === "" || $('#rating_name').val() === null){
       $('#rating_name').addClass("error");
       errors["name"] = true;
@@ -45,29 +45,28 @@ $(document).ready(function(){
     }
   }
 
-  function reviewCPF(){
+  function validaCPF(){
     var valor = 14;
-    if ($('#cpfEvaluate').val() === "___.___.___-__" || $('#cpfEvaluate').val() == "" || $('#cpfEvaluate').val().length != valor || $('#cpfEvaluate').val() == null){
-      $('#cpfEvaluate').addClass("error");
-      errors["cpfEvaluate"] = true;
+    if ($('#cpfAvaliacao').val() === "___.___.___-__" || $('#cpfAvaliacao').val() == "" || $('#cpfAvaliacao').val().length != valor || $('#cpfAvaliacao').val() == null){
+      $('#cpfAvaliacao').addClass("error");
+      errors["cpfAvaliacao"] = true;
       showMessage();
     } else {
-      $('#cpfEvaluate').removeClass("error");
-      errors["cpfEvaluate"] = false;
+      $('#cpfAvaliacao').removeClass("error");
+      errors["cpfAvaliacao"] = false;
       showMessage();
     }
   }
 
-  function reviewDate(){
+  function validaData(){
     var RegExPattern = /^((((0?[1-9]|[12]\d|3[01])[\.\-\/](0?[13578]|1[02])      [\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|[12]\d|30)[\.\-\/](0?[13456789]|1[012])[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|1\d|2[0-8])[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|(29[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00)))|(((0[1-9]|[12]\d|3[01])(0[13578]|1[02])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|1\d|2[0-8])02((1[6-9]|[2-9]\d)?\d{2}))|(2902((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00))))$/;
-
-    if ($('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(RegExPattern)){
-      $('#dateEvaluate').addClass("error");
-      errors["dateEvaluate"] = true;
-
+    if ($('#dataAvaliacao').val() === "__/__/____" || $('#dataAvaliacao').val() == "" || !$('#dataAvaliacao').val().match(RegExPattern)){
+      $('#dataAvaliacao').addClass("error");
+      errors["dataAvaliacao"] = true;
+      showMessage();
     } else {
-      $('#dateEvaluate').removeClass("error");
-      errors["dateEvaluate"] = false;
+      $('#dataAvaliacao').removeClass("error");
+      errors["dataAvaliacao"] = false;
       showMessage();
     }
   }
@@ -81,10 +80,9 @@ $(document).ready(function(){
   }
 
   $('#new_rating').submit(function(e){
-    if(isNull($('#rating_name')) || isNull($('#cpfEvaluate'))){
+    if(isNull($('#rating_name')) || isNull($('#cpfAvaliacao'))){
       e.preventDefault();
-      reviewCPF();
-      reviewName();
+      validaCPF();
     }
   });
 });
