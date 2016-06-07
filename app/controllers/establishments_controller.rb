@@ -11,7 +11,7 @@ class EstablishmentsController < ApplicationController
   # GET /establishments/1
   # GET /establishments/1.json
   def show
-    @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
+    @client = GooglePlaces::Client.new(G_PLACE_KEY)
     @spot = @client.spot(@establishment.id_places)
     general_average = []
     @establishment.ratings.each do |rating|
