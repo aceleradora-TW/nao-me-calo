@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   post '/avaliar' => 'ratings#new'
 
-  post '/search' => 'welcome#search'
 
 
     # The priority is based upon order of creation: first created -> highest priority.

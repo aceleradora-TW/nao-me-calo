@@ -1,11 +1,11 @@
 module ApplicationHelper
   def calculate_average_establishment(establishment)
-    allRatings = establishment.ratings.map do |rating|
+    all_ratings = establishment.ratings.map do |rating|
       rating.average_rating
     end
 
-    allRatings.delete_if {|x| x == nil}
+    all_ratings.delete_if {|x| x == nil}
 
-    return (allRatings.sum/allRatings.length).round(1)
+    return (all_ratings.sum/all_ratings.length).round(1)
   end
 end
