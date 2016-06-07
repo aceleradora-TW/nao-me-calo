@@ -11,12 +11,12 @@
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
     <%= form_tag('/avaliar', :id => 'formEvaluate', :onsubmit => "fillName()") do %>
     <div class="input-group">
-      <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local" onFocus="geolocate()" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onchange="fillName()" placeholder="Avalie um local" id="evaluateField">
+      <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onchange="fillName()" placeholder="Avalie um local" id="evaluateField">
       <span class="input-group-btn">
         <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
       </span>
     </div>
-    <%= hidden_field_tag 'place_id' %>
+    <%= hidden_field_tag 'place_id', :class => 'place-id-placeholder' %>
     <% end %>
   </div>
 </div>
@@ -30,7 +30,7 @@
         <%= submit_tag "Buscar", :class => 'btn btn-success' %>
       </span>
     </div>
-    <%= hidden_field_tag 'place_id_2' %>
+    <%= hidden_field_tag 'place_id_2', :class => 'place-id-placeholder'  %>
     <% end %>
   </div>
 </div>
