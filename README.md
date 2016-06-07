@@ -29,6 +29,3 @@ O **Não Me Calo** é uma plataforma cujo objetivo principal é colocar à dispo
 
 ## Wiki Não Me Calo
 Consulte nossa [Wiki](https://github.com/aceleradora-TW/nao-me-calo/wiki)
-
-## Waffle
-Consulte nosso [Waffle](https://waffle.io/aceleradora-TW/nao-me-calo)
