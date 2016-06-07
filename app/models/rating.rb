@@ -1,5 +1,8 @@
 class Rating < ActiveRecord::Base
 has_one :establishment
+validates :rating_date, presence: true
+validates :cpf, presence: true
+validates :establishment_id, presence: true
 
   def average_rating
 
