@@ -5,7 +5,7 @@
 [![Test Coverage](https://codeclimate.com/github/aceleradora-TW/nao-me-calo/badges/coverage.svg)](https://codeclimate.com/github/aceleradora-TW/nao-me-calo/coverage)
 
 
-Pri ad alia assum omnium. Prima saepe diceret nec ne, sea ex legimus offendit, no cum oblique expetenda democritum. Ad inimicus repudiare eam, eu mei suas detraxit suscipiantur, aeque ignota expetenda ius te. Est ut meliore mandamus. Rebum quidam tacimates his an, at illum oratio epicurei sea, in nec essent senserit.
+O **Não Me Calo** é uma plataforma cujo objetivo principal é colocar à disposição do público informações sobre aceitação a grupos oprimidos nos estabelecimentos.
 # Dependências
 * Back-End:
   * [Ruby 2.3.1p112](https://www.ruby-lang.org/en/)
@@ -24,10 +24,11 @@ Pri ad alia assum omnium. Prima saepe diceret nec ne, sea ex legimus offendit, n
   * [Snap-ci](https://snap-ci.com/)
 
 ## Instalação
-diare eam, eu mei suas detraxit suscipiantur, aeque ignota expetenda ius te. Est ut meliore mandamus. Rebum quidam tacimates his an,
+* [Ruby](https://www.ruby-lang.org/pt/documentation/installation/)
+* [Rails](http://www.railsinstaller.org/pt-BR)
 
 ## Wiki Não Me Calo
 Consulte nossa [Wiki](https://github.com/aceleradora-TW/nao-me-calo/wiki)
 
 ## Waffle
-Consulte nossa [Waffle](https://waffle.io/aceleradora-TW/nao-me-calo)
+Consulte nosso [Waffle](https://waffle.io/aceleradora-TW/nao-me-calo)
