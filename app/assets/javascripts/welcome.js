@@ -11,12 +11,12 @@ var placeSearch, autocomplete;
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
-  input = document.getElementById('buscarLocal');
+  input = document.getElementById('searchField');
   searchBox = new google.maps.places.Autocomplete(
-    /** @type {!HTMLInputElement} */(document.getElementById('buscarLocal')),
+    /** @type {!HTMLInputElement} */(document.getElementById('searchField')),
     {types: ['establishment']});
     autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('campoBusca')),
+      /** @type {!HTMLInputElement} */(document.getElementById('evaluateField')),
       {types: ['establishment']});
 
       // When the user selects an address from the dropdown, populate the address
@@ -63,7 +63,7 @@ function initAutocomplete() {
       $('#place_id').attr('readonly', true);
       $('#place_id_2').attr('readonly', true);
 
-      $('#formAvaliar').submit(function(e){
+      $('#formEvaluate').submit(function(e){
         if($('#place_id').val() == ''){
           e.preventDefault();
         }
