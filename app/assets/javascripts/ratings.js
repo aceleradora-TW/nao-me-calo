@@ -1,24 +1,24 @@
 $(document).ready(function(){
   $("#telefoneAvaliacao").mask("(99) 9999-9999");
-  $("#dataAvaliacao").mask("99/99/9999");
-  $('#cpfAvaliacao').mask('999.999.999-99');
+  $("#dateEvaluate").mask("99/99/9999");
+  $('#cpfEvaluate').mask('999.999.999-99');
 
-  errors = {name: false, cpfAvaliacao: false, dataAvaliacao: false};
+  errors = {name: false, cpfEvaluate: false, dateEvaluate: false};
 
   if ( $('[type="date"]').prop('type') != 'date' ) {
     $('[type="date"]').datepicker();
   }
 
   $('#rating_name').focusout(function(){
-    validaNome();
+    reviewName();
   });
 
-  $('#cpfAvaliacao').focusout(function(){
-    validaCPF();
+  $('#cpfEvaluate').focusout(function(){
+    reviewCPF();
   });
 
-  $('#dataAvaliacao').focusout(function(){
-    validaData();
+  $('#dateEvaluate').focusout(function(){
+    reviewDate();
   });
 
   function showMessage(){
@@ -33,7 +33,7 @@ $(document).ready(function(){
     $('#submitButton').prop("disabled", false);
   }
 
-  function validaNome(){
+  function reviewName(){
     if($('#rating_name').val() === "" || $('#rating_name').val() === null){
       $('#rating_name').addClass("error");
       errors["name"] = true;
@@ -45,28 +45,51 @@ $(document).ready(function(){
     }
   }
 
-  function validaCPF(){
-    var valor = 14;
-    if ($('#cpfAvaliacao').val() === "___.___.___-__" || $('#cpfAvaliacao').val() == "" || $('#cpfAvaliacao').val().length != valor || $('#cpfAvaliacao').val() == null){
-      $('#cpfAvaliacao').addClass("error");
-      errors["cpfAvaliacao"] = true;
+  function reviewCPF(){
+    var teste = $('#cpfEvaluate').val().split(".").join("").split("-").join("");
+    var erro = CPFTest(teste);
+    if(erro) {
+      $('#cpfEvaluate').addClass("error");
+      errors["cpfEvaluate"] = true;
       showMessage();
     } else {
-      $('#cpfAvaliacao').removeClass("error");
-      errors["cpfAvaliacao"] = false;
+      $('#cpfEvaluate').removeClass("error");
+      errors["cpfEvaluate"] = false;
       showMessage();
     }
   }
 
-  function validaData(){
+  function CPFTest(strCPF){
+    var Soma;
+    var Resto;
+    Soma = 0;
+
+    if (strCPF == "00000000000") return true;
+
+    for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    if (Resto != parseInt(strCPF.substring(9, 10)) ) return true;
+
+    Soma = 0;
+    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    if (Resto != parseInt(strCPF.substring(10, 11) ) ) return true;
+    return false;
+  }
+
+  function reviewDate(){
     var RegExPattern = /^((((0?[1-9]|[12]\d|3[01])[\.\-\/](0?[13578]|1[02])      [\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|[12]\d|30)[\.\-\/](0?[13456789]|1[012])[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|1\d|2[0-8])[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|(29[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00)))|(((0[1-9]|[12]\d|3[01])(0[13578]|1[02])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|1\d|2[0-8])02((1[6-9]|[2-9]\d)?\d{2}))|(2902((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00))))$/;
-    if ($('#dataAvaliacao').val() === "__/__/____" || $('#dataAvaliacao').val() == "" || !$('#dataAvaliacao').val().match(RegExPattern)){
-      $('#dataAvaliacao').addClass("error");
-      errors["dataAvaliacao"] = true;
+    if ($('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(RegExPattern)){
+      $('#dateEvaluate').addClass("error");
+      errors["dateEvaluate"] = true;
       showMessage();
     } else {
-      $('#dataAvaliacao').removeClass("error");
-      errors["dataAvaliacao"] = false;
+      $('#dateEvaluate').removeClass("error");
+      errors["dateEvaluate"] = false;
       showMessage();
     }
   }
@@ -80,9 +103,10 @@ $(document).ready(function(){
   }
 
   $('#new_rating').submit(function(e){
-    if(isNull($('#rating_name')) || isNull($('#cpfAvaliacao'))){
+    if(isNull($('#rating_name')) || isNull($('#cpfEvaluate'))){
       e.preventDefault();
-      validaCPF();
+      cpf = reviewCPF();
+      name = reviewName();
     }
   });
 });
