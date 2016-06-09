@@ -32,19 +32,25 @@ class RatingsController < ApplicationController
   # POST /ratings
   # POST /ratings.json
   def create
-    @rating = Rating.new(rating_params)
-    @establishment = Establishment.search_by_id(params[:place_id]).first
-    if(@establishment.nil?)
-      @place = @client.spot(params[:place_id])
-      @establishment = Establishment.create!(name: @place.name, address: @place.formatted_address, lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
-    end
+    if(params[:accepted_terms])
+      @rating = Rating.new(rating_params)
+      @establishment = Establishment.search_by_id(params[:place_id]).first
+      if(@establishment.nil?)
+        @place = @client.spot(params[:place_id])
+        @establishment = Establishment.create!(name: @place.name, address: @place.formatted_address, lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
+      end
 
-    @rating.establishment_id = @establishment.id
+      @rating.establishment_id = @establishment.id
 
-    respond_to do |format|
-      if @rating.save
-        format.html { redirect_to @establishment, notice: 'Avaliação feita com sucesso' }
-      else
+      respond_to do |format|
+        if @rating.save
+          format.html { redirect_to @establishment, notice: 'Avaliação feita com sucesso' }
+        else
+          format.html { render :new }
+        end
+      end
+    else
+      respond_to do |format|
         format.html { render :new }
       end
     end

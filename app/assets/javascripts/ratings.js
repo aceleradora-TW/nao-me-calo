@@ -3,6 +3,8 @@ $(document).ready(function(){
   $("#dateEvaluate").mask("99/99/9999");
   $('#cpfEvaluate').mask('999.999.999-99');
 
+  $('#submitButton').prop("disabled", true);
+
   errors = {name: false, cpfEvaluate: false, dateEvaluate: false};
 
   if ( $('[type="date"]').prop('type') != 'date' ) {
@@ -29,8 +31,10 @@ $(document).ready(function(){
         return;
       }
     }
-    $('.errorDiv').addClass("hidden");
-    $('#submitButton').prop("disabled", false);
+    if(disableButtonTerms()){
+      $('.errorDiv').addClass("hidden");
+      $('#submitButton').prop("disabled", false);
+    }
   }
 
   function reviewName(){
@@ -102,11 +106,25 @@ $(document).ready(function(){
     }
   }
 
+  function disableButtonTerms(){
+    if($('#terms:checked').length === 1){
+      $('#submitButton').prop("disabled", false);
+      return true;
+    } else {
+      $('#submitButton').prop("disabled", true);
+      return false;
+    }
+  }
+
   $('#new_rating').submit(function(e){
     if(isNull($('#rating_name')) || isNull($('#cpfEvaluate'))){
       e.preventDefault();
       cpf = reviewCPF();
       name = reviewName();
     }
+  });
+
+  $('#terms').change(function(){
+    disableButtonTerms();
   });
 });

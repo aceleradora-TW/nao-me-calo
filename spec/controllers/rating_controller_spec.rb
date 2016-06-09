@@ -105,7 +105,7 @@ RSpec.describe RatingsController, type: :controller do
         @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")
       end
       it "expect to flash notice when the rating is created" do
-        post :create,{place_id:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", rating:
+        post :create, {place_id:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", accepted_terms: true, rating:
           {
             woman: 4.0,
             race: 4.0,
