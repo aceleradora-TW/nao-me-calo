@@ -20,11 +20,11 @@ class WelcomeController < ApplicationController
 
   def terms
   end
-  
+
   private
 
   def set_client
-    @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
+    @client = GooglePlaces::Client.new(G_PLACE_KEY)
   end
 
 end

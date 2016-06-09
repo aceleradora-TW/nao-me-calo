@@ -72,7 +72,7 @@ class EstablishmentsController < ApplicationController
     end
 
     def set_client
-      @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
+      @client = GooglePlaces::Client.new(G_PLACE_KEY)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
