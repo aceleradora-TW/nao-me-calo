@@ -43,33 +43,26 @@ function initAutocomplete () {
     }
   }
 
-  function dontSubmitOnEmpty(){
-    var formEvaluate = document.getElementById('formEvaluate');
-    formEvaluate.addEventListener('submit', function(event){
-      var place_id = document.getElementById('place_id');
-      if(place_id.value == ''){
-        event.preventDefault();
-      }
-    });
-
-    var formSearch = document.getElementById('formSearch');
-    formSearch.addEventListener('submit', function(event){
-      var place_id_2 = document.getElementById('place_id_2');
-      if(place_id.value == ''){
-        event.preventDefault();
-      }
-    });
-  }
-
   function cleanPlaceIdValueFromInput(){
     document.getElementById('place_id').value = '';
     document.getElementById('place_id_2').value = '';
   }
 
   $(document).ready(function(){
-    geolocate()
-    cleanPlaceIdValueFromInput()
-    dontSubmitOnEmpty()
+    geolocate();
+    cleanPlaceIdValueFromInput();
     $('#place_id').attr('readonly', true)
     $('#place_id_2').attr('readonly', true)
-  })
+
+    $('#formEvaluate').submit(function(e){
+      if($('#place_id').val() == ""){
+        e.preventDefault();
+      }
+    });
+
+    $('#formSearch').submit(function(e){
+      if($('#place_id_2').val() == ""){
+        e.preventDefault();
+      }
+    });
+  });
