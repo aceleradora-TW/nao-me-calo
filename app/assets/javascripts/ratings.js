@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   $('#submitButton').prop("disabled", true);
 
-  $("#telefoneAvaliacao").mask("(99) 9999-9999");
+  $("#phoneEvaluate").mask("(99) 9999-9999");
   $("#dateEvaluate").mask("99/99/9999");
   $('#cpfEvaluate').mask('999.999.999-99');
 
