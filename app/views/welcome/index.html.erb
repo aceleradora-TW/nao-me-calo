@@ -3,8 +3,15 @@
 
 <% if !flash[:error].nil? %>
 <div class="alert alert-danger">
-  <p id="alert" class="text-center"><%= flash[:error] %></p>
-</div>
+  <p id="alert" class="text-center">
+    <% if ($establishment != nil) %>
+      <%= link_to "/avaliar?place_id=#{$establishment.place_id}" do %>
+        <%= flash[:error] %></p>
+        <% end %>
+    <% else %>
+      <%= flash[:error] %></p>
+    <% end %>
+  </div>
 <%end%>
 
 <div class="row">

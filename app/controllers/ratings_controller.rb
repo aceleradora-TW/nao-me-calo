@@ -19,7 +19,12 @@ class RatingsController < ApplicationController
     @place_id = params[:place_id]
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
     if params[:place_id] != nil
-      @spot = @client.spot(params[:place_id])
+      begin
+        @spot = @client.spot(params[:place_id])
+      rescue => ex
+        $establishment = nil
+        redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
+      end
     else
       redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
     end
