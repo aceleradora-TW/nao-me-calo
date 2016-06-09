@@ -49,7 +49,7 @@ class RatingsController < ApplicationController
 
       respond_to do |format|
         if @rating.save
-          format.html { redirect_to @establishment, notice: 'Avaliação feita com sucesso' }
+          format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
         else
           format.html { render :new }
         end
