@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   get '/dicas' => 'welcome#help'
 
-  post '/avaliar' => 'ratings#new'
+  get '/avaliar' => 'ratings#new'
 
-  post '/search' => 'welcome#search'
+  get '/search' => 'welcome#search'
 
 
     # The priority is based upon order of creation: first created -> highest priority.

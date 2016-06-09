@@ -9,7 +9,7 @@
 
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
-    <%= form_tag('/avaliar', :id => 'formEvaluate', :onsubmit => "fillName()") do %>
+    <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
     <div class="input-group">
       <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onchange="fillName()" placeholder="Avalie um local" id="evaluateField">
       <span class="input-group-btn">
@@ -23,7 +23,7 @@
 
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
-    <%= form_tag('/search', :id => 'formSearch', :onsubmit => "fillSearch()") do %>
+    <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
     <div class="input-group">
       <input type="text" class="form-control" aria-label="Campo para buscar local para visitar" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onFocus="geolocate()" onchange="fillSearch()" placeholder="Busque um local para visitar" id="searchField">
       <span class="input-group-btn">
