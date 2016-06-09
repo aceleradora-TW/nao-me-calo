@@ -1,6 +1,7 @@
+@import "variables.scss";
 .footer-class{
-  background-color: #955B92;
-  color: #f0f028;
+  background-color: $brandColor;
+  color: $secondColor;
   padding-bottom: 20px;
   padding-top: 20px;
   height: 60px;

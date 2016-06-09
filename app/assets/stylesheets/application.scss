@@ -14,6 +14,7 @@
  *= require_tree .
  *= require_self
  */
+ @import "variables.scss";
 body, html {
   height: 100%;
   width: 100%;
@@ -25,10 +26,18 @@ body {
     display: table;
 }
 .btn-primary{
-  background-color: #574EA7 !important;
-  border-color: #574EA7 !important;
+  background-color: $thirdColor !important;
+  border-color: $textColor !important;
 }
 .center-element{
     margin:0 auto;
     display:table;
+}
+.btn-danger{
+  background-color: $thirdColor !important;
+  border-color: $textColor !important;
+}
+.btn-success{
+  background-color: $brandColor !important;
+  border-color: $textColor !important;
 }

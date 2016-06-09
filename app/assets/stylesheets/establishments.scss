@@ -1,6 +1,7 @@
 // Place all the styles related to the Establishments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables.scss";
 .text-field{
   font-size: 60%;
 }
@@ -8,5 +9,5 @@
   font-size: 180%;
 }
 .list-show-style{
-  color: #955B92 !important;
+  color: $brandColor !important;
 }
