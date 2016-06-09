@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+  $('#submitButton').prop("disabled", true);
+
   $("#telefoneAvaliacao").mask("(99) 9999-9999");
   $("#dateEvaluate").mask("99/99/9999");
   $('#cpfEvaluate').mask('999.999.999-99');
@@ -134,7 +137,7 @@ $(document).ready(function(){
       name = reviewName();
     }
   });
-  
+
   $('#terms').change(function(){
     disableButtonTerms();
   });
@@ -149,4 +152,7 @@ $(document).ready(function(){
 
   withoutGrade();
 
+  $('.radio_button').click(function(){
+    $('#submitButton').prop("disabled", false);
+  });
 });

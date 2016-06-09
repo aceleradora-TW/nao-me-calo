@@ -22,12 +22,12 @@
   <br>
   <spanalt="Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo.">Ruim</span>
   <% (1..5).each do |i| %>
-  <%= f.radio_button :woman, "#{i}", aria: {label: "#{i}"} %>
+  <%= f.radio_button :woman, "#{i}", :class => "radio_button", aria: {label: "#{i}"}  %>
   <%= f.label "#{i}" %>
   <% end %>
   <span>Excelente</span>
   <br>
-  <%= f.radio_button :woman, "#{nil}",  aria: {label: "Não avaliado"} %>
+  <%= f.radio_button :woman, "#{nil}", :class => "radio_button", aria: {label: "Não avaliado"} %>
   <span>Não avaliado</span>
 </div>
 
@@ -36,12 +36,12 @@
   <br>
   <span>Ruim</span>
   <% (1..5).each do |i| %>
-  <%= f.radio_button :lgbtqia, "#{i}", aria: {label: "#{i}"} %>
+  <%= f.radio_button :lgbtqia, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
   <%= f.label "#{i}" %>
   <% end %>
   <span>Excelente</span>
   <br>
-  <%= f.radio_button :lgbtqia, "#{nil}",  aria: {label: "Não avaliado"} %>
+  <%= f.radio_button :lgbtqia, "#{nil}", :class => "radio_button", aria: {label: "Não avaliado"} %>
   <span>Não avaliado</span>
 </div>
 
@@ -50,12 +50,12 @@
   <br>
   <span>Ruim</span>
   <% (1..5).each do |i| %>
-  <%= f.radio_button :race, "#{i}", aria: {label: "#{i}"} %>
+  <%= f.radio_button :race, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
   <%= f.label "#{i}" %>
   <% end %>
   <span>Excelente</span>
   <br>
-  <%= f.radio_button :race, "#{nil}",  aria: {label: "Não avaliado"} %>
+  <%= f.radio_button :race, "#{nil}", :class => "radio_button",  aria: {label: "Não avaliado"} %>
   <span>Não avaliado</span>
 </div>
 
@@ -64,12 +64,12 @@
   <br>
   <span>Ruim</span>
   <% (1..5).each do |i| %>
-  <%= f.radio_button :disability, "#{i}", aria: {label: "#{i}"} %>
+  <%= f.radio_button :disability, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
   <%= f.label "#{i}" %>
   <% end %>
   <span>Excelente</span>
   <br>
-  <%= f.radio_button :disability, "#{nil}",  aria: {label: "Não avaliado"} %>
+  <%= f.radio_button :disability, "#{nil}", :class => "radio_button",  aria: {label: "Não avaliado"} %>
   <span>Não avaliado</span>
 </div>
 <div class="field">
@@ -77,12 +77,12 @@
   <br>
   <span>Ruim</span>
   <% (1..5).each do |i| %>
-  <%= f.radio_button :elder, "#{i}", aria: {label: "#{i}"} %>
+  <%= f.radio_button :elder, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
   <%= f.label "#{i}" %>
   <% end %>
   <span>Excelente</span>
   <br>
-  <%= f.radio_button :elder, "#{nil}", aria: {label: "Não avaliado"}  %>
+  <%= f.radio_button :elder, "#{nil}", :class => "radio_button", aria: {label: "Não avaliado"}  %>
   <span>Não avaliado</span>
 </div>
 <div class="field">
@@ -90,12 +90,12 @@
   <br>
   <span>Ruim</span>
   <% (1..5).each do |i| %>
-  <%= f.radio_button :obese, "#{i}", aria: {label: "#{i}"} %>
+  <%= f.radio_button :obese, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
   <%= f.label "#{i}" %>
   <% end %>
   <span>Excelente</span>
   <br>
-  <%= f.radio_button :obese, "#{nil}",  aria: {label: "Não avaliado"} %>
+  <%= f.radio_button :obese, "#{nil}", :class => "radio_button",  aria: {label: "Não avaliado"} %>
   <span>Não avaliado</span>
 </div>
 <div class="form-group">
