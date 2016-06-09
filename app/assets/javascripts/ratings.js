@@ -23,6 +23,10 @@ $(document).ready(function(){
     reviewDate();
   });
 
+  $('#rating_grade').focusout(function(){
+    reviewName();
+  });
+
   function showMessage(){
     for(var l in errors){
       if(errors[l] === true){
@@ -130,8 +134,19 @@ $(document).ready(function(){
       name = reviewName();
     }
   });
-
+  
   $('#terms').change(function(){
     disableButtonTerms();
   });
+
+  function withoutGrade(){
+    var index;
+    var ratings = $("input:radio[name='rating[woman]']");
+    for(index = 0; index < ratings.length; ++index) {
+      console.log(ratings[index].checked);
+    };
+  }
+
+  withoutGrade();
+
 });
