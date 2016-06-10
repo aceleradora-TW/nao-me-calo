@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   before_action :set_client, only: [:index, :search]
 
   def index
-    @establishments = Establishment.select('establishments.* , MAX(ratings.rating_date) as rd').joins(:ratings).order('rd desc').group('establishments.id')
+    @establishments = Establishment.select('establishments.* , MAX(ratings.rating_date) as rd').joins(:ratings).order('rd desc').group('establishments.id').first(5)
   end
 
   def search
