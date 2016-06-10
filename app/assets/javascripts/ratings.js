@@ -101,7 +101,7 @@ $(document).ready(function(){
     var today = date.getDate() + ((date.getMonth()+1) * 30) + (date.getFullYear() * 365);
     ratingDate = parseInt(ratingDate.substring(0,2)) + (parseInt(ratingDate.substring(3,5)) * 30) + (parseInt(ratingDate.substring(6)) * 365);
 
-    if (today < ratingDate || $('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(RegExPattern)){
+    if (today < ratingDate || ratingDate <730000 || $('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(RegExPattern)){
       $('#dateEvaluate').addClass("error");
       errors["dateEvaluate"] = true;
       showMessage();

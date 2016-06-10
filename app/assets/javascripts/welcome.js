@@ -49,7 +49,6 @@ function initAutocomplete () {
   }
 
   $(document).ready(function(){
-    initAutocomplete();
     $('#place_id').attr('readonly', true)
     $('#place_id_2').attr('readonly', true)
 
