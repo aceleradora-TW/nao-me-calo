@@ -18,12 +18,14 @@ feature 'Rate establishment', js: true do
     page.execute_script '$("#phoneEvaluate").val("(51)33306088")'
     page.execute_script '$("#dateEvaluate").val("10/06/2016")'
     check 'terms'
+    sleep 3
     click_on 'Enviar avaliação'
     expect(page).to have_content 'Beco 203'
 
+    sleep 5
 
+    visit '/'
     sleep 10
-
-  end
+    end
 
 end
