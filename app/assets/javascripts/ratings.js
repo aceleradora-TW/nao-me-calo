@@ -6,7 +6,9 @@ $(document).ready(function(){
   $("#dateEvaluate").mask("99/99/9999");
   $('#cpfEvaluate').mask('999.999.999-99');
 
-  errors = {name: false, cpfEvaluate: false, dateEvaluate: false};
+  $('#submitButton').prop("disabled", true);
+
+  errors = {name: false, cpfEvaluate: false, rating: true, dateEvaluate: false};
 
   if ( $('[type="date"]').prop('type') != 'date' ) {
     $('[type="date"]').datepicker();
@@ -36,7 +38,7 @@ $(document).ready(function(){
         return;
       }
     }
-    if(disableButtonTerms()){
+    if(enableButtonTerms()){
       $('.errorDiv').addClass("hidden");
       $('#submitButton').prop("disabled", false);
     }
@@ -137,12 +139,14 @@ $(document).ready(function(){
   });
 
   $('#terms').change(function(){
-    if(!(isNull($('#rating_name')) || isNull($('#cpfEvaluate')))){
+    if(!(isNull($('#rating_name')) || isNull($('#cpfEvaluate')) || errors["rating"])){
       enableButtonTerms();
     }
   });
 
   $('.radio_button').click(function(){
-    $('#submitButton').prop("disabled", false);
+    errors["rating"] = false;
+    enable = enableButtonTerms();
+    show = showMessage();
   });
 });
