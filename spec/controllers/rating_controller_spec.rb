@@ -139,7 +139,7 @@ RSpec.describe RatingsController, type: :controller do
             rating_date:"06/06/06",
           }
         }
-        expect(response).to render_template(:new)
+        expect(response).to redirect_to(root_path)
       end
     end
   end
