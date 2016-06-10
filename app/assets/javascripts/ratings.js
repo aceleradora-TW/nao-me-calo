@@ -6,8 +6,6 @@ $(document).ready(function(){
   $("#dateEvaluate").mask("99/99/9999");
   $('#cpfEvaluate').mask('999.999.999-99');
 
-  $('#submitButton').prop("disabled", true);
-
   errors = {name: false, cpfEvaluate: false, dateEvaluate: false};
 
   if ( $('[type="date"]').prop('type') != 'date' ) {
@@ -141,16 +139,6 @@ $(document).ready(function(){
   $('#terms').change(function(){
     disableButtonTerms();
   });
-
-  function withoutGrade(){
-    var index;
-    var ratings = $("input:radio[name='rating[woman]']");
-    for(index = 0; index < ratings.length; ++index) {
-      console.log(ratings[index].checked);
-    };
-  }
-
-  withoutGrade();
 
   $('.radio_button').click(function(){
     $('#submitButton').prop("disabled", false);
