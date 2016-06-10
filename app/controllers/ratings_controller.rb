@@ -19,7 +19,12 @@ class RatingsController < ApplicationController
     @place_id = params[:place_id]
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
     if params[:place_id] != nil
-      @spot = @client.spot(params[:place_id])
+      begin
+        @spot = @client.spot(params[:place_id])
+      rescue => ex
+        $establishment = nil
+        redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
+      end
     else
       redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
     end
@@ -44,7 +49,7 @@ class RatingsController < ApplicationController
 
       respond_to do |format|
         if @rating.save
-          format.html { redirect_to @establishment, notice: 'Avaliação feita com sucesso' }
+          format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
         else
           format.html { render :new }
         end
@@ -84,7 +89,7 @@ class RatingsController < ApplicationController
     end
 
     def set_client
-      @client = GooglePlaces::Client.new("AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8")
+      @client = GooglePlaces::Client.new(G_PLACE_KEY)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

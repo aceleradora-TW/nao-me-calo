@@ -3,8 +3,15 @@
 
 <% if !flash[:error].nil? %>
 <div class="alert alert-danger">
-  <p id="alert" class="text-center"><%= flash[:error] %></p>
-</div>
+  <p id="alert" class="text-center">
+    <% if ($establishment != nil) %>
+      <%= link_to "/avaliar?place_id=#{$establishment.place_id}" do %>
+        <%= flash[:error] %></p>
+        <% end %>
+    <% else %>
+      <%= flash[:error] %></p>
+    <% end %>
+  </div>
 <%end%>
 
 <div class="row">
@@ -42,7 +49,6 @@
       <h4 class="list-group-item-heading">
         <%= establishment.name %>
         <span class="grade_on_list"><span>Nota média: </span><%= calculate_average_establishment(establishment) %>
-      <p class="list-group-item-text" align="right">/5</p></span>
       </h4>
       <p class="list-group-item-text">
         <%= establishment.address %>

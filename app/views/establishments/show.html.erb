@@ -5,14 +5,14 @@
       <h1 class='text-center'>
         <%= image_tag(@spot.icon, size: "30x30") %>
         <%= @spot.name %>
-        <span class="paragraph"><%= @average_rating.round(2) %>☆</span>
+        <span class="paragraph"><%= @average_rating.round(2) %></span>
       </h1>
     </div>
     <div class='row'>
       <h5 class='text-center'><%= @spot.formatted_address %></h5>
     </div>
     <div class="center-element" >
-      <%= form_tag('/avaliar', :id => 'formEvaluate', :onsubmit => "fillName()") do %>
+      <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
       <%= submit_tag "Avaliar", :class => 'btn btn-primary' %>
       <%= hidden_field_tag 'place_id' , @establishment.id_places %>
       <% end %>
