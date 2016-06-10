@@ -86,7 +86,7 @@
     <%= f.text_field :name, :class => "form-control form-textfield", aria: {label: "Nome"} %>
   </div>
 </div>
-<div class="field">
+<div class="field has-mask">
   <%= f.label :cpf%><br>
   <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
 </div>
@@ -94,11 +94,11 @@
   <%= f.label :email%>
   <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailEvaluate", aria: {label: "email"}  %>
 </div>
-<div class="field">
+<div class="field has-mask">
   <%= f.label "telefone"%>
   <%= f.text_field :phone, :class => "form-control form-textfield", :id => "phoneEvaluate", aria: {label: "Telefone"}  %>
 </div>
-<div class="field" >
+<div class="field has-mask" >
   <%= f.label 'Data do Evento' %><br>
   <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
   <%#= f.text_field :rating_date,:id => "dataAvaliacao",  :class => "form-control", :class => "form-control form-textfield", :id => "dataAvaliacao", aria: {label: "Data do evento"}  %>
