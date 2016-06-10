@@ -118,7 +118,7 @@ $(document).ready(function(){
     }
   }
 
-  function disableButtonTerms(){
+  function enableButtonTerms(){
     if($('#terms:checked').length === 1){
       $('#submitButton').prop("disabled", false);
       return true;
@@ -137,7 +137,9 @@ $(document).ready(function(){
   });
 
   $('#terms').change(function(){
-    disableButtonTerms();
+    if(!(isNull($('#rating_name')) || isNull($('#cpfEvaluate')))){
+      enableButtonTerms();
+    }
   });
 
   $('.radio_button').click(function(){
