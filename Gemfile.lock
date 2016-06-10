@@ -41,8 +41,6 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    byebug (9.0.5)
-    codeclimate-test-reporter (0.5.1)
     byebug (9.0.3)
     capybara (2.7.1)
       addressable
