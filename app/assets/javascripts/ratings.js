@@ -144,7 +144,7 @@ $(document).ready(function(){
   });
 
   $('#terms').change(function(){
-    if(!(isNull($('#rating_name')) || errors['cpfEvaluate'] || errors["rating"] || errors["dateEvaluate"])){
+    if(!(isNull($('#rating_name')) || errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"])){
       enableButtonTerms();
     }
   });
