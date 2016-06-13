@@ -92,12 +92,12 @@
   </div>
   <div class="form-group">
     <div class="field">
-      <%= f.label "nome" %>
+      <%= f.label "nome" %><span class="red-text"> *</span>
       <%= f.text_field :name, :class => "form-control form-textfield", aria: {label: "Nome"} %>
     </div>
   </div>
   <div class="field has-mask">
-    <%= f.label :cpf%>
+    <%= f.label :cpf%><span class="red-text"> *</span>
     <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
   </div>
   <div class="field">
@@ -109,7 +109,7 @@
     <%= f.text_field :phone, :class => "form-control form-textfield", :id => "phoneEvaluate", aria: {label: "Telefone"}  %>
   </div>
   <div class="field has-mask" >
-    <%= f.label 'Data do Evento' %>
+    <%= f.label 'Data do Evento' %><span class="red-text"> *</span>
     <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
     <%#= f.text_field :rating_date,:id => "dataAvaliacao",  :class => "form-control", :class => "form-control form-textfield", :id => "dataAvaliacao", aria: {label: "Data do evento"}  %>
   </div>
