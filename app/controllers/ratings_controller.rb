@@ -33,14 +33,14 @@ class RatingsController < ApplicationController
       @rating = Rating.new(rating_params)
       @establishment = Establishment.search_by_id(params[:place_id]).first
 
-      if(!(@rating.woman.nil? || @rating.lgbtqia.nil? || @rating.race.nil? || @rating.elder.nil? || @rating.obese.nil?))
+      if(@rating.woman != nil? || @rating.lgbtqia != nil? || @rating.race != nil? || @rating.elder != nil? || @rating.obese!= nil?)
         if(@establishment.nil?)
           @place = @client.spot(params[:place_id])
           @establishment = Establishment.create!(name: @place.name, address: @place.formatted_address, lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
         end
 
         @rating.establishment_id = @establishment.id
-        
+
         respond_to do |format|
           if @rating.save
             format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
