@@ -1,118 +1,122 @@
 <%= form_for(@rating, :id => "form-rating" ) do |f| %>
-<% if @rating.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+  <% if @rating.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
 
-  <ul>
-    <% @rating.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<div class="alert alert-danger hidden errorDiv">
-  <p id="alert" class="text-center">Erro, verifique os campos em vermelho!</p>
-</div>
-
-<input type="hidden" id="place_id" name="place_id" value="<%= @place_id %>" readonly="readyonly">
-
-<div class="field">
-  <%= f.label 'Mulher' %>
-  <div class ="row paragraph">
-    <span alt="Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo.">Ruim</span>
-    <% (1..5).each do |i| %>
-    <%= f.radio_button :woman, "#{i}", :class => "radio_button", aria: {label: "#{i}"}  %>
-    <%= f.label "#{i}" %>
-    <% end %>
-    <span>Excelente</span>
+    <ul>
+      <% @rating.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
-</div>
+  <% end %>
 
-<div class="field">
-  <%= f.label 'LGBTQIA' %>
-  <div class ="row paragraph">
-    <span>Ruim</span>
-    <% (1..5).each do |i| %>
-    <%= f.radio_button :lgbtqia, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
-    <%= f.label "#{i}" %>
-    <% end %>
-    <span>Excelente</span>
+  <div class="alert alert-danger hidden errorDiv">
+    <p id="alert" class="text-center">Erro, verifique os campos em vermelho!</p>
   </div>
-</div>
 
-<div class="field">
-  <%= f.label 'Raça' %>
-  <div class ="row paragraph">
-    <span>Ruim</span>
-    <% (1..5).each do |i| %>
-    <%= f.radio_button :race, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
-    <%= f.label "#{i}" %>
-    <% end %>
-    <span>Excelente</span>
-  </div>
-</div>
+  <input type="hidden" id="place_id" name="place_id" value="<%= @place_id %>" readonly="readyonly">
 
-<div class="field">
-  <%= f.label 'Pessoa com deficiência' %>
-  <div class ="row paragraph">
-    <span>Ruim</span>
-    <% (1..5).each do |i| %>
-    <%= f.radio_button :disability, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
-    <%= f.label "#{i}" %>
-    <% end %>
-    <span>Excelente</span>
+  <div class="col-lg-12 no-padding-left">
+    <div class="col-lg-6 no-padding-left" id="radio_button_id">
+      <div class="field">
+        <%= f.label 'Mulher' %>
+        <div class ="row paragraph">
+          <span alt="Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo.">Ruim</span>
+          <% (1..5).each do |i| %>
+          <%= f.radio_button :woman, "#{i}", :class => "radio_button", aria: {label: "#{i}"}  %>
+          <%= f.label "#{i}" %>
+          <% end %>
+          <span>Excelente</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label 'LGBTQIA' %>
+        <div class ="row paragraph">
+          <span>Ruim</span>
+          <% (1..5).each do |i| %>
+          <%= f.radio_button :lgbtqia, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
+          <%= f.label "#{i}" %>
+          <% end %>
+          <span>Excelente</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label 'Raça' %>
+        <div class ="row paragraph">
+          <span>Ruim</span>
+          <% (1..5).each do |i| %>
+          <%= f.radio_button :race, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
+          <%= f.label "#{i}" %>
+          <% end %>
+          <span>Excelente</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label 'Pessoa com deficiência' %>
+        <div class ="row paragraph">
+          <span>Ruim</span>
+          <% (1..5).each do |i| %>
+          <%= f.radio_button :disability, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
+          <%= f.label "#{i}" %>
+          <% end %>
+          <span>Excelente</span>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label 'Idoso' %>
+        <div class ="row paragraph">
+          <span>Ruim</span>
+          <% (1..5).each do |i| %>
+          <%= f.radio_button :elder, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
+          <%= f.label "#{i}" %>
+          <% end %>
+          <span>Excelente</span>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label 'Obeso' %>
+        <div class ="row paragraph">
+          <span>Ruim</span>
+          <% (1..5).each do |i| %>
+          <%= f.radio_button :obese, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
+          <%= f.label "#{i}" %>
+          <% end %>
+          <span>Excelente</span>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="field">
-  <%= f.label 'Idoso' %>
-  <div class ="row paragraph">
-    <span>Ruim</span>
-    <% (1..5).each do |i| %>
-    <%= f.radio_button :elder, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
-    <%= f.label "#{i}" %>
-    <% end %>
-    <span>Excelente</span>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label "nome" %>
+      <%= f.text_field :name, :class => "form-control form-textfield", aria: {label: "Nome"} %>
+    </div>
   </div>
-</div>
-<div class="field">
-  <%= f.label 'Obeso' %>
-  <div class ="row paragraph">
-    <span>Ruim</span>
-    <% (1..5).each do |i| %>
-    <%= f.radio_button :obese, "#{i}", :class => "radio_button", aria: {label: "#{i}"} %>
-    <%= f.label "#{i}" %>
-    <% end %>
-    <span>Excelente</span>
+  <div class="field has-mask">
+    <%= f.label :cpf%>
+    <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
   </div>
-</div>
-<div class="form-group">
   <div class="field">
-    <%= f.label "nome" %>
-    <%= f.text_field :name, :class => "form-control form-textfield", aria: {label: "Nome"} %>
+    <%= f.label :email%>
+    <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailEvaluate", aria: {label: "email"}  %>
   </div>
-</div>
-<div class="field has-mask">
-  <%= f.label :cpf%>
-  <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
-</div>
-<div class="field">
-  <%= f.label :email%>
-  <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailEvaluate", aria: {label: "email"}  %>
-</div>
-<div class="field has-mask">
-  <%= f.label "telefone"%>
-  <%= f.text_field :phone, :class => "form-control form-textfield", :id => "phoneEvaluate", aria: {label: "Telefone"}  %>
-</div>
-<div class="field has-mask" >
-  <%= f.label 'Data do Evento' %>
-  <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
-  <%#= f.text_field :rating_date,:id => "dataAvaliacao",  :class => "form-control", :class => "form-control form-textfield", :id => "dataAvaliacao", aria: {label: "Data do evento"}  %>
-</div>
-<div class='field text-center'>
-  <input type="checkbox" name="accepted_terms" id="terms" unchecked> Aceito os <a href="/termos">termos e condições de uso!</a>
-</div>
-<div class="actions text-center">
-  <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton", aria: {label: "Botão de enviar"} %>
-</div>
-<% end %>
+  <div class="field has-mask">
+    <%= f.label "telefone"%>
+    <%= f.text_field :phone, :class => "form-control form-textfield", :id => "phoneEvaluate", aria: {label: "Telefone"}  %>
+  </div>
+  <div class="field has-mask" >
+    <%= f.label 'Data do Evento' %>
+    <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
+    <%#= f.text_field :rating_date,:id => "dataAvaliacao",  :class => "form-control", :class => "form-control form-textfield", :id => "dataAvaliacao", aria: {label: "Data do evento"}  %>
+  </div>
+  <div class='field text-center'>
+    <input type="checkbox" name="accepted_terms" id="terms" unchecked> Aceito os <a href="/termos">termos e condições de uso!</a>
+  </div>
+  <div class="actions text-center">
+    <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton", aria: {label: "Botão de enviar"} %>
+  </div>
+  <% end %>

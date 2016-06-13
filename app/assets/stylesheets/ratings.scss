@@ -13,3 +13,14 @@
 .hidden{
   display: none;
 }
+
+.errorBorder{
+  border-color: red;
+  border-style: dashed;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.no-padding-left{
+  padding-left: 0px !important;
+}

@@ -31,6 +31,11 @@ $(document).ready(function(){
   });
 
   function showMessage(){
+    if (!$(".radio_button").is(":checked")){
+      $( "#radio_button_id" ).addClass( "errorBorder");
+    }else{
+      $( "#radio_button_id" ).removeClass( "errorBorder");
+    }
     for(var l in errors){
       if(errors[l] === true){
         $('.errorDiv').removeClass("hidden");
