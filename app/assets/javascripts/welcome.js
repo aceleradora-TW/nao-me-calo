@@ -1,6 +1,7 @@
 var autocomplete;
 
 function initAutocomplete () {
+  initMap();
   cleanPlaceIdValueFromInput();
 
   var searchField = (document.getElementById('searchField'));
