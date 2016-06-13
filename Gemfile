@@ -41,7 +41,7 @@ gem 'maskedinput-rails'
 # gem 'capistrano-rails', group: :development
 
 gem 'rails_12factor', group: :production
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem "codeclimate-test-reporter",  '~> 0.5.1'
 gem 'faker'
 
 group :development, :test do
