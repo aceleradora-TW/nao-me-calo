@@ -126,12 +126,14 @@ $(document).ready(function(){
   }
 
   function enableButtonTerms(){
-    if($('#terms:checked').length === 1){
-      $('#submitButton').prop("disabled", false);
-      return true;
-    } else {
-      $('#submitButton').prop("disabled", true);
-      return false;
+    if(!(isNull($('#rating_name')) || isNull($('#cpfEvaluate')) || isNull($('#dateEvaluate')))){
+      if($('#terms:checked').length === 1){
+        $('#submitButton').prop("disabled", false);
+        return true;
+      } else {
+        $('#submitButton').prop("disabled", true);
+        return false;
+      }
     }
   }
 
