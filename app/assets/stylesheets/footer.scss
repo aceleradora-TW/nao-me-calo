@@ -1,0 +1,19 @@
+@import "variables.scss";
+.footer-class{
+  background-color: $brandColor;
+  color: $secondColor;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  height: 60px;
+  display: table-row;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+
+}
+.footer-text{
+  padding-top: 3px;
+}
+#footer-div{
+  padding-top: 100px;
+}

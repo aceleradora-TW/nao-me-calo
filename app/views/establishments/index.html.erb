@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Establishments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Average rating</th>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th>Id places</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @establishments.each do |establishment| %>
+      <tr>
+        <td><%= establishment.name %></td>
+        <td><%= establishment.address %></td>
+        <td><%= establishment.lat %></td>
+        <td><%= establishment.lng %></td>
+        <td><%= establishment.id_places %></td>
+        <td><%= link_to 'Show', establishment %></td>
+        <td><%= link_to 'Edit', edit_establishment_path(establishment) %></td>
+        <td><%= link_to 'Destroy', establishment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Establishment', new_establishment_path %>
