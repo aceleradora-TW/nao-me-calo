@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Rate establishment', js: true do
 
-  scenario 'Search Beco 203 and rate 4 in woman' do
+  scenario 'Search Bar do Beto and rate 4 in woman' do
     page.driver.browser.manage.window.resize_to(2560, 1600)
     visit '/'
     fill_in 'evaluateField', with: 'Bar do Beto  '
