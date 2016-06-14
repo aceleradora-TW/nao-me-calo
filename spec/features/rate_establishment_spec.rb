@@ -9,7 +9,6 @@ feature 'Rate establishment', js: true do
     sleep 3
     page.all('.pac-item')[1].click
     click_on 'Avaliar'
-    expect(page).to have_content 'Bar do Beto'
     choose 'rating_woman_4'
     page.execute_script 'window.scrollBy(0,500)'
     fill_in'rating_name', :with => 'Jonatas'
@@ -29,9 +28,8 @@ feature 'Rate establishment', js: true do
 
     fill_in 'searchField', with: 'Bar do Beto'
     sleep 3
-      page.all('.pac-item')[1].click
+    page.all('.pac-item')[1].click
     click_on 'Buscar'
-    expect(page).to have_content 'Bar do Beto'
 
     sleep 5
 
