@@ -33,7 +33,7 @@ class RatingsController < ApplicationController
       @rating = Rating.new(rating_params)
       @establishment = Establishment.search_by_id(params[:place_id]).first
 
-      if(@rating.woman != nil? || @rating.lgbtqia != nil? || @rating.race != nil? || @rating.elder != nil? || @rating.obese!= nil?)
+      if(!(@rating.woman.nil? && @rating.lgbtqia.nil? && @rating.race.nil? && @rating.elder.nil? && @rating.obese.nil?))
         if(@establishment.nil?)
           @place = @client.spot(params[:place_id])
           @establishment = Establishment.create!(name: @place.name, address: @place.formatted_address, lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
@@ -45,19 +45,19 @@ class RatingsController < ApplicationController
           if @rating.save
             format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
           else
-            format.html { redirect_to root_path }
+            format.html { redirect_to "bing.com.br", notice: "Caiu aqui!" }
           end
         end
       else
         respond_to do |format|
-          format.html { redirect_to root_path }
+          format.html { redirect_to "google.com.br", notice: "Caiu no outro aqui!" }
         end
       end
     else
-      respond_to do |format|
-        format.html { redirect_to root_path }
-      end
-    end
+     respond_to do |format|
+       format.html { redirect_to root_path }
+     end
+   end
   end
 
   def update
