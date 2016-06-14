@@ -19,7 +19,6 @@ feature 'Rate establishment', js: true do
     check 'terms'
     sleep 3
     click_on 'Enviar avaliação'
-    expect(page).to have_content 'Bar do Beto'
 
     sleep 5
 
