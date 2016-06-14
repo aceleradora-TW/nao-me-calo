@@ -2,12 +2,12 @@ require 'rails_helper'
 
 feature 'Rate establishment', js: true do
 
-  scenario 'Search Bar do Beto and rate 4 in woman' do
+  scenario 'Search Beco 203 and rate 4 in woman' do
     page.driver.browser.manage.window.resize_to(2560, 1600)
     visit '/'
-    fill_in 'evaluateField', with: 'Bar do Beto  '
+    fill_in 'evaluateField', with: ' Beco 203  '
     sleep 3
-    page.all('.pac-item')[1].click
+    first('.pac-item').click
     click_on 'Avaliar'
     choose 'rating_woman_4'
     page.execute_script 'window.scrollBy(0,500)'
@@ -25,9 +25,9 @@ feature 'Rate establishment', js: true do
     visit '/'
     sleep 5
 
-    fill_in 'searchField', with: 'Bar do Beto'
+    fill_in 'searchField', with: ' Beco 203'
     sleep 3
-    page.all('.pac-item')[1].click
+    first('.pac-item').click
     click_on 'Buscar'
 
     sleep 5
