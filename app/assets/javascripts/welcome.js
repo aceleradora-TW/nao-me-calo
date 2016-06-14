@@ -4,7 +4,7 @@ var map;
 
 function initAutocomplete () {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
+    center: {lat: -30.0277, lng: -51.2287},
     zoom: 12
   });
   initMap();

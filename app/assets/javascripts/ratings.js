@@ -173,7 +173,7 @@ $(document).ready(function(){
   };
 
   $('.has-mask').click(function(e){
-    $('#cpfEvaluate').setCursorPosition(0);
+    //  $('#cpfEvaluate').setCursorPosition(0);
     $('#phoneEvaluate').setCursorPosition(0);
     $('#dateEvaluate').setCursorPosition(0);
   })
