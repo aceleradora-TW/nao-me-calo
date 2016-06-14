@@ -27,6 +27,15 @@ feature 'Rate establishment', js: true do
     visit '/'
     sleep 5
 
+    fill_in 'searchField', with: 'Bar do Beto'
+    sleep 3
+      page.all('.pac-item')[1].click
+    click_on 'Buscar'
+    expect(page).to have_content 'Bar do Beto'
 
+    sleep 5
+
+    visit '/'
+    sleep 7
     end
 end
