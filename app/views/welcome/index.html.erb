@@ -41,13 +41,25 @@
       </div>
     </div>
 
-    <div class="col-lg-8 col-lg-offset-2">
+<div align="center" class="row">
+    <button id='best_places_button' type="button" class="btn btn-success" >
+      MELHORES
+    </button>
+
+    <button id='worst_places_button' type="button" class="btn btn-danger">
+      PIORES
+    </button>
+    <br>
+    <br>
+</div>
+
+    <div class="col-lg-8 col-lg-offset-2" id="top_5">
       <ul class="list-group">
-        <% @establishments.each do |establishment| %>
+        <% @best_places.each do |establishment, average| %>
         <a href="/perfil/<%= establishment.id %>" class="list-group-item">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
-            <span class="grade_on_list"><span>Nota média: </span><%= calculate_average_establishment(establishment) %>
+            <span class="grade_on_list"><span>Nota média: </span><%= average %>
           </h4>
           <p class="list-group-item-text">
             <%= establishment.address %>
@@ -56,11 +68,27 @@
         <% end %>
       </ul>
     </div>
-<!--
+
+    <div class="col-lg-8 col-lg-offset-2" id="bottom_5">
+      <ul class="list-group">
+        <% @worst_places.each do |establishment, average| %>
+        <a href="/perfil/<%= establishment.id %>" class="list-group-item">
+          <h4 class="list-group-item-heading">
+            <%= establishment.name %>
+            <span class="grade_on_list"><span>Nota média: </span><%= average %>
+          </h4>
+          <p class="list-group-item-text">
+            <%= establishment.address %>
+          </p>
+        </a>
+        <% end %>
+      </ul>
+    </div>
+
 <div class="row">
   <div class="col-lg-12">
     <div id="map">map</div>
   </div>
 </div>
--->
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>

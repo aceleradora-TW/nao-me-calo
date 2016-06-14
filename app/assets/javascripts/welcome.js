@@ -1,8 +1,9 @@
 var autocomplete;
 
 function initAutocomplete () {
-  //initMap();
+  initMap();
   cleanPlaceIdValueFromInput();
+  initLists();
 
   var searchField = (document.getElementById('searchField'));
   var types = {types: ['establishment']};
@@ -50,6 +51,12 @@ function initAutocomplete () {
   }
 
   $(document).ready(function(){
+    $('#best_places_button').click(function(){
+      switchListBest();
+    })
+    $('#worst_places_button').click(function(){
+      switchListWorst();
+    })
     $('#place_id').attr('readonly', true)
     $('#place_id_2').attr('readonly', true)
 
@@ -65,7 +72,7 @@ function initAutocomplete () {
       }
     });
   });
-/*
+
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -34.397, lng: 150.644},
@@ -90,4 +97,21 @@ function initAutocomplete () {
       handleLocationError(false, infoWindow, map.getCenter());
     }
   }
-*/
+
+  function initLists(){
+    $('#bottom_5').hide();
+  }
+
+  function switchListBest(){
+    if($("#bottom_5").is(":visible")){
+      $('#top_5').show();
+      $('#bottom_5').hide();
+    }
+  }
+
+  function switchListWorst(){
+    if($("#top_5").is(":visible")){
+      $('#top_5').hide();
+      $('#bottom_5').show();
+    }
+  }
