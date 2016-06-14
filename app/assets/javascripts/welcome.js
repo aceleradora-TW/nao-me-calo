@@ -1,7 +1,14 @@
 var autocomplete;
 
+var map;
+
 function initAutocomplete () {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 12
+  });
   initMap();
+  createPin();
   cleanPlaceIdValueFromInput();
   initLists();
 
@@ -74,10 +81,7 @@ function initAutocomplete () {
   });
 
   function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 12
-    });
+
     var infoWindow = new google.maps.InfoWindow({map: map});
 
     // Try HTML5 geolocation.
@@ -114,4 +118,16 @@ function initAutocomplete () {
       $('#top_5').hide();
       $('#bottom_5').show();
     }
+  }
+
+  function createPin(){
+     for(var i=0; i<locations.length; i++){
+      var locate = locations[i];
+      var myLatLng = {lat: locate[1], lng: locate[2]};
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: locate[0]
+      });
+     }
   }
