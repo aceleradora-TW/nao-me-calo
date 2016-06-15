@@ -12,7 +12,7 @@ class WelcomeController < ApplicationController
      @pinsForMap = []
 
      @establishments.each do |establishment|
-       @pinsForMap.push([establishment.name, establishment.lat.to_f, establishment.lng.to_f, calculate_average_establishment(establishment).to_f])
+       @pinsForMap.push([establishment.name, establishment.lat.to_f, establishment.lng.to_f, calculate_average_establishment(establishment).to_f, establishment.id])
      end
 
      @establishment_array = @establishment_hash.sort_by{ |k, v| v }

@@ -7,6 +7,7 @@ function initAutocomplete () {
     center: {lat: -30.0277, lng: -51.2287},
     zoom: 12
   });
+
   initMap();
   createPin();
   cleanPlaceIdValueFromInput();
@@ -82,8 +83,6 @@ function initAutocomplete () {
 
   function initMap() {
 
-    var infoWindow = new google.maps.InfoWindow({map: map});
-
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -124,7 +123,6 @@ function initAutocomplete () {
     for(var i=0; i<locations.length; i++){
       var locate = locations[i];
       var rating = locate[3];
-      console.log(rating);
       var iconColor;
       if(rating<=1.5){
         iconColor = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
@@ -142,5 +140,18 @@ function initAutocomplete () {
         title: locate[0],
         icon: iconColor
       });
+      var contentString = '<div id="content">'+
+      '<a href="/perfil/' + locate[4].toString() + '">'+
+      '<h3 id="firstHeading" class="text-center">'+ locate[0].toString() +'</h3>'+
+      '<div id="bodyContent"></a>'+
+      '</div>'+
+      '</div>';
+      marker.info = new google.maps.InfoWindow({
+        content: contentString
+      });
+      google.maps.event.addListener(marker, 'click', function(){
+        var marker_map = this.getMap();
+        this.info.open(marker_map, this);
+      })
     }
   }
