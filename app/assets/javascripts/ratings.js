@@ -157,6 +157,12 @@ $(document).ready(function(){
     show = showMessage();
   });
 
+var ua = window.navigator.userAgent
+var msie = ua.indexOf("MSIE")
+if(msie>0) {
+ alert("puts")
+}
+else {
   $.fn.setCursorPosition = function(pos) {
     this.each(function(index, elem) {
       if (elem.setSelectionRange) {
@@ -164,6 +170,7 @@ $(document).ready(function(){
       } else if (elem.createTextRange) {
         var range = elem.createTextRange();
         range.collapse(true);
+
         range.moveEnd('character', pos);
         range.moveStart('character', pos);
         range.select();
@@ -173,8 +180,9 @@ $(document).ready(function(){
   };
 
   $('.has-mask').click(function(e){
-    //  $('#cpfEvaluate').setCursorPosition(0);
+    $('#cpfEvaluate').setCursorPosition(0);
     $('#phoneEvaluate').setCursorPosition(0);
     $('#dateEvaluate').setCursorPosition(0);
   })
+}
 });
