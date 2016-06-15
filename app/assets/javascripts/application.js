@@ -16,3 +16,4 @@
 //= require twitter/bootstrap
 //= require maskedinput
 //= require welcome
+//= require ratings
