@@ -1,9 +1,9 @@
 var autocomplete;
-
 var map;
 
 function initAutocomplete () {
-  map = new google.maps.Map(document.getElementById('map'), {
+  var mapField = $('#map')[0]
+  map = new google.maps.Map(mapField, {
     center: {lat: -30.0277, lng: -51.2287},
     zoom: 12
   });
@@ -13,13 +13,15 @@ function initAutocomplete () {
   cleanPlaceIdValueFromInput();
   initLists();
 
-  var searchField = (document.getElementById('searchField'));
+  var searchField = $('#searchField')[0];
   var types = {types: ['establishment']};
 
-  searchBox = new google.maps.places.Autocomplete( searchField, types);
+  searchBox = new google.maps.places.Autocomplete(searchField, types);
+
+  var evaluateField = $('#evaluateField')[0];
 
   autocomplete = new google.maps.places.Autocomplete(
-    (document.getElementById('evaluateField')),
+    (evaluateField),
     {types: ['establishment']});
 
     autocomplete.addListener('place_changed', fillName);
@@ -28,12 +30,12 @@ function initAutocomplete () {
 
   function fillName(){
     var place = autocomplete.getPlace();
-    document.getElementById("place_id").value = place.place_id;
+    $('#place_id').val(place.place_id);
   }
 
   function fillSearch(){
     var place = searchBox.getPlace();
-    document.getElementById("place_id_2").value = place.place_id;
+    $('#place_id_2').val(place.place_id);
   }
 
   function geolocate() {
@@ -54,32 +56,9 @@ function initAutocomplete () {
   }
 
   function cleanPlaceIdValueFromInput(){
-    document.getElementById('place_id').value = '';
-    document.getElementById('place_id_2').value = '';
+    $('#place_id').val('');
+    $('#place_id_2').val('');
   }
-
-  $(document).ready(function(){
-    $('#best_places_button').click(function(){
-      switchListBest();
-    })
-    $('#worst_places_button').click(function(){
-      switchListWorst();
-    })
-    $('#place_id').attr('readonly', true)
-    $('#place_id_2').attr('readonly', true)
-
-    $('#formEvaluate').submit(function(e){
-      if($('#place_id').val() == ""){
-        e.preventDefault();
-      }
-    });
-
-    $('#formSearch').submit(function(e){
-      if($('#place_id_2').val() == ""){
-        e.preventDefault();
-      }
-    });
-  });
 
   function initMap() {
 
@@ -98,24 +77,6 @@ function initAutocomplete () {
     } else {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
-    }
-  }
-
-  function initLists(){
-    $('#bottom_5').hide();
-  }
-
-  function switchListBest(){
-    if($("#bottom_5").is(":visible")){
-      $('#top_5').show();
-      $('#bottom_5').hide();
-    }
-  }
-
-  function switchListWorst(){
-    if($("#top_5").is(":visible")){
-      $('#top_5').hide();
-      $('#bottom_5').show();
     }
   }
 
@@ -155,3 +116,51 @@ function initAutocomplete () {
       })
     }
   }
+
+  function initLists(){
+    $('#bottom_5').hide();
+  }
+
+  $(document).ready(function(){
+
+    initLists();
+
+    function initLists(){
+      $('#bottom_5').hide();
+    }
+
+    function switchListBest(){
+      if($('#bottom_5').is(":visible")){
+        $('#top_5').show();
+        $('#bottom_5').hide();
+      }
+    }
+
+    function switchListWorst(){
+      if($("#top_5").is(":visible")){
+        $('#top_5').hide();
+        $('#bottom_5').show();
+      }
+    }
+
+    $('#best_places_button').click(function(){
+      switchListBest();
+    })
+    $('#worst_places_button').click(function(){
+      switchListWorst();
+    })
+    $('#place_id').attr('readonly', true)
+    $('#place_id_2').attr('readonly', true)
+
+    $('#formEvaluate').submit(function(e){
+      if($('#place_id').val() == ''){
+        e.preventDefault();
+      }
+    });
+
+    $('#formSearch').submit(function(e){
+      if($('#place_id_2').val() == ''){
+        e.preventDefault();
+      }
+    });
+  });
