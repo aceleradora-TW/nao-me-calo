@@ -157,11 +157,9 @@ $(document).ready(function(){
     show = showMessage();
   });
 
-var ua = window.navigator.userAgent
-var msie = ua.indexOf("MSIE")
-if(msie >= 11){
-  alert("puts");
-}
+  if ( $.browser.msie ) {
+    alert("puts");
+  }
 else {
   $.fn.setCursorPosition = function(pos) {
     this.each(function(index, elem) {
