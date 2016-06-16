@@ -160,7 +160,7 @@ $(document).ready(function(){
 var ua = window.navigator.userAgent
 var msie = ua.indexOf("MSIE")
 if(msie>0) {
- alert("puts")
+ alert("puts");
 }
 else {
   $.fn.setCursorPosition = function(pos) {
