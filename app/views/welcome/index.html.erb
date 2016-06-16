@@ -12,8 +12,6 @@
       <% end %>
     </div>
     <%end%>
-
-
     <script text="text/javascript">
       var locations = JSON.parse("<%=@pinsForMap%>".replace(/&quot;/g,'"'));
     </script>
@@ -47,13 +45,9 @@
     </div>
 
 <div align="center" class="row">
-    <button id='best_places_button' type="button" class="btn btn-success" >
-      MELHORES
-    </button>
+  <a href="#"id='best_places_button' >Melhores</a>
 
-    <button id='worst_places_button' type="button" class="btn btn-danger">
-      PIORES
-    </button>
+  <a href="#"id='worst_places_button' >Piores</a>
     <br>
     <br>
 </div>
