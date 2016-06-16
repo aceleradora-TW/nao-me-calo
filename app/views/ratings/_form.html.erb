@@ -11,11 +11,11 @@
   </div>
   <% end %>
   <div class="alert alert-danger hidden errorDiv">
-    <p id="alert" class="text-center">Erro, verifique os campos em vermelho!</p>
+    <p id="alert" class="text-center">Erro, os campos com * são obrigatórios!</p>
   </div>
 
   <input type="hidden" id="place_id" name="place_id" value="<%= @place_id %>" readonly="readyonly">
-
+  <span> Marque pelo menos um campo de nota</span><span class="red-text"> *</span>
   <div class="col-lg-12 no-padding-left">
     <div class="col-lg-6 no-padding-left" id="radio_button_id">
       <div class="field">
