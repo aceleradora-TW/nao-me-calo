@@ -40,6 +40,7 @@ GEM
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    browser (2.1.0)
     builder (3.2.2)
     byebug (9.0.3)
     capybara (2.7.1)
@@ -232,6 +233,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  browser
   byebug
   capybara
   codeclimate-test-reporter (~> 0.5.1)
