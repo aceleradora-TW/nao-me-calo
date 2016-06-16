@@ -3,22 +3,32 @@ class WelcomeController < ApplicationController
   include ApplicationHelper
 
   def index
-     @establishments = Establishment.all
-     @establishment_hash={}
-     @establishments.each do |estLocal|
-       @establishment_hash[estLocal] = calculate_average_establishment(estLocal)
-     end
+    @establishments = Establishment.all
+    @establishment_hash={}
+    @establishments.each do |estLocal|
+      @establishment_hash[estLocal] = calculate_average_establishment(estLocal)
+    end
 
-     @pinsForMap = []
+    @pinsForMap = []
 
-     @establishments.each do |establishment|
-       @pinsForMap.push([establishment.name, establishment.lat.to_f, establishment.lng.to_f, calculate_average_establishment(establishment).to_f, establishment.id])
-     end
+    @establishments.each do |establishment|
+      @rating = calculate_average_establishment(establishment)
+      @color = ""
+      if(@rating<=1.5)
+        @color = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+      elsif(@rating<=3.5)
+        @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+      else
+        @color = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+      end
 
-     @establishment_array = @establishment_hash.sort_by{ |k, v| v }
-     @worst_places = @establishment_array[0..4]
-     @establishment_array = @establishment_array.reverse
-     @best_places = @establishment_array[0..4]
+      @pinsForMap.push([establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color, establishment.id])
+    end
+
+    @establishment_array = @establishment_hash.sort_by{ |k, v| v }
+    @worst_places = @establishment_array[0..4]
+    @establishment_array = @establishment_array.reverse
+    @best_places = @establishment_array[0..4]
   end
 
   def search

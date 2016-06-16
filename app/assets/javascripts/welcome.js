@@ -83,17 +83,7 @@ function initAutocomplete () {
   function createPin(){
     for(var i=0; i<locations.length; i++){
       var locate = locations[i];
-      var rating = locate[3];
-      var iconColor;
-      if(rating<=1.5){
-        iconColor = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
-      } else {
-        if(rating<=3.5){
-          iconColor = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
-        }else{
-          iconColor = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
-        }
-      }
+      var iconColor = locate[3]
       var myLatLng = {lat: locate[1], lng: locate[2]};
       var marker = new google.maps.Marker({
         position: myLatLng,
