@@ -1,0 +1,34 @@
+@import "variables.scss";
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: $secondColor !important;
+  color: $brandColor !important;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: $thirdColor !important;
+}
+.navbar-default .navbar-nav > li > a{
+  color: $secondColor !important;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: $secondColor;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+  border-top: 0px !important;
+}
+
+.header-background-color {
+  background-color: $brandColor;
+  border-bottom: solid 2px $textColor;
+}
+.button-header-style{
+  border-color: $secondColor !important;
+
+}
+.button-header-style:hover{
+  background-color: $thirdColor !important;
+}
+
+.button-header-style:focus{
+  background-color: $thirdColor !important;
+}

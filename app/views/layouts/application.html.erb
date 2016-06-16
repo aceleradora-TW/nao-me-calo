@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Não Me Calo</title>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag params[:controller] %>
+  <%= stylesheet_link_tag params[:controller] %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <%= render 'layouts/header' %>
+  <section>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+  </section>
+  <%# 4.times do %>
+  <!-- <br> -->
+  <%# end %>
+  <%= render 'layouts/footer' %>
+</body>
+</html>

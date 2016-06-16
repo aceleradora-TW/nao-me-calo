@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<div class ="col-lg-8 col-lg-offset-2 ">
+  <div class ="col-lg-12 padding-bottom">
+    <div class='row'>
+      <h1 class='text-center'>
+        <%= image_tag(@spot.icon, size: "30x30") %>
+        <%= @spot.name %>
+        <span class="paragraph"><%= @average_rating.round(2) %></span>
+      </h1>
+    </div>
+    <div class='row'>
+      <h5 class='text-center'><%= @spot.formatted_address %></h5>
+    </div>
+    <div class="center-element" >
+      <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
+      <%= submit_tag "Avaliar", :class => 'btn btn-primary' %>
+      <%= hidden_field_tag 'place_id' , @establishment.id_places %>
+      <% end %>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+      <h2>Últimas avaliações:</h2>
+    </div>
+    <div class="col-lg-4 col-lg-offset-4">
+      <ul class="list-group">
+        <% @ratings.each do |rating| %>
+          <%if rating.rating_date!=nil%>
+          <h4 class="list-group-item list-show-style">
+            <span class="text-field"><%= rating.rating_date.strftime("%d/%m/%Y")%></span>
+            <p class="text-right text-data-rating"><%= rating.average_rating %></p>
+          </h4>
+          <%end%>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

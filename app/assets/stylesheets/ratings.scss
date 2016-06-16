@@ -1,0 +1,29 @@
+// Place all the styles related to the ratings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables.scss";
+.form-textfield{
+  width: 250px;
+}
+
+.error {
+  border: 1px dashed red;
+}
+
+.hidden{
+  display: none;
+}
+
+.errorBorder{
+  border-color: red;
+  border-style: dashed;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+.no-padding-left{
+  padding-left: 0px !important;
+}
+.red-text{
+  color: red;
+}
