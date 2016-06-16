@@ -157,6 +157,7 @@ $(document).ready(function(){
     show = showMessage();
   });
 
+
   if ( $.browser.msie ) {
     alert("puts");
   }
