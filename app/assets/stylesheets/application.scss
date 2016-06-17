@@ -42,3 +42,10 @@ body {
   background-color: $brandColor !important;
   border-color: $textColor !important;
 }
+.textarea {
+    resize: none;
+}
+.checkboxcontact{
+  position: relative !important;
+  top: 3px !important;
+}

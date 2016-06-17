@@ -14,7 +14,6 @@ class WelcomeController < ApplicationController
 
      @establishments.each do |establishment|
        @rating = calculate_average_establishment(establishment)
-       @color = ""
        if(@rating<=1.5)
          @color = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
        elsif(@rating<=3.5)
