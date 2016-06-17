@@ -27,6 +27,7 @@
           <h4 class="list-group-item list-show-style">
             <span class="text-field"><%= rating.rating_date.strftime("%d/%m/%Y")%></span>
             <p class="text-right text-data-rating"><%= rating.average_rating %></p>
+            <p>Relato: <%= rating.description %></p>
           </h4>
           <%end%>
         <% end %>
