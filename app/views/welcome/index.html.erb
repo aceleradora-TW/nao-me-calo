@@ -44,7 +44,7 @@
     <div class="col-lg-8 col-lg-offset-2">
       <ul class="list-group">
         <% @establishments.each do |establishment| %>
-        <a href="/perfil/<%= establishment.id %>" class="list-group-item">
+        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcomel-list">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
             <span class="grade_on_list"><span>Nota média: </span><%= calculate_average_establishment(establishment) %>
