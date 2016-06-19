@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables.scss";
-.form-textfield{
+.form-textfield {
   width: 250px;
 }
 
@@ -14,16 +14,73 @@
   display: none;
 }
 
-.errorBorder{
+.errorBorder {
   border-color: red;
   border-style: dashed;
   border-width: 1px;
   border-radius: 4px;
 }
 
-.no-padding-left{
+.no-padding-left {
   padding-left: 0px !important;
 }
+
 .red-text{
   color: red;
+}
+
+.ratings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ratings:after {
+  content: "";
+  clear: both;
+}
+
+.rating {
+  float: left;
+  height: 35px;
+  position: relative;
+  width: 60px;
+  border: 1px solid;
+  border-radius: 7px;
+}
+
+.rating label {
+  cursor: pointer;
+  display: block;
+  font-size: 10px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.dangerous {
+  background-color: inherit;
+  border-color: red;
+  color: red;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+
+}
+
+
+.bad {
+  background-color: orange;
+}
+
+.regular {
+  background-color: yellow;
+}
+
+.good {
+  background-color: green;
+}
+
+.excellent {
+  background-color: blue;
 }
