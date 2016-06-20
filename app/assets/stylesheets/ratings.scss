@@ -1,8 +1,9 @@
+
 // Place all the styles related to the ratings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables.scss";
-.form-textfield{
+.form-textfield {
   width: 250px;
 }
 
@@ -14,16 +15,129 @@
   display: none;
 }
 
-.errorBorder{
+.errorBorder {
   border-color: red;
   border-style: dashed;
   border-width: 1px;
   border-radius: 4px;
 }
 
-.no-padding-left{
+.no-padding-left {
   padding-left: 0px !important;
 }
+
 .red-text{
   color: red;
+}
+
+.ratings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ratings:after {
+  content: "";
+  clear: both;
+}
+
+.rating {
+  float: left;
+  height: 35px;
+  position: relative;
+  width: 60px;
+  margin-right: 3px;
+}
+
+.rating > input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  text-align: center;
+  background-color: inherit;
+  border-radius: 7px;
+  border: 1px solid;
+  cursor: pointer;
+  display: block;
+  font-size: 10px;
+  position: absolute;
+  white-space: nowrap;
+  width: 60px;
+  height: 35px;
+  top: -1px;;
+  margin-right: 3px;
+  &:hover {
+    color: white;
+  }
+}
+
+label .radio_text {
+  display: inline-block;
+  margin-top: 7px;
+}
+
+.dangerous {
+  border-color: $buttonDangerousColor;
+  color: $buttonDangerousColor;
+  &:hover {
+    background-color: $buttonDangerousColor;
+  }
+}
+
+input[type="radio"]:checked + .dangerous {
+  background-color: $buttonDangerousColor;
+  color: white;
+}
+
+.bad {
+  border-color: $buttonBadColor;
+  color: $buttonBadColor;
+  &:hover {
+    background-color: $buttonBadColor;
+  }
+}
+
+input[type="radio"]:checked + .bad {
+  background-color: $buttonBadColor;
+  color: white;
+}
+
+.regular {
+  border-color: $buttonRegularColor;
+  color: $buttonRegularColor;
+  &:hover {
+    background-color: $buttonRegularColor;
+  }
+}
+
+input[type="radio"]:checked + .regular {
+  background-color: $buttonRegularColor;
+  color: white;
+}
+
+.good {
+  border-color: $buttonGoodColor;
+  color: $buttonGoodColor;
+  &:hover {
+    background-color: $buttonGoodColor;
+  }
+}
+
+input[type="radio"]:checked + .good {
+  background-color: $buttonGoodColor;
+  color: white;
+}
+
+.excellent {
+  border-color: $buttonExcellentColor;
+  color: $buttonExcellentColor;
+  &:hover {
+    background-color: $buttonExcellentColor;
+  }
+}
+
+input[type="radio"]:checked + .excellent {
+  background-color: $buttonExcellentColor;
+  color: white;
 }
