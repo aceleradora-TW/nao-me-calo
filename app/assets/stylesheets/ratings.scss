@@ -30,6 +30,14 @@
   color: red;
 }
 
+.paragraph-ratings{
+  padding-left: 15px;
+}
+
+.padding-bottom{
+  padding-top: 10px;
+}
+
 .ratings {
   list-style: none;
   margin: 0;
@@ -56,7 +64,7 @@
 .rating label {
   text-align: center;
   background-color: inherit;
-  border-radius: 7px;
+  border-radius: 4px;
   border: 1px solid;
   cursor: pointer;
   display: block;
@@ -64,7 +72,7 @@
   position: absolute;
   white-space: nowrap;
   width: 60px;
-  height: 35px;
+  height: 26px;
   top: -1px;;
   margin-right: 3px;
   &:hover {
@@ -74,7 +82,7 @@
 
 label .radio_text {
   display: inline-block;
-  margin-top: 7px;
+  margin-top: 3px;
 }
 
 .dangerous {
@@ -140,4 +148,7 @@ input[type="radio"]:checked + .good {
 input[type="radio"]:checked + .excellent {
   background-color: $buttonExcellentColor;
   color: white;
+}
+.text-style-radios{
+  font-weight: normal !important;
 }

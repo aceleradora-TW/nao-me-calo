@@ -17,11 +17,11 @@
 
   <input type="hidden" id="place_id" name="place_id" value="<%= @place_id %>" readonly="readyonly">
   <span> Marque pelo menos um campo de nota</span><span class="red-text"> *</span>
-  <div class="col-lg-12 no-padding-left">
+  <div class="col-lg-12 no-padding-left padding-bottom">
     <div class="col-lg-12 no-padding-left" id="radio_button_id">
       <div class="field">
-        <%= f.label 'Mulher' %>
-        <div class ="row paragraph">
+        <%= f.label 'Mulher', :class => "text-style-radios" %>
+        <div class ="row paragraph-ratings">
           <span alt="Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo.">
           <ul class="ratings">
             <li class="rating">
@@ -59,8 +59,8 @@
       </div>
 
       <div class="field">
-        <%= f.label 'LGBTQIA' %>
-        <div class ="row paragraph">
+        <%= f.label 'LGBTQIA', :class => "text-style-radios" %>
+        <div class ="row paragraph-ratings">
           <ul class="ratings">
             <li class="rating">
               <%= f.radio_button :lgbtqia, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
@@ -97,8 +97,8 @@
       </div>
 
       <div class="field">
-        <%= f.label 'Raça' %>
-        <div class ="row paragraph">
+        <%= f.label 'Raça', :class => "text-style-radios" %>
+        <div class ="row paragraph-ratings">
           <ul class="ratings">
             <li class="rating">
               <%= f.radio_button :race, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
@@ -135,8 +135,8 @@
       </div>
 
       <div class="field">
-        <%= f.label 'Pessoa com deficiência' %>
-        <div class ="row paragraph">
+        <%= f.label 'Pessoa com deficiência', :class => "text-style-radios" %>
+        <div class ="row paragraph-ratings">
           <ul class="ratings">
             <li class="rating">
               <%= f.radio_button :disability, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
@@ -172,8 +172,8 @@
         </div>
       </div>
       <div class="field">
-        <%= f.label 'Idoso' %>
-        <div class ="row paragraph">
+        <%= f.label 'Idoso', :class => "text-style-radios" %>
+        <div class ="row paragraph-ratings">
           <ul class="ratings">
             <li class="rating">
               <%= f.radio_button :elder, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
@@ -209,8 +209,8 @@
         </div>
       </div>
       <div class="field">
-        <%= f.label 'Obeso' %>
-        <div class ="row paragraph">
+        <%= f.label 'Obeso', :class => "text-style-radios" %>
+        <div class ="row paragraph-ratings">
           <ul class="ratings">
             <li class="rating">
               <%= f.radio_button :obese, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
