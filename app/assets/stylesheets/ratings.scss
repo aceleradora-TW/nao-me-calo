@@ -45,42 +45,98 @@
   height: 35px;
   position: relative;
   width: 60px;
-  border: 1px solid;
-  border-radius: 7px;
+  margin-right: 3px;
+}
+
+.rating > input[type="radio"] {
+  display: none;
 }
 
 .rating label {
+  text-align: center;
+  background-color: inherit;
+  border-radius: 7px;
+  border: 1px solid;
   cursor: pointer;
   display: block;
   font-size: 10px;
   position: absolute;
   white-space: nowrap;
+  width: 60px;
+  height: 35px;
+  top: -1px;;
+  margin-right: 3px;
+  &:hover {
+    color: white;
+  }
+}
+
+label .radio_text {
+  display: inline-block;
+  margin-top: 7px;
 }
 
 .dangerous {
-  background-color: inherit;
   border-color: red;
   color: red;
   &:hover {
     background-color: red;
-    color: white;
   }
-
 }
 
+input[type="radio"]:checked + .dangerous {
+  background-color: red;
+  color: white;
+}
 
 .bad {
+  border-color: orange;
+  color: orange;
+  &:hover {
+    background-color: orange;
+  }
+}
+
+input[type="radio"]:checked + .bad {
   background-color: orange;
+  color: white;
 }
 
 .regular {
+  border-color: yellow;
+  color: yellow;
+  &:hover {
+    background-color: yellow;
+  }
+}
+
+input[type="radio"]:checked + .regular {
   background-color: yellow;
+  color: white;
 }
 
 .good {
+  border-color: green;
+  color: green;
+  &:hover {
+    background-color: green;
+  }
+}
+
+input[type="radio"]:checked + .good {
   background-color: green;
+  color: white;
 }
 
 .excellent {
+  border-color: blue;
+  color: blue;
+  &:hover {
+    background-color: blue;
+  }
+}
+
+input[type="radio"]:checked + .excellent {
   background-color: blue;
+  color: white;
 }
