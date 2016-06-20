@@ -89,7 +89,8 @@ function initAutocomplete () {
         position: myLatLng,
         map: map,
         title: locate[0],
-        icon: iconColor
+        icon: iconColor,
+        optimized: false
       });
       var contentString = '<div id="content">'+
       '<a href="/perfil/' + locate[4].toString() + '">'+
