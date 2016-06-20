@@ -55,7 +55,7 @@
     <div class="col-lg-8 col-lg-offset-2" id="top_5">
       <ul class="list-group">
         <% @best_places.each do |establishment, average| %>
-        <a href="/perfil/<%= establishment.id %>" class="list-group-item">
+        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcomel-list">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
             <span class="grade_on_list"><span>Nota média: </span><%= average %>
@@ -68,10 +68,12 @@
       </ul>
     </div>
 
+
+
     <div class="col-lg-8 col-lg-offset-2" id="bottom_5">
       <ul class="list-group">
         <% @worst_places.each do |establishment, average| %>
-        <a href="/perfil/<%= establishment.id %>" class="list-group-item">
+        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcomel-list">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
             <span class="grade_on_list"><span>Nota média: </span><%= average %>
