@@ -58,29 +58,24 @@ class WelcomeController < ApplicationController
   def set_client
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
   end
-  def setConcept place,array
-    array.take(10).each do |est|
-      place.push([est[0],est[1]])
-    end
-  end
 
-  # def setConcept place,array
-  #   array.take(10).each do |est|
-  #     place.push([est[0],est[1]])
-  #   end
-  #   place.each do |w|
-  #     if w[1] < 2
-  #       w[1] = "Péssimo"
-  #     elsif w[1] < 2.5
-  #       w[1] = "Ruim"
-  #     elsif w[1] < 3.5
-  #       w[1] = "Regular"
-  #     elsif w[1] < 4
-  #       w[1] = "Bom"
-  #     else
-  #       w[1] = "Ótimo"
-  #     end
-  #   end
-  # end
+   def setConcept place,array
+     array.take(10).each do |est|
+       place.push([est[0],est[1]])
+     end
+     place.each do |w|
+       if w[1] < 2
+         w[1] = "Péssimo"
+       elsif w[1] < 3
+         w[1] = "Ruim"
+       elsif w[1] < 4
+         w[1] = "Regular"
+       elsif w[1] < 5 
+         w[1] = "Bom"
+       else
+         w[1] = "Ótimo"
+       end
+     end
+   end
 
 end

@@ -22,11 +22,11 @@
     </div>
     <div class="col-lg-4 col-lg-offset-4">
       <ul class="list-group">
-        <% @ratings.each do |rating| %>
-          <%if rating.rating_date!=nil%>
+        <% @rate_array.each do |rating| %>
+          <%if rating[0].rating_date!=nil%>
           <h4 class="list-group-item list-show-style">
-            <span class="text-field"><%= rating.rating_date.strftime("%d/%m/%Y")%></span>
-            <p class="text-right text-data-rating"><%= rating.average_rating %></p>
+            <span class="text-field"><%= rating[0].rating_date.strftime("%d/%m/%Y")%></span>
+            <p class="text-right text-data-rating"><%= rating[1] %></p>
             <p>Relato: <%= rating.description %></p>
           </h4>
           <%end%>

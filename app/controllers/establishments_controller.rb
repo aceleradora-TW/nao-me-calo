@@ -19,6 +19,20 @@ class EstablishmentsController < ApplicationController
     end
     @average_rating = general_average.sum/general_average.size #media geral do estabelecimento
     @ratings = @establishment.ratings.reverse_order.limit(5)
+    @rate_array = []
+    @ratings.each do |rating|
+      if rating.average_rating < 2.0
+        @rate_array.push([rating,"Péssimo"])
+      elsif rating.average_rating < 3.0
+        @rate_array.push([rating,"Ruim"])
+      elsif rating.average_rating < 4.0
+          @rate_array.push([rating,"Regular"])
+      elsif rating.average_rating < 5.0
+          @rate_array.push([rating,"Bom"])
+      else
+          @rate_array.push([rating,"Otimo"])
+      end
+    end
   end
 
   # GET /establishments/new
