@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   get '/termos' => 'welcome#terms'
 
-  get '/faleconosco' => 'contact#contact_us'
+  get '/faleconosco' => 'contactus#index'
+
+  post '/enviar' => 'contactus#index'
 
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
