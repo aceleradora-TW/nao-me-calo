@@ -13,7 +13,7 @@
       </div>
       <div class='row'>
         <%= label_tag 'Email:' %><span class="red-text"> *</span>
-        <%= text_field_tag :email, nil,:class => "form-control", aria: {label: "email"}, id:"emailEvaluate"%>
+        <%= text_field_tag :email, nil,:class => "form-control", aria: {label: "email"}, id:"emailEvaluate", onfocusout: "checkMail()" %>
       </div>
       <div class='row'>
         <%= label_tag 'Assunto:' %>
@@ -21,7 +21,7 @@
       </div>
       <div class='row'>
         <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
-        <%= text_area_tag :message, nil, :class => "form-control textarea", rows: 5 , aria: {label: "Mensagem"}%>
+        <%= text_area_tag :message, nil, :class => "form-control textarea", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate", onfocusout: "checkMessage()"%>
       </div>
       <div class='row'>
         <%= label_tag 'Deseja receber retorno?:' %>
