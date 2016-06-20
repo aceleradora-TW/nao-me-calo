@@ -70,7 +70,7 @@ class WelcomeController < ApplicationController
          w[1] = "Ruim"
        elsif w[1] < 4
          w[1] = "Regular"
-       elsif w[1] < 5 
+       elsif w[1] < 5
          w[1] = "Bom"
        else
          w[1] = "Ótimo"

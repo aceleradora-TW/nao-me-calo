@@ -30,7 +30,7 @@ class EstablishmentsController < ApplicationController
       elsif rating.average_rating < 5.0
           @rate_array.push([rating,"Bom"])
       else
-          @rate_array.push([rating,"Otimo"])
+          @rate_array.push([rating,"Ótimo"])
       end
     end
   end
