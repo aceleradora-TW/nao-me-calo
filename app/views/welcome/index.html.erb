@@ -55,11 +55,7 @@
     <div class="col-lg-8 col-lg-offset-2" id="top_5">
       <ul class="list-group">
         <% @best_places.each do |establishment, average| %>
-<<<<<<< HEAD
-        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome_list">
-=======
         <a href="/perfil/<%= establishment.id %>" class="list-group-item welcomel-list">
->>>>>>> ac0ce2991d59b62ba7256765b38d495937fd042b
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
             <span class="grade_on_list"><span>Nota média: </span><%= average %>
