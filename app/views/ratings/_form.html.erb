@@ -16,8 +16,8 @@
   </div>
 
   <input type="hidden" id="place_id" name="place_id" value="<%= @place_id %>" readonly="readyonly">
-  <span> Marque pelo menos um campo de nota</span><span class="red-text"> *</span>
   <div class="col-lg-12 no-padding-left padding-bottom">
+    <%= f.label 'Marque pelo menos um campo de nota' %> <span class="red-text">*</span>
     <div class="col-lg-12 no-padding-left" id="radio_button_id">
       <div class="field">
         <%= f.label 'Mulher', :class => "text-style-radios" %>
@@ -247,6 +247,7 @@
       </div>
     </div>
   </div>
+  
   <div class="form-group">
     <div class="field">
       <%= f.label "nome" %>
