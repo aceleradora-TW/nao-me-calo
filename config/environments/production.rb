@@ -3,16 +3,16 @@ Rails.application.configure do
   G_PLACE_KEY = "AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8"
   # Code is not reloaded between requests.
   config.cache_classes = true
-
+  config.action_mailer.default_url_options = { host: 'naomecalotw-staging.herokuapp.com' }
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :user_name            =>  ENV['gmail_username'],
-    :password             =>  ENV['gmail_password'],
+    :user_name            =>  "aceleradoratw9@gmail.com",
+    :password             =>  "naomecalo",
     :domain               => 'gmail.com',
-    :authentication       => 'login',
+    :authentication       => 'plain',
     :openssl_verify_mode  => 'none',
     :enable_starttls_auto => true
   }
