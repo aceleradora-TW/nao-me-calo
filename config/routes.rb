@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get '/termos' => 'welcome#terms'
 
-  get '/faleconosco' => 'contact_us#index'
+  get '/faleconosco' => 'contact_us#send_mail'
 
   post '/enviar' => 'contact_us#send_mail'
 
