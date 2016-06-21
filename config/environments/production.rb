@@ -12,7 +12,7 @@ Rails.application.configure do
     :user_name            => "aceleradoratw9@gmail.com", # ENV['gmail_username'],
     :password             => "naomecalo", # ENV['gmail_password'],
     :domain               => 'gmail.com',
-    :authentication       => :login,
+    :authentication       => 'plain',
     :enable_starttls_auto => true
   }
 
