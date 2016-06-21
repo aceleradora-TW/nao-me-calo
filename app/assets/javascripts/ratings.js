@@ -8,21 +8,18 @@ $(document).ready(function(){
 
   $('#submitButton').prop("disabled", true);
 
-  errors = {name: false, cpfEvaluate: false, rating: true, dateEvaluate: false, emailEvaluate: false};
+  errors = {cpfEvaluate: false, rating: true, dateEvaluate: false};
 
   if ( $('[type="date"]').prop('type') != 'date' ) {
     $('[type="date"]').datepicker();
   }
-
-  $('#rating_name').focusout(function(){
-    reviewName();
-  });
 
   $('#emailEvaluate').focusout(function(){
     checkMail();
   });
 
   $('#nameEvaluate').focusout(function(){
+    reviewName();
     checkName();
   });
 
@@ -58,12 +55,12 @@ $(document).ready(function(){
   }
 
   function reviewName(){
-    if($('#rating_name').val() === "" || $('#rating_name').val() === null){
-      $('#rating_name').addClass("error");
+    if($('#nameEvaluate').val() === "" || $('#nameEvaluate').val() === null){
+      $('#nameEvaluate').addClass("error");
       errors["name"] = true;
       showMessage();
     } else {
-      $('#rating_name').removeClass("error");
+      $('#nameEvaluate').removeClass("error");
       errors["name"] = false;
       showMessage();
     }
@@ -137,13 +134,11 @@ $(document).ready(function(){
     var nameExp = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
     var nameInput = $('#nameEvaluate').val();
 
-    if (!nameInput.match(nameExp)){
+    if (!nameInput.match(nameExp) && nameInput !==""){
       $('#nameEvaluate').addClass("error");
-      errors["nameEvaluate"] = true;
       showMessage();
     }else{
       $('#nameEvaluate').removeClass("error");
-      errors["nameEvaluate"] = false;
       showMessage();
     }
 
@@ -155,17 +150,15 @@ $(document).ready(function(){
 
     if (!emailInput.match(emailExp)){
       $('#emailEvaluate').addClass("error");
-      errors["emailEvaluate"] = true;
       showMessage();
     }else{
       $('#emailEvaluate').removeClass("error");
-      errors["emailEvaluate"] = false;
       showMessage();
     }
   }
 
   function enableButtonTerms(){
-    if(!(isNull($('#rating_name')) || isNull($('#cpfEvaluate')) || isNull($('#dateEvaluate')))){
+    if(!(isNull($('#cpfEvaluate')) || isNull($('#dateEvaluate')))){
       if($('#terms:checked').length === 1){
         $('#submitButton').prop("disabled", false);
         return true;
@@ -177,7 +170,7 @@ $(document).ready(function(){
   }
 
   $('#new_rating').submit(function(e){
-    if(isNull($('#rating_name')) || isNull($('#cpfEvaluate'))){
+    if(isNull($('#nameEvaluate')) || isNull($('#cpfEvaluate'))){
       e.preventDefault();
       cpf = reviewCPF();
       name = reviewName();
@@ -185,7 +178,7 @@ $(document).ready(function(){
   });
 
   $('#terms').change(function(){
-    if(!(isNull($('#rating_name')) || errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"])){
+    if(!(errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"])){
       enableButtonTerms();
     }
   });
@@ -196,31 +189,4 @@ $(document).ready(function(){
     show = showMessage();
   });
 
-
-  if ( $.browser.msie ) {
-    alert("puts");
-  }
-else {
-  $.fn.setCursorPosition = function(pos) {
-    this.each(function(index, elem) {
-      if (elem.setSelectionRange) {
-        elem.setSelectionRange(pos, pos);
-      } else if (elem.createTextRange) {
-        var range = elem.createTextRange();
-        range.collapse(true);
-
-        range.moveEnd('character', pos);
-        range.moveStart('character', pos);
-        range.select();
-      }
-    });
-    return this;
-  };
-
-  $('.has-mask').click(function(e){
-    $('#cpfEvaluate').setCursorPosition(0);
-    $('#phoneEvaluate').setCursorPosition(0);
-    $('#dateEvaluate').setCursorPosition(0);
-  })
-}
 });
