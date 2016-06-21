@@ -254,11 +254,11 @@
     </div>
   </div>
   <div class="field has-mask">
-    <%= f.label :cpf%><span class="red-text"> *</span>
-    <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
+    <%= f.label :cpf, :class => "text-uppercase"%><span class="red-text"> *</span>
+    <%= f.text_field :cpf, :class => "form-control form-textfield ", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
   </div>
   <div class="field">
-    <%= f.label :email%>
+    <%= f.label "E-mail"%>
     <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailEvaluate", aria: {label: "email"}  %>
   </div>
   <div class="field has-mask">
@@ -278,5 +278,6 @@
   </div>
   <div class="actions text-center">
     <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton", aria: {label: "Botão de enviar"} %>
+    <p class="validation_text">Preencha e valide os campos marcados com <span class="red-text"> *</span> para abilitar o botão de Enviar avaliação </p>
   </div>
   <% end %>

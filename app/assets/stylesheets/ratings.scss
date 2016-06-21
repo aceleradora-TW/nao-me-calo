@@ -15,6 +15,10 @@
   display: none;
 }
 
+.text-uppercase{
+  text-transform: uppercase !important;
+}
+
 .errorBorder {
   border-color: red;
   border-style: dashed;
@@ -91,6 +95,9 @@ label .radio_text {
   &:hover {
     background-color: $buttonDangerousColor;
   }
+}
+.validation_text{
+  margin-top: 3px;
 }
 
 input[type="radio"]:checked + .dangerous {
