@@ -1,7 +1,9 @@
 class ContactUs < ApplicationMailer
-  def welcome_email()
-    # @user = user
-    # @url  = 'http://example.com/login'
-    mail(to: 'aceleradoratw9@gmail.com', subject: 'Welcome to My Awesome Site')
+  def welcome_email(name, email, subject, message)
+    @name = name
+    @email = email
+    @subject = subject
+    @message = message
+    mail(to: 'aceleradoratw9@gmail.com', subject: 'Não me Calo Fale Conosco')
   end
 end

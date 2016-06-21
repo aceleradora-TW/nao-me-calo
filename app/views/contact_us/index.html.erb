@@ -8,7 +8,7 @@
         <%= form_tag("/enviar", :method => "post") do %>
         <div class='row'>
           <%= label_tag 'Nome:' %>
-          <%= text_field_tag :nome, nil,:class => "form-control", aria: {label: "nome"}%>
+          <%= text_field_tag :name, nil,:class => "form-control", aria: {label: "nome"}%>
         </div>
         <div class='row'>
           <%= label_tag 'Email:' %><span class="red-text"> *</span>
@@ -16,7 +16,7 @@
         </div>
         <div class='row'>
           <%= label_tag 'Assunto:' %>
-          <%= text_field_tag :assunto, nil,:class => "form-control", aria: {label: "Assunto"}%>
+          <%= text_field_tag :subject, nil,:class => "form-control", aria: {label: "Assunto"}%>
         </div>
         <div class='row'>
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
