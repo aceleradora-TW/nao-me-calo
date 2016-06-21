@@ -19,7 +19,7 @@ $(document).ready(function(){
   });
 
   $('#nameEvaluate').focusout(function(){
-    reviewName();
+    //reviewName();
     checkName();
   });
 
@@ -54,17 +54,17 @@ $(document).ready(function(){
     }
   }
 
-  function reviewName(){
-    if($('#nameEvaluate').val() === "" || $('#nameEvaluate').val() === null){
-      $('#nameEvaluate').addClass("error");
-      errors["name"] = true;
-      showMessage();
-    } else {
-      $('#nameEvaluate').removeClass("error");
-      errors["name"] = false;
-      showMessage();
-    }
-  }
+  // function reviewName(){
+  //   if($('#nameEvaluate').val() === "" || $('#nameEvaluate').val() === null){
+  //     $('#nameEvaluate').addClass("error");
+  //     errors["name"] = true;
+  //     showMessage();
+  //   } else {
+  //     $('#nameEvaluate').removeClass("error");
+  //     errors["name"] = false;
+  //     showMessage();
+  //   }
+  // }
 
   function reviewCPF(){
     var teste = $('#cpfEvaluate').val().split(".").join("").split("-").join("");
@@ -169,13 +169,15 @@ $(document).ready(function(){
     }
   }
 
-  $('#new_rating').submit(function(e){
-    if(isNull($('#nameEvaluate')) || isNull($('#cpfEvaluate'))){
-      e.preventDefault();
-      cpf = reviewCPF();
-      name = reviewName();
-    }
-  });
+//código comentado, ele evita que avaliacao seja enviada sem nome e sem cpf caso botao seja clicado, mas tal acao é impossível, uma vez que o botao vai estar disable
+//ps: o campo nome nao é obrigatorio
+  // $('#new_rating').submit(function(e){
+  //   if(isNull($('#nameEvaluate')) || isNull($('#cpfEvaluate'))){
+  //     e.preventDefault();
+  //     cpf = reviewCPF();
+  //     name = reviewName();
+  //   }
+  // });
 
   $('#terms').change(function(){
     if(!(errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"])){
