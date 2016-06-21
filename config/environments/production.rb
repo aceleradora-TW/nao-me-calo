@@ -11,8 +11,9 @@ Rails.application.configure do
     :port                 => 587,
     :user_name            =>  ENV['gmail_username'],
     :password             =>  ENV['gmail_password'],
-    :domain               => 'heroku.com',
-    :authentication       => :login ,
+    :domain               => 'gmail.com',
+    :authentication       => 'login',
+    :openssl_verify_mode  => 'none',
     :enable_starttls_auto => true
   }
 
