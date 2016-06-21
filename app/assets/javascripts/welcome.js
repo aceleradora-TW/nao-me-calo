@@ -81,7 +81,7 @@ function initAutocomplete () {
   }
 
   function createPin(){
-    for(var i=0; i<locations.length; i++){
+    for(var i = 0; i<locations.length; i++){
       var locate = locations[i];
       var iconColor = locate[3]
       var myLatLng = {lat: locate[1], lng: locate[2]};

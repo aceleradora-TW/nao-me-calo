@@ -65,12 +65,26 @@ $(document).ready(function(){
   //     showMessage();
   //   }
   // }
+  function reviewName(){
+    if($('#rating_name').val() === "" || $('#rating_name').val() === null){
+      //$('#rating_name').addClass("error");
+      //errors["name"] = true;
+      //showMessage();
+    } else {
+      $('#rating_name').removeClass("error");
+      //errors["name"] = false;
+      //showMessage();
+    }
+  }
 
   function reviewCPF(){
     var teste = $('#cpfEvaluate').val().split(".").join("").split("-").join("");
     var erro = CPFTest(teste);
     if(erro) {
       $('#cpfEvaluate').addClass("error");
+      $('#cpfAlert').removeClass("hidden");
+      $('#cpfAlert').addClass("cpfError");
+      $('#alertText').removeClass("hidden");
       errors["cpfEvaluate"] = true;
       showMessage();
     } else {
@@ -113,8 +127,10 @@ $(document).ready(function(){
 
     if (((today < ratingDate) || (ratingDate <730000)) || $('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(RegExPattern)){
       $('#dateEvaluate').addClass("error");
+      $('#dateAlert').addClass("cpfError");
+      $('#dateAlertText').removeClass("hidden");
       errors["dateEvaluate"] = true;
-      showMessage();
+      //showMessage();
     } else {
       $('#dateEvaluate').removeClass("error");
       errors["dateEvaluate"] = false;
@@ -133,10 +149,10 @@ $(document).ready(function(){
   function checkName(){
     var nameExp = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
     var nameInput = $('#nameEvaluate').val();
-
-    if (!nameInput.match(nameExp) && nameInput !==""){
-      $('#nameEvaluate').addClass("error");
-      showMessage();
+    if (!nameInput.match(nameExp)){
+      //$('#nameEvaluate').addClass("error");
+      errors["nameEvaluate"] = true;
+      //showMessage();
     }else{
       $('#nameEvaluate').removeClass("error");
       showMessage();
@@ -148,8 +164,9 @@ $(document).ready(function(){
     var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var emailInput = $('#emailEvaluate').val();
 
-    if (!emailInput.match(emailExp) && emailInput !==""){
-      $('#emailEvaluate').addClass("error");
+    if (!emailInput.match(emailExp)){
+      //$('#emailEvaluate').addClass("error");
+      errors["emailEvaluate"] = true;
       showMessage();
     }else{
       $('#emailEvaluate').removeClass("error");

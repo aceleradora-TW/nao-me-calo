@@ -247,16 +247,17 @@
       </div>
     </div>
   </div>
-  
+
   <div class="form-group">
     <div class="field">
       <%= f.label "nome" %>
       <%= f.text_field :name, :class => "form-control form-textfield", :id => "nameEvaluate", aria: {label: "Nome"} %>
     </div>
   </div>
-  <div class="field has-mask">
-    <%= f.label :cpf, :class => "text-uppercase"%><span class="red-text"> *</span>
-    <%= f.text_field :cpf, :class => "form-control form-textfield ", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
+  <div id="cpfAlert", class="field has-mask">
+    <%= f.label :cpf,  :class => "text-uppercase"%><span class="red-text"> *</span>
+    <p id="alertText", class="hidden">Este campo, é de preenchimento obrigatório!</p>
+    <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
   </div>
   <div class="field">
     <%= f.label "E-mail"%>
@@ -266,8 +267,9 @@
     <%= f.label "telefone"%>
     <%= f.text_field :phone, :class => "form-control form-textfield", :id => "phoneEvaluate", aria: {label: "Telefone"}  %>
   </div>
-  <div class="field has-mask" >
+  <div  id="dateAlert" class="field has-mask" >
     <%= f.label 'Data do Evento' %><span class="red-text"> *</span>
+    <p id="dateAlertText", class="hidden alertText">Este campo, é de preenchimento obrigatório!</p>
     <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
   </div>
   <div class="field">
