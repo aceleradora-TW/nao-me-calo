@@ -53,7 +53,6 @@ $(document).ready(function(){
       $('#submitButton').prop("disabled", false);
     }
   }
-
   // function reviewName(){
   //   if($('#nameEvaluate').val() === "" || $('#nameEvaluate').val() === null){
   //     $('#nameEvaluate').addClass("error");
@@ -65,17 +64,17 @@ $(document).ready(function(){
   //     showMessage();
   //   }
   // }
-  function reviewName(){
-    if($('#rating_name').val() === "" || $('#rating_name').val() === null){
-      //$('#rating_name').addClass("error");
-      //errors["name"] = true;
-      //showMessage();
-    } else {
-      $('#rating_name').removeClass("error");
-      //errors["name"] = false;
-      //showMessage();
-    }
-  }
+  // function reviewName(){
+  //   if($('#rating_name').val() === "" || $('#rating_name').val() === null){
+  //     //$('#rating_name').addClass("error");
+  //     //errors["name"] = true;
+  //     //showMessage();
+  //   } else {
+  //     $('#rating_name').removeClass("error");
+  //     //errors["name"] = false;
+  //     //showMessage();
+  //   }
+  // }
 
   function reviewCPF(){
     var teste = $('#cpfEvaluate').val().split(".").join("").split("-").join("");
@@ -149,13 +148,15 @@ $(document).ready(function(){
   function checkName(){
     var nameExp = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
     var nameInput = $('#nameEvaluate').val();
-    if (!nameInput.match(nameExp)){
-      //$('#nameEvaluate').addClass("error");
-      errors["nameEvaluate"] = true;
-      //showMessage();
-    }else{
+    if (nameInput.match(nameExp)){
       $('#nameEvaluate').removeClass("error");
+      errors["nameEvaluate"] = false;
       showMessage();
+    }else{
+      $('#nameEvaluate').addClass("error");
+      errors["nameEvaluate"] = true;
+      showMessage();
+
     }
 
   }
@@ -165,11 +166,12 @@ $(document).ready(function(){
     var emailInput = $('#emailEvaluate').val();
 
     if (!emailInput.match(emailExp)){
-      //$('#emailEvaluate').addClass("error");
+      $('#emailEvaluate').addClass("error");
       errors["emailEvaluate"] = true;
       showMessage();
     }else{
       $('#emailEvaluate').removeClass("error");
+      errors["emailEvaluate"] = false;
       showMessage();
     }
   }
@@ -197,7 +199,7 @@ $(document).ready(function(){
   // });
 
   $('#terms').change(function(){
-    if(!(errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"])){
+    if(!(errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"] || errors["nameEvaluate"] || errors["emailEvaluate"])){
       enableButtonTerms();
     }
   });
