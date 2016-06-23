@@ -1,57 +1,57 @@
 
 <%= form_for(@rating, :id => "form-rating" ) do |f| %>
-  <% if @rating.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+<% if @rating.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
 
-    <ul>
-      <% @rating.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <div class="alert alert-danger hidden errorDiv">
-    <p id="alert" class="text-center">Erro, os campos com * são obrigatórios!</p>
-  </div>
+  <ul>
+    <% @rating.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="alert alert-danger hidden errorDiv">
+  <p id="alert" class="text-center">Erro, os campos com * são obrigatórios!</p>
+</div>
 
-  <input type="hidden" id="place_id" name="place_id" value="<%= @place_id %>" readonly="readyonly">
-  <div class="col-lg-12 no-padding-left padding-bottom">
-    <%= f.label 'Marque pelo menos um campo de nota' %> <span class="red-text">*</span>
-    <div class="col-lg-12 no-padding-left" id="radio_button_id">
-      <div class="field">
-        <%= f.label 'Mulher', :class => "text-style-radios" %>
-        <div class ="row paragraph-ratings">
-          <span alt="Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo.">
+<input type="hidden" id="place_id" name="place_id" value="<%= @place_id %>" readonly="readyonly">
+<div class="col-lg-12 no-padding-left padding-bottom">
+  <%= f.label 'Marque pelo menos um campo de nota' %> <span class="red-text">*</span>
+  <div class="col-lg-12 no-padding-left" id="radio_button_id">
+    <div class="field">
+      <%= f.label 'Mulher', :class => "text-style-radios" %>
+      <div class ="row paragraph-ratings">
+        <span alt="Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo.">
           <ul class="ratings">
             <li class="rating">
               <%= f.radio_button :woman, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
               <%= f.label :woman, :class => "dangerous", :value => "1" do %>
-                <span class="radio_text">Péssimo</span>
+              <span class="radio_text">Péssimo</span>
               <% end %>
             </li>
             <li class="rating">
               <%= f.radio_button :woman, "2", :class => "radio_button", aria: {label: "Ruim"}  %>
               <%= f.label :woman, :class => "bad", :value => "2" do %>
-                <span class="radio_text">Ruim</span>
+              <span class="radio_text">Ruim</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :woman, "3", :class => "radio_button", aria: {label: "Regular"}  %>
               <%= f.label :woman, :class => "regular", :value => "3" do %>
-                <span class="radio_text">Regular</span>
+              <span class="radio_text">Regular</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :woman, "4", :class => "radio_button", aria: {label: "Bom"}  %>
               <%= f.label :woman, :class => "good", :value => "4" do %>
-                <span class="radio_text">Bom</span>
+              <span class="radio_text">Bom</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :woman, "5", :class => "radio_button", aria: {label: "Ótimo"}  %>
               <%= f.label :woman, :class => "excellent", :value => "5" do %>
-                <span class="radio_text">Ótimo</span>
+              <span class="radio_text">Ótimo</span>
               <%end%>
             </li>
           </ul>
@@ -65,31 +65,31 @@
             <li class="rating">
               <%= f.radio_button :lgbtqia, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
               <%= f.label :lgbtqia, :class => "dangerous", :value => "1" do %>
-                <span class="radio_text">Péssimo</span>
+              <span class="radio_text">Péssimo</span>
               <% end %>
             </li>
             <li class="rating">
               <%= f.radio_button :lgbtqia, "2", :class => "radio_button", aria: {label: "Ruim"}  %>
               <%= f.label :lgbtqia, :class => "bad", :value => "2" do %>
-                <span class="radio_text">Ruim</span>
+              <span class="radio_text">Ruim</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :lgbtqia, "3", :class => "radio_button", aria: {label: "Regular"}  %>
               <%= f.label :lgbtqia, :class => "regular", :value => "3" do %>
-                <span class="radio_text">Regular</span>
+              <span class="radio_text">Regular</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :lgbtqia, "4", :class => "radio_button", aria: {label: "Bom"}  %>
               <%= f.label :lgbtqia, :class => "good", :value => "4" do %>
-                <span class="radio_text">Bom</span>
+              <span class="radio_text">Bom</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :lgbtqia, "5", :class => "radio_button", aria: {label: "Ótimo"}  %>
               <%= f.label :lgbtqia, :class => "excellent", :value => "5" do %>
-                <span class="radio_text">Ótimo</span>
+              <span class="radio_text">Ótimo</span>
               <%end%>
             </li>
           </ul>
@@ -103,31 +103,31 @@
             <li class="rating">
               <%= f.radio_button :race, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
               <%= f.label :race, :class => "dangerous", :value => "1" do %>
-                <span class="radio_text">Péssimo</span>
+              <span class="radio_text">Péssimo</span>
               <% end %>
             </li>
             <li class="rating">
               <%= f.radio_button :race, "2", :class => "radio_button", aria: {label: "Ruim"}  %>
               <%= f.label :race, :class => "bad", :value => "2" do %>
-                <span class="radio_text">Ruim</span>
+              <span class="radio_text">Ruim</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :race, "3", :class => "radio_button", aria: {label: "Regular"}  %>
               <%= f.label :race, :class => "regular", :value => "3" do %>
-                <span class="radio_text">Regular</span>
+              <span class="radio_text">Regular</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :race, "4", :class => "radio_button", aria: {label: "Bom"}  %>
               <%= f.label :race, :class => "good", :value => "4" do %>
-                <span class="radio_text">Bom</span>
+              <span class="radio_text">Bom</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :race, "5", :class => "radio_button", aria: {label: "Ótimo"}  %>
               <%= f.label :race, :class => "excellent", :value => "5" do %>
-                <span class="radio_text">Ótimo</span>
+              <span class="radio_text">Ótimo</span>
               <%end%>
             </li>
           </ul>
@@ -141,31 +141,31 @@
             <li class="rating">
               <%= f.radio_button :disability, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
               <%= f.label :disability, :class => "dangerous", :value => "1" do %>
-                <span class="radio_text">Péssimo</span>
+              <span class="radio_text">Péssimo</span>
               <% end %>
             </li>
             <li class="rating">
               <%= f.radio_button :disability, "2", :class => "radio_button", aria: {label: "Ruim"}  %>
               <%= f.label :disability, :class => "bad", :value => "2" do %>
-                <span class="radio_text">Ruim</span>
+              <span class="radio_text">Ruim</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :disability, "3", :class => "radio_button", aria: {label: "Regular"}  %>
               <%= f.label :disability, :class => "regular", :value => "3" do %>
-                <span class="radio_text">Regular</span>
+              <span class="radio_text">Regular</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :disability, "4", :class => "radio_button", aria: {label: "Bom"}  %>
               <%= f.label :disability, :class => "good", :value => "4" do %>
-                <span class="radio_text">Bom</span>
+              <span class="radio_text">Bom</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :disability, "5", :class => "radio_button", aria: {label: "Ótimo"}  %>
               <%= f.label :disability, :class => "excellent", :value => "5" do %>
-                <span class="radio_text">Ótimo</span>
+              <span class="radio_text">Ótimo</span>
               <%end%>
             </li>
           </ul>
@@ -178,31 +178,31 @@
             <li class="rating">
               <%= f.radio_button :elder, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
               <%= f.label :elder, :class => "dangerous", :value => "1" do %>
-                <span class="radio_text">Péssimo</span>
+              <span class="radio_text">Péssimo</span>
               <% end %>
             </li>
             <li class="rating">
               <%= f.radio_button :elder, "2", :class => "radio_button", aria: {label: "Ruim"}  %>
               <%= f.label :elder, :class => "bad", :value => "2" do %>
-                <span class="radio_text">Ruim</span>
+              <span class="radio_text">Ruim</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :elder, "3", :class => "radio_button", aria: {label: "Regular"}  %>
               <%= f.label :elder, :class => "regular", :value => "3" do %>
-                <span class="radio_text">Regular</span>
+              <span class="radio_text">Regular</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :elder, "4", :class => "radio_button", aria: {label: "Bom"}  %>
               <%= f.label :elder, :class => "good", :value => "4" do %>
-                <span class="radio_text">Bom</span>
+              <span class="radio_text">Bom</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :elder, "5", :class => "radio_button", aria: {label: "Ótimo"}  %>
               <%= f.label :elder, :class => "excellent", :value => "5" do %>
-                <span class="radio_text">Ótimo</span>
+              <span class="radio_text">Ótimo</span>
               <%end%>
             </li>
           </ul>
@@ -215,31 +215,31 @@
             <li class="rating">
               <%= f.radio_button :obese, "1", :class => "radio_button", aria: {label: "Péssimo"}  %>
               <%= f.label :obese, :class => "dangerous", :value => "1" do %>
-                <span class="radio_text">Péssimo</span>
+              <span class="radio_text">Péssimo</span>
               <% end %>
             </li>
             <li class="rating">
               <%= f.radio_button :obese, "2", :class => "radio_button", aria: {label: "Ruim"}  %>
               <%= f.label :obese, :class => "bad", :value => "2" do %>
-                <span class="radio_text">Ruim</span>
+              <span class="radio_text">Ruim</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :obese, "3", :class => "radio_button", aria: {label: "Regular"}  %>
               <%= f.label :obese, :class => "regular", :value => "3" do %>
-                <span class="radio_text">Regular</span>
+              <span class="radio_text">Regular</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :obese, "4", :class => "radio_button", aria: {label: "Bom"}  %>
               <%= f.label :obese, :class => "good", :value => "4" do %>
-                <span class="radio_text">Bom</span>
+              <span class="radio_text">Bom</span>
               <%end%>
             </li>
             <li class="rating">
               <%= f.radio_button :obese, "5", :class => "radio_button", aria: {label: "Ótimo"}  %>
               <%= f.label :obese, :class => "excellent", :value => "5" do %>
-                <span class="radio_text">Ótimo</span>
+              <span class="radio_text">Ótimo</span>
               <%end%>
             </li>
           </ul>
@@ -249,14 +249,15 @@
   </div>
 
   <div class="form-group">
-    <div class="field">
+    <div id="nameAlert" class="field has-mask">
       <%= f.label "nome" %>
+      <p id="nameAlertText", class="hidden">Por favor, digite um nome válido.</p>
       <%= f.text_field :name, :class => "form-control form-textfield", :id => "nameEvaluate", aria: {label: "Nome"} %>
     </div>
   </div>
   <div id="cpfAlert", class="field has-mask">
     <%= f.label :cpf,  :class => "text-uppercase"%><span class="red-text"> *</span>
-    <p id="alertText", class="hidden">Este campo é de preenchimento obrigatório!</p>
+    <p id="cpfAlertText", class="hidden">Este campo é de preenchimento obrigatório!</p>
     <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
   </div>
   <div class="field">

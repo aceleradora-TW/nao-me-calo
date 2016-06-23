@@ -43,13 +43,13 @@ $(document).ready(function(){
     }
     for(var l in errors){
       if(errors[l] === true){
-        $('.errorDiv').removeClass("hidden");
+      //  $('.errorDiv').removeClass("hidden");
         $('#submitButton').prop("disabled", true);
         return;
       }
     }
     if(enableButtonTerms()){
-      $('.errorDiv').addClass("hidden");
+    //  $('.errorDiv').addClass("hidden");
       $('#submitButton').prop("disabled", false);
     }
   }
@@ -64,17 +64,6 @@ $(document).ready(function(){
   //     showMessage();
   //   }
   // }
-  // function reviewName(){
-  //   if($('#rating_name').val() === "" || $('#rating_name').val() === null){
-  //     //$('#rating_name').addClass("error");
-  //     //errors["name"] = true;
-  //     //showMessage();
-  //   } else {
-  //     $('#rating_name').removeClass("error");
-  //     //errors["name"] = false;
-  //     //showMessage();
-  //   }
-  // }
 
   function reviewCPF(){
     var teste = $('#cpfEvaluate').val().split(".").join("").split("-").join("");
@@ -83,11 +72,14 @@ $(document).ready(function(){
       $('#cpfEvaluate').addClass("error");
       $('#cpfAlert').removeClass("hidden");
       $('#cpfAlert').addClass("cpfError");
-      $('#alertText').removeClass("hidden");
+      $('#cpfAlertText').removeClass("hidden");
       errors["cpfEvaluate"] = true;
       showMessage();
     } else {
       $('#cpfEvaluate').removeClass("error");
+      $('#cpfAlertText').addClass("hidden");
+      $('#cpfAlert').removeClass("cpfError")
+    //  $('#cpfAlert').addClass("hidden");
       errors["cpfEvaluate"] = false;
       showMessage();
     }
@@ -129,7 +121,7 @@ $(document).ready(function(){
       $('#dateAlert').addClass("cpfError");
       $('#dateAlertText').removeClass("hidden");
       errors["dateEvaluate"] = true;
-      //showMessage();
+      showMessage();
     } else {
       $('#dateEvaluate').removeClass("error");
       errors["dateEvaluate"] = false;
@@ -148,12 +140,16 @@ $(document).ready(function(){
   function checkName(){
     var nameExp = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
     var nameInput = $('#nameEvaluate').val();
-    if (nameInput.match(nameExp)){
+    if (nameInput.match(nameExp) || $('#nameEvaluate').val() === "" || $('#nameEvaluate').val() === null){
       $('#nameEvaluate').removeClass("error");
+      $('#nameAlertText').addClass('hidden');
+      $('#nameAlert').removeClass('cpfError');
       errors["nameEvaluate"] = false;
       showMessage();
     }else{
       $('#nameEvaluate').addClass("error");
+      $('#nameAlertText').removeClass("hidden");
+      $('#nameAlert').addClass('cpfError');
       errors["nameEvaluate"] = true;
       showMessage();
 
