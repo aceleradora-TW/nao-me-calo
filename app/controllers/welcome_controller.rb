@@ -4,35 +4,35 @@ class WelcomeController < ApplicationController
 
   def index
 
-     @establishments = Establishment.all
-     @establishment_hash={}
-     @establishments.each do |estLocal|
-       @establishment_hash[estLocal] = calculate_average_establishment(estLocal)
-     end
+    @establishments = Establishment.all
+    @establishment_hash = {}
+    @establishments.each do |establishment|
+      @establishment_hash[establishment] = calculate_average_establishment(establishment)
+    end
 
-     @pinsForMap = []
+    @pinsForMap = []
 
-     @establishments.each do |establishment|
-       @rating = calculate_average_establishment(establishment)
-       if(@rating<=1.5)
-         @color = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
-       elsif(@rating<=3.5)
-         @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
-       else
-         @color = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
-       end
+    @establishments.each do |establishment|
+      @rating = calculate_average_establishment(establishment)
+      if(@rating <= 1.5)
+        @color = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+      elsif(@rating <= 3.5)
+        @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+      else
+        @color = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+      end
 
-       @pinsForMap.push([establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color, establishment.id])
-     end
+      @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color, establishment.id]
+    end
 
-     @establishment_array = @establishment_hash.sort_by{ |k, v| v }
+    @establishment_array = @establishment_hash.sort_by{ |key, value| value }
 
-     @worst_places = []
-     @worst_places = setConcept @worst_places,@establishment_array
+    @worst_places = []
+    @worst_places = set_concept(@worst_places, @establishment_array)
 
-     @establishment_array = @establishment_array.reverse
-     @best_places = []
-     @best_places = setConcept @best_places,@establishment_array
+    @establishment_array = @establishment_array.reverse
+    @best_places = []
+    @best_places = set_concept(@best_places, @establishment_array)
 
 
   end
@@ -59,23 +59,23 @@ class WelcomeController < ApplicationController
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
   end
 
-   def setConcept place,array
-     array.take(10).each do |est|
-       place.push([est[0],est[1]])
-     end
-     place.each do |w|
-       if w[1] < 2
-         w[1] = "Péssimo"
-       elsif w[1] < 3
-         w[1] = "Ruim"
-       elsif w[1] < 4
-         w[1] = "Regular"
-       elsif w[1] < 5
-         w[1] = "Bom"
-       else
-         w[1] = "Ótimo"
-       end
-     end
-   end
+  def set_concept (places, array)
+    array.take(10).each do |establishment|
+      places << [establishment[0], establishment[1]]
+    end
+    places.each do |place|
+      if place[1] < 2
+        place[1] = "Péssimo"
+      elsif place[1] < 3
+        place[1] = "Ruim"
+      elsif place[1] < 4
+        place[1] = "Regular"
+      elsif place[1] < 5
+        place[1] = "Bom"
+      else
+        place[1] = "Ótimo"
+      end
+    end
+  end
 
 end
