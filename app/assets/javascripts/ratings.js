@@ -71,14 +71,14 @@ $(document).ready(function(){
     if(erro) {
       $('#cpfEvaluate').addClass("error");
       $('#cpfAlert').removeClass("hidden");
-      $('#cpfAlert').addClass("cpfError");
+      $('#cpfAlert').addClass("textFieldError");
       $('#cpfAlertText').removeClass("hidden");
       errors["cpfEvaluate"] = true;
       showMessage();
     } else {
       $('#cpfEvaluate').removeClass("error");
       $('#cpfAlertText').addClass("hidden");
-      $('#cpfAlert').removeClass("cpfError")
+      $('#cpfAlert').removeClass("textFieldError")
     //  $('#cpfAlert').addClass("hidden");
       errors["cpfEvaluate"] = false;
       showMessage();
@@ -118,12 +118,14 @@ $(document).ready(function(){
 
     if (((today < ratingDate) || (ratingDate <730000)) || $('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(RegExPattern)){
       $('#dateEvaluate').addClass("error");
-      $('#dateAlert').addClass("cpfError");
+      $('#dateAlert').addClass("textFieldError");
       $('#dateAlertText').removeClass("hidden");
       errors["dateEvaluate"] = true;
       showMessage();
     } else {
       $('#dateEvaluate').removeClass("error");
+      $('#dateAlertText').addClass("hidden");
+      $('#dateAlert').removeClass("textFieldError");
       errors["dateEvaluate"] = false;
       showMessage();
     }
@@ -143,13 +145,13 @@ $(document).ready(function(){
     if (nameInput.match(nameExp) || $('#nameEvaluate').val() === "" || $('#nameEvaluate').val() === null){
       $('#nameEvaluate').removeClass("error");
       $('#nameAlertText').addClass('hidden');
-      $('#nameAlert').removeClass('cpfError');
+      //$('#nameAlert').removeClass('textFieldError');
       errors["nameEvaluate"] = false;
       showMessage();
     }else{
       $('#nameEvaluate').addClass("error");
       $('#nameAlertText').removeClass("hidden");
-      $('#nameAlert').addClass('cpfError');
+      //$('#nameAlert').addClass('textFieldError');
       errors["nameEvaluate"] = true;
       showMessage();
 
@@ -160,14 +162,15 @@ $(document).ready(function(){
   function checkMail(){
     var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var emailInput = $('#emailEvaluate').val();
-
-    if (!emailInput.match(emailExp)){
-      $('#emailEvaluate').addClass("error");
-      errors["emailEvaluate"] = true;
+    if (emailInput.match(emailExp) || $('#emailEvaluate').val() === "" || $('#emailEvaluate').val() === null){
+      $('#emailEvaluate').removeClass("error");
+      $('#emailAlertText').addClass('hidden');
+      errors["emailEvaluate"] = false;
       showMessage();
     }else{
-      $('#emailEvaluate').removeClass("error");
-      errors["emailEvaluate"] = false;
+      $('#emailEvaluate').addClass("error");
+      $('#emailAlertText').removeClass('hidden');
+      errors["emailEvaluate"] = true;
       showMessage();
     }
   }

@@ -257,11 +257,12 @@
   </div>
   <div id="cpfAlert", class="field has-mask">
     <%= f.label :cpf,  :class => "text-uppercase"%><span class="red-text"> *</span>
-    <p id="cpfAlertText", class="hidden">Este campo é de preenchimento obrigatório!</p>
+    <p id="cpfAlertText", class="hidden">Por favor, digite um CPF válido.</p>
     <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
   </div>
   <div class="field">
     <%= f.label "E-mail"%>
+    <p id="emailAlertText", class="hidden">Por favor, digite um email válido.</p>
     <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailEvaluate", aria: {label: "email"}  %>
   </div>
   <div class="field has-mask">
@@ -270,7 +271,7 @@
   </div>
   <div  id="dateAlert" class="field has-mask" >
     <%= f.label 'Data do Evento' %><span class="red-text"> *</span>
-    <p id="dateAlertText", class="hidden alertText">Este campo é de preenchimento obrigatório!</p>
+    <p id="dateAlertText", class="hidden alertText">Por favor, digite uma data válida</p>
     <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
   </div>
   <div class="field">
@@ -278,7 +279,8 @@
     <%= f.text_area :description, rows: 5, :class => "form-control", aria: {label: "Descrição"}  %>
   </div>
   <div class='field text-center'>
-    <input type="checkbox" name="accepted_terms" id="terms" unchecked> Aceito os <a href="/termos" target="_blank">termos e condições de uso!</a>
+    <input type="checkbox" name="accepted_terms" id="terms" unchecked>
+    <label for="terms">Aceito os <a href="/termos" target="_blank">termos e condições de uso!</a></label>
   </div>
   <div class="actions text-center">
     <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton", aria: {label: "Botão de enviar"} %>
