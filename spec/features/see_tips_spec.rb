@@ -1,4 +1,5 @@
 require "rails_helper"
+
 feature "See tips", js: true do
   scenario "Click button of tips" do
     visit '/'

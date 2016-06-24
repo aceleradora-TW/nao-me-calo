@@ -6,7 +6,7 @@
 #     #page.driver.browser.manage.window.resize_to(2560, 1600)
 #     visit '/'
 #
-#     page.execute_script("$('div[title=\'Beco do Guincho\']').click()")
+#     page.execute_script("$('div[title='Beco do Guincho']').click()")
 #     sleep 3
 #
 #
