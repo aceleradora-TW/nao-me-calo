@@ -1,57 +1,73 @@
 $(document).ready(function(){
-  $('#button_disable').prop("disabled", true);
+  initialize();
+  checkIfEmailIsFill();
+  checkIfMessageIsFill();
+  checkMail();
+  checkMessage();
+});
 
-  function disabled_button(){
-    for(var l in errors){
-      if(errors[l] === true){
-        //  $('.errorDiv').removeClass("hidden");
-        $('#button_disable').prop("disabled", true);
-        return;
-      }
-    }
-    if(enableCheckBox()){
-      $('#checkBox').prop("disabled", false);
-    }
+errors = {emailEvaluate: false, messageEvaluate: false}
+var checkIfEmailIsFill = function(){
+  var $emailEvaluate = $('#emailEvaluate');
+  var $buttonSend = $('input[type=submit]');
 
-  }
-
-
-  function enableCheckBox(){
-    if(!(isNull($('#emailEvaluate')) || isNull($('#messageEvaluate')))){
-      if($('#checkBox:checked').length === 1){
-        $('#button_disable').prop("disabled", false);
-        return true;
-      } else {
-        $('#button_disable').prop("disabled", true);
-        return false;
-      }
-    }
-  }
-  function checkMail(){
-    var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var emailInput = $('#emailEvaluate').val();
-
-    if (!emailInput.match(emailExp) || emailInput === ""){
-      $('#emailEvaluate').addClass("error");
-      errors["emailEvaluate"] = true;
-      showMessage();
+  $emailEvaluate.keyup(function(){
+    if($emailEvaluate.val() != ''){
+      $buttonSend.attr('disabled', false)
     }else{
-      $('#emailEvaluate').removeClass("error");
-      errors["emailEvaluate"] = false;
-      showMessage();
+      $buttonSend.attr('disabled', true)
+    }
+  })
+}
+
+var checkIfMessageIsFill = function(){
+  var $messageEvaluate = $('#messageEvaluate');
+  var $buttonSend = $('input[type=submit]');
+
+  $messageEvaluate.keyup(function(){
+    if($messageEvaluate.val() != ''){
+      $buttonSend.attr('disabled', false)
+    }else{
+      $buttonSend.attr('disabled', true)
+    }
+  })
+}
+
+var disableButton = function(){
+  $('input[type=submit]').attr('disabled', true)
+}
+
+var initialize = function(){
+  for(var l in errors){
+    if(errors[l] === true){
+      return disableButton();
     }
   }
+}
+function checkMail(){
+  var emailExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var emailInput = $('#emailEvaluate').val();
 
-  function checkMessage(){
-    var message = $('#messageEvaluate').val();
-    if (message === ""){
-      $('#messageEvaluate').addClass("error");
-      errors["messageEvaluate"] = true;
-      showMessage();
-    }else{
-      $('#messageEvaluate').removeClass("error");
-      errors["messageEvaluate"] = false;
-      showMessage();
-    }
+  if (!emailInput.match(emailExp) || emailInput === ""){
+    $('#emailEvaluate').addClass("error");
+    errors["emailEvaluate"] = true;
+    initialize();
+  }else{
+    $('#emailEvaluate').removeClass("error");
+    errors["emailEvaluate"] = false;
+    initialize();
+  }
+}
+
+function checkMessage(){
+  var message = $('#messageEvaluate').val();
+  if (message === ""){
+    $('#messageEvaluate').addClass("error");
+    errors["messageEvaluate"] = true;
+
+  }else{
+    $('#messageEvaluate').removeClass("error");
+    errors["messageEvaluate"] = false;
+
   }
 }
