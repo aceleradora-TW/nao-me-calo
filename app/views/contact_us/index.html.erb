@@ -25,11 +25,11 @@
         </div>
         <div class='row'>
           <%= label_tag 'Deseja receber retorno?:' %>
-          <%= check_box 'object', 'boolean_attribute', {:class => "checkboxcontact"}, 'true', 'false'%>
+          <%= check_box 'object', 'boolean_attribute', {:class => "checkboxcontact"}, :id =>"checkBox"%>
         </div>
         <div class="row">
           <div class="text-center">
-            <%= submit_tag "Enviar!", :method => "send_mail", :class =>"btn btn-primary form-group" %>
+            <%= submit_tag "Enviar!", :method => "send_mail", :class =>"btn btn-primary form-group", :id=>"button_disable" %>
           </div>
         </div>
         <% end %>
