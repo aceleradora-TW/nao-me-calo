@@ -18,6 +18,21 @@ class EstablishmentsController < ApplicationController
       general_average.push(rating.average_rating) unless rating.average_rating.nil?
     end
     @average_rating = general_average.sum/general_average.size #media geral do estabelecimento
+    @rating_concept
+
+    case @average_rating
+    when 1...2
+      @rating_concept = "Péssimo"
+    when 2...3
+      @rating_concept = "Ruim"
+    when 3...4
+      @rating_concept = "Regular"
+    when 4...5
+      @rating_concept = "Bom"
+    else
+      @rating_concept = "Ótimo"
+    end
+
     @ratings = @establishment.ratings.reverse_order.limit(5)
     @rate_array = []
     @ratings.each do |rating|
@@ -26,11 +41,11 @@ class EstablishmentsController < ApplicationController
       elsif rating.average_rating < 3.0
         @rate_array.push([rating,"Ruim"])
       elsif rating.average_rating < 4.0
-          @rate_array.push([rating,"Regular"])
+        @rate_array.push([rating,"Regular"])
       elsif rating.average_rating < 5.0
-          @rate_array.push([rating,"Bom"])
+        @rate_array.push([rating,"Bom"])
       else
-          @rate_array.push([rating,"Ótimo"])
+        @rate_array.push([rating,"Ótimo"])
       end
     end
   end
@@ -80,17 +95,17 @@ class EstablishmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_establishment
-      @establishment = Establishment.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_establishment
+    @establishment = Establishment.find(params[:id])
+  end
 
-    def set_client
-      @client = GooglePlaces::Client.new(G_PLACE_KEY)
-    end
+  def set_client
+    @client = GooglePlaces::Client.new(G_PLACE_KEY)
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def establishment_params
-      params.require(:establishment).permit(:name, :address, :average_rating, :lat, :lng, :id_places)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def establishment_params
+    params.require(:establishment).permit(:name, :address, :average_rating, :lat, :lng, :id_places)
+  end
 end
