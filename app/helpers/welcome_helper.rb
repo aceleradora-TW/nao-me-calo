@@ -20,13 +20,13 @@ module WelcomeHelper
       places << [establishment[0], establishment[1]]
     end
     places.each do |place|
-      if place[1] < 2
+      if place[1] < 1.8
         place[1] = "Péssimo"
-      elsif place[1] < 3
+      elsif place[1] < 2.6
         place[1] = "Ruim"
-      elsif place[1] < 4
+      elsif place[1] < 3.4
         place[1] = "Regular"
-      elsif place[1] < 5
+      elsif place[1] < 4.2
         place[1] = "Bom"
       else
         place[1] = "Ótimo"

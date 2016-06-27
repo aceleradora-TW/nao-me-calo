@@ -21,13 +21,13 @@ class EstablishmentsController < ApplicationController
     @rating_concept
 
     case @average_rating
-    when 1...2
+    when 1 ... 1.8
       @rating_concept = "Péssimo"
-    when 2...3
+    when 1.8 ... 2.6
       @rating_concept = "Ruim"
-    when 3...4
+    when 2.6 ... 3.4
       @rating_concept = "Regular"
-    when 4...5
+    when 3.4 ... 4.2
       @rating_concept = "Bom"
     else
       @rating_concept = "Ótimo"

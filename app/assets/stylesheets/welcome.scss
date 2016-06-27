@@ -20,71 +20,76 @@
   background-color: #f8f8f8 !important;
 }
 
-.concept_text:hover{
-  color: white;
+.rating {
+  text-align: center;
+  padding-top: 7px;
+  background-color: inherit;
+  border-radius: 4px;
+  border: 1px solid;
+  // cursor: pointer;
+  // display: block;
+  font-size: 10px;
+  // position: absolute;
+  // white-space: nowrap;
+  width: 60px;
+  height: 26px;
+  top: -1px;
+  margin-right: 3px;
+  // &:hover {
+  //   color: white;
+  // }
 }
 
 .dangerous {
   border-color: $buttonDangerousColor;
-  color: $buttonDangerousColor;
-  &:hover {
-    background-color: $buttonDangerousColor;
-  }
-}
-
-input[type="radio"]:checked + .dangerous {
-  background-color: $buttonDangerousColor;
   color: white;
+  background-color: $buttonDangerousColor;
 }
+// input[type="radio"]:checked + .dangerous {
+//   background-color: $buttonDangerousColor;
+//   color: white;
+// }
 
 .bad {
   border-color: $buttonBadColor;
-  color: $buttonBadColor;
-  &:hover {
-    background-color: $buttonBadColor;
-  }
+  color: white;
+  background-color: $buttonBadColor;
 }
 
-input[type="radio"]:checked + .bad {
-  background-color: $buttonBadColor;
-  color: white;
-}
+// input[type="radio"]:checked + .bad {
+//   background-color: $buttonBadColor;
+//   color: white;
+// }
 
 .regular {
   border-color: $buttonRegularColor;
-  color: $buttonRegularColor;
-  &:hover {
-    background-color: $buttonRegularColor;
-  }
+  color: white;
+  background-color: $buttonRegularColor;
 }
 
-input[type="radio"]:checked + .regular {
-  background-color: $buttonRegularColor;
-  color: white;
-}
+// input[type="radio"]:checked + .regular {
+//   background-color: $buttonRegularColor;
+//   color: white;
+// }
 
 .good {
   border-color: $buttonGoodColor;
-  color: $buttonGoodColor;
-  &:hover {
-    background-color: $buttonGoodColor;
-  }
+  color: white;
+  background-color: $buttonGoodColor;
 }
 
-input[type="radio"]:checked + .good {
-  background-color: $buttonGoodColor;
-  color: white;
-}
+// input[type="radio"]:checked + .good {
+//   background-color: $buttonGoodColor;
+//   color: white;
+// }
 
 .excellent {
   border-color: $buttonExcellentColor;
-  color: $buttonExcellentColor;
-  &:hover {
-    background-color: $buttonExcellentColor;
-  }
+  color: white;
+  background-color: $buttonExcellentColor;
 }
 
-input[type="radio"]:checked + .excellent {
-  background-color: $buttonExcellentColor;
-  color: white;
-}
+// input[type="radio"]:checked + .excellent {
+//   background-color: $buttonExcellentColor;
+//   color: white;
+// }
