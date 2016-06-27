@@ -1,46 +1,31 @@
+errorsContact = {emailEvaluate: true, messageEvaluate: true}
+
 $(document).ready(function(){
   initialize();
-  checkIfEmailIsFill();
-  checkIfMessageIsFill();
+});
+
+$('#emailEvaluate').focusout(function(){
   checkMail();
+});
+
+$('#messageEvaluate').focusout(function(){
   checkMessage();
 });
 
-errors = {emailEvaluate: false, messageEvaluate: false}
-var checkIfEmailIsFill = function(){
-  var $emailEvaluate = $('#emailEvaluate');
-  var $buttonSend = $('input[type=submit]');
-
-  $emailEvaluate.keyup(function(){
-    if($emailEvaluate.val() != ''){
-      $buttonSend.attr('disabled', false)
-    }else{
-      $buttonSend.attr('disabled', true)
-    }
-  })
-}
-
-var checkIfMessageIsFill = function(){
-  var $messageEvaluate = $('#messageEvaluate');
-  var $buttonSend = $('input[type=submit]');
-
-  $messageEvaluate.keyup(function(){
-    if($messageEvaluate.val() != ''){
-      $buttonSend.attr('disabled', false)
-    }else{
-      $buttonSend.attr('disabled', true)
-    }
-  })
-}
-
 var disableButton = function(){
-  $('input[type=submit]').attr('disabled', true)
+  $('#button_disable').attr('disabled', true);
+}
+
+var enableButton = function(){
+  $('#button_disable').attr('disabled', false);
 }
 
 var initialize = function(){
-  for(var l in errors){
-    if(errors[l] === true){
+  for(var l in errorsContact){
+    if(errorsContact[l] === true){
       return disableButton();
+    } else {
+      enableButton();
     }
   }
 }
@@ -50,11 +35,11 @@ function checkMail(){
 
   if (!emailInput.match(emailExp) || emailInput === ""){
     $('#emailEvaluate').addClass("error");
-    errors["emailEvaluate"] = true;
+    errorsContact["emailEvaluate"] = true;
     initialize();
   }else{
     $('#emailEvaluate').removeClass("error");
-    errors["emailEvaluate"] = false;
+    errorsContact["emailEvaluate"] = false;
     initialize();
   }
 }
@@ -63,11 +48,11 @@ function checkMessage(){
   var message = $('#messageEvaluate').val();
   if (message === ""){
     $('#messageEvaluate').addClass("error");
-    errors["messageEvaluate"] = true;
-
+    errorsContact["messageEvaluate"] = true;
+    initialize();
   }else{
     $('#messageEvaluate').removeClass("error");
-    errors["messageEvaluate"] = false;
-
+    errorsContact["messageEvaluate"] = false;
+    initialize();
   }
 }
