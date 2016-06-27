@@ -30,6 +30,10 @@ class RatingsController < ApplicationController
 
   def create
     if(params[:accepted_terms])
+      if(Obscenity.profane?(params[:description]))
+        redirect_to 'google.com.br'
+      else
+      end
       @rating = Rating.new(rating_params)
       @establishment = Establishment.search_by_id(params[:place_id]).first
 

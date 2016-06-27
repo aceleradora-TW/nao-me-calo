@@ -115,6 +115,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    obscenity (1.0.2)
     pg (0.18.4)
     pg_search (1.0.6)
       activerecord (>= 3.1)
@@ -248,6 +249,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   maskedinput-rails
+  obscenity
   pg (~> 0.15)
   pg_search
   poltergeist
