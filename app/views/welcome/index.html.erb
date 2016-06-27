@@ -17,7 +17,7 @@
       <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
         <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
         <div class="input-group">
-          <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onchange="fillName()" placeholder="Avalie um local" id="evaluateField">
+          <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" placeholder="Avalie um local" id="evaluateField">
           <span class="input-group-btn">
             <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
           </span>
@@ -61,6 +61,6 @@
   <div class="col-lg-12">
     <div id="map">map</div>
   </div>
-</div>
--->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
+</div> -->
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=<%=G_PLACE_KEY%>&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>

@@ -16,6 +16,9 @@ function initAutocomplete () {
     autocomplete.addListener('place_changed', fillName);
     searchBox.addListener('place_changed', fillSearch);
   }
+  $('#evaluateField').change("fillName()");
+
+
 
   function fillName(){
     var place = autocomplete.getPlace();
