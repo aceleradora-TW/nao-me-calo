@@ -17,8 +17,14 @@ function initAutocomplete () {
     searchBox.addListener('place_changed', fillSearch);
   }
   $('#evaluateField').change("fillName()");
+  $('#searchField').change("fillSearch()");
+  $('#searchField').focus("geolocate()");
+  $('#searchField').keydown("list_places()");
+  $('#evaluateField').keydown("list_places()");
 
-
+  function list_places(){
+    if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}
+  }
 
   function fillName(){
     var place = autocomplete.getPlace();

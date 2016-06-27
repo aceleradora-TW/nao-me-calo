@@ -12,12 +12,11 @@
       <% end %>
     </div>
     <%end%>
-
     <div class="row">
       <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
         <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
         <div class="input-group">
-          <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" placeholder="Avalie um local" id="evaluateField">
+          <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"   placeholder="Avalie um local" id="evaluateField">
           <span class="input-group-btn">
             <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
           </span>
@@ -31,7 +30,7 @@
       <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
         <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
         <div class="input-group">
-          <input type="text" class="form-control" aria-label="Campo para buscar local para visitar" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onFocus="geolocate()" onchange="fillSearch()" placeholder="Busque um local para visitar" id="searchField">
+          <input type="text" class="form-control" aria-label="Campo para buscar local para visitar" placeholder="Busque um local para visitar" id="searchField">
           <span class="input-group-btn">
             <%= submit_tag "Buscar", :class => 'btn btn-success' %>
           </span>
