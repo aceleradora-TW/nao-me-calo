@@ -20,13 +20,13 @@
   background-color: #f8f8f8 !important;
 }
 
-.rating {
+.concept {
   text-align: center;
   padding-top: 7px;
   background-color: inherit;
   border-radius: 4px;
   border: 1px solid;
-  // cursor: pointer;
+  cursor: pointer;
   // display: block;
   font-size: 10px;
   // position: absolute;
@@ -40,7 +40,7 @@
   // }
 }
 
-.dangerous {
+.dangerous_welcome {
   border-color: $buttonDangerousColor;
   color: white;
   background-color: $buttonDangerousColor;
@@ -50,7 +50,7 @@
 //   color: white;
 // }
 
-.bad {
+.bad_welcome {
   border-color: $buttonBadColor;
   color: white;
   background-color: $buttonBadColor;
@@ -61,7 +61,7 @@
 //   color: white;
 // }
 
-.regular {
+.regular_welcome {
   border-color: $buttonRegularColor;
   color: white;
   background-color: $buttonRegularColor;
@@ -72,7 +72,7 @@
 //   color: white;
 // }
 
-.good {
+.good_welcome {
   border-color: $buttonGoodColor;
   color: white;
   background-color: $buttonGoodColor;
@@ -83,7 +83,7 @@
 //   color: white;
 // }
 
-.excellent {
+.excellent_welcome {
   border-color: $buttonExcellentColor;
   color: white;
   background-color: $buttonExcellentColor;
