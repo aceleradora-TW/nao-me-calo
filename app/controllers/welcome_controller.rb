@@ -14,14 +14,33 @@ class WelcomeController < ApplicationController
     @pinsForMap = []
 
     @establishments.each do |establishment|
-      @rating = calculate_average_establishment(establishment)
-      if(@rating <= 1.5)
-        @color = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
-      elsif(@rating <= 3.5)
-        @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+      @rating = calculate_average_establishment establishment
+      @rating.round(1)
+      case @rating
+      when  1 .. 1.8
+        @color = "http://www.googlemapsmarkers.com/v1/O/E03535/"
+      when 1.9 .. 2.6
+        @color = "http://www.googlemapsmarkers.com/v1/O/FF6633/"
+      when  2.7 .. 3.4
+        @color = "http://www.googlemapsmarkers.com/v1/O/FFBD14/"
+      when 3.5 .. 4.2
+        @color = "http://www.googlemapsmarkers.com/v1/O/99CC00/"
       else
-        @color = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+        @color = "http://www.googlemapsmarkers.com/v1/O/329853/"
       end
+
+
+      # if(@rating <= 1)
+      #   @color = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
+      # elsif(@rating <= 3.5)
+      #   @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+      # elsif(@rating <= 3.5)
+      #   @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+      # elsif(@rating <= 3.5)
+      #   @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
+      # else
+      #   @color = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+      # end
 
       @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color, establishment.id]
     end
