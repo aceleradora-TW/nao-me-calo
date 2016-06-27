@@ -29,19 +29,6 @@ class WelcomeController < ApplicationController
         @color = "http://www.googlemapsmarkers.com/v1/O/329853/"
       end
 
-
-      # if(@rating <= 1)
-      #   @color = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
-      # elsif(@rating <= 3.5)
-      #   @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
-      # elsif(@rating <= 3.5)
-      #   @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
-      # elsif(@rating <= 3.5)
-      #   @color = "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
-      # else
-      #   @color = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
-      # end
-
       @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color, establishment.id]
     end
 
