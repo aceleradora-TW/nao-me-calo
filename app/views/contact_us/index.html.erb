@@ -23,11 +23,7 @@
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
           <%= text_area_tag :message, nil, :class => "form-control textarea", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate", onfocusout: "checkMessage()"%>
         </div>
-        <div class='row'>
-          <%= label_tag 'Deseja receber retorno?:' %>
-          <%= check_box 'object', 'boolean_attribute', {:class => "checkboxcontact"}, :id =>"checkBox"%>
-        </div>
-        <div class="row">
+        <div class="row padding-bottom">
           <div class="text-center">
             <%= submit_tag "Enviar!", :method => "send_mail", :class =>"btn btn-primary form-group", :id=>"button_disable" %>
           </div>
