@@ -36,13 +36,13 @@ class EstablishmentsController < ApplicationController
     @ratings = @establishment.ratings.reverse_order.limit(5)
     @rate_array = []
     @ratings.each do |rating|
-      if rating.average_rating < 2.0
+      if rating.average_rating < 1.8
         @rate_array.push([rating,"Péssimo"])
-      elsif rating.average_rating < 3.0
+      elsif rating.average_rating < 2.6
         @rate_array.push([rating,"Ruim"])
-      elsif rating.average_rating < 4.0
+      elsif rating.average_rating < 3.4
         @rate_array.push([rating,"Regular"])
-      elsif rating.average_rating < 5.0
+      elsif rating.average_rating < 4.2
         @rate_array.push([rating,"Bom"])
       else
         @rate_array.push([rating,"Ótimo"])
