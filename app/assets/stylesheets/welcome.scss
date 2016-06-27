@@ -6,10 +6,6 @@
   float:right;
 }
 
-.welcomel-list:hover{
-    background-color: #f2f2f2 !important;
-    text-shadow: 0.3px 0.3px !important;
-}
 // .body{
 //   padding-top: 60px;
 //   padding-bottom: 40px;
@@ -22,5 +18,73 @@
 .welcome_list:hover {
   text-shadow: 0.3px 0.3px !important;
   background-color: #f8f8f8 !important;
+}
 
+.concept_text:hover{
+  color: white;
+}
+
+.dangerous {
+  border-color: $buttonDangerousColor;
+  color: $buttonDangerousColor;
+  &:hover {
+    background-color: $buttonDangerousColor;
+  }
+}
+
+input[type="radio"]:checked + .dangerous {
+  background-color: $buttonDangerousColor;
+  color: white;
+}
+
+.bad {
+  border-color: $buttonBadColor;
+  color: $buttonBadColor;
+  &:hover {
+    background-color: $buttonBadColor;
+  }
+}
+
+input[type="radio"]:checked + .bad {
+  background-color: $buttonBadColor;
+  color: white;
+}
+
+.regular {
+  border-color: $buttonRegularColor;
+  color: $buttonRegularColor;
+  &:hover {
+    background-color: $buttonRegularColor;
+  }
+}
+
+input[type="radio"]:checked + .regular {
+  background-color: $buttonRegularColor;
+  color: white;
+}
+
+.good {
+  border-color: $buttonGoodColor;
+  color: $buttonGoodColor;
+  &:hover {
+    background-color: $buttonGoodColor;
+  }
+}
+
+input[type="radio"]:checked + .good {
+  background-color: $buttonGoodColor;
+  color: white;
+}
+
+.excellent {
+  border-color: $buttonExcellentColor;
+  color: $buttonExcellentColor;
+  &:hover {
+    background-color: $buttonExcellentColor;
+  }
+}
+
+input[type="radio"]:checked + .excellent {
+  background-color: $buttonExcellentColor;
+  color: white;
 }

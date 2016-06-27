@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   before_action :set_client, only: [:index, :search]
   include ApplicationHelper
+  include WelcomeHelper
 
   def index
 
@@ -59,23 +60,5 @@ class WelcomeController < ApplicationController
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
   end
 
-  def set_concept (places, array)
-    array.take(10).each do |establishment|
-      places << [establishment[0], establishment[1]]
-    end
-    places.each do |place|
-      if place[1] < 2
-        place[1] = "Péssimo"
-      elsif place[1] < 3
-        place[1] = "Ruim"
-      elsif place[1] < 4
-        place[1] = "Regular"
-      elsif place[1] < 5
-        place[1] = "Bom"
-      else
-        place[1] = "Ótimo"
-      end
-    end
-  end
 
 end

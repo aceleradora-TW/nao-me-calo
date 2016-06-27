@@ -91,6 +91,12 @@
 label .radio_text {
   display: inline-block;
   margin-top: 3px;
+//  font-weight: normal;
+//  color: black !important;
+}
+
+.validation_text{
+  margin-top: 3px;
 }
 
 .dangerous {
@@ -99,9 +105,6 @@ label .radio_text {
   &:hover {
     background-color: $buttonDangerousColor;
   }
-}
-.validation_text{
-  margin-top: 3px;
 }
 
 input[type="radio"]:checked + .dangerous {
