@@ -35,6 +35,9 @@ function checkMail(){
 
   if (!emailInput.match(emailExp) || emailInput === ""){
     $('#emailEvaluate').addClass("error");
+    $('#emailAlert').removeClass("hidden");
+    $('#emailAlert').addClass("textFieldError");
+    $('#emailEvaluate').removeClass("hidden");
     errorsContact["emailEvaluate"] = true;
     initialize();
   }else{
@@ -48,6 +51,9 @@ function checkMessage(){
   var message = $('#messageEvaluate').val();
   if (message === ""){
     $('#messageEvaluate').addClass("error");
+    $('#messageAlertText').removeClass("hidden");
+    $('#messageAlert').addClass("textFieldError");
+    $('#messageEvaluate').removeClass("hidden");
     errorsContact["messageEvaluate"] = true;
     initialize();
   }else{

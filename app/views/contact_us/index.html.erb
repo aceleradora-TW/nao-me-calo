@@ -3,27 +3,34 @@
   <div class="row">
     <h2 class="text-center">Fale conosco!</h2>
   </div>
-  <div class='row'>
+    <div class='row'>
     <div class="col-lg-offset-3 col-lg-6">
       <div class="form-group">
         <%= form_tag("/enviar", :method => "post") do %>
-        <div class='row'>
+          <div class="field">
+          <b>Preencha os campos marcados com</b> <span class="red-text"> *</span>
+          </div>
+        <div class='field'>
           <%= label_tag 'Nome:' %>
           <%= text_field_tag :name, nil,:class => "form-control", aria: {label: "nome"}%>
         </div>
-        <div class='row'>
-          <%= label_tag 'Email:' %><span class="red-text"> *</span>
+        <div class='field' id="emailAlert">
+          <%= label_tag 'E-mail:' %><span class="red-text"> *</span>
+          <p id="emailAlertText", class="hidden">Por favor, digite um Email válido.</p>
           <%= text_field_tag :email, nil,:class => "form-control", aria: {label: "email"}, id:"emailEvaluate", onfocusout: "checkMail()" %>
         </div>
-        <div class='row'>
+        <div class='field'>
           <%= label_tag 'Assunto:' %>
           <%= text_field_tag :subject, nil,:class => "form-control", aria: {label: "Assunto"}%>
         </div>
-        <div class='row'>
+        <div class='field'id="messageAlert">
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
+            <p id="messageAlertText", class="hidden">Por favor, digite uma mensagem.</p>
+
           <%= text_area_tag :message, nil, :class => "form-control textarea", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate", onfocusout: "checkMessage()"%>
+
         </div>
-        <div class="row padding-bottom">
+        <div class="field padding-bottom">
           <div class="text-center">
             <%= submit_tag "Enviar!", :method => "send_mail", :class =>"btn btn-primary form-group", :id=>"button_disable" %>
           </div>
