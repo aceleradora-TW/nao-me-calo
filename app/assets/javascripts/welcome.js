@@ -83,7 +83,7 @@ function initAutocomplete () {
   function createPin(){
     for(var i = 0; i<locations.length; i++){
       var locate = locations[i];
-      var iconColor = locate[3]
+      var iconColor = locate[3];
       var myLatLng = {lat: locate[1], lng: locate[2]};
       var marker = new google.maps.Marker({
         position: myLatLng,
@@ -93,7 +93,7 @@ function initAutocomplete () {
         optimized: false
       });
       var contentString = '<div id="content">'+
-      '<a href="/perfil/' + locate[4].toString() + '">'+
+      '<a href="/perfil/' + locate[4].toString() + '">' + '<label class="concept padding-bottom ' + locate[6].toString() + '">' + locate[5].toString() + '</label>' +
       '<h3 id="firstHeading" class="text-center">'+ locate[0].toString() +'</h3>'+
       '<div id="bodyContent"></a>'+
       '</div>'+
@@ -104,13 +104,13 @@ function initAutocomplete () {
       google.maps.event.addListener(marker, 'click', function(){
         var marker_map = this.getMap();
         this.info.open(marker_map, this);
-      })
+      });
     }
   }
 
-  function initLists(){
-    $('#bottom_5').hide();
-  }
+  // function initLists(){
+  //   $('#bottom_5').hide();
+  // }
 
   $(document).ready(function(){
 
