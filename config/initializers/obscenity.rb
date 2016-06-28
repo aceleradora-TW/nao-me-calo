@@ -283,7 +283,6 @@ Obscenity.configure do |config|
     "M a r i c a",
     "M_a_r_i_c_a",
     "Maricas",
-    "Merda",
     "M e r d a",
     "M_e_r_d_a",
     "Merdinha",
