@@ -2,7 +2,7 @@ require 'obscenity/active_model'
 # ActiveRecord example
 class Post < ActiveRecord::Base
 
-  key :description, String
+
 
   validates :description,  obscenity: { sanitize: true, replacement:  "[censored]" }
 end
