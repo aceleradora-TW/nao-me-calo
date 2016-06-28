@@ -61,7 +61,7 @@
         <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome_list">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
-            <span class="grade_on_list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
+            <span class="grade_on_list "><label class="concept_welcome <%= set_average_style(average) %>"><%= average %></label>
           </h4>
           <p class="list-group-item-text">
             <%= establishment.address %>
@@ -71,15 +71,13 @@
       </ul>
     </div>
 
-
-
     <div class="col-lg-8 col-lg-offset-2" id="bottom_5">
       <ul class="list-group">
         <% @worst_places.each do |establishment, average| %>
         <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome_list">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
-            <span class="grade_on_list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>          </h4>
+            <span class="grade_on_list "><label class="concept_welcome <%= set_average_style(average) %>"><%= average %></label>          </h4>
           <p class="list-group-item-text">
           <%= establishment.address %>
         </p>

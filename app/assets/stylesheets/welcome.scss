@@ -20,7 +20,11 @@
   background-color: #f8f8f8 !important;
 }
 
-.concept {
+.pin_subtitle{
+  font-weight: bold;
+}
+
+.concept_welcome {
   text-align: center;
   padding-top: 7px;
   background-color: inherit;
@@ -38,9 +42,6 @@
   // &:hover {
   //   color: white;
   // }
-}
-.pin_subtitle{
-  font-weight: bold;
 }
 
 .dangerous_welcome {
