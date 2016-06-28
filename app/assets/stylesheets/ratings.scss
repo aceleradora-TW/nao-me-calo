@@ -156,6 +156,10 @@ input[type="radio"]:checked + .good {
   }
 }
 
+.erroMessage{
+  color: red;
+}
+
 input[type="radio"]:checked + .excellent {
   background-color: $buttonExcellentColor;
   color: white;

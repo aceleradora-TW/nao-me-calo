@@ -9,7 +9,6 @@ end
 
 # MongoMapper example
 class Book
-  include MongoMapper::Document
   key :description, String
 
   validates :description,  obscenity: { sanitize: true, replacement:  :vowels }
@@ -17,7 +16,6 @@ end
 
 # Mongoid example
 class Page
-  include Mongoid::Document
   key :description, String
 
   validates :description,  obscenity: { sanitize: true, replacement:  :garbled }

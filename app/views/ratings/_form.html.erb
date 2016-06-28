@@ -1,5 +1,6 @@
 
 <%= form_for(@rating, :id => "form-rating" ) do |f| %>
+<p class="erroMessage"> <%= flash_message %> </p>
 <% if @rating.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
@@ -274,10 +275,13 @@
     <p id="dateAlertText", class="hidden alertText">Por favor, digite uma data válida</p>
     <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
   </div>
-  <div class="field">
+
+
+    <div class="field">
     <%= f.label "Descrição do relato" %>
     <%= f.text_area :description, rows: 5, :class => "form-control", aria: {label: "Descrição"}  %>
-  </div>
+    </div>
+
   <div class='field text-center'>
     <input type="checkbox" name="accepted_terms" id="terms" unchecked>
     <label for="terms">Aceito os <a href="/termos" target="_blank">termos e condições de uso!</a></label>

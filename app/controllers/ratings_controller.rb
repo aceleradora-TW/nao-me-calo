@@ -1,6 +1,7 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
   before_action :set_client, only: [:new, :create]
+  include ApplicationHelper
 
   def index
     @ratings = Rating.all
@@ -13,10 +14,11 @@ class RatingsController < ApplicationController
     @rating = Rating.new
     @place_id = params[:place_id]
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
+
     if params[:place_id] != nil
       begin
         @spot = @client.spot(params[:place_id])
-      rescue => ex
+        rescue => ex
         $establishment = nil
         redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
       end
@@ -30,38 +32,41 @@ class RatingsController < ApplicationController
 
   def create
     if(params[:accepted_terms])
-      if(Obscenity.profane?(params[:description]))
-        redirect_to 'google.com.br'
+
+      if(Obscenity.profane?(rating_params[:description]))
+        redirect_to controller: :ratings, action: :new, place_id: params[:place_id]
+        flash[:notice] = "* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *"
       else
-      end
-      @rating = Rating.new(rating_params)
-      @establishment = Establishment.search_by_id(params[:place_id]).first
 
-      if(!(@rating.woman.nil? && @rating.lgbtqia.nil? && @rating.race.nil? && @rating.elder.nil? && @rating.obese.nil?))
-        if(@establishment.nil?)
-          @place = @client.spot(params[:place_id])
-          @establishment = Establishment.create!(name: @place.name, address: @place.vicinity+" - "+@place.address_components[5]["short_name"], lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
-        end
+        @rating = Rating.new(rating_params)
+        @establishment = Establishment.search_by_id(params[:place_id]).first
 
-        @rating.establishment_id = @establishment.id
-
-        respond_to do |format|
-          if @rating.save
-            format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
-          else
-            format.html { redirect_to "bing.com.br", notice: "Caiu aqui!" }
+        if(!(@rating.woman.nil? && @rating.lgbtqia.nil? && @rating.race.nil? && @rating.elder.nil? && @rating.obese.nil?))
+          if(@establishment.nil?)
+            @place = @client.spot(params[:place_id])
+            @establishment = Establishment.create!(name: @place.name, address: @place.vicinity+" - "+@place.address_components[5]["short_name"], lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
           end
-        end
-      else
-        respond_to do |format|
-          format.html { redirect_to "google.com.br", notice: "Caiu no outro aqui!" }
+
+          @rating.establishment_id = @establishment.id
+
+          respond_to do |format|
+            if @rating.save
+              format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
+            else
+              format.html { redirect_to "bing.com.br", notice: "Caiu aqui!" }
+            end
+          end
+        else
+          respond_to do |format|
+            format.html { redirect_to "google.com.br", notice: "Caiu no outro aqui!" }
+          end
         end
       end
     else
-     respond_to do |format|
-       format.html { redirect_to root_path }
-     end
-   end
+      respond_to do |format|
+        format.html { redirect_to root_path }
+      end
+    end
   end
 
   def update

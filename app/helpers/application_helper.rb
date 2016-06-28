@@ -8,4 +8,16 @@ module ApplicationHelper
 
     return (all_ratings.sum/all_ratings.length).round(1)
   end
+
+
+  def flash_message
+    messages = ""
+    [:notice, :info, :warning, :error].each {|type|
+      if flash[type]
+        messages += "#{flash[type]}"
+      end
+    }
+
+    messages
+  end
 end
