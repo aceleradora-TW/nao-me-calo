@@ -7,6 +7,52 @@ class RatingsController < ApplicationController
     @ratings = Rating.all
   end
 
+  def report
+    @establishments = Establishment.all
+    @establishment = @establishments.find_by id: "#{params[:establishment_id]}"
+    @ratings = Rating.all
+    @report = @ratings.find_by id: "#{params[:report_id]}"
+
+    @client = GooglePlaces::Client.new(G_PLACE_KEY)
+    @spot = @client.spot(@establishment.id_places)
+
+    general_average = []
+    @establishment.ratings.each do |rating|
+      general_average.push(rating.average_rating) unless rating.average_rating.nil?
+    end
+    @average_rating = general_average.sum/general_average.size #media geral do estabelecimento
+
+    case @average_rating
+    when 1 ... 1.8
+      @rating_concept = "Péssimo"
+    when 1.8 ... 2.6
+      @rating_concept = "Ruim"
+    when 2.6 ... 3.4
+      @rating_concept = "Regular"
+    when 3.4 ... 4.2
+      @rating_concept = "Bom"
+    else
+      @rating_concept = "Ótimo"
+    end
+    
+    @ratings = @establishment.ratings.reverse_order.limit(5)
+    @rate_array = []
+    @ratings.each do |rating|
+      if rating.average_rating < 1.8
+        @rate_array.push([rating,"Péssimo"])
+      elsif rating.average_rating < 2.6
+        @rate_array.push([rating,"Ruim"])
+      elsif rating.average_rating < 3.4
+        @rate_array.push([rating,"Regular"])
+      elsif rating.average_rating < 4.2
+        @rate_array.push([rating,"Bom"])
+      else
+        @rate_array.push([rating,"Ótimo"])
+      end
+    end
+
+  end
+
   def show
   end
 
