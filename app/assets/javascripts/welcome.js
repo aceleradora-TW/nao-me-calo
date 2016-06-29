@@ -107,7 +107,7 @@ function initAutocomplete () {
       });
     }
   }
-  
+
   function initLists(){
     $('#bottom_5').hide();
   }
@@ -116,9 +116,10 @@ function initAutocomplete () {
 
     initLists();
 
-    function initLists(){
-      $('#bottom_5').hide();
-    }
+    // Comentado porque repete a funcao de cima
+    // function initLists(){
+    //   $('#bottom_5').hide();
+    // }
 
     function switchListBest(){
       if($('#bottom_5').is(":visible")){

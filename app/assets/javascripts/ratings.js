@@ -8,7 +8,7 @@ $(document).ready(function(){
 
   $('#submitButton').prop("disabled", true);
 
-  errors = {cpfEvaluate: false, rating: true, dateEvaluate: false};
+  errors = {cpfEvaluate: false, rating: true, dateEvaluate: false, description: false};
 
   if ( $('[type="date"]').prop('type') != 'date' ) {
     $('[type="date"]').datepicker();
@@ -34,6 +34,22 @@ $(document).ready(function(){
   $('#rating_grade').focusout(function(){
     reviewName();
   });
+
+  $('#rating_description').focusout(function(){
+    hasBadWords($('#rating_description'));
+  });
+
+  function hasBadWords(text){
+    var badwords = ["coco"];
+    if( $.inArray(text.val(), badwords) !== -1 ){
+      errors["description"] = true;
+      text.addClass( "errorBorder" );
+      $( '#descriptionAlertText' ).removeClass( "hidden" );
+      $('#descriptionAlert').removeClass("hidden");
+      $('#descriptionAlert').addClass("textFieldError");
+      showMessage();
+    }
+  }
 
   function showMessage(){
     if (!$(".radio_button").is(":checked")){
