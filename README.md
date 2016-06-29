@@ -27,5 +27,12 @@ O **Não Me Calo** é uma plataforma cujo objetivo principal é colocar à dispo
 * [Ruby](https://www.ruby-lang.org/pt/documentation/installation/)
 * [Rails](http://www.railsinstaller.org/pt-BR)
 
+### Passos
+Rodar os seguintes comandos para rodar a aplicação
+
+* rake db:create
+* rake db:migrate
+* rails server
+
 ## Wiki Não Me Calo
 Consulte nossa [Wiki](https://github.com/aceleradora-TW/nao-me-calo/wiki)
