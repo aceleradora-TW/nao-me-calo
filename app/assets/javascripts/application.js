@@ -17,4 +17,4 @@
 //= require maskedinput
 //= require welcome
 //= require ratings
-//= require contact
+//= require contact_us
