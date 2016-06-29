@@ -107,10 +107,10 @@ function initAutocomplete () {
       });
     }
   }
-
-  // function initLists(){
-  //   $('#bottom_5').hide();
-  // }
+  
+  function initLists(){
+    $('#bottom_5').hide();
+  }
 
   $(document).ready(function(){
 
