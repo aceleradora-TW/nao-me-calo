@@ -34,7 +34,7 @@ class RatingsController < ApplicationController
     else
       @rating_concept = "Ótimo"
     end
-    
+
     @ratings = @establishment.ratings.reverse_order.limit(5)
     @rate_array = []
     @ratings.each do |rating|
@@ -77,9 +77,9 @@ class RatingsController < ApplicationController
   end
 
   def create
-    if(params[:accepted_terms])
+    if params[:accepted_terms]
 
-      if(Obscenity.profane?(rating_params[:description]))
+      if Obscenity.profane?(rating_params[:description])
         redirect_to controller: :ratings, action: :new, place_id: params[:place_id]
         flash[:notice] = "* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *"
       else

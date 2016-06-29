@@ -40,13 +40,31 @@ $(document).ready(function(){
   });
 
   function hasBadWords(text){
-    var badwords = ["coco"];
-    if( $.inArray(text.val(), badwords) !== -1 ){
+    // var badwords = "<%= get_bad_word %>"
+    // alert(badwords);
+    var count = 0
+    // text = text.val().toUpperCase()
+    for(var i=0; i<=badwords.length; i++){
+      if( text.val().indexOf(badwords[i]) !== -1 ){
+        count++;
+      }
+    }
+    badWordsErrors(count, text)
+  }
+
+  function badWordsErrors(count, text){
+    if(count>0){
       errors["description"] = true;
       text.addClass( "errorBorder" );
       $( '#descriptionAlertText' ).removeClass( "hidden" );
-      $('#descriptionAlert').removeClass("hidden");
       $('#descriptionAlert').addClass("textFieldError");
+      showMessage();
+    }
+    else {
+      errors["description"] = false;
+      text.removeClass( "errorBorder" );
+      $( '#descriptionAlertText' ).addClass( "hidden" );
+      $('#descriptionAlert').removeClass("textFieldError");
       showMessage();
     }
   }
@@ -59,13 +77,13 @@ $(document).ready(function(){
     }
     for(var l in errors){
       if(errors[l] === true){
-      //  $('.errorDiv').removeClass("hidden");
+        //  $('.errorDiv').removeClass("hidden");
         $('#submitButton').prop("disabled", true);
         return;
       }
     }
     if(enableButtonTerms()){
-    //  $('.errorDiv').addClass("hidden");
+      //  $('.errorDiv').addClass("hidden");
       $('#submitButton').prop("disabled", false);
     }
   }
@@ -95,7 +113,7 @@ $(document).ready(function(){
       $('#cpfEvaluate').removeClass("error");
       $('#cpfAlertText').addClass("hidden");
       $('#cpfAlert').removeClass("textFieldError")
-    //  $('#cpfAlert').addClass("hidden");
+      //  $('#cpfAlert').addClass("hidden");
       errors["cpfEvaluate"] = false;
       showMessage();
     }
@@ -203,8 +221,8 @@ $(document).ready(function(){
     }
   }
 
-//código comentado, ele evita que avaliacao seja enviada sem nome e sem cpf caso botao seja clicado, mas tal acao é impossível, uma vez que o botao vai estar disable
-//ps: o campo nome nao é obrigatorio
+  //código comentado, ele evita que avaliacao seja enviada sem nome e sem cpf caso botao seja clicado, mas tal acao é impossível, uma vez que o botao vai estar disable
+  //ps: o campo nome nao é obrigatorio
   // $('#new_rating').submit(function(e){
   //   if(isNull($('#nameEvaluate')) || isNull($('#cpfEvaluate'))){
   //     e.preventDefault();

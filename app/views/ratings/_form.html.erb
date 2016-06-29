@@ -292,4 +292,7 @@
     <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton", aria: {label: "Botão de enviar"} %>
 
   </div>
+<script>
+  var badwords = <%= get_bad_word.inspect.html_safe %>;
+</script>
   <% end %>
