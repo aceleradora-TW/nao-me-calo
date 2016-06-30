@@ -11,6 +11,8 @@ class WelcomeController < ApplicationController
       @establishment_hash[establishment] = calculate_average_establishment(establishment)
     end
 
+
+
     @pinsForMap = []
 
     @establishments.each do |establishment|

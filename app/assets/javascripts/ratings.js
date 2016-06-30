@@ -40,12 +40,14 @@ $(document).ready(function(){
   });
 
   function hasBadWords(text){
-    // var badwords = "<%= get_bad_word %>"
+    //  var badwords = "<%= get_bad_word %>"
     // alert(badwords);
-    var count = 0
-    // text = text.val().toUpperCase()
-    for(var i=0; i<=badwords.length; i++){
-      if( text.val().indexOf(badwords[i]) !== -1 ){
+    var count = 0;
+     var textLowerCase = text.val().toLowerCase();
+      // text = text.val().toLowerCase()
+    // alert(textLowerCase);
+    for(var i = 0; i <= badwords.length; i++){
+      if(text.val().toLowerCase().indexOf(badwords[i]) !== -1 ){
         count++;
       }
     }
