@@ -14,10 +14,10 @@
           <%= label_tag 'Nome:' %>
           <%= text_field_tag :name, nil,:class => "form-control", aria: {label: "nome"}%>
         </div>
-        <div class='field' id="emailAlert">
+        <div class='field' id="emailAlertContact">
           <%= label_tag 'E-mail:' %><span class="red-text"> *</span>
-          <p id="emailAlertText", class="hidden">Por favor, digite um Email válido.</p>
-          <%= text_field_tag :email, nil,:class => "form-control", aria: {label: "email"}, id:"emailEvaluate", onfocusout: "checkMail()" %>
+          <p id="emailAlertTextContact", class="hidden">Por favor, digite um Email válido.</p>
+          <%= text_field_tag :email, nil,:class => "form-control", aria: {label: "email"}, id:"emailEvaluateContact" %>
         </div>
         <div class='field'>
           <%= label_tag 'Assunto:' %>
@@ -27,7 +27,7 @@
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
             <p id="messageAlertText", class="hidden">Por favor, digite uma mensagem.</p>
 
-          <%= text_area_tag :message, nil, :class => "form-control textarea", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate", onfocusout: "checkMessage()"%>
+          <%= text_area_tag :message, nil, :class => "form-control textarea", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate"%>
 
         </div>
         <div class="field padding-bottom">
