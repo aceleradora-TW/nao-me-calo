@@ -5,7 +5,7 @@
       <h1 class='text-center'>
         <%= image_tag(@spot.icon, size: "30x30") %>
         <%= @spot.name %>
-        <span class="margin_left"><label class="concept_establishment <%=set_average_style(@rating_concept ) %>"><%= @rating_concept %></label></span>
+        <span class="margin_left"><label class="concept <%=set_average_style(@rating_concept ) %>"><%= @rating_concept %></label></span>
       </h1>
     </div>
     <div class='row'>
@@ -26,7 +26,7 @@
         <%if rating[0].rating_date != nil%>
         <h4 class="list-group-item list-show-style">
           <span class="text-field"><%= rating[0].rating_date.strftime("%d/%m/%Y")%></span>
-          <p class="text-right text-data-rating"><label class="concept_establishment_list <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
+          <p class="text-right text-data-rating"><label class="concept-establishment-list <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
           <!-- <p class="text-right text-data-rating"><%= rating[1] %></p> -->
           <div id="share-buttons" align="right">
             <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/" target="_blank">

@@ -2,15 +2,15 @@ module WelcomeHelper
   def set_average_style(average)
     case average
     when "Péssimo"
-      return 'dangerous_welcome'
+      return 'concept-dangerous'
     when "Ruim"
-      return 'bad_welcome'
+      return 'concept-bad'
     when "Regular"
-      return 'regular_welcome'
+      return 'concept-regular'
     when "Bom"
-      return 'good_welcome'
+      return 'concept-good'
     else
-      return 'excellent_welcome'
+      return 'concept-excellent'
     end
   end
 

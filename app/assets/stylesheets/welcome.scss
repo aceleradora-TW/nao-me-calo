@@ -24,7 +24,7 @@
   font-weight: bold;
 }
 
-.concept_welcome {
+.concept {
   text-align: center;
   padding-top: 7px;
   background-color: inherit;
@@ -39,61 +39,25 @@
   height: 26px;
   top: -1px;
   margin-right: 3px;
-  // &:hover {
-  //   color: white;
-  // }
-}
-
-.dangerous_welcome {
-  border-color: $buttonDangerousColor;
   color: white;
-  background-color: $buttonDangerousColor;
+  &-dangerous {
+    border-color: $buttonDangerousColor;
+    background-color: $buttonDangerousColor;
+  }
+  &-bad {
+    border-color: $buttonBadColor;
+    background-color: $buttonBadColor;
+  }
+  &-regular {
+    border-color: $buttonRegularColor;
+    background-color: $buttonRegularColor;
+  }
+  &-good {
+    border-color: $buttonGoodColor;
+    background-color: $buttonGoodColor;
+  }
+  &-excellent{
+    border-color: $buttonExcellentColor;
+    background-color: $buttonExcellentColor;
+  }
 }
-// input[type="radio"]:checked + .dangerous {
-//   background-color: $buttonDangerousColor;
-//   color: white;
-// }
-
-.bad_welcome {
-  border-color: $buttonBadColor;
-  color: white;
-  background-color: $buttonBadColor;
-}
-
-// input[type="radio"]:checked + .bad {
-//   background-color: $buttonBadColor;
-//   color: white;
-// }
-
-.regular_welcome {
-  border-color: $buttonRegularColor;
-  color: white;
-  background-color: $buttonRegularColor;
-}
-
-// input[type="radio"]:checked + .regular {
-//   background-color: $buttonRegularColor;
-//   color: white;
-// }
-
-.good_welcome {
-  border-color: $buttonGoodColor;
-  color: white;
-  background-color: $buttonGoodColor;
-}
-
-// input[type="radio"]:checked + .good {
-//   background-color: $buttonGoodColor;
-//   color: white;
-// }
-
-.excellent_welcome {
-  border-color: $buttonExcellentColor;
-  color: white;
-  background-color: $buttonExcellentColor;
-}
-
-// input[type="radio"]:checked + .excellent {
-//   background-color: $buttonExcellentColor;
-//   color: white;
-// }

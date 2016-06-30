@@ -16,31 +16,31 @@
 
 }
 
-.concept_establishment {
-  text-align: center;
-  padding-top: 7px;
-  background-color: inherit;
-  border-radius: 4px;
-  border: 1px solid;
-
-  // display: block;
-  font-size: 10px;
-  //position: absolute;
-  // white-space: nowrap;
-  width: 60px;
-  height: 26px;
-  //top: -1px;
-  margin-right: 3px;
-  // &:hover {
-  //   color: white;
-  // }
-}
+// .concept_establishment {
+//   text-align: center;
+//   padding-top: 7px;
+//   background-color: inherit;
+//   border-radius: 4px;
+//   border: 1px solid;
+//
+//   // display: block;
+//   font-size: 10px;
+//   //position: absolute;
+//   // white-space: nowrap;
+//   width: 60px;
+//   height: 26px;
+//   //top: -1px;
+//   margin-right: 3px;
+//   // &:hover {
+//   //   color: white;
+//   // }
+// }
 
 .margin_left{
   margin-left: 40px;
 }
 
-.concept_establishment_list {
+.concept-establishment-list {
   text-align: center;
   padding-top: 3px;
   background-color: inherit;
@@ -53,6 +53,7 @@
   width: 60px !important;
   height: 26px !important;
   top: -1px;
+  color: white;
   margin-right: 3px;
   // &:hover {
   //   color: white;

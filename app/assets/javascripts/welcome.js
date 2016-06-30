@@ -93,7 +93,7 @@ function initAutocomplete () {
         optimized: false
       });
       var contentString = '<div id="content">'+
-      '<a href="/perfil/' + locate[4].toString() + '">' + '<label class="concept_welcome padding-bottom ' + locate[6].toString() + '">' + locate[5].toString() + '</label>' +
+      '<a href="/perfil/' + locate[4].toString() + '">' + '<label class="concept padding-bottom ' + locate[6].toString() + '">' + locate[5].toString() + '</label>' +
       '<h3 id="firstHeading" class="text-center">'+ locate[0].toString() +'</h3>'+
       '<div id="bodyContent"></a>'+
       '</div>'+
