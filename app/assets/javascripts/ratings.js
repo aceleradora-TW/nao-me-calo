@@ -51,7 +51,7 @@ $(document).ready(function(){
         count++;
       }
     }
-    badWordsErrors(count, text)
+    badWordsErrors(count, text);
   }
 
   function badWordsErrors(count, text){
@@ -234,7 +234,7 @@ $(document).ready(function(){
   // });
 
   $('#terms').change(function(){
-    if(!(errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"] || errors["nameEvaluate"] || errors["emailEvaluate"])){
+    if(!(errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"] || errors["nameEvaluate"] || errors["emailEvaluate"] || errors["description"])){
       enableButtonTerms();
     }
   });
