@@ -60,10 +60,10 @@
     <div class="col-lg-8 col-lg-offset-2" id="top_5">
       <ul class="list-group">
         <% @best_places.each do |establishment, average| %>
-        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome_list">
+        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
-            <span class="grade_on_list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
+            <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
           </h4>
           <p class="list-group-item-text">
             <%= establishment.address %>
@@ -76,10 +76,10 @@
     <div class="col-lg-8 col-lg-offset-2" id="bottom_5">
       <ul class="list-group">
         <% @worst_places.each do |establishment, average| %>
-        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome_list">
+        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
-            <span class="grade_on_list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>          </h4>
+            <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>          </h4>
           <p class="list-group-item-text">
           <%= establishment.address %>
         </p>
@@ -91,17 +91,17 @@
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2">
     <div id="map">map</div>
-    <p>
+    <p class="pin-subtitle">
     <img src="http://www.googlemapsmarkers.com/v1/O/E03535"/>
-    <span class="pin_subtitle">Pessímo</span>
+    <span>Pessímo</span>
     <img src="http://www.googlemapsmarkers.com/v1/O/FF6633/"/>
-    <span class="pin_subtitle">Ruim</span>
+    <span>Ruim</span>
     <img src="http://www.googlemapsmarkers.com/v1/O/FFBD14/"/>
-    <span class="pin_subtitle">Regular</span>
+    <span>Regular</span>
     <img src="http://www.googlemapsmarkers.com/v1/O/99CC00/"/>
-    <span class="pin_subtitle">Ótimo</span>
+    <span>Ótimo</span>
     <img src="http://www.googlemapsmarkers.com/v1/O/329853/"/>
-    <span class="pin_subtitle">Excelente</span>
+    <span>Excelente</span>
   </p>
   </div>
 </div>

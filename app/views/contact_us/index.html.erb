@@ -27,7 +27,7 @@
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
             <p id="messageAlertText", class="hidden">Por favor, digite uma mensagem.</p>
 
-          <%= text_area_tag :message, nil, :class => "form-control textarea", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate"%>
+          <%= text_area_tag :message, nil, :class => "form-control text-area", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate", onfocusout: "checkMessage()"%>
 
         </div>
         <div class="field padding-bottom">

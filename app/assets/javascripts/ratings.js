@@ -59,14 +59,14 @@ $(document).ready(function(){
       errors["description"] = true;
       text.addClass( "errorBorder" );
       $( '#descriptionAlertText' ).removeClass( "hidden" );
-      $('#descriptionAlert').addClass("textFieldError");
+      $('#descriptionAlert').addClass("text-field-error");
       showMessage();
     }
     else {
       errors["description"] = false;
       text.removeClass( "errorBorder" );
       $( '#descriptionAlertText' ).addClass( "hidden" );
-      $('#descriptionAlert').removeClass("textFieldError");
+      $('#descriptionAlert').removeClass("text-field-error");
       showMessage();
     }
   }
@@ -107,14 +107,14 @@ $(document).ready(function(){
     if(erro) {
       $('#cpfEvaluate').addClass("error");
       $('#cpfAlert').removeClass("hidden");
-      $('#cpfAlert').addClass("textFieldError");
+      $('#cpfAlert').addClass("text-field-error");
       $('#cpfAlertText').removeClass("hidden");
       errors["cpfEvaluate"] = true;
       showMessage();
     } else {
       $('#cpfEvaluate').removeClass("error");
       $('#cpfAlertText').addClass("hidden");
-      $('#cpfAlert').removeClass("textFieldError")
+      $('#cpfAlert').removeClass("text-field-error")
       //  $('#cpfAlert').addClass("hidden");
       errors["cpfEvaluate"] = false;
       showMessage();
@@ -154,14 +154,14 @@ $(document).ready(function(){
 
     if (((today < ratingDate) || (ratingDate <730000)) || $('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(RegExPattern)){
       $('#dateEvaluate').addClass("error");
-      $('#dateAlert').addClass("textFieldError");
+      $('#dateAlert').addClass("text-field-error");
       $('#dateAlertText').removeClass("hidden");
       errors["dateEvaluate"] = true;
       showMessage();
     } else {
       $('#dateEvaluate').removeClass("error");
       $('#dateAlertText').addClass("hidden");
-      $('#dateAlert').removeClass("textFieldError");
+      $('#dateAlert').removeClass("text-field-error");
       errors["dateEvaluate"] = false;
       showMessage();
     }
@@ -181,13 +181,13 @@ $(document).ready(function(){
     if (nameInput.match(nameExp) || $('#nameEvaluate').val() === "" || $('#nameEvaluate').val() === null){
       $('#nameEvaluate').removeClass("error");
       $('#nameAlertText').addClass('hidden');
-      //$('#nameAlert').removeClass('textFieldError');
+      //$('#nameAlert').removeClass('text-field-error');
       errors["nameEvaluate"] = false;
       showMessage();
     }else{
       $('#nameEvaluate').addClass("error");
       $('#nameAlertText').removeClass("hidden");
-      //$('#nameAlert').addClass('textFieldError');
+      //$('#nameAlert').addClass('text-field-error');
       errors["nameEvaluate"] = true;
       showMessage();
 

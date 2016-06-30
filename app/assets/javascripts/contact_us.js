@@ -38,13 +38,13 @@ $(document).ready(function(){
       $('#emailEvaluateContact').addClass("error");
       $('#emailAlertContact').removeClass("hidden");
       $('#emailAlertTextContact').removeClass("hidden");
-      $('#emailAlertContact').addClass("textFieldError");
+      $('#emailAlertContact').addClass("text-field-error");
       $('#emailEvaluateContact').removeClass("hidden");
       errorsContact["emailEvaluateContact"] = true;
       initialize();
     }else{
       $('#emailEvaluateContact').removeClass("error");
-      $('#emailAlertContact').removeClass("textFieldError");
+      $('#emailAlertContact').removeClass("text-field-error");
       $('#emailAlertTextContact').addClass("hidden");
       errorsContact["emailEvaluateContact"] = false;
       initialize();
@@ -56,13 +56,13 @@ $(document).ready(function(){
     if (message === ""){
       $('#messageEvaluate').addClass("error");
       $('#messageAlertText').removeClass("hidden");
-      $('#messageAlert').addClass("textFieldError");
+      $('#messageAlert').addClass("text-field-error");
       $('#messageEvaluate').removeClass("hidden");
       errorsContact["messageEvaluate"] = true;
       initialize();
     }else{
       $('#messageEvaluate').removeClass("error");
-      $('#messageAlert').removeClass("textFieldError");
+      $('#messageAlert').removeClass("text-field-error");
       $('#messageAlertText').addClass("hidden");
       errorsContact["messageEvaluate"] = false;
       initialize();

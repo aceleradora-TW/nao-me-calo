@@ -19,7 +19,7 @@
   text-transform: uppercase !important;
 }
 
-.errorBorder {
+.error-border {
   border-color: red;
   border-style: dashed;
   border-width: 1px;
@@ -48,10 +48,10 @@
   padding: 0;
 }
 
-.ratings:after {
-  content: "";
-  clear: both;
-}
+// .ratings:after {
+//   content: "";
+//   clear: both;
+// }
 
 .rating {
   float: left;
@@ -83,33 +83,34 @@
     color: white;
   }
 }
-.textFieldError {
+.text-field-error {
   background-color: #f2dede;
   border-color: #ebccd1;
 }
 
-label .radio_text {
+label .radio-text {
   display: inline-block;
   margin-top: 3px;
 }
 
-.dangerous {
+.rating-dangerous {
   border-color: $buttonDangerousColor;
   color: $buttonDangerousColor;
   &:hover {
     background-color: $buttonDangerousColor;
   }
 }
-.validation_text{
-  margin-top: 3px;
-}
 
-input[type="radio"]:checked + .dangerous {
+// .validation_text{
+//   margin-top: 3px;
+// } nao é chamado em nenhum lugar
+
+input[type="radio"]:checked + .rating-dangerous {
   background-color: $buttonDangerousColor;
   color: white;
 }
 
-.bad {
+.rating-bad {
   border-color: $buttonBadColor;
   color: $buttonBadColor;
   &:hover {
@@ -117,12 +118,12 @@ input[type="radio"]:checked + .dangerous {
   }
 }
 
-input[type="radio"]:checked + .bad {
+input[type="radio"]:checked + .rating-bad {
   background-color: $buttonBadColor;
   color: white;
 }
 
-.regular {
+.rating-regular {
   border-color: $buttonRegularColor;
   color: $buttonRegularColor;
   &:hover {
@@ -130,12 +131,12 @@ input[type="radio"]:checked + .bad {
   }
 }
 
-input[type="radio"]:checked + .regular {
+input[type="radio"]:checked + .rating-regular {
   background-color: $buttonRegularColor;
   color: white;
 }
 
-.good {
+.rating-good {
   border-color: $buttonGoodColor;
   color: $buttonGoodColor;
   &:hover {
@@ -143,12 +144,12 @@ input[type="radio"]:checked + .regular {
   }
 }
 
-input[type="radio"]:checked + .good {
+input[type="radio"]:checked + .rating-good {
   background-color: $buttonGoodColor;
   color: white;
 }
 
-.excellent {
+.rating-excellent {
   border-color: $buttonExcellentColor;
   color: $buttonExcellentColor;
   &:hover {
@@ -156,11 +157,11 @@ input[type="radio"]:checked + .good {
   }
 }
 
-.erroMessage{
+.erro-message{
   color: red;
 }
 
-input[type="radio"]:checked + .excellent {
+input[type="radio"]:checked + .rating-excellent {
   background-color: $buttonExcellentColor;
   color: white;
 }

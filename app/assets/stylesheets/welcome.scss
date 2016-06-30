@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables.scss";
-.grade_on_list{
+.grade-on-list{
   float:right;
 }
 
@@ -15,12 +15,12 @@
   border-radius: 6px;
   margin: 0 10px 0px 10px;
 }
-.welcome_list:hover {
+.welcome-list:hover {
   text-shadow: 0.3px 0.3px !important;
   background-color: #f8f8f8 !important;
 }
 
-.pin_subtitle{
+.pin-subtitle{
   font-weight: bold;
 }
 
