@@ -14,7 +14,7 @@
     <div class="center-element" >
       <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
       <%= submit_tag "Avaliar", :class => 'btn btn-primary' %>
-      <%= hidden_field_tag 'place_id' , @establishment.id_places %>
+      <%= hidden_field_tag 'placeId' , @establishment.id_places %>
       <% end %>
     </div>
     <div class="col-lg-10 col-lg-offset-1 text-center">

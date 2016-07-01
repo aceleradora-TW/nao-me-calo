@@ -58,12 +58,12 @@ class RatingsController < ApplicationController
 
   def new
     @rating = Rating.new
-    @place_id = params[:place_id]
+    @placeId = params[:placeId]
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
 
-    if params[:place_id] != nil
+    if params[:placeId] != nil
       begin
-        @spot = @client.spot(params[:place_id])
+        @spot = @client.spot(params[:placeId])
         rescue => ex
         $establishment = nil
         redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
@@ -80,17 +80,17 @@ class RatingsController < ApplicationController
     if params[:accepted_terms]
 
       if Obscenity.profane?(rating_params[:description])
-        redirect_to controller: :ratings, action: :new, place_id: params[:place_id]
+        redirect_to controller: :ratings, action: :new, placeId: params[:placeId]
         flash[:notice] = "* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *"
       else
 
         @rating = Rating.new(rating_params)
-        @establishment = Establishment.search_by_id(params[:place_id]).first
+        @establishment = Establishment.search_by_id(params[:placeId]).first
 
         if(!(@rating.woman.nil? && @rating.lgbtqia.nil? && @rating.race.nil? && @rating.elder.nil? && @rating.obese.nil?))
           if(@establishment.nil?)
-            @place = @client.spot(params[:place_id])
-            @establishment = Establishment.create!(name: @place.name, address: @place.vicinity+" - "+@place.address_components[5]["short_name"], lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
+            @place = @client.spot(params[:placeId])
+            @establishment = Establishment.create!(name: @place.name, address: @place.vicinity+" - "+@place.address_components[5]["short_name"], lat: @place.lat, lng: @place.lng, id_places: @place.placeId)
           end
 
           @rating.establishment_id = @establishment.id

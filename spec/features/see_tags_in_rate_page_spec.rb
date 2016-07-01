@@ -10,7 +10,7 @@ feature 'See tags in rate page', js: true do
   end
 
   scenario 'See tags' do
-    visit '/avaliar?commit=Avaliar&place_id=ChIJj2J3iGOCGZUR5XT38N2pANQ'
+    visit '/avaliar?commit=Avaliar&placeId=ChIJj2J3iGOCGZUR5XT38N2pANQ'
 
     expect(page).to have_content 'Mulher'
     expect(page).to have_content 'Péssimo'

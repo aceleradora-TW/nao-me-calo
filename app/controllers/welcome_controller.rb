@@ -53,9 +53,9 @@ class WelcomeController < ApplicationController
   end
 
   def search
-    @establishment = Establishment.search_by_id(params[:place_id_2]).first
+    @establishment = Establishment.search_by_id(params[:placeId2]).first
     if(@establishment.nil?)
-      $establishment = @client.spot(params[:place_id_2])
+      $establishment = @client.spot(params[:placeId2])
       redirect_to root_path, :flash => { :error => "Lugar ainda não foi avaliado. Clique nessa mensagem para avalia-lo." }
     else
       redirect_to @establishment

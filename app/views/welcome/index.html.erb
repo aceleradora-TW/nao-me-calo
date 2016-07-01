@@ -4,7 +4,7 @@
 <div class="alert alert-danger">
   <p id="alert" class="text-center">
     <% if ($establishment != nil) %>
-    <%= link_to "/avaliar?place_id=#{$establishment.place_id}" do %>
+    <%= link_to "/avaliar?placeId=#{$establishment.placeId}" do %>
     <%= flash[:error] %></p>
     <% end %>
     <% else %>
@@ -27,7 +27,7 @@
           <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
         </span>
       </div>
-      <%= hidden_field_tag 'place_id', :class => 'place-id-placeholder' %>
+      <%= hidden_field_tag 'placeId', :class => 'place-id-placeholder' %>
       <% end %>
     </div>
   </div>
@@ -41,7 +41,7 @@
           <%= submit_tag "Buscar", :class => 'btn btn-success' %>
         </span>
       </div>
-      <%= hidden_field_tag 'place_id_2'  %>
+      <%= hidden_field_tag 'placeId2'  %>
       <% end %>
     </div>
   </div>
