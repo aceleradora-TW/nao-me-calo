@@ -1,18 +1,13 @@
 $(document).ready(function(){
-  $('#list-all').hide();
-  $('#show_five_button').hide();
 
-  $('#show_all_button').click(function(){
-    $('#list-all').show();
-    $('#list-last-5').hide();
-    $('#show_all_button').hide();
-    $('#show_five_button').show();
-  });
+    var x = 5;
+    var size_li = $("#list-last-5 li").size();
+    $('#list-last-5 li:lt('+size_li+')').hide();
+    $('#list-last-5 li:lt('+x+')').show();
+    $('#show_five_button').click(function(){
+      x = (x+5 <= size_li) ? x+5 : size_li;
+      $('#list-last-5 li:lt('+x+')').show();
 
-  $('#show_five_button').click(function(){
-    $('#list-all').hide();
-    $('#list-last-5').show();
-    $('#show_all_button').show();
-    $('#show_five_button').hide();
-  });
+    });
+
 });
