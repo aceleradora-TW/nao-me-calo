@@ -43,11 +43,11 @@ $(document).ready(function(){
     //  var badwords = "<%= get_bad_word %>"
     // alert(badwords);
     var count = 0;
-     var textLowerCase = text.val().toLowerCase();
+     var textLowerCase = text.val().toLowerCase().split(" ");
       // text = text.val().toLowerCase()
-    // alert(textLowerCase);
+     //alert(textLowerCase);
     for(var i = 0; i <= badwords.length; i++){
-      if(text.val().toLowerCase().indexOf(badwords[i]) !== -1 ){
+      if(textLowerCase.indexOf(badwords[i]) !== -1 ){
         count++;
       }
     }
