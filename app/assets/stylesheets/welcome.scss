@@ -10,6 +10,10 @@
 //   padding-top: 60px;
 //   padding-bottom: 40px;
 // }
+#map_search {
+  margin-top: 10px;
+}
+
 #map {
   height: 400px;
   border-radius: 6px;
@@ -33,9 +37,6 @@
   cursor: pointer;
   font-family: Arial;
   font-size: 12px;
-  // display: block;
-  // position: absolute;
-  // white-space: nowrap;
   width: 60px;
   height: 26px;
   top: -1px;
