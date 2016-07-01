@@ -61,4 +61,7 @@
     border-color: $buttonExcellentColor;
     background-color: $buttonExcellentColor;
   }
+  &-pointer-nill-events{
+    pointer-events: none;
+  }
 }
