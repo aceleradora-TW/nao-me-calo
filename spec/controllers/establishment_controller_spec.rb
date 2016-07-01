@@ -38,10 +38,10 @@ RSpec.describe EstablishmentsController, type: :controller do
       expect(assigns[:average_rating]).to eq(4)
     end
 
-    # it 'expect @ratings to be the last 5 ratings' do
-    #   get :show, id: @est1.id
-    #   expect(assigns[:ratings]).to eq(6)
-    # end
+    it 'expect @ratings to have all ratings' do
+      get :show, id: @est1.id
+      expect(assigns[:ratings]).to eq([@r6, @r5, @r4, @r3, @r2, @rating])
+    end
   end
 
   describe "#create" do
