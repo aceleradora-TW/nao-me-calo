@@ -85,12 +85,12 @@ function initAutocomplete () {
 
   function fillName(){
     var place = autocomplete.getPlace();
-    $('#placeId').val(place.placeId);
+    $('#placeId').val(place.place_id);
   }
 
   function fillSearch(){
     var place = searchBox.getPlace();
-    $('#placeId2').val(place.placeId);
+    $('#placeId2').val(place.place_id);
   }
 
   function geolocate() {
