@@ -1,69 +1,69 @@
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
-  <% if !flash[:error].nil? %>
-  <div class="alert alert-danger">
-    <p id="alert" class="text-center">
-      <% if ($establishment != nil) %>
-      <%= link_to "/avaliar?place_id=#{$establishment.place_id}" do %>
-      <%= flash[:error] %></p>
-      <% end %>
-      <% else %>
-      <%= flash[:error] %></p>
-      <% end %>
-    </div>
-    <%end%>
-    <script text="text/javascript">
-      var locations = JSON.parse("<%=@pinsForMap%>".replace(/&quot;/g,'"'));
-      var pin_map = "<%=@pin_map%>";
-      var average_pin_map = "<%=@rating%>";
-    </script>
+<% if !flash[:error].nil? %>
+<div class="alert alert-danger">
+  <p id="alert" class="text-center">
+    <% if ($establishment != nil) %>
+    <%= link_to "/avaliar?place_id=#{$establishment.place_id}" do %>
+    <%= flash[:error] %></p>
+    <% end %>
+    <% else %>
+    <%= flash[:error] %></p>
+    <% end %>
+  </div>
+  <%end%>
+  <script text="text/javascript">
+  var locations = JSON.parse("<%=@pinsForMap%>".replace(/&quot;/g,'"'));
+  var pin_map = "<%=@pin_map%>";
+  var average_pin_map = "<%=@rating%>";
+  </script>
 
-    <div class="row">
-      <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
-        <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
-        <div class="input-group">
-          <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onchange="fillName()" placeholder="Avalie um local" id="evaluateField">
-          <span class="input-group-btn">
-            <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
-          </span>
-        </div>
-        <%= hidden_field_tag 'place_id', :class => 'place-id-placeholder' %>
-        <% end %>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
+      <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
+      <div class="input-group">
+        <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onchange="fillName()" placeholder="Avalie um local" id="evaluateField">
+        <span class="input-group-btn">
+          <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
+        </span>
       </div>
+      <%= hidden_field_tag 'place_id', :class => 'place-id-placeholder' %>
+      <% end %>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
-        <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
-        <div class="input-group">
-          <input type="text" class="form-control" aria-label="Campo para buscar local para visitar" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onFocus="geolocate()" onchange="fillSearch()" placeholder="Busque um local para visitar" id="searchField">
-          <span class="input-group-btn">
-            <%= submit_tag "Buscar", :class => 'btn btn-success' %>
-          </span>
-        </div>
-        <%= hidden_field_tag 'place_id_2'  %>
-        <% end %>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
+      <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="Campo para buscar local para visitar" onkeydown="if($('.pac-container').is(':visible') && event.keyCode == 13) {event.preventDefault();}" onFocus="geolocate()" onchange="fillSearch()" placeholder="Busque um local para visitar" id="searchField">
+        <span class="input-group-btn">
+          <%= submit_tag "Buscar", :class => 'btn btn-success' %>
+        </span>
       </div>
+      <%= hidden_field_tag 'place_id_2'  %>
+      <% end %>
     </div>
+  </div>
 
-<div align="center" class="row paragraph">
-  Ordenar por:
-</div>
-<div align="center" class="row paragraph">
-  <a href="#" id='best_places_button' >Mais Altas</a>
-  <span> | </span>
-  <a href="#" id='worst_places_button' >Mais Baixas</a>
+  <div align="center" class="row paragraph">
+    Ordenar por:
+  </div>
+  <div align="center" class="row paragraph">
+    <a href="#" id='best_places_button' >Mais Altas</a>
+    <span> | </span>
+    <a href="#" id='worst_places_button' >Mais Baixas</a>
     <br>
     <br>
-</div>
+  </div>
 
-    <div class="col-lg-8 col-lg-offset-2" id="top_5">
-      <ul class="list-group">
-        <% @best_places.each do |establishment, average| %>
-        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
-          <h4 class="list-group-item-heading">
-            <%= establishment.name %>
-            <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
+  <div class="col-lg-8 col-lg-offset-2" id="top_5">
+    <ul class="list-group">
+      <% @best_places.each do |establishment, average| %>
+      <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
+        <h4 class="list-group-item-heading">
+          <%= establishment.name %>
+          <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
           </h4>
           <p class="list-group-item-text">
             <%= establishment.address %>
@@ -80,30 +80,38 @@
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
             <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>          </h4>
-          <p class="list-group-item-text">
-          <%= establishment.address %>
-        </p>
-        </a>
-        <% end %>
-      </ul>
-    </div>
+              <p class="list-group-item-text">
+                <%= establishment.address %>
+              </p>
+            </a>
+            <% end %>
+          </ul>
+        </div>
 
-<div class="row">
-  <div class="col-lg-8 col-lg-offset-2">
-    <div id="map">map</div>
-    <p class="pin-subtitle">
-    <img src="http://www.googlemapsmarkers.com/v1/O/E03535"/>
-    <span>Pessímo</span>
-    <img src="http://www.googlemapsmarkers.com/v1/O/FF6633/"/>
-    <span>Ruim</span>
-    <img src="http://www.googlemapsmarkers.com/v1/O/FFBD14/"/>
-    <span>Regular</span>
-    <img src="http://www.googlemapsmarkers.com/v1/O/99CC00/"/>
-    <span>Ótimo</span>
-    <img src="http://www.googlemapsmarkers.com/v1/O/329853/"/>
-    <span>Excelente</span>
-  </p>
-  </div>
-</div>
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+             <div class="row">
+              <div class="col-md-8">
+                  <input id="map_search" type="text" class="form-control" style="width:50%; " aria-label="Avalie um local"  placeholder="Avalie um local" >
+                </input>
+              </div><!-- /.row-->
+              </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
+              <div id="map">map</div>
+              <p class="pin-subtitle">
+                <img src="http://www.googlemapsmarkers.com/v1/O/E03535"/>
+                <span>Pessímo</span>
+                <img src="http://www.googlemapsmarkers.com/v1/O/FF6633/"/>
+                <span>Ruim</span>
+                <img src="http://www.googlemapsmarkers.com/v1/O/FFBD14/"/>
+                <span>Regular</span>
+                <img src="http://www.googlemapsmarkers.com/v1/O/99CC00/"/>
+                <span>Ótimo</span>
+                <img src="http://www.googlemapsmarkers.com/v1/O/329853/"/>
+                <span>Excelente</span>
+              </p>
+            </div>
+          </div>
+
+
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
