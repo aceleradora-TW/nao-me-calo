@@ -48,11 +48,6 @@
   padding: 0;
 }
 
-// .ratings:after {
-//   content: "";
-//   clear: both;
-// }
-
 .rating {
   float: left;
   height: 35px;
@@ -101,10 +96,6 @@ label .radio-text {
     background-color: $buttonDangerousColor;
   }
 }
-
-// .validation_text{
-//   margin-top: 3px;
-// } nao é chamado em nenhum lugar
 
 input[type="radio"]:checked + .rating-dangerous {
   background-color: $buttonDangerousColor;
@@ -158,7 +149,7 @@ input[type="radio"]:checked + .rating-good {
   }
 }
 
-.erro-message{
+.error-message{
   color: red;
 }
 

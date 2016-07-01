@@ -85,12 +85,12 @@ function initAutocomplete () {
 
   function fillName(){
     var place = autocomplete.getPlace();
-    $('#place_id').val(place.place_id);
+    $('#placeId').val(place.place_id);
   }
 
   function fillSearch(){
     var place = searchBox.getPlace();
-    $('#place_id_2').val(place.place_id);
+    $('#placeId2').val(place.place_id);
   }
 
   function geolocate() {
@@ -111,8 +111,8 @@ function initAutocomplete () {
   }
 
   function cleanPlaceIdValueFromInput(){
-    $('#place_id').val('');
-    $('#place_id_2').val('');
+    $('#placeId').val('');
+    $('#placeId2').val('');
   }
 
   function initMap() {
@@ -164,49 +164,44 @@ function initAutocomplete () {
   }
 
   function initLists(){
-    $('#bottom_5').hide();
+    $('#bottom5').hide();
   }
 
   $(document).ready(function(){
 
     initLists();
 
-    // Comentado porque repete a funcao de cima
-    // function initLists(){
-    //   $('#bottom_5').hide();
-    // }
-
     function switchListBest(){
-      if($('#bottom_5').is(":visible")){
-        $('#top_5').show();
-        $('#bottom_5').hide();
+      if($('#bottom5').is(":visible")){
+        $('#top5').show();
+        $('#bottom5').hide();
       }
     }
 
     function switchListWorst(){
-      if($("#top_5").is(":visible")){
-        $('#top_5').hide();
-        $('#bottom_5').show();
+      if($("#top5").is(":visible")){
+        $('#top5').hide();
+        $('#bottom5').show();
       }
     }
 
-    $('#best_places_button').click(function(){
+    $('#bestPlacesButton').click(function(){
       switchListBest();
     })
-    $('#worst_places_button').click(function(){
+    $('#worstPlacesButton').click(function(){
       switchListWorst();
     })
-    $('#place_id').attr('readonly', true)
-    $('#place_id_2').attr('readonly', true)
+    $('#placeId').attr('readonly', true)
+    $('#placeId2').attr('readonly', true)
 
     $('#formEvaluate').submit(function(e){
-      if($('#place_id').val() == ''){
+      if($('#placeId').val() == ''){
         e.preventDefault();
       }
     });
 
     $('#formSearch').submit(function(e){
-      if($('#place_id_2').val() == ''){
+      if($('#placeId2').val() == ''){
         e.preventDefault();
       }
     });

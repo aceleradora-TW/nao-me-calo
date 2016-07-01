@@ -24,15 +24,11 @@ body, html {
   padding-bottom: 20px !important;
 }
 body {
-    display: table;
-}
-.btn-primary{
-  background-color: $thirdColor !important;
-  border-color: $textColor !important;
+  display: table;
 }
 .center-element{
-    margin:0 auto;
-    display:table;
+  margin:0 auto;
+  display:table;
 }
 .btn-danger{
   background-color: $thirdColor !important;

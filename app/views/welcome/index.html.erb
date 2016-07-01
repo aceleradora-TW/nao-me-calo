@@ -50,14 +50,14 @@
     Ordenar por:
   </div>
   <div align="center" class="row paragraph">
-    <a href="#" id='best_places_button' >Mais Altas</a>
+    <a href="#" id='bestPlacesButton' >Mais Altas</a>
     <span> | </span>
-    <a href="#" id='worst_places_button' >Mais Baixas</a>
+    <a href="#" id='worstPlacesButton' >Mais Baixas</a>
     <br>
     <br>
   </div>
 
-  <div class="col-lg-8 col-lg-offset-2" id="top_5">
+  <div class="col-lg-8 col-lg-offset-2" id="top5">
     <ul class="list-group">
       <% @best_places.each do |establishment, average| %>
       <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
@@ -73,7 +73,7 @@
       </ul>
     </div>
 
-    <div class="col-lg-8 col-lg-offset-2" id="bottom_5">
+    <div class="col-lg-8 col-lg-offset-2" id="bottom5">
       <ul class="list-group">
         <% @worst_places.each do |establishment, average| %>
         <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">

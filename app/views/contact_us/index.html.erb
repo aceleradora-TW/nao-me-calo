@@ -26,13 +26,11 @@
         <div class='field'id="messageAlert">
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
             <p id="messageAlertText", class="hidden">Por favor, digite uma mensagem.</p>
-
           <%= text_area_tag :message, nil, :class => "form-control text-area", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate", onfocusout: "checkMessage()"%>
-
         </div>
         <div class="field padding-bottom">
           <div class="text-center">
-            <%= submit_tag "Enviar!", :method => "send_mail", :class =>"btn btn-primary form-group", :id=>"button_disable" %>
+            <%= submit_tag "Enviar!", :method => "send_mail", :class =>"btn btn-primary form-group", :id=>"buttonDisable" %>
           </div>
         </div>
         <% end %>

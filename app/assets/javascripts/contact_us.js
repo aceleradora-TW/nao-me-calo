@@ -13,11 +13,11 @@ $(document).ready(function(){
   });
 
   function disableButton(){
-    $('#button_disable').attr('disabled', true);
+    $('#buttonDisable').attr('disabled', true);
   }
 
   function enableButton(){
-    $('#button_disable').attr('disabled', false);
+    $('#buttonDisable').attr('disabled', false);
   }
 
   function initialize(){

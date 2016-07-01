@@ -24,11 +24,10 @@
 .button-header-style{
   border-color: $secondColor !important;
 
-}
-.button-header-style:hover{
-  background-color: $thirdColor !important;
-}
-
-.button-header-style:focus{
-  background-color: $thirdColor !important;
+  &:hover{
+    background-color: $thirdColor !important;
+  }
+  &:focus{
+    background-color: $thirdColor !important;
+  }
 }
