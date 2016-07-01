@@ -18,3 +18,4 @@
 //= require welcome
 //= require ratings
 //= require contact_us
+//= require establishments

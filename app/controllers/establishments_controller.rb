@@ -33,6 +33,23 @@ class EstablishmentsController < ApplicationController
       @rating_concept = "Ótimo"
     end
 
+
+    @ratings_all = @establishment.ratings.reverse_order
+    @rate_array_all = []
+    @ratings_all.each do |rating|
+      if rating.average_rating < 1.8
+        @rate_array_all.push([rating,"Péssimo"])
+      elsif rating.average_rating < 2.6
+        @rate_array_all.push([rating,"Ruim"])
+      elsif rating.average_rating < 3.4
+        @rate_array_all.push([rating,"Regular"])
+      elsif rating.average_rating < 4.2
+        @rate_array_all.push([rating,"Bom"])
+      else
+        @rate_array_all.push([rating,"Ótimo"])
+      end
+    end
+
     @ratings = @establishment.ratings.reverse_order.limit(5)
     @rate_array = []
     @ratings.each do |rating|
