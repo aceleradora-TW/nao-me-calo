@@ -42,7 +42,7 @@ $(document).ready(function(){
     var count = 0;
     var textLowerCase = text.val().toLowerCase().split(" ");
     for(var i = 0; i <= badwords.length; i++){
-      if(textLowerCase.indexOf(badwords[i]) !== -1 ){
+      if(textLowerCase[0].indexOf(badwords[i]) !== -1 ){
         count++;
       }
     }
