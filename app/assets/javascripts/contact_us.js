@@ -35,11 +35,12 @@ $(document).ready(function(){
     var emailInput = $('#emailEvaluateContact').val();
 
     if (!emailInput.match(emailExp) || emailInput === "" ){
-      $('#emailEvaluateContact').addClass("error");
-      $('#emailAlertContact').removeClass("hidden");
-      $('#emailAlertTextContact').removeClass("hidden");
-      $('#emailAlertContact').addClass("text-field-error");
-      $('#emailEvaluateContact').removeClass("hidden");
+      // $('#emailEvaluateContact').addClass("error");
+      // // $('#emailAlertContact').removeClass("hidden");
+      // $('#emailAlertTextContact').removeClass("hidden");
+      // $('#emailAlertContact').addClass("text-field-error");
+      // $('#emailEvaluateContact').removeClass("hidden");
+      errorFound('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact');
       errorsContact["emailEvaluateContact"] = true;
       initialize();
     }else{
@@ -51,13 +52,20 @@ $(document).ready(function(){
     }
   }
 
+function errorFound(textAreaId, alertTextId, alertDivId){
+  $(textAreaId).addClass("error");
+  $(alertTextId).removeClass("hidden");
+  $(alertDivId).addClass("text-field-error");
+}
+
   function checkMessage(){
     var message = $('#messageEvaluate').val();
     if (message === ""){
-      $('#messageEvaluate').addClass("error");
-      $('#messageAlertText').removeClass("hidden");
-      $('#messageAlert').addClass("text-field-error");
-      $('#messageEvaluate').removeClass("hidden");
+      errorFound('#messageEvaluate', '#messageAlertText', '#messageAlert');
+      // $('#messageEvaluate').addClass("error");
+      // $('#messageAlertText').removeClass("hidden");
+      // $('#messageAlert').addClass("text-field-error");
+      // $('#messageEvaluate').removeClass("hidden");
       errorsContact["messageEvaluate"] = true;
       initialize();
     }else{

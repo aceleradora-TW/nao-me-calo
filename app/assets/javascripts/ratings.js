@@ -40,7 +40,7 @@ $(document).ready(function(){
 
   function hasBadWords(text){
     var count = 0;
-     var textLowerCase = text.val().toLowerCase().split(" ");
+    var textLowerCase = text.val().toLowerCase().split(" ");
     for(var i = 0; i <= badwords.length; i++){
       if(textLowerCase.indexOf(badwords[i]) !== -1 ){
         count++;
@@ -156,8 +156,7 @@ $(document).ready(function(){
 
   function checkName(){
     var nameExp = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
-    var nameInput = $('#nameEvaluate').val();
-    if (nameInput.match(nameExp) || $('#nameEvaluate').val() === "" || $('#nameEvaluate').val() === null){
+    if (checking("#nameEvaluate", nameExp)){
       $('#nameEvaluate').removeClass("error");
       $('#nameAlertText').addClass('hidden');
       errors["nameEvaluate"] = false;
@@ -172,8 +171,7 @@ $(document).ready(function(){
 
   function checkMail(){
     var emailExp = /^(([^<>()\[\]\\.,;:=/{}+!\s@"]+(\.[^<>()\[\]\\.,;:=/{}+!\s@]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var emailInput = $('#emailEvaluate').val();
-    if (emailInput.match(emailExp) || $('#emailEvaluate').val() === "" || $('#emailEvaluate').val() === null){
+    if(checking("#emailEvaluate", emailExp)){
       $('#emailEvaluate').removeClass("error");
       $('#emailAlertText').addClass('hidden');
       errors["emailEvaluate"] = false;
@@ -183,6 +181,16 @@ $(document).ready(function(){
       $('#emailAlertText').removeClass('hidden');
       errors["emailEvaluate"] = true;
       showMessage();
+    }
+  }
+
+  function checking(inputId, exp){
+    var input = $(inputId).val();
+    if (input.match(exp) || $(inputId).val() === "" || $(inputId).val() === null) {
+      return true
+    }
+    else {
+      return false
     }
   }
 
