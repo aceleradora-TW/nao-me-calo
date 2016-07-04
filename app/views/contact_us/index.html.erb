@@ -28,7 +28,8 @@
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
             <p id="messageAlertText", class="hidden">Por favor, digite uma mensagem.</p>
             <p id="messageAlertTextObscenity", class="hidden alertText">Seu texto contém palavras ofensivas, por favor corrija</p>
-          <%= text_area_tag :message, nil, :class => "form-control text-area", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate", onfocusout: "checkMessage()"%>
+            <p>O texto deve ter no máximo 500 caracteres.</p>
+          <%= text_area_tag :message, nil, :maxlength => 500, :class => "form-control text-area", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate", onfocusout: "checkMessage()"%>
         </div>
         <script>
           var badwords = <%= get_bad_word.inspect.html_safe %>;
