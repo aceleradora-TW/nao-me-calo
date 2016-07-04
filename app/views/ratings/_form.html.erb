@@ -281,7 +281,7 @@
       <%= f.label "Descrição do relato" %>
       <p id="descriptionAlertText", class="hidden alertText">Seu texto contém palavras ofensivas, por favor corrija</p>
       <p>O texto deve ter no máximo 500 caracteres.</p>
-      <%= f.text_area :description, rows: 5, :maxlength => 500, :class => "form-control", aria: {label: "Descrição"}  %>
+      <%= f.text_area :description, rows: 5, :maxlength => 500, :class => "form-control", :id => "ratingDescription", aria: {label: "Descrição"}  %>
     </div>
   </div>
 
