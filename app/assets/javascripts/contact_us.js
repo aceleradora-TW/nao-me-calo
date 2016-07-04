@@ -1,4 +1,4 @@
-errorsContact = {emailEvaluate: true, messageEvaluate: true}
+errorsContact = {emailEvaluateContact: true, messageEvaluate: true}
 
 $(document).ready(function(){
   initialize();
@@ -65,7 +65,7 @@ $(document).ready(function(){
       $('#messageAlert').removeClass("text-field-error");
       $('#messageAlertText').addClass("hidden");
       errorsContact["messageEvaluate"] = false;
-      initialize();
+       initialize();
     }
   }
 });
