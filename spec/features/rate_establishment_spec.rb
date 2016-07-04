@@ -11,7 +11,7 @@ feature 'Rate establishment', js: true do
     fill_in 'emailEvaluate', :with => 'jonatas@terra.com.br'
     page.execute_script '$("#phoneEvaluate").val("(51)33306088")'
     page.execute_script '$("#dateEvaluate").val("10/06/2016")'
-    fill_in 'rating_description', :with => 'Este é um texto de teste!'
+    fill_in 'ratingDescription', :with => 'Este é um texto de teste!'
     check 'terms'
     click_on 'Enviar avaliação'
 
