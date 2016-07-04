@@ -184,16 +184,6 @@ $(document).ready(function(){
     }
   }
 
-  function checking(inputId, exp){
-    var input = $(inputId).val();
-    if (input.match(exp) || $(inputId).val() === "" || $(inputId).val() === null) {
-      return true
-    }
-    else {
-      return false
-    }
-  }
-
   function enableButtonTerms(){
     if(!(isNull($('#cpfEvaluate')) || isNull($('#dateEvaluate')))){
       if($('#terms:checked').length === 1){
@@ -218,3 +208,13 @@ $(document).ready(function(){
     show = showMessage();
   });
 });
+
+function checking(inputId, exp){
+  var input = $(inputId).val();
+  if (input.match(exp) || $(inputId).val() === "" || $(inputId).val() === null) {
+    return true
+  }
+  else {
+    return false
+  }
+}

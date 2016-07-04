@@ -1,4 +1,4 @@
-errorsContact = {emailEvaluateContact: true, messageEvaluate: true}
+errorsContact = {emailEvaluateContact: true, messageEvaluate: true, nameEvaluateContact: false}
 
 $(document).ready(function(){
   initialize();
@@ -10,6 +10,10 @@ $(document).ready(function(){
 
   $('#messageEvaluate').focusout(function(){
     checkMessage();
+  });
+
+  $('#nameEvaluateContact').focusout(function(){
+    checkNameContact();
   });
 
   function disableButton(){
@@ -33,47 +37,54 @@ $(document).ready(function(){
   function checkMailContact(){
     var emailExp = /^(([^<>()\[\]\\.,;:=/{}+!\s@"]+(\.[^<>()\[\]\\.,;:=/{}+!\s@]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var emailInput = $('#emailEvaluateContact').val();
-
     if (!emailInput.match(emailExp) || emailInput === "" ){
-      // $('#emailEvaluateContact').addClass("error");
-      // // $('#emailAlertContact').removeClass("hidden");
-      // $('#emailAlertTextContact').removeClass("hidden");
-      // $('#emailAlertContact').addClass("text-field-error");
-      // $('#emailEvaluateContact').removeClass("hidden");
-      errorFound('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact');
+      errorFoundContact('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact');
       errorsContact["emailEvaluateContact"] = true;
       initialize();
     }else{
-      $('#emailEvaluateContact').removeClass("error");
-      $('#emailAlertContact').removeClass("text-field-error");
-      $('#emailAlertTextContact').addClass("hidden");
+      errorNotFoundContact('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact')
       errorsContact["emailEvaluateContact"] = false;
       initialize();
     }
   }
 
-function errorFound(textAreaId, alertTextId, alertDivId){
-  $(textAreaId).addClass("error");
-  $(alertTextId).removeClass("hidden");
-  $(alertDivId).addClass("text-field-error");
-}
+  function checkNameContact(){
+    var nameExp = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/
+    if (checking("#nameEvaluateContact", nameExp)){
+      errorNotFoundContact('#nameEvaluateContact', '#nameAlertTextContact', '#nameAlertContact')
+      errorsContact["nameEvaluateContact"] = false;
+      initialize();
+    }
+    else {
+      errorFoundContact('#nameEvaluateContact', '#nameAlertTextContact', '#nameAlertContact');
+      errorsContact["nameEvaluate"] = true;
+      initialize();
+      showMessage();
+    }
+  }
 
   function checkMessage(){
     var message = $('#messageEvaluate').val();
     if (message === ""){
-      errorFound('#messageEvaluate', '#messageAlertText', '#messageAlert');
-      // $('#messageEvaluate').addClass("error");
-      // $('#messageAlertText').removeClass("hidden");
-      // $('#messageAlert').addClass("text-field-error");
-      // $('#messageEvaluate').removeClass("hidden");
+      errorFoundContact('#messageEvaluate', '#messageAlertText', '#messageAlert');
       errorsContact["messageEvaluate"] = true;
       initialize();
     }else{
-      $('#messageEvaluate').removeClass("error");
-      $('#messageAlert').removeClass("text-field-error");
-      $('#messageAlertText').addClass("hidden");
+      errorNotFoundContact('#messageEvaluate', '#messageAlertText', '#messageAlert')
       errorsContact["messageEvaluate"] = false;
        initialize();
     }
+  }
+
+  function errorFoundContact(textAreaId, alertTextId, alertDivId){
+    $(textAreaId).addClass("error");
+    $(alertTextId).removeClass("hidden");
+    $(alertDivId).addClass("text-field-error");
+  }
+
+  function errorNotFoundContact(textAreaId, alertTextId, alertDivId){
+    $(textAreaId).removeClass("error");
+    $(alertTextId).addClass("hidden");
+    $(alertDivId).removeClass("text-field-error");
   }
 });

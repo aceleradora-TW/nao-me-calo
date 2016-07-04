@@ -10,9 +10,10 @@
           <div class="field">
           <b>Preencha os campos marcados com</b> <span class="red-text"> *</span>
           </div>
-        <div class='field'>
+        <div class='field' id="nameAlertContact">
           <%= label_tag 'Nome:' %>
-          <%= text_field_tag :name, nil,:class => "form-control", aria: {label: "nome"}, :id => "nameContact"%>
+          <p id="nameAlertTextContact", class="hidden">Por favor, digite um nome válido.</p>
+          <%= text_field_tag :name, nil,:class => "form-control", aria: {label: "nome"}, id:"nameEvaluateContact"%>
         </div>
         <div class='field' id="emailAlertContact">
           <%= label_tag 'E-mail:' %><span class="red-text"> *</span>
