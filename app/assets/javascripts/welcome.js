@@ -27,6 +27,13 @@ function initAutocomplete () {
     autocomplete.addListener('place_changed', fillName);
     searchBox.addListener('place_changed', fillSearch);
 
+    $('#evaluateField').change("fillName()");
+    $('#searchField').change("fillSearch()");
+    $('#searchField').focus("geolocate()");
+    $('#searchField').keydown("list_places()");
+    $('#evaluateField').keydown("list_places()");
+
+
     // Create the search box and link it to the UI element.
     var input = document.getElementById('map_search');
     var searchBoxMap = new google.maps.places.SearchBox(input);
