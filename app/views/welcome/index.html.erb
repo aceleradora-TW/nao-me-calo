@@ -4,7 +4,7 @@
 <div class="alert alert-danger">
   <p id="alert" class="text-center">
     <% if ($establishment != nil) %>
-    <%= link_to "/avaliar?placeId=#{$establishment.placeId}" do %>
+    <%= link_to "/avaliar?place_id=#{$establishment.place_id}" do %>
     <%= flash[:error] %></p>
     <% end %>
     <% else %>
