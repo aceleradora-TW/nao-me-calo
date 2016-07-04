@@ -40,7 +40,7 @@ class WelcomeController < ApplicationController
       @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color, establishment.id, @pin_concept, set_average_style(@pin_concept)]
     end
 
-    @establishment_array = @establishment_hash.sort_by{ |key, value| value }
+    @establishment_array = @establishment_hash.sort_by{ |_key, value| value }
 
     @worst_places = []
     @worst_places = set_concept(@worst_places, @establishment_array)

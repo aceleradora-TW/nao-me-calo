@@ -43,7 +43,7 @@ function initAutocomplete () {
     searchBoxMap.addListener('places_changed', function() {
       var places = searchBoxMap.getPlaces();
 
-      if (places.length == 0) {
+      if (places.length === 0) {
         return;
       }
 
@@ -195,13 +195,13 @@ function initAutocomplete () {
     $('#placeId2').attr('readonly', true)
 
     $('#formEvaluate').submit(function(e){
-      if($('#placeId').val() == ''){
+      if($('#placeId').val() === ''){
         e.preventDefault();
       }
     });
 
     $('#formSearch').submit(function(e){
-      if($('#placeId2').val() == ''){
+      if($('#placeId2').val() === ''){
         e.preventDefault();
       }
     });

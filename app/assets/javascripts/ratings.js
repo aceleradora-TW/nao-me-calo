@@ -10,7 +10,7 @@ $(document).ready(function(){
 
   errors = {cpfEvaluate: false, rating: true, dateEvaluate: false, description: false};
 
-  if ( $('[type="date"]').prop('type') != 'date' ) {
+  if ( $('[type="date"]').prop('type') !== 'date' ) {
     $('[type="date"]').datepicker();
   }
 
@@ -106,31 +106,30 @@ $(document).ready(function(){
     var rest;
     sum = 0;
 
-    if ( strCPF == "00000000000" || strCPF == "11111111111" || strCPF == "22222222222" || strCPF == "33333333333" || strCPF == "44444444444" || strCPF == "55555555555" || strCPF == "66666666666" || strCPF == "77777777777" || strCPF == "88888888888" || strCPF == "99999999999" || strCPF == "01234567890") return true;
+    if ( strCPF === "00000000000" || strCPF === "11111111111" || strCPF === "22222222222" || strCPF === "33333333333" || strCPF === "44444444444" || strCPF === "55555555555" || strCPF === "66666666666" || strCPF === "77777777777" || strCPF === "88888888888" || strCPF === "99999999999" || strCPF === "01234567890") return true;
 
     for (i=1; i<=9; i++) sum = sum + parseInt(strCPF.substring(i-1, i)) * (11 - i);
     rest = (sum * 10) % 11;
 
-    if ((rest == 10) || (rest == 11))  rest = 0;
-    if (rest != parseInt(strCPF.substring(9, 10)) ) return true;
+    if ((rest === 10) || (rest === 11))  rest = 0;
+    if (rest !== parseInt(strCPF.substring(9, 10), 10) ) return true;
 
     sum = 0;
-    for (i = 1; i <= 10; i++) sum = sum + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+    for (i = 1; i <= 10; i++) sum = sum + parseInt(strCPF.substring(i-1, i), 10) * (12 - i);
     rest = (sum * 10) % 11;
 
     if ((rest == 10) || (rest == 11))  rest = 0;
-    if (rest != parseInt(strCPF.substring(10, 11) ) ) return true;
+    if (rest != parseInt(strCPF.substring(10, 11), 10 ) ) return true;
     return false;
   }
 
   function reviewDate(){
-    var regExPattern = /^((((0?[1-9]|[12]\d|3[01])[\.\-\/](0?[13578]|1[02])      [\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|[12]\d|30)[\.\-\/](0?[13456789]|1[012])[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|1\d|2[0-8])[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|(29[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00)))|(((0[1-9]|[12]\d|3[01])(0[13578]|1[02])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|1\d|2[0-8])02((1[6-9]|[2-9]\d)?\d{2}))|(2902((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00))))$/;
-
+    var regExPattern = /^((((0?[1-9]|[12]\d|3[01])[\.\-\/](0?[13578]|1[02]) {6}[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|[12]\d|30)[\.\-\/](0?[13456789]|1[012])[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|1\d|2[0-8])[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|(29[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00)))|(((0[1-9]|[12]\d|3[01])(0[13578]|1[02])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|1\d|2[0-8])02((1[6-9]|[2-9]\d)?\d{2}))|(2902((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00))))$/;
     var ratingDate = $('#dateEvaluate').val();
     var date = new Date();
 
     var today = date.getDate() + ((date.getMonth()+1) * 30) + (date.getFullYear() * 365);
-    ratingDate = parseInt(ratingDate.substring(0,2)) + (parseInt(ratingDate.substring(3,5)) * 30) + (parseInt(ratingDate.substring(6)) * 365);
+    ratingDate = parseInt(ratingDate.substring(0,2), 10) + (parseInt(ratingDate.substring(3,5), 10) * 30) + (parseInt(ratingDate.substring(6), 10) * 365);
 
     if (((today < ratingDate) || (ratingDate <730000)) || $('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(regExPattern)){
       $('#dateEvaluate').addClass("error");
@@ -148,7 +147,7 @@ $(document).ready(function(){
   }
 
   function isNull(parameter){
-    if(parameter.val() == null || parameter.val() == ""){
+    if(parameter.val() === null || parameter.val() === ""){
       return true;
     } else {
       return false;
