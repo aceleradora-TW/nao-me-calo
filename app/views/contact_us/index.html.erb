@@ -12,7 +12,7 @@
           </div>
         <div class='field'>
           <%= label_tag 'Nome:' %>
-          <%= text_field_tag :name, nil,:class => "form-control", aria: {label: "nome"}%>
+          <%= text_field_tag :name, nil,:class => "form-control", aria: {label: "nome"}, :id => "nameContact"%>
         </div>
         <div class='field' id="emailAlertContact">
           <%= label_tag 'E-mail:' %><span class="red-text"> *</span>
@@ -21,7 +21,7 @@
         </div>
         <div class='field'>
           <%= label_tag 'Assunto:' %>
-          <%= text_field_tag :subject, nil,:class => "form-control", aria: {label: "Assunto"}%>
+          <%= text_field_tag :subject, nil,:class => "form-control", aria: {label: "Assunto"}, :id => "subjectContact"%>
         </div>
         <div class='field'id="messageAlert">
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
