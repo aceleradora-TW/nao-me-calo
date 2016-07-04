@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
 
   $('#messageEvaluate').focusout(function(){
-    checkMessage();
+    hasBadWordsContact($('#messageEvaluate'));
   });
 
   $('#nameEvaluateContact').focusout(function(){
@@ -57,9 +57,8 @@ $(document).ready(function(){
     }
     else {
       errorFoundContact('#nameEvaluateContact', '#nameAlertTextContact', '#nameAlertContact');
-      errorsContact["nameEvaluate"] = true;
+      errorsContact["nameEvaluateContact"] = true;
       initialize();
-      showMessage();
     }
   }
 
@@ -72,7 +71,7 @@ $(document).ready(function(){
     }else{
       errorNotFoundContact('#messageEvaluate', '#messageAlertText', '#messageAlert')
       errorsContact["messageEvaluate"] = false;
-       initialize();
+      initialize();
     }
   }
 
@@ -87,4 +86,34 @@ $(document).ready(function(){
     $(alertTextId).addClass("hidden");
     $(alertDivId).removeClass("text-field-error");
   }
+
+  function hasBadWordsContact(text){
+    var count = 0;
+    var textLowerCase = text.val().toLowerCase().split(" ");
+    for(var i = 0; i <= badwords.length; i++){
+      if(textLowerCase.indexOf(badwords[i]) !== -1 ){
+        count++;
+      }
+    }
+    badWordsErrorsContact(count, text);
+  }
+
+  function badWordsErrorsContact(count, text){
+    if(count>0){
+      errorsContact["messageEvaluate"] = true;
+      text.addClass("error");
+      $('#messageAlertTextObscenity' ).removeClass("hidden");
+      $('#messageAlert').addClass("text-field-error");
+      initialize();
+    }
+    else {
+      errorsContact["messageEvaluate"] = false;
+      text.removeClass( "errorBorder" );
+      $('#messageAlertTextObscenity').addClass( "hidden" );
+      $('#messageAlert').removeClass("text-field-error");
+      initialize();
+      checkMessage();
+    }
+  }
+
 });
