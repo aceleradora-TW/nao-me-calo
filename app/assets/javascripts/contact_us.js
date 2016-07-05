@@ -24,6 +24,10 @@ $(document).ready(function(){
     $('#buttonDisable').attr('disabled', false);
   }
 
+  $('#messageEvaluate').keyup(function(){
+    countChars($('#messageEvaluate'),500,'limitCharContact');
+  });
+
   function initialize(){
     for(var l in errorsContact){
       if(errorsContact[l] === true){
@@ -32,6 +36,11 @@ $(document).ready(function(){
         enableButton();
       }
     }
+  }
+
+  function countChars(box, limit, campospan){
+    var count =  limit  - box.val().length;
+    document.getElementById(campospan).innerHTML = "Caracteres restantes: " + count;
   }
 
   function checkMailContact(){

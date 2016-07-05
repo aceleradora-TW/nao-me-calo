@@ -39,7 +39,6 @@ $(document).ready(function(){
   });
 
   $('#ratingDescription').keyup(function(){
-    // mostrarResultado($('#ratingDescription'),500,'sprestante');
     countChars($('#ratingDescription'),500,'limitChar');
   });
 
