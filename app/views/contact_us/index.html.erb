@@ -22,7 +22,7 @@
         </div>
         <div class='field'>
           <%= label_tag 'Assunto:' %>
-          <%= text_field_tag :subject, nil,:class => "form-control", aria: {label: "Assunto"}, :id => "subjectContact"%>
+          <%= text_field_tag :subject, nil, :maxlength => 100, :class => "form-control", aria: {label: "Assunto"}, :id => "subjectContact"%>
         </div>
         <div class='field'id="messageAlert">
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
