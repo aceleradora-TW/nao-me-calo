@@ -7,6 +7,7 @@ gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 
+gem 'devise'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -40,6 +41,7 @@ gem 'jquery-ui-rails'
 gem 'google_places'
 gem 'pg_search'
 gem 'maskedinput-rails'
+gem 'activeadmin'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
