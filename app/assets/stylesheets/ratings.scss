@@ -87,6 +87,11 @@
 label .radio-text {
   display: inline-block;
   margin-top: 3px;
+  color: #565656 !important;
+  // &:hover {
+  //   color: white !important;
+  // }
+
 }
 
 .rating-dangerous {
@@ -94,12 +99,17 @@ label .radio-text {
   color: $buttonDangerousColor;
   &:hover {
     background-color: $buttonDangerousColor;
+    .radio-text{
+      color: white !important;
+    }
   }
 }
 
 input[type="radio"]:checked + .rating-dangerous {
   background-color: $buttonDangerousColor;
-  color: white;
+  .radio-text{
+    color: white !important;
+  }
 }
 
 .rating-bad {
@@ -107,12 +117,18 @@ input[type="radio"]:checked + .rating-dangerous {
   color: $buttonBadColor;
   &:hover {
     background-color: $buttonBadColor;
+    .radio-text{
+      color: white !important;
+    }
   }
+
 }
 
 input[type="radio"]:checked + .rating-bad {
   background-color: $buttonBadColor;
-  color: white;
+  .radio-text{
+    color: white !important;
+  }
 }
 
 .rating-regular {
@@ -120,12 +136,17 @@ input[type="radio"]:checked + .rating-bad {
   color: $buttonRegularColor;
   &:hover {
     background-color: $buttonRegularColor;
+    .radio-text{
+      color: white !important;
+    }
   }
 }
 
 input[type="radio"]:checked + .rating-regular {
   background-color: $buttonRegularColor;
-  color: white;
+  .radio-text{
+    color: white !important;
+  }
 }
 
 .rating-good {
@@ -133,12 +154,17 @@ input[type="radio"]:checked + .rating-regular {
   color: $buttonGoodColor;
   &:hover {
     background-color: $buttonGoodColor;
+    .radio-text{
+      color: white !important;
+    }
   }
 }
 
 input[type="radio"]:checked + .rating-good {
   background-color: $buttonGoodColor;
-  color: white;
+  .radio-text{
+    color: white !important;
+  }
 }
 
 .rating-excellent {
@@ -146,6 +172,9 @@ input[type="radio"]:checked + .rating-good {
   color: $buttonExcellentColor;
   &:hover {
     background-color: $buttonExcellentColor;
+    .radio-text{
+      color: white !important;
+    }
   }
 }
 
@@ -155,7 +184,9 @@ input[type="radio"]:checked + .rating-good {
 
 input[type="radio"]:checked + .rating-excellent {
   background-color: $buttonExcellentColor;
-  color: white;
+  .radio-text{
+    color: white !important;
+  }
 }
 .text-style-radios{
   font-weight: normal !important;
