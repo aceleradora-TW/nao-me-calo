@@ -280,11 +280,10 @@
     <div class="field">
       <%= f.label "Descrição do relato" %>
       <p id="descriptionAlertText", class="hidden alertText">Seu texto contém palavras ofensivas, por favor corrija</p>
-      <p>O texto deve ter no máximo 500 caracteres.</p>
       <%= f.text_area :description, rows: 5, :maxlength => 500, :class => "form-control", :id => "ratingDescription", aria: {label: "Descrição"}  %>
     </div>
   </div>
-
+  <span id="limitChar">Caracteres restantes: 500</span>
   <div class='field text-center'>
     <input type="checkbox" name="accepted_terms" id="terms" unchecked>
     <label for="terms">Aceito os <a href="/termos" target="_blank">termos e condições de uso!</a></label>
@@ -293,8 +292,8 @@
     <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton", aria: {label: "Botão de enviar"} %>
   </div>
 
-<script>
-  
+  <script>
+
   var badwords = <%= get_bad_word.inspect.html_safe %>;
-</script>
+  </script>
   <% end %>

@@ -38,6 +38,11 @@ $(document).ready(function(){
     hasBadWords($('#ratingDescription'));
   });
 
+  $('#ratingDescription').keyup(function(){
+    // mostrarResultado($('#ratingDescription'),500,'sprestante');
+    countChars($('#ratingDescription'),500,'limitChar');
+  });
+
   function hasBadWords(text){
 
     var count = 0;
@@ -190,8 +195,7 @@ $(document).ready(function(){
       if($('#terms:checked').length === 1){
         $('#submitButton').prop("disabled", false);
         return true;
-      } else {
-        $('#submitButton').prop("disabled", true);
+      } else {        $('#submitButton').prop("disabled", true);
         return false;
       }
     }
@@ -199,8 +203,7 @@ $(document).ready(function(){
 
   $('#terms').change(function(){
     if(!(errors['cpfEvaluate'] || isNull($('#cpfEvaluate')) || errors["rating"] || isNull($('#dateEvaluate')) || errors["dateEvaluate"] || errors["nameEvaluate"] || errors["emailEvaluate"] || errors["description"])){
-      enableButtonTerms();
-    }
+      enableButtonTerms();    }
   });
 
   $('.radio-button').click(function(){
@@ -208,6 +211,12 @@ $(document).ready(function(){
     enable = enableButtonTerms();
     show = showMessage();
   });
+
+  function countChars(box, limit, campospan){
+    var count =  limit  - box.val().length;
+    document.getElementById(campospan).innerHTML = "Caracteres restantes: " + count;
+  }
+
 });
 
 function checking(inputId, exp){
