@@ -4,14 +4,11 @@ class WelcomeController < ApplicationController
   include WelcomeHelper
 
   def index
-
     @establishments = Establishment.all
     @establishment_hash = {}
     @establishments.each do |establishment|
       @establishment_hash[establishment] = calculate_average_establishment(establishment)
     end
-
-
 
     @pinsForMap = []
 
@@ -36,7 +33,6 @@ class WelcomeController < ApplicationController
         @pin_concept = "Ótimo"
       end
 
-
       @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color, establishment.id, @pin_concept, set_average_style(@pin_concept)]
     end
 
@@ -48,8 +44,6 @@ class WelcomeController < ApplicationController
     @establishment_array = @establishment_array.reverse
     @best_places = []
     @best_places = set_concept(@best_places, @establishment_array)
-
-
   end
 
   def search

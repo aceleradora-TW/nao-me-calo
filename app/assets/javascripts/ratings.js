@@ -109,7 +109,7 @@ $(document).ready(function(){
 
     if ( strCPF === "00000000000" || strCPF === "11111111111" || strCPF === "22222222222" || strCPF === "33333333333" || strCPF === "44444444444" || strCPF === "55555555555" || strCPF === "66666666666" || strCPF === "77777777777" || strCPF === "88888888888" || strCPF === "99999999999" || strCPF === "01234567890") return true;
 
-    for (i=1; i<=9; i++) sum = sum + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+    for (i=1; i<=9; i++) sum = sum + parseInt(strCPF.substring(i-1, i), 10) * (11 - i);
     rest = (sum * 10) % 11;
 
     if ((rest === 10) || (rest === 11))  rest = 0;
@@ -119,8 +119,8 @@ $(document).ready(function(){
     for (i = 1; i <= 10; i++) sum = sum + parseInt(strCPF.substring(i-1, i), 10) * (12 - i);
     rest = (sum * 10) % 11;
 
-    if ((rest == 10) || (rest == 11))  rest = 0;
-    if (rest != parseInt(strCPF.substring(10, 11), 10 ) ) return true;
+    if ((rest === 10) || (rest === 11))  rest = 0;
+    if (rest !== parseInt(strCPF.substring(10, 11), 10 ) ) return true;
     return false;
   }
 

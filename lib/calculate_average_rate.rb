@@ -7,7 +7,7 @@ class CalculateAverageRate
   end
 
   def calculate_media(evaluates)
-    evaluates.each do |key, value|
+    evaluates.each do |_key, value|
       unless value == nil
         @result = @result + value
       end

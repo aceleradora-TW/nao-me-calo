@@ -1,5 +1,0 @@
-engines:
-  rubocop:
-    enabled: true
-    exclude_fingerprints:
-    - 854e6b3bf13a488e39d95fdb730f54bf

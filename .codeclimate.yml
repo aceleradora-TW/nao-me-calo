@@ -1,0 +1,12 @@
+engines:
+  rubocop:
+    enabled: true
+    exclude_fingerprints:
+    - 854e6b3bf13a488e39d95fdb730f54bf
+  eslint:
+    enabled: true
+    checks:
+      complexity:
+        enabled: false
+    exclude_fingerprints:
+    - c95e0c49c7ee402bb9e686d2b8058b30

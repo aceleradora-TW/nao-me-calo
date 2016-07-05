@@ -60,7 +60,6 @@ class RatingsController < ApplicationController
         redirect_to controller: :ratings, action: :new, placeId: params[:placeId]
         flash[:notice] = "* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *"
       else
-
         @rating = Rating.new(rating_params)
         @establishment = Establishment.search_by_id(params[:placeId]).first
 
@@ -76,28 +75,14 @@ class RatingsController < ApplicationController
             if @rating.save
               format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
             else
-              format.html { redirect_to "bing.com.br", notice: "Caiu aqui!" }
+              format.html { redirect_to root_path }
             end
-          end
-        else
-          respond_to do |format|
-            format.html { redirect_to "google.com.br", notice: "Caiu no outro aqui!" }
           end
         end
       end
     else
       respond_to do |format|
         format.html { redirect_to root_path }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @rating.update(rating_params)
-        format.html { redirect_to @rating, notice: 'Rating was successfully updated.' }
-      else
-        format.html { render :edit }
       end
     end
   end

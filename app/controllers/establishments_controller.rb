@@ -40,17 +40,7 @@ class EstablishmentsController < ApplicationController
       end
     end
   end
-
-  def update
-    respond_to do |format|
-      if @establishment.update(establishment_params)
-        format.html { redirect_to @establishment, notice: 'Establishment was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
-    end
-  end
-
+  
   def destroy
     @establishment.destroy
     respond_to do |format|
