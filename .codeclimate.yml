@@ -1,8 +1,12 @@
 engines:
   rubocop:
     enabled: true
+    checks:
+      Rubocop/Metrics/CyclomaticComplexity:
+        enabled: false
     exclude_fingerprints:
-    - 854e6b3bf13a488e39d95fdb730f54bf
+    - 1d05cd733d851f0fe43349c14e00e0ef
+    - 7097b81d5e79fa8746fe3d2360512673
   eslint:
     enabled: true
     checks:

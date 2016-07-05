@@ -132,7 +132,7 @@ $(document).ready(function(){
     var today = date.getDate() + ((date.getMonth()+1) * 30) + (date.getFullYear() * 365);
     ratingDate = parseInt(ratingDate.substring(0,2), 10) + (parseInt(ratingDate.substring(3,5), 10) * 30) + (parseInt(ratingDate.substring(6), 10) * 365);
 
-    if (((today < ratingDate) || (ratingDate <730000)) || $('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() == "" || !$('#dateEvaluate').val().match(regExPattern)){
+    if (((today < ratingDate) || (ratingDate <730000)) || $('#dateEvaluate').val() === "__/__/____" || $('#dateEvaluate').val() === "" || !$('#dateEvaluate').val().match(regExPattern)){
       $('#dateEvaluate').addClass("error");
       $('#dateAlert').addClass("text-field-error");
       $('#dateAlertText').removeClass("hidden");

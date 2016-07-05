@@ -15,25 +15,9 @@ class WelcomeController < ApplicationController
     @establishments.each do |establishment|
       @rating = calculate_average_establishment establishment
       @rating.round(1)
-      case @rating
-      when  1 .. 1.8
-        @color = "http://www.googlemapsmarkers.com/v1/O/E03535/"
-        @pin_concept = "Péssimo"
-      when 1.9 .. 2.6
-        @color = "http://www.googlemapsmarkers.com/v1/O/FF6633/"
-        @pin_concept = "Ruim"
-      when  2.7 .. 3.4
-        @color = "http://www.googlemapsmarkers.com/v1/O/FFBD14/"
-        @pin_concept = "Regular"
-      when 3.5 .. 4.2
-        @color = "http://www.googlemapsmarkers.com/v1/O/99CC00/"
-        @pin_concept = "Bom"
-      else
-        @color = "http://www.googlemapsmarkers.com/v1/O/329853/"
-        @pin_concept = "Ótimo"
-      end
+      @color_and_rating = get_color_and_pin_concept(@rating)
 
-      @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color, establishment.id, @pin_concept, set_average_style(@pin_concept)]
+      @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color_and_rating[0], establishment.id, @color_and_rating[1], set_average_style(@color_and_rating[1])]
     end
 
     @establishment_array = @establishment_hash.sort_by{ |_key, value| value }
@@ -60,6 +44,28 @@ class WelcomeController < ApplicationController
   end
 
   def terms
+  end
+
+  def get_color_and_pin_concept(rating)
+    case rating
+    when  1 .. 1.8
+      color = "http://www.googlemapsmarkers.com/v1/O/E03535/"
+      pin_concept = "Péssimo"
+    when 1.9 .. 2.6
+      color = "http://www.googlemapsmarkers.com/v1/O/FF6633/"
+      pin_concept = "Ruim"
+    when  2.7 .. 3.4
+      color = "http://www.googlemapsmarkers.com/v1/O/FFBD14/"
+      pin_concept = "Regular"
+    when 3.5 .. 4.2
+      color = "http://www.googlemapsmarkers.com/v1/O/99CC00/"
+      pin_concept = "Bom"
+    else
+      color = "http://www.googlemapsmarkers.com/v1/O/329853/"
+      pin_concept = "Ótimo"
+    end
+
+    return [color, pin_concept]
   end
 
   private
