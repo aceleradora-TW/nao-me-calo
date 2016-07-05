@@ -39,10 +39,11 @@ $(document).ready(function(){
   });
 
   function hasBadWords(text){
+
     var count = 0;
-    var textLowerCase = text.val().toLowerCase().split(" ");
+    var textLowerCase = text.val().toLowerCase();
     for(var i = 0; i <= badwords.length; i++){
-      if(textLowerCase[0].indexOf(badwords[i]) !== -1 ){
+      if(textLowerCase.indexOf(badwords[i]) !== -1 ){
         count++;
       }
     }
