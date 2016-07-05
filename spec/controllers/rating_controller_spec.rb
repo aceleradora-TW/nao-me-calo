@@ -50,56 +50,6 @@ RSpec.describe RatingsController, type: :controller do
       end
     end
 
-    describe "#update" do
-      before :each do
-        @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")
-        @r1 = Rating.create!(woman: 4.0,race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id)
-      end
-
-      it "expect to flash notice when the rating is updated " do
-        put :update,{
-          id: @r1.id, rating:
-          {
-            woman: 4.0,
-            race: 4.0,
-            lgbtqia: 4.0,
-            disability: 4.0,
-            elder: 4.0,
-            obese: 4.0,
-            name: "Teste",
-            email: "teste",
-            phone: "teste",
-            rating_date:"06/06/06",
-            establishment_id: @est1.id,
-            cpf: "123456",
-          }
-        }
-        expect(flash[:notice]).to eq("Rating was successfully updated.")
-      end
-
-      it "expect to render edit when something goes wrong with Update " do
-      put :update,{
-        id: @r1.id, rating:
-        {
-          woman: 4.0,
-          race: 4.0,
-          lgbtqia: 4.0,
-          disability: 4.0,
-          elder: 4.0,
-          obese: 4.0,
-          name: "Teste",
-          email: "teste",
-          phone: "teste",
-          rating_date:"06/06/06",
-          establishment_id: "",
-          cpf: "",
-        }
-      }
-      expect(response).to render_template(:edit)
-    end
-
-    end
-
     describe "#create" do
       before :each do
         @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")

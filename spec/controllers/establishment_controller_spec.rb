@@ -71,54 +71,6 @@ RSpec.describe EstablishmentsController, type: :controller do
     end
   end
 
-  describe "#update" do
-    before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
-    end
-
-    it "expect to flash notice when the establishment is updated " do
-      put :update,{
-        id: @est1.id, establishment:
-        {
-          name: "testedo teste",
-          address: "logo ali",
-          lat: "0",
-          lng: "0",
-          id_places: "321"
-        }
-      }
-      expect(flash[:notice]).to eq("Establishment was successfully updated.")
-    end
-
-    it "expect to flash notice when the establishment is updated " do
-      put :update,{
-        id: @est1.id, establishment:
-        {
-          name: "testedo teste",
-          address: "logo ali",
-          lat: "0",
-          lng: "0",
-          id_places: "321"
-        }
-      }
-      expect(flash[:notice]).to eq("Establishment was successfully updated.")
-    end
-
-    it "expect to render edit when something goes wrong with Update " do
-      put :update,{
-        id: @est1.id, establishment:
-        {
-          name: "",
-          address: "logo ali",
-          lat: "0",
-          lng: "0",
-          id_places: "321"
-        }
-      }
-      expect(response).to render_template(:edit)
-    end
-  end
-
   describe '#destroy' do
     before :each do
       @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
