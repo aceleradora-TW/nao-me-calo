@@ -8,7 +8,7 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 SimpleCov.start do
-  add_filter "/app" # Removendo teste para a criação da página de admin
+  add_filter "/app/admin" # Removendo teste para a criação da página de admin
 end
 
 CodeClimate::TestReporter.start
