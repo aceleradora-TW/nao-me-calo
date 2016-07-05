@@ -15,6 +15,11 @@
 <div class="alert alert-danger hidden errorDiv">
   <p id="alert" class="text-center">Erro, os campos com * são obrigatórios!</p>
 </div>
+
+<div>
+  <%= f.button 'Limpar campos', :type => "button", :class => "btn btn-success", :id => "clearButton", aria: {label: "Limpar os campos"} %>
+</div>
+
 <b>Preencha os campos marcados com</b> <span class="red-text"> *</span>
 <input type="hidden" id="placeId" name="placeId" value="<%= @placeId %>" readonly="readyonly">
 <div class="col-lg-12 no-padding-left padding-bottom">

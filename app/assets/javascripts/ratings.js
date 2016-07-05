@@ -42,6 +42,11 @@ $(document).ready(function(){
     countChars($('#ratingDescription'),500,'limitChar');
   });
 
+  $('#clearButton').click(function(){
+    $('.radio-button').removeAttr('checked');
+  });
+
+
   function hasBadWords(text){
 
     var count = 0;
