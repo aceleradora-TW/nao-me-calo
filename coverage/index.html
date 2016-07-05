@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_red.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-05T14:07:04-03:00">2016-07-05T14:07:04-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-05T14:27:56-03:00">2016-07-05T14:27:56-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">78.45%</span></span>
+    (<span class="covered_percent"><span class="yellow">85.48%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.17
+         2.31
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>28</b> files in total.
-    <b>181</b> relevant lines. 
-    <span class="green"><b>142</b> lines covered</span> and
-    <span class="red"><b>39</b> lines missed </span>
+    <b>186</b> relevant lines. 
+    <span class="green"><b>159</b> lines covered</span> and
+    <span class="red"><b>27</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#0cbdccb59a443c8da5559e42440675102e272f53" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
-        <td class="red strong">31.25 %</td>
+        <td class="red strong">68.75 %</td>
         <td>696</td>
         <td>32</td>
-        <td>10</td>
         <td>22</td>
-        <td>1.0</td>
+        <td>10</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -147,7 +147,7 @@
         <td>11</td>
         <td>10</td>
         <td>1</td>
-        <td>5.1</td>
+        <td>17.8</td>
       </tr>
       
       <tr>
@@ -313,11 +313,11 @@
       <tr>
         <td class="strong"><a href="#8d448d8dcad5255d562e108a812b66a0c0c8302b" class="src_link" title="spec/helpers/application_helper_spec.rb">spec/helpers/application_helper_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>41</td>
         <td>24</td>
-        <td>19</td>
-        <td>19</td>
+        <td>24</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -327,7 +327,7 @@
         <td>21</td>
         <td>20</td>
         <td>1</td>
-        <td>1.0</td>
+        <td>1.8</td>
       </tr>
       
     </tbody>
@@ -397,11 +397,11 @@
         <div class="source_table" id="0cbdccb59a443c8da5559e42440675102e272f53">
   <div class="header">
     <h3>app/helpers/application_helper.rb</h3>
-    <h4><span class="red">31.25 %</span> covered</h4>
+    <h4><span class="red">68.75 %</span> covered</h4>
     <div>
       <b>32</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>22</b> lines missed.</span>
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>10</b> lines missed.</span>
     </div>
   </div>
   
@@ -420,14 +420,14 @@
           <code class="ruby">  def calculate_average_establishment(establishment)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="3">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
           <code class="ruby">    all_ratings = establishment.ratings.map do |rating|</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="4">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">      rating.average_rating</code>
         </li>
@@ -444,8 +444,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="7">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="4" data-linenumber="7">
+          <span class="hits">4</span>
           
           <code class="ruby">    all_ratings.delete_if {|x| x == nil}</code>
         </li>
@@ -456,8 +456,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="9">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
           <code class="ruby">    return (all_ratings.sum/all_ratings.length).round(1)</code>
         </li>
@@ -480,26 +480,26 @@
           <code class="ruby">  def populate_rate_array(ratings)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
           
           <code class="ruby">    rate_array = []</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
           
           <code class="ruby">    ratings.each do |rating|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
+        <li class="covered" data-hits="6" data-linenumber="15">
+          <span class="hits">6</span>
           
           <code class="ruby">      if rating.average_rating &lt; 1.8</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="2" data-linenumber="16">
+          <span class="hits">2</span>
           
           <code class="ruby">        rate_array.push([rating,&quot;Péssimo&quot;])</code>
         </li>
@@ -522,8 +522,8 @@
           <code class="ruby">      elsif rating.average_rating &lt; 3.4</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
           <code class="ruby">        rate_array.push([rating,&quot;Regular&quot;])</code>
         </li>
@@ -546,8 +546,8 @@
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
+        <li class="covered" data-hits="2" data-linenumber="24">
+          <span class="hits">2</span>
           
           <code class="ruby">        rate_array.push([rating,&quot;Ótimo&quot;])</code>
         </li>
@@ -570,8 +570,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
-          
+        <li class="covered" data-hits="3" data-linenumber="28">
+          <span class="hits">3</span>
           
           <code class="ruby">    return rate_array</code>
         </li>
@@ -600,8 +600,8 @@
           <code class="ruby">  def determine_concept(rating)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="33">
-          
+        <li class="covered" data-hits="3" data-linenumber="33">
+          <span class="hits">3</span>
           
           <code class="ruby">    case rating</code>
         </li>
@@ -612,8 +612,8 @@
           <code class="ruby">    when 1 ... 1.8</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
           
           <code class="ruby">      @rating_concept = &quot;Péssimo&quot;</code>
         </li>
@@ -636,8 +636,8 @@
           <code class="ruby">    when 2.6 ... 3.4</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
-          
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
           
           <code class="ruby">      @rating_concept = &quot;Regular&quot;</code>
         </li>
@@ -660,8 +660,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
-          
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
           
           <code class="ruby">      @rating_concept = &quot;Ótimo&quot;</code>
         </li>
@@ -672,8 +672,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
-          
+        <li class="covered" data-hits="3" data-linenumber="45">
+          <span class="hits">3</span>
           
           <code class="ruby">    return @rating_concept</code>
         </li>
@@ -5148,14 +5148,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="9">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="19" data-linenumber="9">
+          <span class="hits">19</span>
           
           <code class="ruby">    all_ratings = [self.woman, self.lgbtqia, self.race, self.disability, self.elder, self.obese]</code>
         </li>
       
-        <li class="covered" data-hits="35" data-linenumber="10">
-          <span class="hits">35</span>
+        <li class="covered" data-hits="133" data-linenumber="10">
+          <span class="hits">133</span>
           
           <code class="ruby">    all_ratings.delete_if {|rating| rating == nil}</code>
         </li>
@@ -5166,8 +5166,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="12">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="19" data-linenumber="12">
+          <span class="hits">19</span>
           
           <code class="ruby">    if(all_ratings.empty?)</code>
         </li>
@@ -5190,8 +5190,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="16">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="19" data-linenumber="16">
+          <span class="hits">19</span>
           
           <code class="ruby">    return (all_ratings.sum/all_ratings.length).round(1) #media parcial</code>
         </li>
@@ -13929,8 +13929,8 @@
     <h3>spec/helpers/application_helper_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>19</b> relevant lines. 
-      <span class="green"><b>19</b> lines covered</span> and
+      <b>24</b> relevant lines. 
+      <span class="green"><b>24</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -13962,121 +13962,223 @@
           <code class="ruby">  before :each do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="5">
+          <span class="hits">7</span>
           
           <code class="ruby">    @est1 = Establishment.create!(name:&quot;Teste&quot;, address:&quot;Logo Ali&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;321&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @est2 = Establishment.create!(name:&quot;Teste2&quot;, address:&quot;Logo Ali2&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;121&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @est3 = Establishment.create!(name:&quot;Teste3&quot;, address:&quot;Logo Ali3&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;1212&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @est4 = Establishment.create!(name:&quot;Teste4&quot;, address:&quot;Logo Ali4&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;1213&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @est5 = Establishment.create!(name:&quot;Teste5&quot;, address:&quot;Logo Ali5&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;1212&quot;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="6">
+          <span class="hits">7</span>
           
           <code class="ruby">    @r1 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="7">
+          <span class="hits">7</span>
           
-          <code class="ruby">    @r2 = Rating.create!(woman: 2.0,race: 2.0, lgbtqia: 2.0, disability: 2.0, elder: 2.0, obese: 2.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est2.id)</code>
+          <code class="ruby">    @ratings1 = [@r1, @r1]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="8">
+          <span class="hits">7</span>
           
-          <code class="ruby">    @r3 = Rating.create!(woman: 3.0,race: 3.0, lgbtqia: 3.0, disability: 3.0, elder: 3.0, obese: 3.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est3.id)</code>
+          <code class="ruby">    @r3 = Rating.create!(woman: 3.0,race: 3.0, lgbtqia: 3.0, disability: 3.0, elder: 3.0, obese: 3.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="9">
+          <span class="hits">7</span>
           
-          <code class="ruby">    @r4 = Rating.create!(woman: 4.0,race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est4.id)</code>
+          <code class="ruby">    @ratings3 = [@r3, @r3]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="10">
+          <span class="hits">7</span>
           
-          <code class="ruby">    @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est5.id)</code>
+          <code class="ruby">    @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="7" data-linenumber="11">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    @ratings5 = [@r5, @r5]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;expect to return the average from establishments&#39; do</code>
+          <code class="ruby">  it &#39;expect to return the average from est&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(calculate_average_establishment(@est1)).to eq(1)</code>
+          <code class="ruby">    expect(calculate_average_establishment(@est1)).to eq(3.0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(calculate_average_establishment(@est2)).to eq(2)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(calculate_average_establishment(@est3)).to eq(3)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(calculate_average_establishment(@est4)).to eq(4)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(calculate_average_establishment(@est5)).to eq(5)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect to populate rate result with ratings and pessimo&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(populate_rate_array(@ratings1)).to eq([[@r1, &quot;Péssimo&quot;], [@r1, &quot;Péssimo&quot;]])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect to populate rate result with rating and regular&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(populate_rate_array(@ratings3)).to eq([[@r3, &quot;Regular&quot;], [@r3, &quot;Regular&quot;]])</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect to populate with rating and otimo&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(populate_rate_array(@ratings5)).to eq([[@r5, &quot;Ótimo&quot;], [@r5, &quot;Ótimo&quot;]])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect determine concept to return péssimo&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(determine_concept(1)).to eq(&quot;Péssimo&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect determine concept to return regular&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(determine_concept(3)).to eq(&quot;Regular&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect determine concept to return Ótimo&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(determine_concept(5)).to eq(&quot;Ótimo&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">end</code>
@@ -14484,8 +14586,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="65">
+          <span class="hits">7</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :transaction</code>
         </li>
@@ -14544,8 +14646,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="75">
+          <span class="hits">7</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -14580,8 +14682,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="81">
+          <span class="hits">7</span>
           
           <code class="ruby">   DatabaseCleaner.clean</code>
         </li>

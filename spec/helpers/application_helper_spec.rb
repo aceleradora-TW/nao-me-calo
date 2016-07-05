@@ -3,22 +3,39 @@ require "rails_helper"
 RSpec.describe ApplicationHelper, type: :helper do
   before :each do
     @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
-    @est2 = Establishment.create!(name:"Teste2", address:"Logo Ali2", lat:"0", lng:"0", id_places:"121")
-    @est3 = Establishment.create!(name:"Teste3", address:"Logo Ali3", lat:"0", lng:"0", id_places:"1212")
-    @est4 = Establishment.create!(name:"Teste4", address:"Logo Ali4", lat:"0", lng:"0", id_places:"1213")
-    @est5 = Establishment.create!(name:"Teste5", address:"Logo Ali5", lat:"0", lng:"0", id_places:"1212")
     @r1 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id)
-    @r2 = Rating.create!(woman: 2.0,race: 2.0, lgbtqia: 2.0, disability: 2.0, elder: 2.0, obese: 2.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est2.id)
-    @r3 = Rating.create!(woman: 3.0,race: 3.0, lgbtqia: 3.0, disability: 3.0, elder: 3.0, obese: 3.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est3.id)
-    @r4 = Rating.create!(woman: 4.0,race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est4.id)
-    @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est5.id)
+    @ratings1 = [@r1, @r1]
+    @r3 = Rating.create!(woman: 3.0,race: 3.0, lgbtqia: 3.0, disability: 3.0, elder: 3.0, obese: 3.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id)
+    @ratings3 = [@r3, @r3]
+    @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id)
+    @ratings5 = [@r5, @r5]
   end
 
-  it 'expect to return the average from establishments' do
-    expect(calculate_average_establishment(@est1)).to eq(1)
-    expect(calculate_average_establishment(@est2)).to eq(2)
-    expect(calculate_average_establishment(@est3)).to eq(3)
-    expect(calculate_average_establishment(@est4)).to eq(4)
-    expect(calculate_average_establishment(@est5)).to eq(5)
+  it 'expect to return the average from est' do
+    expect(calculate_average_establishment(@est1)).to eq(3.0)
+  end
+
+  it 'expect to populate rate result with ratings and pessimo' do
+    expect(populate_rate_array(@ratings1)).to eq([[@r1, "Péssimo"], [@r1, "Péssimo"]])
+  end
+
+  it 'expect to populate rate result with rating and regular' do
+    expect(populate_rate_array(@ratings3)).to eq([[@r3, "Regular"], [@r3, "Regular"]])
+  end
+
+  it 'expect to populate with rating and otimo' do
+    expect(populate_rate_array(@ratings5)).to eq([[@r5, "Ótimo"], [@r5, "Ótimo"]])
+  end
+
+  it 'expect determine concept to return péssimo' do
+    expect(determine_concept(1)).to eq("Péssimo")
+  end
+
+  it 'expect determine concept to return regular' do
+    expect(determine_concept(3)).to eq("Regular")
+  end
+  
+  it 'expect determine concept to return Ótimo' do
+    expect(determine_concept(5)).to eq("Ótimo")
   end
 end
