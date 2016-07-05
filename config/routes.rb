@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   get '/perfil/:id' => 'establishments#show'
 
-  get '/relato/:establishment_id/:report_id' => 'ratings#report'
-
   get '/dicas' => 'welcome#help'
 
   get '/avaliar' => 'ratings#new'
