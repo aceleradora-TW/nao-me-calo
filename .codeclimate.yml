@@ -10,3 +10,18 @@ engines:
         enabled: false
     exclude_fingerprints:
     - c95e0c49c7ee402bb9e686d2b8058b30
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.js"
+  - "**.jsx"
+  - "**.rb"
+exclude_paths:
+- config/**/*
+- db/**/*
+- spec/**/*
+- vendor/**/*
