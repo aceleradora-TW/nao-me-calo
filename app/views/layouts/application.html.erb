@@ -10,13 +10,12 @@
   <meta property="og:title" content="<%= @establishment ? @establishment.name : 'Não Me Calo' %>" >
   <meta property="og:site_name" content="Nao me calo">
   <meta property="og:url" content="<%= @establishment ? 'http://naomecalotw-staging.herokuapp.com/perfil/'+@establishment.id.to_s+'' : 'http://naomecalotw-staging.herokuapp.com/' %>" >
-  <meta property="og:description" content="<%=@rate_array ? @rate_array[0][0].description : 'Não me calo' %>" >
   <%if (!@rate_array.nil?) %>
     <% @rate_array.each do |rating| %>
       <meta property="og:description" content="<%= rating ? rating[0].description : 'Não me calo' %>" >
     <%end%>
   <%end%>
-  
+
   <meta property="og:image" content="" >
   <meta property="og:type" content="website" >
   <meta property="og:locale" content="" >
@@ -24,7 +23,6 @@
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <%= content_for?(:head) ? yield(:head) : '' %>
 </head>
 <body>
   <%= render 'layouts/header' %>
