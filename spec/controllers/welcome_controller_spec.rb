@@ -15,11 +15,6 @@ RSpec.describe WelcomeController, type: :controller do
       @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est5.id)
     end
 
-    # it 'expect establishment has to have key establishment and average' do
-    #   get :index
-    #   expect(assigns[:establishment_hash]).to eq({@est1 => 1.0, @est2 => 2.0, @est3 => 3.0, @est4 => 4.0, @est5 => 5.0})
-    # end
-
     it 'expect pins ForMap to have two establishment correctly' do
       get :index
       expect(assigns[:pinsForMap]).to eq([
