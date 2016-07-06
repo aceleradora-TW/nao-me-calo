@@ -1,0 +1,25 @@
+@import "_variables.scss";
+
+.search {
+  margin-bottom: 60px;
+
+
+  &-label{
+    text-align: center;
+    font-style: italic;
+    padding: 35px 50px;
+  }
+
+  &-input{
+    padding: 0px 50px;
+  }
+
+  &-inputButton{
+    border-color: $textColor;
+    background-color: inherit;
+    color: $textColor;
+    &:hover{
+      color: $textColor;
+    }
+  }
+}

@@ -14,7 +14,7 @@
  *= require_tree .
  *= require_self
  */
- @import "variables.scss";
+ @import "_variables.scss";
 body, html {
   height: 100%;
   width: 100%;

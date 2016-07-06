@@ -1,7 +1,10 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "variables.scss";
+@import "_variables.scss";
+@import "./components/search.scss";
+
+
 .grade-on-list{
   float:right;
 }
@@ -19,6 +22,11 @@
   border-radius: 6px;
   margin: 0 10px 0px 10px;
 }
+
+#hero{
+  background: red;
+}
+
 .welcome-list:hover {
   text-shadow: 0.3px 0.3px !important;
   background-color: #f8f8f8 !important;
@@ -65,4 +73,8 @@
   &-pointer-nill-events{
     pointer-events: none;
   }
+}
+
+.order-space{
+  margin-top: 20px;
 }

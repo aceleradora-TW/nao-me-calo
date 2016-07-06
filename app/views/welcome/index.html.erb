@@ -18,35 +18,53 @@
   var average_pin_map = "<%=@rating%>";
   </script>
 
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
-      <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
-      <div class="input-group">
-        <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  placeholder="Avalie um local" id="evaluateField">
-        <span class="input-group-btn">
-          <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
-        </span>
+
+  <div class="row order-space">
+
+    <div class="col-lg-4  col-lg-offset-2">
+      <div class="search search-rating">
+        <div class="search-label">
+          Avalie e comente a suas experiências no estabelecimentos que frequenta
+        </div>
+        <div class="search-input">
+          <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
+          <div class="input-group">
+            <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  placeholder="Avalie um local" id="evaluateField">
+            <span class="input-group-btn">
+              <button type="submit" class="btn search-inputButton">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </span>
+          </div>
+        </div>
       </div>
       <%= hidden_field_tag 'placeId', :class => 'place-id-placeholder' %>
       <% end %>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 form-group">
-      <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
-      <div class="input-group">
-        <input type="text" class="form-control" aria-label="Campo para buscar local para visitar" placeholder="Busque um local para visitar" id="searchField">
-        <span class="input-group-btn">
-          <%= submit_tag "Buscar", :class => 'btn btn-success' %>
-        </span>
+    <div class="col-lg-4">
+      <div class="search search-place">
+        <div class="search-label">
+          Veja como é a avaliação de estabelecimentos feita por outras pessoas
+        </div>
+        <div class="search-input">
+          <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
+          <div class="input-group">
+            <input type="text" class="form-control" aria-label="Campo para buscar local para visitar" placeholder="Busque um local para visitar" id="searchField">
+            <span class="input-group-btn">
+              <button type="submit" class="btn search-inputButton">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </span>
+          </div>
+        </div>
       </div>
       <%= hidden_field_tag 'placeId2'  %>
       <% end %>
     </div>
   </div>
 
-  <div align="center" class="row paragraph">
+  <div align="center" class="row paragraph order-space">
     Ordenar por:
   </div>
   <div align="center" class="row paragraph">
@@ -90,28 +108,28 @@
 
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
-             <div class="row">
+            <div class="row">
               <div class="col-md-8">
-                  <input id="map_search" type="text" class="form-control" style="width:50%; " aria-label="Busque um local"  placeholder="Busque um local" >
-                </input>
-              </div><!-- /.row-->
-              </div>
-
-              <div id="map">map</div>
-              <p class="pin-subtitle">
-                <img src="http://www.googlemapsmarkers.com/v1/O/E03535"/>
-                <span>Pessímo</span>
-                <img src="http://www.googlemapsmarkers.com/v1/O/FF6633/"/>
-                <span>Ruim</span>
-                <img src="http://www.googlemapsmarkers.com/v1/O/FFBD14/"/>
-                <span>Regular</span>
-                <img src="http://www.googlemapsmarkers.com/v1/O/99CC00/"/>
-                <span>Ótimo</span>
-                <img src="http://www.googlemapsmarkers.com/v1/O/329853/"/>
-                <span>Excelente</span>
-              </p>
-            </div>
+                <input id="map_search" type="text" class="form-control" style="width:50%; " aria-label="Busque um local"  placeholder="Busque um local" >
+              </input>
+            </div><!-- /.row-->
           </div>
 
+          <div id="map">map</div>
+          <p class="pin-subtitle">
+            <img src="http://www.googlemapsmarkers.com/v1/O/E03535"/>
+            <span>Pessímo</span>
+            <img src="http://www.googlemapsmarkers.com/v1/O/FF6633/"/>
+            <span>Ruim</span>
+            <img src="http://www.googlemapsmarkers.com/v1/O/FFBD14/"/>
+            <span>Regular</span>
+            <img src="http://www.googlemapsmarkers.com/v1/O/99CC00/"/>
+            <span>Ótimo</span>
+            <img src="http://www.googlemapsmarkers.com/v1/O/329853/"/>
+            <span>Excelente</span>
+          </p>
+        </div>
+      </div>
 
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>

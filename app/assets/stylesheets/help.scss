@@ -1,9 +1,9 @@
 // Place all the styles related to the help controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "variables.scss";
-.hold-link-help > a:hover, a:visited,a:link{
-  color: $brandColor !important;
+@import "_variables.scss";
+.hold-link-help {
+  color: $brandColor;
   background-color: rgba(0,0,0,0) !important;
 }
 .hold-link-title-help > a:hover{
