@@ -13,16 +13,18 @@ RSpec.describe WelcomeController, type: :controller do
       @r3 = Rating.create!(woman: 3.0,race: 3.0, lgbtqia: 3.0, disability: 3.0, elder: 3.0, obese: 3.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est3.id)
       @r4 = Rating.create!(woman: 4.0,race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est4.id)
       @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est5.id)
+      @r6 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id)
+      @r7 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id)
     end
 
     it 'expect pins ForMap to have two establishment correctly' do
       get :index
       expect(assigns[:pinsForMap]).to eq([
-        [@est1.name, @est1.lat.to_f, @est1.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/E03535/", @est1.id, "Péssimo", "concept-dangerous"],
-        [@est2.name, @est2.lat.to_f, @est2.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/FF6633/", @est2.id, "Ruim", "concept-bad"],
-        [@est3.name, @est3.lat.to_f, @est3.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/FFBD14/", @est3.id, "Regular", "concept-regular"],
-        [@est4.name, @est4.lat.to_f, @est4.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/99CC00/", @est4.id, "Bom", "concept-good"],
-        [@est5.name, @est5.lat.to_f, @est5.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/329853/", @est5.id, "Ótimo", "concept-excellent"]
+        [@est1.name, @est1.lat.to_f, @est1.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/E03535/", @est1.id, "Péssimo", "concept-dangerous", true],
+        [@est2.name, @est2.lat.to_f, @est2.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/FF6633/", @est2.id, "Ruim", "concept-bad", false],
+        [@est3.name, @est3.lat.to_f, @est3.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/FFBD14/", @est3.id, "Regular", "concept-regular", false],
+        [@est4.name, @est4.lat.to_f, @est4.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/99CC00/", @est4.id, "Bom", "concept-good", false],
+        [@est5.name, @est5.lat.to_f, @est5.lng.to_f, "http://www.googlemapsmarkers.com/v1/O/329853/", @est5.id, "Ótimo", "concept-excellent", false]
         ])
     end
 
