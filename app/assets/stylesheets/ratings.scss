@@ -65,8 +65,12 @@
   background-color: #F8F8FF;
   border: 3px solid;
   border-color: $brandColor;
-  color: black;
+  color: #565656;
   font-weight: bold;
+  &:hover{
+    background-color: $brandColor;
+    color: white;
+  }
 }
 
 .rating > input[type="radio"] {
@@ -75,7 +79,7 @@
 
 .rating label {
   text-align: center;
-  background-color: inherit;
+  background-color: #F8F8FF;
   border-radius: 4px;
   border: 1px solid;
   cursor: pointer;
