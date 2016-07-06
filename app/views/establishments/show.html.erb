@@ -16,6 +16,8 @@
       <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
       <%= hidden_field_tag 'placeId' , @establishment.id_places %>
       <% end %>
+
+
     </div>
     <div class="col-lg-10 col-lg-offset-1 text-center">
       <h2>Últimas avaliações:</h2>
@@ -33,6 +35,14 @@
               <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/" target="_blank">
                 <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
               </a>
+              <% content_for :head do %>
+              <meta property="og:title" content="Teste do compartilhamento" >
+              <meta property="og:site_name" content="Nao me carlos">
+              <meta property="og:url" content="http://naomecalotw-staging.herokuapp.com/" >
+              <meta property="og:description" content="<%= rating[0].description %>"  >
+              <% end %>
+            
+
               <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/&amp;text=N&atildeo%20me%20Calo&amp;hashtags=naomecalo" target="_blank">
                 <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
               </a>
