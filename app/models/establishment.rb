@@ -6,4 +6,9 @@ class Establishment < ActiveRecord::Base
   has_many :ratings
 
   pg_search_scope :search_by_id, :against => :id_places
+
+  def has_more_than_2_ratings?
+    self.ratings.length >= 3
+  end
+
 end

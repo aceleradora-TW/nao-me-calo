@@ -7,7 +7,9 @@ class WelcomeController < ApplicationController
     @establishments = Establishment.all
     @establishment_hash = {}
     @establishments.each do |establishment|
-      @establishment_hash[establishment] = calculate_average_establishment(establishment)
+      if establishment.has_more_than_2_ratings?
+        @establishment_hash[establishment] = calculate_average_establishment(establishment)
+      end
     end
 
     @pinsForMap = []
