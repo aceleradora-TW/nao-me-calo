@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Não Me Calo</title>
+  <title><%= @establishment ? @establishment.name : "Não Me Calo" %></title>
+  <meta http-equiv=”content-language” content=”pt-br”>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+
+  <link rel="canonical" href="http://naomecalotw-staging.herokuapp.com/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:title" content="<%= @establishment ? @establishment.name : 'Não Me Calo' %>" >
+  <meta property="og:site_name" content="Nao me calo">
+  <meta property="og:url" content="<%= @establishment ? 'http://naomecalotw-staging.herokuapp.com/perfil/'+@establishment.id.to_s+'' : 'http://naomecalotw-staging.herokuapp.com/' %>" >
+  <meta property="og:description" content="<%=@rate_array ? @rate_array[0][0].description : 'Não me calo' %>" >
+  <%if (!@rate_array.nil?) %>
+    <% @rate_array.each do |rating| %>
+      <meta property="og:description" content="<%= rating ? rating[0].description : 'Não me calo' %>" >
+    <%end%>
+  <%end%>
+  
+  <meta property="og:image" content="" >
+  <meta property="og:type" content="website" >
+  <meta property="og:locale" content="" >
+
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= content_for?(:head) ? yield(:head) : '' %>
-  <meta http-equiv=”content-language” content=”pt-br”>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-<!-- <title>naomecalo</title>
-<link rel="canonical" href="http://naomecalotw-staging.herokuapp.com/">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="keywords" content="" >
-<meta name="description" content="testando">
-<!--FACEBOOK-->
-<!-- <meta property="og:title" content="Teste do compartilhamento" >
-<meta property="og:site_name" content="Nao me carlos">
-<meta property="og:url" content="http://naomecalotw-staging.herokuapp.com/" >
-<meta property="og:description" content="testando o compartilhamento"  >
-<meta property="og:image" content="" >
-<meta property="og:type" content="website" > -->
-
-<!-- <meta property="og:locale" content="" > -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <%= render 'layouts/header' %>
