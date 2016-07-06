@@ -16,9 +16,6 @@
   <p id="alert" class="text-center">Erro, os campos com * são obrigatórios!</p>
 </div>
 
-<div>
-  <%= f.button 'Limpar campos', :type => "button", :class => "btn btn-success", :id => "clearButton", aria: {label: "Limpar os campos"} %>
-</div>
 
 <b>Preencha os campos marcados com</b> <span class="red-text"> *</span>
 <input type="hidden" id="placeId" name="placeId" value="<%= @placeId %>" readonly="readyonly">
@@ -250,6 +247,9 @@
             </li>
           </ul>
         </div>
+      </div>
+      <div>
+        <%= f.button 'Limpar campos', :type => "button", :class => "btn-field-clean", :id => "clearButton", aria: {label: "Limpar os campos"} %>
       </div>
     </div>
   </div>

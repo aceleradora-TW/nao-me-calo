@@ -1,3 +1,4 @@
+
 ActiveAdmin.register Rating do
 
 # See permitted parameters documentation:

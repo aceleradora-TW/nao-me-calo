@@ -56,6 +56,19 @@
   margin-right: 3px;
 }
 
+.btn-field-clean{
+  width: auto;
+  height: 26px;
+  font-family: Arial;
+  font-size: 12px;
+  border-radius: 6px;
+  background-color: #F8F8FF;
+  border: 3px solid;
+  border-color: $brandColor;
+  color: black;
+  font-weight: bold;
+}
+
 .rating > input[type="radio"] {
   display: none;
 }
