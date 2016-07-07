@@ -19,7 +19,7 @@ class RatingsController < ApplicationController
       begin
         @spot = @client.spot(params[:placeId])
       rescue
-        $establishment = nil
+        # Se lançar exceção
       end
     else
       redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
@@ -50,8 +50,6 @@ class RatingsController < ApplicationController
           respond_to do |format|
             if @rating.save
               format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
-            else
-              format.html { redirect_to root_path }
             end
           end
         end

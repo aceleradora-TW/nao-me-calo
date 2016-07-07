@@ -33,10 +33,6 @@ RSpec.describe RatingsController, type: :controller do
       get :new, id: @est2
       expect(flash[:error]).to eq("Erro, por favor, pesquise de novo.")
     end
-    it 'get on rescue when the passed place id is not valid' do
-      get :new, id: "abc"
-      expect(assigns[:establishment]).to be(nil)
-    end
   end
 
   describe '#destroy' do
@@ -74,6 +70,27 @@ RSpec.describe RatingsController, type: :controller do
         }
       }
       expect(flash[:notice]).to eq("Avaliação feita com sucesso")
+    end
+
+    it "expect to flash notice when using bad words" do
+      post :create, {placeId:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", accepted_terms: true, rating:
+        {
+          woman: 4.0,
+          race: 4.0,
+          lgbtqia: 4.0,
+          disability: 4.0,
+          elder: 4.0,
+          obese: 4.0,
+          name: "Teste",
+          cpf: "123456",
+          email: "teste",
+          phone: "teste",
+          rating_date:"06/06/06",
+          establishment_id: @est1.id,
+          description: "grelo"
+        }
+      }
+      expect(flash[:notice]).to eq("* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *")
     end
 
     it "expect to render new when the rating is not created" do
