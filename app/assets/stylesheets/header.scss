@@ -1,7 +1,8 @@
 @import "_variables.scss";
 
 .header{
-  background: url("../assets/picture_boy_megaphone.jpg");
+  // background: url("../assets/picture_boy_megaphone.jpg");
+  background-image: image-url("../assets/picture_boy_megaphone.jpg");
   background-size: cover;
   height: 475px;
   background-position: center;
@@ -10,6 +11,8 @@
   opacity:0.65;
 	-moz-opacity: 0.65;
 	filter: alpha(opacity=65);
+
+
 
 
   &-links{
