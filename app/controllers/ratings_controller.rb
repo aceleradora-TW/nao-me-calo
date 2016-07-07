@@ -20,7 +20,6 @@ class RatingsController < ApplicationController
         @spot = @client.spot(params[:placeId])
       rescue
         $establishment = nil
-        redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
       end
     else
       redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}

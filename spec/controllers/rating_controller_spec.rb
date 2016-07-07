@@ -33,6 +33,10 @@ RSpec.describe RatingsController, type: :controller do
       get :new, id: @est2
       expect(flash[:error]).to eq("Erro, por favor, pesquise de novo.")
     end
+    it 'get on rescue when the passed place id is not valid' do
+      get :new, id: "abc"
+      expect(assigns[:establishment]).to be(nil)
+    end
   end
 
   describe '#destroy' do
