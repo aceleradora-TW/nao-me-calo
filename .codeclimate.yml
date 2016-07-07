@@ -24,3 +24,4 @@ exclude_paths:
 - db/**/*
 - spec/**/*
 - vendor/**/*
+- app/admin/*
