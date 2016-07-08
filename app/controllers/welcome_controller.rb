@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
   include ApplicationHelper
   include WelcomeHelper
 
+# comentario
   def index
     @establishments = Establishment.all
     @establishment_hash = {}
