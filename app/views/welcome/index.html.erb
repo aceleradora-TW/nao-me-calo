@@ -77,7 +77,7 @@
     <br>
   </div>
 
-  <div class="col-lg-8 col-lg-offset-2" id="top5">
+  <div class="col-md-5 col-lg-offset-1" id="top5">
     <ul class="list-group">
       <% @best_places.each do |establishment, average| %>
       <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
@@ -93,7 +93,7 @@
       </ul>
     </div>
 
-    <div class="col-lg-8 col-lg-offset-2" id="bottom5">
+    <div class="col-md-5 col-lg-offset-1" id="bottom5">
       <ul class="list-group">
         <% @worst_places.each do |establishment, average| %>
         <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
@@ -111,7 +111,7 @@
         <a name="mapa" >
           <!-- </a> -->
           <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-md-5">
               <div class="row">
                 <div class="col-md-8">
                   <input id="map_search" type="text" class="form-control" style="width:50%; " aria-label="Busque um local"  placeholder="Busque um local" >
