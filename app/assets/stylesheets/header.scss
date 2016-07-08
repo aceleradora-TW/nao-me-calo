@@ -2,20 +2,24 @@
 
 .header{
   // background: url("../assets/picture_boy_megaphone.jpg");
+  background-position: center;
+  margin: 0 0 40px 0;
+
+  
+&-image-backgroud{
   background-image: image-url("../assets/picture_boy_megaphone2.jpg");
   background-size: cover;
   height: 475px;
-  background-position: center;
-  margin: 0 0 40px 0;
+}
+
+
 
   // opacity:0.65;
 	// -moz-opacity: 0.65;
 	// filter: alpha(opacity=65);
 
   &-text{
-    margin-top: 22%;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin: 12% 15% 0 15%;
     color: $brandColor;
     font-weight: bold;
     font-size: 28px;
