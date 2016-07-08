@@ -20,11 +20,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if params[:controller] == 'welcome' %>
+  <% if params[:controller] == 'welcome' && params[:action] == 'index'%>
   <%= render 'layouts/header' %>
   <% else %>
   <%= render 'layouts/navbar' %>
- <% end %>
+  <% end %>
   <section>
     <div class="container-fluid">
       <%= yield %>
