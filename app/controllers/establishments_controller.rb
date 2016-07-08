@@ -23,7 +23,8 @@ class EstablishmentsController < ApplicationController
     @establishment = Establishment.new
   end
 
-  def edit
+  def update
+    @establishment = Establishment.find(params[:id])
   end
 
   def create

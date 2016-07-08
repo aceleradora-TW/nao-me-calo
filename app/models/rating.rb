@@ -1,8 +1,9 @@
 class Rating < ActiveRecord::Base
-has_one :establishment
+belongs_to :establishment
 validates :rating_date, presence: true
 validates :cpf, presence: true
 validates :establishment_id, presence: true
+
 
   def average_rating
     all_ratings = [self.woman, self.lgbtqia, self.race, self.disability, self.elder, self.obese]

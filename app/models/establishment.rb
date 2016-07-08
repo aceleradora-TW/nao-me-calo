@@ -4,6 +4,7 @@ class Establishment < ActiveRecord::Base
   validates :address, presence: true
   validates :id_places, presence: true
   has_many :ratings
+  accepts_nested_attributes_for :ratings
 
   pg_search_scope :search_by_id, :against => :id_places
 
