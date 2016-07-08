@@ -7,12 +7,14 @@ ActiveAdmin.register Rating do
 
 permit_params :woman, :lgbtqia, :race, :disability, :elder, :obese, :name, :cpf , :email, :phone, :description
 
-# index do
-#   selectable_column
-#   id_column
-#   column :description
-#   column :race
-#   actions
-# end
+index do
+  selectable_column
+  id_column
+  column :establishment_id
+  column :description
+  column :average_rating
+  column :rating_date
+  actions
+end
 
 end
