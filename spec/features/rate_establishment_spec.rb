@@ -75,11 +75,11 @@ feature 'Rate establishment', js: true do
    page.execute_script '$("#cpfEvaluate").val("01854323016")'
    fill_in 'emailEvaluate', :with => 'jonatas@terra.com.br'
    page.execute_script '$("#phoneEvaluate").val("(51)33306088")'
-   fill_in 'dateEvaluate', :with => '10012020'
+   page.execute_script '$("#dateEvaluate").val("10/06/2011")'
    fill_in 'ratingDescription', :with => 'merda'
    check 'terms'
    expect(page).to have_button('submitButton', disabled: true)
-   expect(page).to have_content 'Por favor, digite uma data válida'
+   expect(page).to have_content 'Seu texto contém palavras ofensivas, por favor corrija'
    sleep 5
  end
 
