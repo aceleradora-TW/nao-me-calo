@@ -14,5 +14,7 @@ RSpec.describe Rating, type: :model do
     it 'expect to return nil when all ratings are empty' do
       expect(@rating2.average_rating).to be(nil)
     end
+
+
   end
 end
