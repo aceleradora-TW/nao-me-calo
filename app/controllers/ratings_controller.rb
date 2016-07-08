@@ -47,12 +47,15 @@ class RatingsController < ApplicationController
           end
 
           @rating.establishment_id = @establishment.id
-
+          if @rating.description == ""
+            @rating.visible = true
+          end
           respond_to do |format|
             if @rating.save
               format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
             end
           end
+
         end
       end
     else
