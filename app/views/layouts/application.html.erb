@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:title" content="<%= !@rating.nil? ? !@rating.establishment.nil? ? @rating.establishment.name : 'Não Me Calo' : 'Nao Me Calo'%>" >
   <meta property="og:site_name" content="Nao me calo">
-  <meta property="og:url" content="<%= !@rating.nil? ? !@rating.establishment.nil? ? 'http://naomecalotw-staging.herokuapp.com/ratings/'+@rating.id.to_s+'' : 'http://naomecalotw-staging.herokuapp.com/' : 'http://naomecalotw-staging.herokuapp.com/' %>" >
+  <meta property="og:url" content="<%= !@rating.nil? ? !@rating.establishment.nil? ? 'http://naomecalotw-staging.herokuapp.com/perfil/'+@rating.establishment.id.to_s+'' : 'http://naomecalotw-staging.herokuapp.com/' : 'http://naomecalotw-staging.herokuapp.com/' %>" >
   <meta property="og:description" content="<%= !@rating.nil? ? @rating.description : 'Não Me Calo' %>" >
   <meta property="og:image" content="" >
   <meta property="og:type" content="website" >
