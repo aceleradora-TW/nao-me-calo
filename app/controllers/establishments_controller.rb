@@ -63,6 +63,7 @@ class EstablishmentsController < ApplicationController
     @rating_concept = nil
   end
 
+
   def set_establishment
     @establishment = Establishment.find(params[:id])
   end

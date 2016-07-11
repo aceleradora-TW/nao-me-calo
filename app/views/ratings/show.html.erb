@@ -5,7 +5,7 @@
       <h1 class='text-center'>
         <%= image_tag(@spot.icon, size: "30x30") %>
         <%= @spot.name %>
-        <% if @rating_concept != nil %> <span class="margin_left"><label class="concept concept-pointer-nill-events  <%= set_average_style(@rating_concept) %>"><%= @rating_concept %></label></span>
+        <% if @rating_establishment != nil %> <span class="margin_left"><label class="concept concept-pointer-nill-events  <%= set_average_style(@rating_concept) %>"><%= @rating_concept %></label></span>
         <% end %>
       </h1>
     </div>
@@ -28,9 +28,9 @@
           <% if @rating.rating_date != nil and @rating.visible %>
           <h4 class="list-group-item list-show-style">
             <span class="text-field"><%= @rating.rating_date.strftime("%d/%m/%Y")%></span>
-
+            <p class="text-right text-data-rating"><label class="concept-establishment-list <%= set_average_style(@rating_description) %>"><%= @rating_description %></label></p>
             <div id="share-buttons" align="right">
-              <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/ratings/<%= @rating.id %>" target="_blank">
+              <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/relato/<%= @rating.id %>" target="_blank">
                 <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
               </a>
               <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/&amp;text=N&atildeo%20me%20Calo&amp;hashtags=naomecalo" target="_blank">
@@ -43,9 +43,9 @@
           </h4>
           <%end%>
         </li>
-        <div class="col-lg-10 col-lg-offset-1 text-center">
+        <div class="col-lg-10 col-lg-offset-1 text-center padding-bottom">
         <p>
-          <a href="/perfil/<%= @rating.establishment.id %>">Veja aqui mais relatos deste local.</a>
+          <h3><a href="/perfil/<%= @rating.establishment.id %>">Veja aqui mais relatos deste local.</a></h3>
         </p>
         </div>
       </ul>

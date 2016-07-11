@@ -56,6 +56,7 @@ module ApplicationHelper
     messages
   end
 
+
   def get_bad_word
     bad_words = ["babaca",
       "babacÊo",
