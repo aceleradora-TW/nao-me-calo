@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
   before_action :set_client, only: [:index, :search]
   include ApplicationHelper
   include WelcomeHelper
+  include RatingsHelper
 
   def index
     @establishments = Establishment.all
@@ -30,6 +31,11 @@ class WelcomeController < ApplicationController
     @establishment_array = @establishment_array.reverse
     @best_places = []
     @best_places = set_concept(@best_places, @establishment_array)
+
+    time = Time.now
+    if time.hour > 1
+      clean_CPF_from_db
+    end
   end
 
   def search
