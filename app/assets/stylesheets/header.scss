@@ -53,3 +53,10 @@
   }
 
 }
+.nav-background-color{
+  background-image: image-url("../assets/picture_boy_megaphone2.jpg");
+  background-size: cover;
+  height: 367px;
+  background-position: 100% 30%;
+  border-bottom: 2px solid $textColor;
+}

@@ -64,19 +64,19 @@
     </div>
   </div>
 
-  <div align="center" class="row paragraph order-space">
-      Ordenar por:
-  </div>
-  <div align="center" class="row paragraph">
-    <a name="ranking" href="/#ranking" id='bestPlacesButton' >Mais Altas</a>
-    <span> | </span>
-    <a href="/#ranking" id='worstPlacesButton' >Mais Baixas</a>
-    <br>
-    <br>
-  </div>
 
   <div class="col-md-5 col-lg-offset-1" id="top5">
     <ul class="list-group">
+      <div align="center" class="row paragraph order-space">
+        Ordenar por:
+      </div>
+      <div align="center" class="row paragraph">
+        <a name="ranking" href="/#ranking" id='bestPlacesButton' >Mais Altas</a>
+        <span> | </span>
+        <a href="/#ranking" id='worstPlacesButton' >Mais Baixas</a>
+        <br>
+        <br>
+      </div>
       <% @best_places.each do |establishment, average| %>
       <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
         <h4 class="list-group-item-heading">
