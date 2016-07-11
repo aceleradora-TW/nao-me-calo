@@ -2,6 +2,7 @@ class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: [:show, :edit, :update, :destroy]
   before_action :set_client, only: [:show]
   include ApplicationHelper
+  include WelcomeHelper
 
   def index
     @establishments = Establishment.all
@@ -16,6 +17,30 @@ class EstablishmentsController < ApplicationController
 
     @rate_array = populate_rate_array(@ratings)
   end
+
+  def ranking
+  @establishments = Establishment.all
+  @establishment_hash = {}
+  @establishments.each do |establishment|
+    if establishment.has_more_than_2_ratings?
+      @establishment_hash[establishment] = calculate_average_establishment(establishment)
+    end
+  end
+
+  @establishments.each do |establishment|
+    @rating_establishment = calculate_average_establishment establishment
+    @rating_establishment.round(1)
+  end
+
+  @establishment_array = @establishment_hash.sort_by{ |_key, value| value }
+
+  @worst_places = []
+  @worst_places = set_concept(@worst_places, @establishment_array)
+
+  @establishment_array = @establishment_array.reverse
+  @best_places = []
+  @best_places = set_concept(@best_places, @establishment_array)
+end
 
 
   def new
