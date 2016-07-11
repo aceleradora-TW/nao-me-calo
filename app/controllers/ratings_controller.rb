@@ -8,7 +8,7 @@ class RatingsController < ApplicationController
   end
 
   def show
-    redirect_to (@rating.establishment)
+        
   end
 
   def new
