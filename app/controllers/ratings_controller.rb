@@ -43,7 +43,7 @@ class RatingsController < ApplicationController
         @rating = Rating.new(rating_params)
         @establishment = Establishment.search_by_id(params[:placeId]).first
 
-        if(!(@rating.woman.nil? && @rating.lgbtqia.nil? && @rating.race.nil? && @rating.elder.nil? && @rating.obese.nil?))
+        if(!(@rating.woman.nil? && @rating.lgbtqia.nil? && @rating.race.nil? && @rating.disability.nil? && @rating.elder.nil? && @rating.obese.nil?))
           if(@establishment.nil?)
             @place = @client.spot(params[:placeId])
             @establishment = Establishment.create!(name: @place.name, address: @place.vicinity+" - "+@place.address_components[5]["short_name"], lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
