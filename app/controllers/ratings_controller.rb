@@ -48,11 +48,12 @@ class RatingsController < ApplicationController
             @place = @client.spot(params[:placeId])
             @establishment = Establishment.create!(name: @place.name, address: @place.vicinity+" - "+@place.address_components[5]["short_name"], lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
           end
-
-          @rating.establishment_id = @establishment.id
           if @rating.description == ""
             @rating.visible = true
+            @rating.moderated = true
           end
+
+          @rating.establishment_id = @establishment.id
           respond_to do |format|
             if @rating.save
               format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso' }
