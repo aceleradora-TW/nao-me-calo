@@ -8,7 +8,8 @@ class RatingsController < ApplicationController
   end
 
   def show
-        
+    @client = GooglePlaces::Client.new(G_PLACE_KEY)
+    @spot = @client.spot(@rating.establishment.id_places)
   end
 
   def new

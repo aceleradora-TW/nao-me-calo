@@ -1,68 +1,54 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>nome do estabelecimento:</strong>
-  <%= @rating.establishment.name%>
-</p>
+<div class ="col-lg-8 col-lg-offset-2 ">
+  <div class ="col-lg-12 padding-bottom">
+    <div class='row'>
+      <h1 class='text-center'>
+        <%= image_tag(@spot.icon, size: "30x30") %>
+        <%= @spot.name %>
+        <% if @rating_concept != nil %> <span class="margin_left"><label class="concept concept-pointer-nill-events  <%= set_average_style(@rating_concept) %>"><%= @rating_concept %></label></span>
+        <% end %>
+      </h1>
+    </div>
+    <div class='row'>
+      <h5 class='text-center'><%= @spot.formatted_address %></h5>
+    </div>
+    <!-- <div class="center-element" >
+      <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
+      <%= submit_tag "Veja mais avaliações do local", :class => 'btn btn-danger' %>
+      <%= hidden_field_tag 'placeId' , @rating.establishment.id_places %>
+      <% end %>
+    </div> -->
 
-<p>
-  <strong>Woman:</strong>
-  <%= @rating.woman %>
-</p>
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+      <h2>Relato sobre o local.</h2>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+      <ul class="list-group" id="listLast5">
+        <li>
+          <% if @rating.rating_date != nil and @rating.visible %>
+          <h4 class="list-group-item list-show-style">
+            <span class="text-field"><%= @rating.rating_date.strftime("%d/%m/%Y")%></span>
 
-<p>
-  <strong>Lgbtqia:</strong>
-  <%= @rating.lgbtqia %>
-</p>
-
-<p>
-  <strong>race:</strong>
-  <%= @rating.race %>
-</p>
-
-<p>
-  <strong>Disability:</strong>
-  <%= @rating.disability %>
-</p>
-
-<p>
-  <strong>Elder:</strong>
-  <%= @rating.elder %>
-</p>
-
-<p>
-  <strong>Obese:</strong>
-  <%= @rating.obese %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @rating.name %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @rating.cpf %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @rating.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @rating.phone %>
-</p>
-
-<p>
-  <strong>Rating date:</strong>
-  <%= @rating.rating_date %>
-</p>
-
-<p>
-  <strong>Rating description:</strong>
-  <%= @rating.description %>
-</p>
-
-<%= link_to 'Edit', edit_rating_path(@rating) %> |
-<%= link_to 'Back', ratings_path %>
+            <div id="share-buttons" align="right">
+              <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/ratings/<%= @rating.id %>" target="_blank">
+                <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
+              </a>
+              <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/&amp;text=N&atildeo%20me%20Calo&amp;hashtags=naomecalo" target="_blank">
+                <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
+              </a>
+            </div>
+            <% if @rating.description != nil && !(@rating.description.blank?)%>
+            <p id="breakline">Relato: <%= @rating.description %></p>
+            <% end %>
+          </h4>
+          <%end%>
+        </li>
+        <div class="col-lg-10 col-lg-offset-1 text-center">
+        <p>
+          <a href="/perfil/<%= @rating.establishment.id %>">Veja aqui mais relatos deste local.</a>
+        </p>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
