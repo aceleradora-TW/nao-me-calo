@@ -12,7 +12,6 @@ class EstablishmentsController < ApplicationController
     @spot = @client.spot(@establishment.id_places)
     generate_concept
 
-
     @ratings = @establishment.ratings.reverse_order
 
     @rate_array = populate_rate_array(@ratings)
@@ -58,10 +57,12 @@ class EstablishmentsController < ApplicationController
       @average_rating = general_average.sum/general_average.size #media geral do estabelecimento
 
       @rating_concept = determine_concept(@average_rating)
+      return @rating_concept
     end
   else
     @rating_concept = nil
   end
+
 
 
   def set_establishment
