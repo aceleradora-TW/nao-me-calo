@@ -50,7 +50,7 @@ function initAutocomplete () {
     searchBoxMap.addListener('places_changed', function() {
       var places = searchBoxMap.getPlaces();
 
-      if (places.length === 0) {
+      if ( places.length === 0 ) {
         return;
       }
 
@@ -86,7 +86,9 @@ function initAutocomplete () {
           bounds.extend(place.geometry.location);
         }
       });
+
       map.fitBounds(bounds);
+      map.setZoom(15);
     });
   }
 
