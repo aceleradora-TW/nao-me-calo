@@ -27,22 +27,19 @@
       <ul class="list-group" id="listLast5">
         <% @rate_array.each do |rating| %>
         <li>
-          <% if rating[0].rating_date != nil and rating[0].visible %>
+          <% if rating[0].rating_date != nil and rating[0].visible  %>
           <h4 class="list-group-item list-show-style">
             <span class="text-field"><%= rating[0].rating_date.strftime("%d/%m/%Y")%></span>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
-            <!-- <p class="text-right text-data-rating"><%= rating[1] %></p> -->
+            <% if rating[0].description != nil && !(rating[0].description.blank?)%>
             <div id="share-buttons" align="right">
               <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/relato/<%= rating[0].id %>" target="_blank">
                 <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
               </a>
-
-
               <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/relato/<%=rating[0].id %>/&amp;text=<%= rating[0].description.slice(0..80)%> ... &amp;hashtags=naomecalo" target="_blank">
                 <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
               </a>
             </div>
-            <% if rating[0].description != nil && !(rating[0].description.blank?)%>
             <p id="breakline">Relato: <%= rating[0].description %></p>
             <% end %>
           </h4>
