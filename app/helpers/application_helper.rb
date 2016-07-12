@@ -1,4 +1,6 @@
 module ApplicationHelper
+
+  
   def calculate_average_establishment(establishment)
 
     all_ratings = establishment.ratings.to_a.delete_if {|rating| rating.moderated == false}

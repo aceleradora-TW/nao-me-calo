@@ -4,6 +4,8 @@ class WelcomeController < ApplicationController
   include WelcomeHelper
   include RatingsHelper
 
+
+
   def index
     @establishments = Establishment.all
     @establishment_hash = {}
@@ -12,9 +14,8 @@ class WelcomeController < ApplicationController
         @establishment_hash[establishment] = calculate_average_establishment(establishment)
       end
     end
-
     @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
-
+    
     @pinsForMap = []
 
     @establishments.each do |establishment|
