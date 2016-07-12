@@ -26,6 +26,7 @@ class EstablishmentsController < ApplicationController
       @establishment_hash[establishment] = calculate_average_establishment(establishment)
     end
   end
+  @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
 
   @establishments.each do |establishment|
     if establishment.has_more_than_2_ratings?
