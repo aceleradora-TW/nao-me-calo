@@ -1,10 +1,13 @@
 module ApplicationHelper
   def calculate_average_establishment(establishment)
-    all_ratings = establishment.ratings.map do |rating|
+
+    all_rating = establishment.ratings.to_a.delete_if {|rating| rating.moderated == false}
+
+    all_ratings do |rating|
       rating.average_rating
     end
 
-    all_ratings.delete_if {|x| x == nil}
+    all_ratings.delete_if {|rating| rating == nil}
 
     return (all_ratings.sum/all_ratings.length).round(1)
   end
