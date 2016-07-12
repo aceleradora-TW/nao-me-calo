@@ -28,8 +28,10 @@ class EstablishmentsController < ApplicationController
   end
 
   @establishments.each do |establishment|
-    @rating_establishment = calculate_average_establishment establishment
-    @rating_establishment.round(1)
+    if establishment.has_more_than_2_ratings?
+      @rating_establishment = calculate_average_establishment establishment
+      @rating_establishment.round(1)
+    end
   end
 
   @establishment_array = @establishment_hash.sort_by{ |_key, value| value }
