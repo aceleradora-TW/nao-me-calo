@@ -9,7 +9,14 @@ class Establishment < ActiveRecord::Base
   pg_search_scope :search_by_id, :against => :id_places
 
   def has_more_than_2_ratings?
-    self.ratings.length >= 3
+    total_ratings_moderated = 0
+    self.ratings.each do |rating|
+      if rating.moderated == true
+        total_ratings_moderated += 1
+      end
+    end
+
+    return total_ratings_moderated > 2
   end
 
 end

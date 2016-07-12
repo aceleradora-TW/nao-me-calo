@@ -1,9 +1,9 @@
 module ApplicationHelper
   def calculate_average_establishment(establishment)
 
-    all_rating = establishment.ratings.to_a.delete_if {|rating| rating.moderated == false}
+    all_ratings = establishment.ratings.to_a.delete_if {|rating| rating.moderated == false}
 
-    all_ratings do |rating|
+    all_ratings = all_ratings.each.map do |rating|
       rating.average_rating
     end
 

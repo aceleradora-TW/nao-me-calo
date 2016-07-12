@@ -83,9 +83,9 @@ end
 
       @rating_concept = determine_concept(@average_rating)
       return @rating_concept
+    else
+      @rating_concept = nil
     end
-  else
-    @rating_concept = nil
   end
 
 
