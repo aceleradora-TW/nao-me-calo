@@ -13,6 +13,8 @@ class WelcomeController < ApplicationController
       end
     end
 
+    @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
+
     @pinsForMap = []
 
     @establishments.each do |establishment|
