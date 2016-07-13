@@ -11,10 +11,6 @@ RSpec.describe ApplicationHelper, type: :helper do
     @ratings5 = [@r5, @r5]
   end
 
-  it 'expect to return the average from est' do
-    expect(calculate_average_establishment(@est1)).to eq(3.0)
-  end
-
   it 'expect to populate rate result with ratings and pessimo' do
     expect(populate_rate_array(@ratings1)).to eq([[@r1, "Péssimo"], [@r1, "Péssimo"]])
   end
@@ -25,17 +21,5 @@ RSpec.describe ApplicationHelper, type: :helper do
 
   it 'expect to populate with rating and otimo' do
     expect(populate_rate_array(@ratings5)).to eq([[@r5, "Ótimo"], [@r5, "Ótimo"]])
-  end
-
-  it 'expect determine concept to return péssimo' do
-    expect(determine_concept(1)).to eq("Péssimo")
-  end
-
-  it 'expect determine concept to return regular' do
-    expect(determine_concept(3)).to eq("Regular")
-  end
-
-  it 'expect determine concept to return Ótimo' do
-    expect(determine_concept(5)).to eq("Ótimo")
   end
 end

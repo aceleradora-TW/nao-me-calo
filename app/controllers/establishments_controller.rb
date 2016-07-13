@@ -3,6 +3,7 @@ class EstablishmentsController < ApplicationController
   before_action :set_client, only: [:show]
   include ApplicationHelper
   include WelcomeHelper
+  require 'concept.rb'
 
   def index
     @establishments = Establishment.all
@@ -11,7 +12,7 @@ class EstablishmentsController < ApplicationController
   def show
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
     @spot = @client.spot(@establishment.id_places)
-    generate_concept
+    @rating_concept = Concept.generate_concept @establishment
 
     @ratings = @establishment.ratings.reverse_order
 
@@ -21,21 +22,9 @@ class EstablishmentsController < ApplicationController
   def ranking
   @establishments = Establishment.all
   @establishment_hash = {}
-  @establishments.each do |establishment|
-    if establishment.has_more_than_2_ratings?
-      @establishment_hash[establishment] = calculate_average_establishment(establishment)
-    end
-  end
   @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
 
-  @establishments.each do |establishment|
-    if establishment.has_more_than_2_ratings?
-      @rating_establishment = calculate_average_establishment establishment
-      @rating_establishment.round(1)
-    end
-  end
-
-  @establishment_array = @establishment_hash.sort_by{ |_key, value| value }
+  @establishment_array = Ranking.generate_array_ranking(@establishments)
 
   @worst_places = []
   @worst_places = set_concept(@worst_places, @establishment_array)
@@ -74,24 +63,6 @@ end
   end
 
   private
-
-  def generate_concept
-    if @establishment.has_more_than_2_ratings?
-      general_average = []
-      @establishment.ratings.each do |rating|
-        general_average.push(rating.average_rating) unless rating.average_rating.nil?
-      end
-
-      @average_rating = general_average.sum/general_average.size #media geral do estabelecimento
-
-      @rating_concept = determine_concept(@average_rating)
-      return @rating_concept
-    else
-      @rating_concept = nil
-    end
-  end
-
-
 
   def set_establishment
     @establishment = Establishment.find(params[:id])

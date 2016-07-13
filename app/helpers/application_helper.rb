@@ -1,19 +1,5 @@
 module ApplicationHelper
 
-  
-  def calculate_average_establishment(establishment)
-
-    all_ratings = establishment.ratings.to_a.delete_if {|rating| rating.moderated == false}
-
-    all_ratings = all_ratings.each.map do |rating|
-      rating.average_rating
-    end
-
-    all_ratings.delete_if {|rating| rating == nil}
-
-    return (all_ratings.sum/all_ratings.length).round(1)
-  end
-
   def populate_rate_array(ratings)
     rate_array = []
     ratings.each do |rating|
@@ -33,22 +19,6 @@ module ApplicationHelper
     return rate_array
   end
 
-
-  def determine_concept(rating)
-    case rating
-    when 1 ... 1.8
-      @rating_concept = "Péssimo"
-    when 1.8 ... 2.6
-      @rating_concept = "Ruim"
-    when 2.6 ... 3.4
-      @rating_concept = "Regular"
-    when 3.4 ... 4.2
-      @rating_concept = "Bom"
-    else
-      @rating_concept = "Ótimo"
-    end
-    return @rating_concept
-  end
 
   def flash_message
     messages = ""

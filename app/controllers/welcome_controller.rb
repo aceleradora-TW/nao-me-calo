@@ -3,32 +3,22 @@ class WelcomeController < ApplicationController
   include ApplicationHelper
   include WelcomeHelper
   include RatingsHelper
-
-
+  require 'ranking.rb'
 
   def index
     @establishments = Establishment.all
     @establishment_hash = {}
-    @establishments.each do |establishment|
-      if establishment.has_more_than_2_ratings?
-        @establishment_hash[establishment] = calculate_average_establishment(establishment)
-      end
-    end
-    @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
-    
     @pinsForMap = []
-
     @establishments.each do |establishment|
       if establishment.has_more_than_2_ratings?
-        @rating_welcome = calculate_average_establishment establishment
-        @rating_welcome.round(1)
-        @color_and_rating = get_color_and_pin_concept(@rating_welcome)
-
+        @establishment_hash[establishment] = establishment.calculate_average
+        @color_and_rating = get_color_and_pin_concept(@establishment_hash[establishment])
         @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color_and_rating[0], establishment.id, @color_and_rating[1], set_average_style(@color_and_rating[1]), establishment.has_more_than_2_ratings?]
       end
     end
+    @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
 
-    @establishment_array = @establishment_hash.sort_by{ |_key, value| value }
+    @establishment_array = Ranking.generate_array_ranking(@establishments)
 
     @worst_places = []
     @worst_places = set_concept(@worst_places, @establishment_array)

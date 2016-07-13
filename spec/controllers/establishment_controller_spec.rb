@@ -33,9 +33,9 @@ RSpec.describe EstablishmentsController, type: :controller do
       @r6 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
     end
 
-    it 'expect @average_rating to be equals 4' do
+    it 'expect @rating_concept to be equals 4' do
       get :show, id: @est1.id
-      expect(assigns[:average_rating]).to eq(4)
+      expect(assigns[:rating_concept]).to eq('Bom')
     end
 
     it 'expect @ratings to have all ratings' do

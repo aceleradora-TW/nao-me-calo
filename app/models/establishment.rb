@@ -19,4 +19,13 @@ class Establishment < ActiveRecord::Base
     return total_ratings_moderated > 2
   end
 
+  def calculate_average
+    all_ratings = self.ratings.to_a.delete_if {|rating| rating.moderated == false}
+    all_ratings = all_ratings.each.map do |rating|
+      rating.average_rating
+    end
+    all_ratings.delete_if {|rating| rating == nil}
+    return (all_ratings.sum/all_ratings.length).round(1)
+  end
+
 end
