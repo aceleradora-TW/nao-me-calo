@@ -86,11 +86,9 @@ class RatingsController < ApplicationController
         general_average.push(rating.average_rating) unless rating.average_rating.nil?
       end
 
-
       @average_rating = general_average.sum/general_average.size #media geral do estabelecimento
 
-
-      @rating_establishment = determine_concept(@average_rating)
+      @rating_establishment = Concept.determine_concept(@average_rating)
     else
       @rating_establishment = nil
     end
