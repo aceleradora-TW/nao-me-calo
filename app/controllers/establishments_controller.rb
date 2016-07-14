@@ -26,12 +26,9 @@ class EstablishmentsController < ApplicationController
 
   @establishment_array = Ranking.generate_array_ranking(@establishments)
 
-  @worst_places = []
-  @worst_places = set_concept(@worst_places, @establishment_array)
-
+  @worst_places = set_concept(@establishment_array)
   @establishment_array = @establishment_array.reverse
-  @best_places = []
-  @best_places = set_concept(@best_places, @establishment_array)
+  @best_places = set_concept(@establishment_array)
 end
 
 
