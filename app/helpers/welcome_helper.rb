@@ -1,6 +1,7 @@
 module WelcomeHelper
 
-  def set_concept (array)
+  def set_concept
+    array = Ranking.generate_array_ranking(@establishments)
     places = []
     array.take(5).each do |establishment|
       places << [establishment[0], establishment[1]]

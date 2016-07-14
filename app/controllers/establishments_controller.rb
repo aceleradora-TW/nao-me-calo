@@ -24,11 +24,9 @@ class EstablishmentsController < ApplicationController
   @establishment_hash = {}
   @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
 
-  @establishment_array = Ranking.generate_array_ranking(@establishments)
 
-  @worst_places = set_concept(@establishment_array)
-  @establishment_array = @establishment_array.reverse
-  @best_places = set_concept(@establishment_array)
+  @worst_places = set_concept
+  @best_places = @worst_places.reverse
 end
 
 
