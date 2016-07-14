@@ -19,9 +19,6 @@ module Concept
     end
   end
 
-
-  private
-
   def determine_concept(rating)
     case rating
     when 1 ... 1.8
