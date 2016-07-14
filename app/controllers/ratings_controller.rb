@@ -12,7 +12,7 @@ class RatingsController < ApplicationController
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
     @spot = @client.spot(@rating.establishment.id_places)
     @rating_description = Concept.determine_concept(@rating.average_rating)
-    generate_concept_rating
+    @concept = Concept.generate_concept(@rating.establishment)
   end
 
   def new
@@ -78,21 +78,6 @@ class RatingsController < ApplicationController
   end
 
   private
-
-  def generate_concept_rating
-    if @rating.establishment.has_more_than_2_ratings?
-      general_average = []
-      @rating.establishment.ratings.each do |rating|
-        general_average.push(rating.average_rating) unless rating.average_rating.nil?
-      end
-
-      @average_rating = general_average.sum/general_average.size #media geral do estabelecimento
-
-      @rating_establishment = Concept.determine_concept(@average_rating)
-    else
-      @rating_establishment = nil
-    end
-  end
 
   def set_rating
     @rating = Rating.find(params[:id])

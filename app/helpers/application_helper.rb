@@ -1,5 +1,20 @@
 module ApplicationHelper
 
+  def set_average_style(average)
+    case average
+    when "Péssimo"
+      return 'concept-dangerous'
+    when "Ruim"
+      return 'concept-bad'
+    when "Regular"
+      return 'concept-regular'
+    when "Bom"
+      return 'concept-good'
+    else
+      return 'concept-excellent'
+    end
+  end
+
   def populate_rate_array(ratings)
     rate_array = []
     ratings.each do |rating|
