@@ -2,6 +2,7 @@ class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
   before_action :set_client, only: [:new, :create]
   include ApplicationHelper
+  require 'concept.rb'
 
   def index
     @ratings = Rating.all
@@ -10,7 +11,7 @@ class RatingsController < ApplicationController
   def show
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
     @spot = @client.spot(@rating.establishment.id_places)
-    @rating_description = determine_concept(@rating.average_rating)
+    @rating_description = Concept.determine_concept(@rating.average_rating)
     generate_concept_rating
   end
 
@@ -94,8 +95,6 @@ class RatingsController < ApplicationController
       @rating_establishment = nil
     end
   end
-
-
 
   def set_rating
     @rating = Rating.find(params[:id])

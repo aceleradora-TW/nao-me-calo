@@ -12,7 +12,7 @@ class EstablishmentsController < ApplicationController
   def show
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
     @spot = @client.spot(@establishment.id_places)
-    @rating_concept = Concept.generate_concept @establishment
+    @rating_concept = Concept.generate_concept(@establishment)
 
     @ratings = @establishment.ratings.reverse_order
 
