@@ -20,14 +20,13 @@ class EstablishmentsController < ApplicationController
   end
 
   def ranking
-  @establishments = Establishment.all
-  @establishment_hash = {}
-  @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
-
-
-  @worst_places = set_concept
-  @best_places = @worst_places.reverse
-end
+    @establishments = Establishment.all
+    @establishment_hash = {}
+    @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
+    
+    @worst_places = set_concept
+    @best_places = @worst_places.reverse
+  end
 
 
   def new

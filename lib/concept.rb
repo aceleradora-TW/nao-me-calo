@@ -32,7 +32,7 @@ module Concept
     else
       rating_concept = "Ótimo"
     end
-    rating_concept
+    return rating_concept
   end
 
 end

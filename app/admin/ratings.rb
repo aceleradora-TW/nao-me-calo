@@ -1,10 +1,13 @@
-
 ActiveAdmin.register Rating do
-  actions :all, except: [:new, :destroy]
+  actions :all, except: [:new, :edit]
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
+  action_item "Moderar", only: :show do
+    link_to("Moderar", rating_moderated_path(rating.id), method: :put)
+  end
+
+  action_item "Toogle Visible", only: :show do
+    link_to("Toggle Visible", rating_visible_path(rating.id), method: :put)
+  end
 
   permit_params :woman, :lgbtqia, :race, :disability, :elder, :obese, :name, :cpf , :email, :phone, :description, :visible, :moderated
 
@@ -17,7 +20,12 @@ ActiveAdmin.register Rating do
     column :average_rating
     column :rating_date
     column :visible
-    actions
+    actions defaults: true do |rating|
+      link_to("Toggle Visible", rating_visible_path(rating.id), method: :put)
+    end
   end
 
+  show do
+    attributes_table :moderated, :visible, :name, :average_rating, :cpf, :description, :emai, :phone, :description
+  end
 end

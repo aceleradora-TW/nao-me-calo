@@ -31,7 +31,6 @@
           <h4 class="list-group-item list-show-style">
             <span class="text-field"><%= rating[0].rating_date.strftime("%d/%m/%Y")%></span>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
-            <% if rating[0].description != nil && !(rating[0].description.blank?)%>
             <div id="share-buttons" align="right">
               <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/relato/<%= rating[0].id %>" target="_blank">
                 <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
@@ -40,7 +39,8 @@
                 <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
               </a>
             </div>
-            <p id="breakline">Relato: <%= rating[0].description %></p>
+            <% if rating[0].description != nil && !(rating[0].description.blank?)%>
+              <p id="breakline">Relato: <%= rating[0].description %></p>
             <% end %>
           </h4>
           <%end%>

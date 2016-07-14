@@ -60,7 +60,7 @@ $(document).ready(function(){
   }
 
   function badWordsErrors(count, text){
-    var hasError = (count==1);
+    var hasError = (count === 1);
     if(hasError){
       errors['description'] = hasError;
       text.addClass('errorBorder');

@@ -24,7 +24,7 @@ class RatingsController < ApplicationController
       begin
         @spot = @client.spot(params[:placeId])
       rescue
-        # Se lançar exceção
+        puts "Erro com o google places, favor verificar."
       end
     else
       redirect_to root_path, :flash => {:error => "Erro, por favor, pesquise de novo."}
@@ -74,6 +74,43 @@ class RatingsController < ApplicationController
     @rating.destroy
     respond_to do |format|
       format.html { redirect_to ratings_url, notice: 'Rating was successfully destroyed.' }
+    end
+  end
+
+  def visible
+    @rating = Rating.find(params[:rating_id])
+
+    if (@rating.visible == false)
+      @rating.visible = true
+    else
+      @rating.visible = false
+    end
+
+    respond_to do |format|
+      if @rating.save
+        format.html { redirect_to admin_root_path, notice: "Success!" }
+      else
+        format.html { redirect_to admin_root_path }
+      end
+    end
+  end
+
+  def moderated
+    @rating = Rating.find(params[:rating_id])
+
+    respond_to do |format|
+      if(@rating.moderated == false)
+        @rating.moderated = true
+        @rating.visible = true
+      else
+        format.html { redirect_to admin_root_path, :flash => {:error => "A avaliação já foi moderada anteriormente."} }
+      end
+
+      if @rating.save
+        format.html { redirect_to admin_root_path, notice: "Success!" }
+      else
+        format.html { redirect_to admin_root_path }
+      end
     end
   end
 

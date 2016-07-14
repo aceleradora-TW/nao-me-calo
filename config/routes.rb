@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :ratings
+  resources :ratings do
+    put :visible
+    put :moderated
+  end
   resources :establishments
   resources :users
 
