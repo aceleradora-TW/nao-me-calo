@@ -1,3 +1,4 @@
+<div class="body">
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
 <% if !flash[:error].nil? %>
@@ -17,6 +18,7 @@
   var pin_map = "<%=@pin_map%>";
   var average_pin_map = "<%=@rating_welcome%>";
   </script>
+
 
 
   <div class="row order-space">
@@ -147,6 +149,7 @@
           </p>
         </div>
       </div>
+    </div>
 
 
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>

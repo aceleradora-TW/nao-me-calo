@@ -183,6 +183,10 @@ function initAutocomplete () {
   $(document).ready(function(){
 
     initLists();
+    var actualFontSize = 14
+    $("#changeSizeButton").click(function(){
+      changemysize();
+    });
 
     function switchListBest(){
       if($('#bottom5').is(":visible")){
@@ -196,6 +200,15 @@ function initAutocomplete () {
         $('#top5').hide();
         $('#bottom5').show();
       }
+    }
+
+    function changemysize() {
+      var max = 18
+      if(actualFontSize<max){
+        actualFontSize = actualFontSize+2;
+        $(".body").css("font-size", actualFontSize + "px");
+      }
+
     }
 
     $('#bestPlacesButton').click(function(){
