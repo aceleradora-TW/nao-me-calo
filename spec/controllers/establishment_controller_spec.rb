@@ -25,12 +25,12 @@ RSpec.describe EstablishmentsController, type: :controller do
   describe '#show' do
     before :each do
       @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")
-      @rating = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
-      @r2 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
-      @r3 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
-      @r4 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
-      @r5 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
-      @r6 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, obese: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
+      @r1 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
+      @r2 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
+      @r3 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
+      @r4 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
+      @r5 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
+      @r6 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
     end
 
     it 'expect @rating_concept to be equals 4' do
@@ -40,7 +40,7 @@ RSpec.describe EstablishmentsController, type: :controller do
 
     it 'expect @ratings to have all ratings' do
       get :show, id: @est1.id
-      expect(assigns[:ratings]).to eq([@r6, @r5, @r4, @r3, @r2, @rating])
+      expect(assigns[:ratings]).to eq([@r6, @r5, @r4, @r3, @r2, @r1])
     end
   end
 
