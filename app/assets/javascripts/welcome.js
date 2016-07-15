@@ -184,8 +184,12 @@ function initAutocomplete () {
 
     initLists();
     var actualFontSize = 14
-    $("#changeSizeButton").click(function(){
-      changemysize();
+    $("#upperFontSizeButton").click(function(){
+      upperFontSize();
+    });
+
+    $("#lowerFontSizeButton").click(function(){
+      lowerFontSize();
     });
 
     function switchListBest(){
@@ -202,13 +206,20 @@ function initAutocomplete () {
       }
     }
 
-    function changemysize() {
+    function lowerFontSize(){
+      var min = 14
+      if(actualFontSize>min){
+        actualFontSize = actualFontSize-2;
+        $(".body").css("font-size", actualFontSize + "px");
+      }
+    }
+
+    function upperFontSize() {
       var max = 18
       if(actualFontSize<max){
         actualFontSize = actualFontSize+2;
         $(".body").css("font-size", actualFontSize + "px");
       }
-
     }
 
     $('#bestPlacesButton').click(function(){
