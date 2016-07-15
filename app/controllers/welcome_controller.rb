@@ -49,16 +49,17 @@ class WelcomeController < ApplicationController
   def set_client
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
   end
+
   def get_color_and_pin_concept(rating)
     pin_concept = Concept.determine_concept(rating)
     case rating
-    when  1 .. 1.8
+    when  1 ... 1.8
       color = "http://www.googlemapsmarkers.com/v1/O/E03535/"
-    when 1.9 .. 2.6
+    when 1.8 ... 2.6
       color = "http://www.googlemapsmarkers.com/v1/O/FF6633/"
-    when  2.7 .. 3.4
+    when  2.6 ... 3.4
       color = "http://www.googlemapsmarkers.com/v1/O/FFBD14/"
-    when 3.5 .. 4.2
+    when 3.4 ... 4.2
       color = "http://www.googlemapsmarkers.com/v1/O/99CC00/"
     else
       color = "http://www.googlemapsmarkers.com/v1/O/329853/"
