@@ -64,58 +64,62 @@
     </div>
   </div>
 
-<div class="col-md-5 col-lg-offset-1">
-  <div align="center" class="row paragraph order-space">
-    Ordenar por:
-  </div>
-  <div align="center" class="row paragraph">
-    <a name="ranking" href="/#ranking" id='bestPlacesButton' >Mais Altas</a>
-    <span> | </span>
-    <a href="/#ranking" id='worstPlacesButton' >Mais Baixas</a>
-    <br>
-    <br>
-  </div>
-  <div class="col-md-12" id="top5">
-    <ul class="list-group">
-      <% @best_places.each do |establishment, average| %>
-      <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
-        <h4 class="list-group-item-heading">
-          <%= establishment.name %>
-          <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
-          </h4>
-          <p class="list-group-item-text">
-            <%= establishment.address %>
-          </p>
-        </a>
-        <% end %>
-      </ul>
+  <div class="col-md-5 col-lg-offset-1">
+    <div align="center" class="row paragraph order-space">
+      Ordenar por:
     </div>
-
-    <div class="col-md-12" id="bottom5">
+    <div align="center" class="row paragraph">
+      <a name="ranking" href="/#ranking" id='bestPlacesButton' >Mais Altas</a>
+      <span> | </span>
+      <a href="/#ranking" id='worstPlacesButton' >Mais Baixas</a>
+      <br>
+      <br>
+    </div>
+    <div class="col-md-12" id="top5">
       <ul class="list-group">
-        <% @worst_places.each do |establishment, average| %>
+        <% @best_places.each do |establishment, average| %>
         <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
           <h4 class="list-group-item-heading">
             <%= establishment.name %>
-            <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>          </h4>
-              <p class="list-group-item-text">
-                <%= establishment.address %>
-              </p>
-            </a>
-            <% end %>
-          </ul>
-        </div>
-        <div id="share-buttons" align="center">
-          <p class="share-text">Clique nos botões abaixo para compartilhar este ranking!</p>
-          <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/ranking" target="_blank">
-            <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
+            <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
+            </h4>
+            <p class="list-group-item-text">
+              <%= establishment.address %>
+            </p>
           </a>
-          <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/ranking/&amp;text=<%= @share_text %>&amp;hashtags=naomecalo" target="_blank">
-            <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
-          </a>
-        </div>
-        <a href="/ranking">Ver mais</a>
+          <% end %>
+        </ul>
       </div>
+
+
+      <div class="col-md-12" id="bottom5">
+        <ul class="list-group">
+          <% @worst_places.each do |establishment, average| %>
+          <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
+            <h4 class="list-group-item-heading">
+              <%= establishment.name %>
+              <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>          </h4>
+                <p class="list-group-item-text">
+                  <%= establishment.address %>
+                </p>
+              </a>
+              <% end %>
+            </ul>
+          </div>
+          <div id="share-buttons" align="center">
+            <p class="share-text">Clique nos botões abaixo para compartilhar este ranking!</p>
+            <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/ranking" target="_blank">
+              <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/ranking/&amp;text=<%= @share_text %>&amp;hashtags=naomecalo" target="_blank">
+              <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
+            </a>
+          </div>
+          <a href="/ranking">Ver mais</a>
+        </div>
+        <!-- <a href="#mapa_path"  -->
+        <a name="mapa" >
+          <!-- </a> -->
 
           <div class="row">
             <div class="col-md-5">
@@ -126,7 +130,7 @@
               </div><!-- /.row-->
             </div>
           </a>
-          <div id="map">map</div>
+          <div id="map" class="hidden-xs visible-lg visible-md visible-sm">map</div>
           <p class="text-bold">
             <img src="http://www.googlemapsmarkers.com/v1/O/E03535"/>
             <span>Péssimo</span>
@@ -143,4 +147,4 @@
       </div>
 
 
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
