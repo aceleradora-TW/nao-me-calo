@@ -5,8 +5,18 @@ $(document).ready(function(){
     $('#listLast5 li:lt(' + size_li + ')').hide();
     $('#listLast5 li:lt(' + x + ')').show();
 
+    hideListButton();
+
     $('#showFiveButton').click(function(){
       x = (x+5 <= size_li) ? x + 5 : size_li;
       $('#listLast5 li:lt(' + x + ')').show();
+      hideListButton();
     });
+
+    function hideListButton(){
+      if(size_li <= x){
+      $('#showFiveButton').hide();
+      }
+    }
+
 });
