@@ -14,9 +14,9 @@
   </div>
   <%end%>
   <script text="text/javascript">
-  var locations = JSON.parse("<%=@pinsForMap%>".replace(/&quot;/g,'"'));
-  var pin_map = "<%=@pin_map%>";
-  var average_pin_map = "<%=@rating_welcome%>";
+    var locations = JSON.parse("<%=@pinsForMap%>".replace(/&quot;/g,'"'));
+    var pin_map = "<%=@pin_map%>";
+    var average_pin_map = "<%=@rating_welcome%>";
   </script>
 
 
@@ -64,10 +64,6 @@
       <%= hidden_field_tag 'placeId2'  %>
       <% end %>
     </div>
-  </div>
-  <div class="teste">
-    <%= submit_tag "A+", :class =>"btn btn-warning form-group", :id =>"upperFontSizeButton" %>
-    <%= submit_tag "A-", :class =>"btn btn-warning form-group", :id =>"lowerFontSizeButton" %>
   </div>
   <div class="col-md-5 col-lg-offset-1">
     <div align="center" class="row paragraph order-space">
@@ -151,6 +147,4 @@
         </div>
       </div>
     </div>
-
-
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>

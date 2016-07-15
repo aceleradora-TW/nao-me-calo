@@ -210,7 +210,7 @@ function initAutocomplete () {
       var min = 14
       if(actualFontSize>min){
         actualFontSize = actualFontSize-2;
-        $(".body").css("font-size", actualFontSize + "px");
+        $("body").css("font-size", actualFontSize + "px");
       }
     }
 
@@ -218,9 +218,24 @@ function initAutocomplete () {
       var max = 18
       if(actualFontSize<max){
         actualFontSize = actualFontSize+2;
-        $(".body").css("font-size", actualFontSize + "px");
+        $("body").css("font-size", actualFontSize + "px");
       }
     }
+
+    // function initFontOption(){
+    //
+    // }
+
+    // $(document).scroll(function() {
+    //   checkOffset();
+    // });
+    //
+    // function checkOffset(){
+    //   if($('#buttons-enhance').offset().top + $('#buttons-enhance').height() >= $('footer').offset().top - 10)
+    //     $('#buttons-enhance').css({'position': 'absolute', 'margin-top': '400px'});
+    //   if($(document).scrollTop() + window.innerHeight < $('footer').offset().top)
+    //     $('#buttons-enhance').css({'position': 'fixed', 'margin-top': ''});
+    // }
 
     $('#bestPlacesButton').click(function(){
       switchListBest();
