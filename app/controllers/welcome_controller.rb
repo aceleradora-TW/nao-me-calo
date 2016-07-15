@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
   include WelcomeHelper
   include RatingsHelper
   require 'ranking.rb'
+  require 'concept.rb'
 
   def index
     @establishments = Establishment.all

@@ -82,6 +82,7 @@ class RatingsController < ApplicationController
 
     if (@rating.visible == false)
       @rating.visible = true
+      @rating.moderated = true
     else
       @rating.visible = false
     end
@@ -101,7 +102,6 @@ class RatingsController < ApplicationController
     respond_to do |format|
       if(@rating.moderated == false)
         @rating.moderated = true
-        @rating.visible = true
       else
         format.html { redirect_to admin_root_path, :flash => {:error => "A avaliação já foi moderada anteriormente."} }
       end
