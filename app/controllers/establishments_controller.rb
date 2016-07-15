@@ -14,7 +14,14 @@ class EstablishmentsController < ApplicationController
     @spot = @client.spot(@establishment.id_places)
     @rating_concept = Concept.generate_concept(@establishment)
 
-    @ratings = @establishment.ratings.reverse_order
+    @ratings = []
+
+    @establishment.ratings.each do |rating|
+      if rating.visible == true
+        @ratings << rating
+      end
+    end
+    @ratings.reverse!
 
     @rate_array = populate_rate_array(@ratings)
   end
@@ -23,7 +30,7 @@ class EstablishmentsController < ApplicationController
     @establishments = Establishment.all
     @establishment_hash = {}
     @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
-    
+
     @worst_places = set_concept
     @best_places = @worst_places.reverse
   end
