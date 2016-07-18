@@ -4,18 +4,18 @@
   color: $secondColor;
   padding-bottom: 20px;
   padding-top: 20px;
-  height: 90px;
+  height: 123px;
   display: table-row;
   margin: 0 auto;
   position: absolute;
   bottom: 0;
-
+  z-index: absolute;
 }
 .footer-text{
   padding-top: 3px;
 }
 #footer-div{
-  padding-top: 100px;
+  padding-top:40%;
 }
 
 #share-buttons img {
