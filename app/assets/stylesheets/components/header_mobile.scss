@@ -1,73 +1,60 @@
 @import "_variables.scss";
-// -------------------MOBILE-------------------
+
 .headerMobile{
 
-#navbar-menu-collapse{
-  font-size: 125%;
-  float: left;
-}
-li{
-  background-color: #9B5B96;
-  // margin: 1%;
-  // border: 1px solid black;
-}
-  a{
-    margin-left: 10px;
-    color: white;
+  &-button{
+    width: 30px;
+    height: 30px;
+    background: $brandColor;
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    z-index: 90;
+    border-radius: 5px;
+    padding: 5px;
+
   }
-}
-.headerMobile-text{
-  & p{
-    font-size: 75%;
+
+  &-buttonIcon{
+    background: url('../assets/header-mobile-icon.png');
+    background-size: cover;
+    padding: 6px;
+    height: 100%;
+  }
+
+  &-text{
+    font-size: 100%;
     text-align: center;
     position: relative;
     color:$brandColor;
+    padding: 60px 45px 0px;
+    font-weight: bold;
   }
-}
-#headerMobile-image{
-  background-image: url('picture_boy_megaphone2.jpg');
-  padding-bottom: 10%;
- }
 
-@media only screen and (max-width : 480px) {
-   #headerMobile-image{
-     background-image: url('picture_boy_megaphone2.jpg') no-repeat center center relative;
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-   background-size: cover;
-   }
- }
- .header-mobile{
-   font-size: 50%;
-   float: left;
- }
+  &-image{
+    background-image: url('picture_boy_megaphone2.jpg');
+    padding-bottom: 25px;
+    height: 200px;
+    background-size: cover;
+  }
 
- #id-para-teste{
- }
+  &-links{
+    display: none;
+    background: $brandColor;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    & ul{
+      margin: 0;
+      padding: 0;
+      & li{
+        border-bottom: 1px solid darken($brandColor, 10%);
+        padding: 10px 15px;
+        & a{
+          color: #ffffff;
+        }
+      }
+    }
+  }
 
-.icon-bar{
-  background-color: $secondColor !important;
-}
-
-.button-header-style{
- border-color: $brandColor !important;
-}
-.button-header-style:hover{
- background-color: $brandColor !important;
-}
-.button-header-style:focus{
- background-color: $brandColor !important;
-}
-.navbar-toggle {
-    position: relative;
-    float: left;
-    margin-right: 15px;
-    padding: 9px 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid blue;
-    border-radius: 4px;
 }

@@ -27,40 +27,32 @@
 
     </div>
   </div>
-  <!-- MOBILE -->
-  <div class="headerMobile visible-xs hidden-sm hidden-md hidden-lg">
-    <div id="headerMobile-image">
-      <div class="navbar-header" >
-        <button type="button" class="navbar-toggle button-header-style collapsed"  data-toggle="collapse" data-target="#navbar-menu-collapse" aria-expanded="true" id="botao-pra-testar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </div>
 
-        <div class="header-mobile" id="navbar-menu-collapse">
-          <ul class="nav navbar-nav hidden" id="id-para-teste">
-            <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
-            <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Dicas", dicas_path %></li>
-            <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Fale conosco", faleconosco_path%></li>
-            <li><a href="/ranking">Ranking</a></li>
-          </ul>
-        </div>
-      </button>
+
+  <!-- MOBILE -->
+
+
+  <div class="visible-xs hidden-sm hidden-md hidden-lg">
+
+    <div class="headerMobile-image">
       <div class="headerMobile-text">
-        <p> Não me calo é uma plataforma para classificar o estabelecimento onde as pessoas
-          podem relatar situação de opressão com algum grupo</p>
-        </div>
+        <p>
+          Não me calo é uma plataforma para classificar o estabelecimento onde as pessoas
+          podem relatar situação de opressão com algum grupo
+        </p>
       </div>
     </div>
-    <script>
-    $('#botao-pra-testar').on('click', function(){
-      $("#id-para-teste").removeClass('hidden');
-    });
-    </script>
+    <div class="headerMobile-button">
+      <div class="headerMobile-buttonIcon"></div>
+    </div>
+
+    <div class="headerMobile-links">
+      <ul>
+        <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+        <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Dicas", dicas_path %></li>
+        <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Fale conosco", faleconosco_path%></li>
+        <li><a href="/ranking">Ranking</a></li>
+      </ul>
+    </div>
+
   </div>
-<script>
-$('#botao-pra-testar').on('click', function(){
-  $("#id-para-teste").removeClass('hidden');
-});
-</script>

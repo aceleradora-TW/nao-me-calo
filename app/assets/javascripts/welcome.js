@@ -1,3 +1,5 @@
+//= require header-mobile
+
 var autocomplete;
 var map;
 
@@ -181,6 +183,8 @@ function initAutocomplete () {
   }
 
   $(document).ready(function(){
+
+    openHeaderMobile();
 
     var isMobile = window.matchMedia("only screen and (max-width: 760px)");
 
