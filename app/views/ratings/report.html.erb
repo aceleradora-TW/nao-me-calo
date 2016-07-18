@@ -2,7 +2,7 @@
 <div class ="col-lg-8 col-lg-offset-2 ">
   <div class ="col-lg-12 padding-bottom">
     <div class='row'>
-      <h1 class='text-center'>
+      <h1 class='size-h1 text-center'>
         <%= image_tag(@spot.icon, size: "30x30") %>
         <%= @spot.name %>
         <span class="margin_left"><label class="concept_establishment <%=set_average_style(@rating_concept ) %>"><%= @rating_concept %></label></span>
@@ -24,7 +24,7 @@
       <ul class="list-group">
         <% @rate_array.each do |rating| %>
         <% if rating[0].rating_date != nil %>
-        <h4 class="list-group-item list-show-style">
+        <h4 class="size-h4 list-group-item list-show-style">
           <span class="text-field">
             <%= rating[0].rating_date.strftime("%d/%m/%Y")%>
           </span>
