@@ -39,14 +39,14 @@
   <%= render 'layouts/navbar' %>
   <% end %>
   <section>
+    <div id="buttons-enhance">
+      <%= submit_tag "A+", :class =>"btn btn-warning form-group", :id =>"upperFontSizeButton" %>
+      <%= submit_tag "A-", :class =>"btn btn-warning form-group", :id =>"lowerFontSizeButton" %>
+    </div>
     <div class="container-fluid">
       <%= yield %>
-    </divthub.>
+    </divthub>
   </section>
-  <div class="buttons-enhance" id="buttons-enhance">
-    <%= submit_tag "A+", :class =>"btn btn-warning form-group", :id =>"upperFontSizeButton" %>
-    <%= submit_tag "A-", :class =>"btn btn-warning form-group", :id =>"lowerFontSizeButton" %>
-  </div>
   <%= render 'layouts/footer' %>
 </body>
 </html>

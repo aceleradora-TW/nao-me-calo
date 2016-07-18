@@ -182,7 +182,12 @@ function initAutocomplete () {
 
   $(document).ready(function(){
 
+    var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+
     initLists();
+    checkOffset();
+    checkMobileEnhanceButtons();
+
     var actualFontSize = 14
     $("#upperFontSizeButton").click(function(){
       upperFontSize();
@@ -222,20 +227,24 @@ function initAutocomplete () {
       }
     }
 
-    // function initFontOption(){
-    //
-    // }
+    $(document).scroll(function() {
+      if(!isMobile.matches){
+        checkOffset();
+      }
+    });
 
-    // $(document).scroll(function() {
-    //   checkOffset();
-    // });
-    //
-    // function checkOffset(){
-    //   if($('#buttons-enhance').offset().top + $('#buttons-enhance').height() >= $('footer').offset().top - 10)
-    //     $('#buttons-enhance').css({'position': 'absolute', 'margin-top': '400px'});
-    //   if($(document).scrollTop() + window.innerHeight < $('footer').offset().top)
-    //     $('#buttons-enhance').css({'position': 'fixed', 'margin-top': ''});
-    // }
+    function checkMobileEnhanceButtons(){
+      if(isMobile.matches){
+        $('#buttons-enhance').hide();
+      }
+    }
+
+    function checkOffset(){
+      if($('#buttons-enhance').offset().top + $('#buttons-enhance').height() >= $('footer').offset().top - 10)
+        $('#buttons-enhance').css({'position': 'absolute', "bottom": "100px", "left": "6px"});
+      if($(document).scrollTop() + window.innerHeight < $('footer').offset().top)
+        $('#buttons-enhance').css({'position': 'fixed', "bottom": "2px", "left": "6px"});
+    }
 
     $('#bestPlacesButton').click(function(){
       switchListBest();
