@@ -12,9 +12,9 @@
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
             <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Dicas", dicas_path %></li>
+            <li class="<%= 'active' if current_page?(ranking_path) %>"><%= link_to "Ranking", ranking_path %></li>
             <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Fale conosco", faleconosco_path%></li>
-            <!-- <li><a href="/#mapa">Mapa</a></li> -->
-            <li><a href="/#ranking">Ranking</a></li>
+
           </ul>
         </div>
         <div class="headerDesktop-text ">
@@ -26,7 +26,7 @@
 
     </div>
   </div>
-<!-- MOBILE -->
+  <!-- MOBILE -->
   <div class="headerMobile visible-xs hidden-sm hidden-md hidden-lg">
     <div id="headerMobile-image">
       <div class="navbar-header" >
@@ -35,47 +35,47 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-      </div>
+        </div>
 
-      <div class="header-mobile" id="navbar-menu-collapse">
-        <ul class="nav navbar-nav hidden" id="id-para-teste">
-          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
-          <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Dicas", dicas_path %></li>
-          <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Fale conosco", faleconosco_path%></li>
-          <li><a href="/ranking">Ranking</a></li>
-          <!-- <li><a href="/#mapa">Mapa</a></li> -->
-        </ul>
-      </div>
+        <div class="header-mobile" id="navbar-menu-collapse">
+          <ul class="nav navbar-nav hidden" id="id-para-teste">
+            <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+            <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Dicas", dicas_path %></li>
+            <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Fale conosco", faleconosco_path%></li>
+            <li><a href="/ranking">Ranking</a></li>
+            <!-- <li><a href="/#mapa">Mapa</a></li> -->
+          </ul>
+        </div>
       </button>
       <div class="headerMobile-text">
         <p> Não me calo é uma plataforma para classificar o estabelecimento onde as pessoas
           podem relatar situação de opressão com algum grupo</p>
         </div>
+      </div>
     </div>
-  </div>
-<script>
-// $('#botao-pra-testar').on('click', function(){
-//     $('#botao-pra-testar').css("display", "block");
-// });
-$('#botao-pra-testar').on('click', function(){
-  $("#id-para-teste").removeClass('hidden');
-});
-  // alert("alsjdh");
-  //   $('#botao-pra-testar ul').css("display", "none");
-// $(function() {
-//   var menuVisible = false;
-//   $('#botao-pra-testar').click(function() {
-//     if (menuVisible) {
-//       $('#id-para-teste').css({'display':'none'});
-//       menuVisible = false;
-//       return;
-//     }
-//     $('#id-para-teste').css({'display':'block'});
-//     menuVisible = true;
-//   });
-//   $('#id-para-teste').click(function() {
-//     $(this).css({'display':'none'});
-//     menuVisible = false;
-//   });
-// });
-</script>
+    <script>
+    // $('#botao-pra-testar').on('click', function(){
+    //     $('#botao-pra-testar').css("display", "block");
+    // });
+    $('#botao-pra-testar').on('click', function(){
+      $("#id-para-teste").removeClass('hidden');
+    });
+    // alert("alsjdh");
+    //   $('#botao-pra-testar ul').css("display", "none");
+    // $(function() {
+    //   var menuVisible = false;
+    //   $('#botao-pra-testar').click(function() {
+    //     if (menuVisible) {
+    //       $('#id-para-teste').css({'display':'none'});
+    //       menuVisible = false;
+    //       return;
+    //     }
+    //     $('#id-para-teste').css({'display':'block'});
+    //     menuVisible = true;
+    //   });
+    //   $('#id-para-teste').click(function() {
+    //     $(this).css({'display':'none'});
+    //     menuVisible = false;
+    //   });
+    // });
+    </script>
