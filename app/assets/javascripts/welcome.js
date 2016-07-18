@@ -241,7 +241,7 @@ function initAutocomplete () {
 
     function checkOffset(){
       if($('#buttons-enhance').offset().top + $('#buttons-enhance').height() >= $('footer').offset().top - 10)
-        $('#buttons-enhance').css({'position': 'absolute', "bottom": "100px", "left": "6px"});
+        $('#buttons-enhance').css({'position': 'absolute', "bottom": "125px", "left": "6px"});
       if($(document).scrollTop() + window.innerHeight < $('footer').offset().top)
         $('#buttons-enhance').css({'position': 'fixed', "bottom": "2px", "left": "6px"});
     }
