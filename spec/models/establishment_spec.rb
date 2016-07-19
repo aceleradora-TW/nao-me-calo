@@ -10,15 +10,16 @@ RSpec.describe Establishment, type: :model do
     @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
     @ratings5 = [@r5, @r5]
   end
+
   it 'expect to populate rate result with ratings and pessimo' do
-    expect(populate_rate_array(@ratings1)).to eq([[@r1, "Péssimo"], [@r1, "Péssimo"]])
+    expect(@est1.populate_rate_array(@ratings1)).to eq([[@r1, "Péssimo"], [@r1, "Péssimo"]])
   end
 
   it 'expect to populate rate result with rating and regular' do
-    expect(populate_rate_array(@ratings3)).to eq([[@r3, "Regular"], [@r3, "Regular"]])
+    expect(@est1.populate_rate_array(@ratings3)).to eq([[@r3, "Regular"], [@r3, "Regular"]])
   end
 
   it 'expect to populate with rating and otimo' do
-    expect(populate_rate_array(@ratings5)).to eq([[@r5, "Ótimo"], [@r5, "Ótimo"]])
+    expect(@est1.populate_rate_array(@ratings5)).to eq([[@r5, "Ótimo"], [@r5, "Ótimo"]])
   end
 end

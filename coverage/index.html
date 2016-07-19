@@ -14,18 +14,18 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-19T13:20:02-03:00">2016-07-19T13:20:02-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-19T13:26:42-03:00">2016-07-19T13:26:42-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">92.75%</span></span>
+    (<span class="covered_percent"><span class="green">93.79%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.82
+         4.85
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>50</b> files in total.
     <b>676</b> relevant lines. 
-    <span class="green"><b>627</b> lines covered</span> and
-    <span class="red"><b>49</b> lines missed </span>
+    <span class="green"><b>634</b> lines covered</span> and
+    <span class="red"><b>42</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -482,12 +482,12 @@
       
       <tr>
         <td class="strong"><a href="#fa0b4964030c0d86c5e1fa62b7a037f883b91a11" class="src_link" title="spec/helpers/application_helper_spec.rb">spec/helpers/application_helper_spec.rb</a></td>
-        <td class="red strong">30.0 %</td>
-        <td>14</td>
-        <td>10</td>
-        <td>3</td>
-        <td>7</td>
-        <td>0.3</td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -523,11 +523,11 @@
       <tr>
         <td class="strong"><a href="#feec00e69cb39452f5636304cef4ce46d80a3b7c" class="src_link" title="spec/models/establishment_spec.rb">spec/models/establishment_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>8</td>
-        <td>8</td>
+        <td>25</td>
+        <td>16</td>
+        <td>16</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -19649,11 +19649,11 @@
         <div class="source_table" id="fa0b4964030c0d86c5e1fa62b7a037f883b91a11">
   <div class="header">
     <h3>spec/helpers/application_helper_spec.rb</h3>
-    <h4><span class="red">30.0 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>7</b> lines missed.</span>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -19678,67 +19678,13 @@
           <code class="ruby">RSpec.describe ApplicationHelper, type: :helper do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  before :each do</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="5">
-          
-          
-          <code class="ruby">    @est1 = Establishment.create!(name:&quot;Teste&quot;, address:&quot;Logo Ali&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;321&quot;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="6">
-          
-          
-          <code class="ruby">    @r1 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
-          
-          <code class="ruby">    @ratings1 = [@r1, @r1]</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
-          
-          <code class="ruby">    @r3 = Rating.create!(woman: 3.0,race: 3.0, lgbtqia: 3.0, disability: 3.0, elder: 3.0, obese: 3.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
-          
-          <code class="ruby">    @ratings3 = [@r3, @r3]</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
-          
-          <code class="ruby">    @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
-          
-          <code class="ruby">    @ratings5 = [@r5, @r5]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>
@@ -20017,8 +19963,8 @@
     <h3>spec/models/establishment_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>16</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -20047,70 +19993,130 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
+          <code class="ruby">  before :each do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @est1 = Establishment.create!(name:&quot;Teste&quot;, address:&quot;Logo Ali&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;321&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @r1 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @ratings1 = [@r1, @r1]</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @r3 = Rating.create!(woman: 3.0,race: 3.0, lgbtqia: 3.0, disability: 3.0, elder: 3.0, obese: 3.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="9">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @ratings3 = [@r3, @r3]</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @ratings5 = [@r5, @r5]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
           <code class="ruby">  it &#39;expect to populate rate result with ratings and pessimo&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(populate_rate_array(@ratings1)).to eq([[@r1, &quot;Péssimo&quot;], [@r1, &quot;Péssimo&quot;]])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;expect to populate rate result with rating and regular&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(populate_rate_array(@ratings3)).to eq([[@r3, &quot;Regular&quot;], [@r3, &quot;Regular&quot;]])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;expect to populate with rating and otimo&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(populate_rate_array(@ratings5)).to eq([[@r5, &quot;Ótimo&quot;], [@r5, &quot;Ótimo&quot;]])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
