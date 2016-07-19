@@ -193,13 +193,9 @@ function initAutocomplete () {
     checkMobileEnhanceButtons();
 
     var actualFontSize = 14
-    $("#upperFontSizeButton").click(function(){
-      upperFontSize();
-    });
+    $("#upperFontSizeButton").click(upperFontSize);
 
-    $("#lowerFontSizeButton").click(function(){
-      lowerFontSize();
-    });
+    $("#lowerFontSizeButton").click(lowerFontSize);
 
     function switchListBest(){
       if($('#bottom5').is(":visible")){
