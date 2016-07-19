@@ -14,18 +14,18 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-19T13:26:42-03:00">2016-07-19T13:26:42-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-19T13:34:45-03:00">2016-07-19T13:34:45-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.79%</span></span>
+    (<span class="covered_percent"><span class="green">94.23%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.85
+         5.12
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>50</b> files in total.
     <b>676</b> relevant lines. 
-    <span class="green"><b>634</b> lines covered</span> and
-    <span class="red"><b>42</b> lines missed </span>
+    <span class="green"><b>637</b> lines covered</span> and
+    <span class="red"><b>39</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -192,12 +192,12 @@
       
       <tr>
         <td class="strong"><a href="#f0981a5f77f235faf25ae8ca599bcbab8d938e67" class="src_link" title="app/models/establishment.rb">app/models/establishment.rb</a></td>
-        <td class="yellow strong">86.67 %</td>
+        <td class="green strong">96.67 %</td>
         <td>49</td>
         <td>30</td>
-        <td>26</td>
-        <td>4</td>
-        <td>21.9</td>
+        <td>29</td>
+        <td>1</td>
+        <td>22.6</td>
       </tr>
       
       <tr>
@@ -207,7 +207,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>129.6</td>
+        <td>144.2</td>
       </tr>
       
       <tr>
@@ -7139,11 +7139,11 @@
         <div class="source_table" id="f0981a5f77f235faf25ae8ca599bcbab8d938e67">
   <div class="header">
     <h3>app/models/establishment.rb</h3>
-    <h4><span class="yellow">86.67 %</span> covered</h4>
+    <h4><span class="green">96.67 %</span> covered</h4>
     <div>
       <b>30</b> relevant lines. 
-      <span class="green"><b>26</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>29</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -7336,26 +7336,26 @@
           <code class="ruby">  def populate_rate_array(ratings)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="32">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="6" data-linenumber="32">
+          <span class="hits">6</span>
           
           <code class="ruby">    rate_array = []</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="33">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="6" data-linenumber="33">
+          <span class="hits">6</span>
           
           <code class="ruby">    ratings.each do |rating|</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="34">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="18" data-linenumber="34">
+          <span class="hits">18</span>
           
           <code class="ruby">      if rating.average_rating &lt; 1.8</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
+        <li class="covered" data-hits="2" data-linenumber="35">
+          <span class="hits">2</span>
           
           <code class="ruby">        rate_array.push([rating,&quot;Péssimo&quot;])</code>
         </li>
@@ -7378,8 +7378,8 @@
           <code class="ruby">      elsif rating.average_rating &lt; 3.4</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
-          
+        <li class="covered" data-hits="2" data-linenumber="39">
+          <span class="hits">2</span>
           
           <code class="ruby">        rate_array.push([rating,&quot;Regular&quot;])</code>
         </li>
@@ -7402,8 +7402,8 @@
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
-          
+        <li class="covered" data-hits="2" data-linenumber="43">
+          <span class="hits">2</span>
           
           <code class="ruby">        rate_array.push([rating,&quot;Ótimo&quot;])</code>
         </li>
@@ -7420,8 +7420,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="46">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="6" data-linenumber="46">
+          <span class="hits">6</span>
           
           <code class="ruby">    return rate_array</code>
         </li>
@@ -7510,14 +7510,14 @@
           <code class="ruby">  def average_rating</code>
         </li>
       
-        <li class="covered" data-hits="142" data-linenumber="9">
-          <span class="hits">142</span>
+        <li class="covered" data-hits="158" data-linenumber="9">
+          <span class="hits">158</span>
           
           <code class="ruby">    all_ratings = [self.woman, self.lgbtqia, self.race, self.disability, self.elder, self.obese]</code>
         </li>
       
-        <li class="covered" data-hits="994" data-linenumber="10">
-          <span class="hits">994</span>
+        <li class="covered" data-hits="1106" data-linenumber="10">
+          <span class="hits">1106</span>
           
           <code class="ruby">    all_ratings.delete_if {|rating| rating == nil}</code>
         </li>
@@ -7528,8 +7528,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="142" data-linenumber="12">
-          <span class="hits">142</span>
+        <li class="covered" data-hits="158" data-linenumber="12">
+          <span class="hits">158</span>
           
           <code class="ruby">    if(all_ratings.empty?)</code>
         </li>
@@ -7546,8 +7546,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="141" data-linenumber="15">
-          <span class="hits">141</span>
+        <li class="covered" data-hits="157" data-linenumber="15">
+          <span class="hits">157</span>
           
           <code class="ruby">    return (all_ratings.sum/all_ratings.length).round(1) #media parcial</code>
         </li>
@@ -19681,7 +19681,7 @@
         <li class="never" data-hits="" data-linenumber="4">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -20047,7 +20047,7 @@
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
@@ -20059,7 +20059,7 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(populate_rate_array(@ratings1)).to eq([[@r1, &quot;Péssimo&quot;], [@r1, &quot;Péssimo&quot;]])</code>
+          <code class="ruby">    expect(@est1.populate_rate_array(@ratings1)).to eq([[@r1, &quot;Péssimo&quot;], [@r1, &quot;Péssimo&quot;]])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -20083,7 +20083,7 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(populate_rate_array(@ratings3)).to eq([[@r3, &quot;Regular&quot;], [@r3, &quot;Regular&quot;]])</code>
+          <code class="ruby">    expect(@est1.populate_rate_array(@ratings3)).to eq([[@r3, &quot;Regular&quot;], [@r3, &quot;Regular&quot;]])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
@@ -20107,7 +20107,7 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(populate_rate_array(@ratings5)).to eq([[@r5, &quot;Ótimo&quot;], [@r5, &quot;Ótimo&quot;]])</code>
+          <code class="ruby">    expect(@est1.populate_rate_array(@ratings5)).to eq([[@r5, &quot;Ótimo&quot;], [@r5, &quot;Ótimo&quot;]])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
