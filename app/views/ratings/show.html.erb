@@ -19,7 +19,7 @@
     <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
       <ul class="list-group" id="listLast5">
         <li>
-          <% if @rating.rating_date != nil and @rating.visible %>
+          <% if checking_if_rating_is_visible(@rating) %>
           <h4 class="size-h4 list-group-item list-show-style">
             <span class="text-field"><%= @date_description %></span>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(@rating_description) %>"><%= @rating_description %></label></p>
@@ -31,7 +31,7 @@
                 <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
               </a>
             </div>
-            <% if @rating.description != nil && !(@rating.description.blank?)%>
+            <% if description_exists(@rating)%>
             <p id="breakline">Relato: <%= @rating.description %></p>
             <% end %>
           </h4>

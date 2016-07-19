@@ -28,4 +28,22 @@ class Establishment < ActiveRecord::Base
     return (all_ratings.sum/all_ratings.length).round(1)
   end
 
+  def populate_rate_array(ratings)
+    rate_array = []
+    ratings.each do |rating|
+      if rating.average_rating < 1.8
+        rate_array.push([rating,"Péssimo"])
+      elsif rating.average_rating < 2.6
+        rate_array.push([rating,"Ruim"])
+      elsif rating.average_rating < 3.4
+        rate_array.push([rating,"Regular"])
+      elsif rating.average_rating < 4.2
+        rate_array.push([rating,"Bom"])
+      else
+        rate_array.push([rating,"Ótimo"])
+      end
+    end
+    return rate_array
+  end
+
 end

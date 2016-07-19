@@ -27,7 +27,7 @@
       <ul class="list-group" id="listLast5">
         <% @rate_array.each do |rating| %>
         <li>
-          <% if rating[0].rating_date != nil and rating[0].visible  %>
+          <% if checking_if_rating_is_visible(rating[0])  %>
           <h4 class="size-h4 list-group-item list-show-style">
             <span class="text-field"><%= returning_date(rating[0])%></span>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
