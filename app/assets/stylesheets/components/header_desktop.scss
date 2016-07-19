@@ -1,34 +1,49 @@
 @import "_variables.scss";
 
-// -------------------DESKTOP-------------------
 .headerDesktop{
-  a:link{
-    font-size: 100%;
-    background-color: $textColor;
-  }
-}
 
-.headerDesktop-text{
-  & p{
-    font-size: 200%;
-    margin-top: 20%;
+  &-image{
+    width: 100%;
+    height: 509px;
+    background-image: url('picture_boy_megaphone2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-logo{
+    position: absolute;
+    background-image: url('logo.jpg');
+    top: 35px;
+    left: 60px;
+  }
+
+  &-links{
     position: relative;
-    color:$brandColor;
-    text-align: center;
-    margin-right: 15%;
-  }
-}
+    float: right;
 
-#headerDesktop-image{
-  width: 100%;
-  height: 700px;
-  background-image: url('picture_boy_megaphone2.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.header-logo{
-  position: absolute;
-  background-image: url('logo.jpg');
-   top: 8px;
-   left: 16px;
+    & ul{
+      margin: 0px;
+      list-style: none;
+      display: inline-flex;
+      padding: 31px;
+      float:right;
+
+      & li{
+        padding: 13px 62px;
+        & a{
+          color: $brandColor;
+        }
+      }
+    }
+  }
+
+  &-text{
+    font-size: 34px;
+    text-align: center;
+    position: relative;
+    float: left;
+    color: $brandColor;
+    padding: 100px 213px;
+    width: 100%;
+  }
 }

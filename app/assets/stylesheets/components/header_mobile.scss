@@ -42,8 +42,10 @@
     display: none;
     background: $brandColor;
     position: absolute;
-    top: 40px;
+    top: 0px;
     width: 100%;
+    padding-top: 44px;
+    text-align: center;
     & ul{
       margin: 0;
       padding: 0;
