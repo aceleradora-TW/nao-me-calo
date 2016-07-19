@@ -17,6 +17,11 @@ module ApplicationHelper
     end
   end
 
+  def checking_if_rating_is_visible
+    if @rating.rating_date != nil and @rating.visible
+    end
+  end
+
   def returning_date(rating)
     return rating.rating_date.strftime("%d/%m/%Y")
   end
@@ -189,9 +194,9 @@ module ApplicationHelper
       "cabrona",
       "caceta",
       "c a c e t e",
-  	  "cacete",
+      "cacete",
       "c a c e t e s",
-  	  "cacetes",
+      "cacetes",
       "c_a_c_e_t_e",
       "cacetÍ_o",
       "cacetão",
@@ -696,5 +701,5 @@ module ApplicationHelper
       "pnc",
       "p n c",
       "feminazi"]
+    end
   end
-end
