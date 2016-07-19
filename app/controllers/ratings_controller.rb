@@ -13,6 +13,7 @@ class RatingsController < ApplicationController
     @spot = @client.spot(@rating.establishment.id_places)
     @rating_description = Concept.determine_concept(@rating.average_rating)
     @concept = Concept.generate_concept(@rating.establishment)
+    @date_description = @rating.rating_date.strftime("%d/%m/%Y")
   end
 
   def new

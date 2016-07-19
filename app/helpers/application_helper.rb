@@ -15,6 +15,17 @@ module ApplicationHelper
     end
   end
 
+  def returning_date(rating)
+    return rating.rating_date.strftime("%d/%m/%Y")
+  end
+
+  def description_exists(rating)
+    if rating.description != nil && !(rating.description.blank?)
+      return true  
+    end
+  end
+
+
   def populate_rate_array(ratings)
     rate_array = []
     ratings.each do |rating|

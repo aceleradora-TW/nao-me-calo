@@ -24,6 +24,7 @@ class EstablishmentsController < ApplicationController
     @ratings.reverse!
 
     @rate_array = populate_rate_array(@ratings)
+
   end
 
   def ranking
@@ -64,6 +65,7 @@ class EstablishmentsController < ApplicationController
   end
 
   private
+
 
   def set_establishment
     @establishment = Establishment.find(params[:id])

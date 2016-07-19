@@ -21,7 +21,7 @@
         <li>
           <% if @rating.rating_date != nil and @rating.visible %>
           <h4 class="size-h4 list-group-item list-show-style">
-            <span class="text-field"><%= @rating.rating_date.strftime("%d/%m/%Y")%></span>
+            <span class="text-field"><%= @date_description %></span>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(@rating_description) %>"><%= @rating_description %></label></p>
             <div id="share-buttons" align="right">
               <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/relato/<%= @rating.id %>" target="_blank">
