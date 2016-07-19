@@ -2,12 +2,14 @@
 
 .headerDesktop{
 
+
   &-image{
     width: 100%;
     height: 509px;
-    background-image: url('picture_boy_megaphone2.jpg');
+    background-image: url('../assets/picture_boy_megaphone2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom: 2px solid $textColor;
   }
 
   &-logo{
@@ -32,6 +34,8 @@
         padding: 13px 62px;
         & a{
           color: $brandColor;
+          font-size: 100%;
+          background-color: $textColor;
         }
       }
     }
@@ -46,4 +50,5 @@
     padding: 100px 213px;
     width: 100%;
   }
+
 }

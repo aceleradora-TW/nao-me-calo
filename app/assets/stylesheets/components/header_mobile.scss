@@ -27,14 +27,15 @@
     text-align: center;
     position: relative;
     color:$brandColor;
-    padding: 60px 45px 0px;
+    padding-top: 13%;
+    margin: 0% 25% 0% 10%;
     font-weight: bold;
   }
 
   &-image{
     background-image: url('picture_boy_megaphone2.jpg');
     padding-bottom: 25px;
-    height: 200px;
+    height: 186px;
     background-size: cover;
   }
 
@@ -59,4 +60,7 @@
     }
   }
 
+}
+.border-header-mobile{
+  border-bottom: 2px solid $textColor;
 }

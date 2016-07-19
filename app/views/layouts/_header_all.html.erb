@@ -1,4 +1,4 @@
-<div class="header nav-background-color">
+<div class="nav-header-all hidden-xs visible-sm visible-md visible-lg">
 
   <nav role="navigation" class="navbar navbar-static-top header-background-color">
     <div class="container">
@@ -25,4 +25,24 @@
       </div>
     </nav>
   </div>
+</div>
+
+<!-- MOBILE -->
+<div class="visible-xs hidden-sm hidden-md hidden-lg border-header-mobile">
+
+  <div class="headerMobile-image">
+  </div>
+  <div class="headerMobile-button">
+    <div class="headerMobile-buttonIcon"></div>
+  </div>
+
+  <div class="headerMobile-links">
+    <ul>
+      <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+      <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Dicas", dicas_path %></li>
+      <li class="<%= 'active' if current_page?(ranking_path) %>"><%= link_to "Ranking", ranking_path %></li>
+      <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Fale conosco", faleconosco_path%></li>
+    </ul>
+  </div>
+
 </div>

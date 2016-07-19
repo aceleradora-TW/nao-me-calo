@@ -1,23 +1,7 @@
 @import "_variables.scss";
 
 .header{
-  // background: url("../assets/picture_boy_megaphone.jpg");
-  background-position: center;
   margin: 0 0 40px 0;
-
-&-image-backgroud{
-  background-image: image-url("../assets/picture_boy_megaphone2.jpg");
-  background-size: cover;
-  height: 475px;
-  border-bottom: 2px solid $textColor;
-  // border-style:
-  // border-top: black;
-}
-
-
-  // opacity:0.65;
-	// -moz-opacity: 0.65;
-	// filter: alpha(opacity=65);
 
   &-text{
     margin: 15% 15% 0 15%;
@@ -33,7 +17,7 @@
 
   &-links{
     float:right;
-    margin: 0 200px 0 0;
+    margin: 0 30% 0 10%;
     position: absolute;
     top: 8px;
     right: 10px;
@@ -53,10 +37,11 @@
   }
 
 }
-.nav-background-color{
-  background-image: image-url("../assets/picture_boy_megaphone2.jpg");
-  background-size: cover;
-  height: 367px;
-  background-position: 100% 30%;
-  border-bottom: 2px solid $textColor;
-  }
+
+  .nav-header-all{
+    background-image: image-url("../assets/picture_boy_megaphone2.jpg");
+    background-size: cover;
+    height: 108px;
+    border-bottom: 2px solid $textColor;
+    background-color: $secondColor;
+    }
