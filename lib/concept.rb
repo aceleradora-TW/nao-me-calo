@@ -13,7 +13,6 @@ module Concept
       average_rating = general_average.sum/general_average.size #media geral do estabelecimento
 
       rating_concept = determine_concept(average_rating)
-      return rating_concept
     else
       rating_concept = nil
     end

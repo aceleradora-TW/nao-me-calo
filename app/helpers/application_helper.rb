@@ -10,8 +10,10 @@ module ApplicationHelper
       return 'concept-regular'
     when "Bom"
       return 'concept-good'
-    else
+    when "Ótimo"
       return 'concept-excellent'
+    else
+      return nil
     end
   end
 
@@ -21,7 +23,7 @@ module ApplicationHelper
 
   def description_exists(rating)
     if rating.description != nil && !(rating.description.blank?)
-      return true  
+      return true
     end
   end
 
