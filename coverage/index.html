@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-19T11:07:52-03:00">2016-07-19T11:07:52-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-19T13:18:52-03:00">2016-07-19T13:18:52-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">94.37%</span></span>
+    (<span class="covered_percent"><span class="green">92.75%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.13
+         4.82
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>675</b> relevant lines. 
-    <span class="green"><b>637</b> lines covered</span> and
-    <span class="red"><b>38</b> lines missed </span>
+    <b>676</b> relevant lines. 
+    <span class="green"><b>627</b> lines covered</span> and
+    <span class="red"><b>49</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -102,12 +102,12 @@
       
       <tr>
         <td class="strong"><a href="#b6fe386adb75e57421bf52a5a3ff4daab9a29bf1" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
-        <td class="yellow strong">81.82 %</td>
-        <td>705</td>
-        <td>33</td>
-        <td>27</td>
+        <td class="red strong">75.0 %</td>
+        <td>685</td>
+        <td>24</td>
+        <td>18</td>
         <td>6</td>
-        <td>4.1</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -192,12 +192,12 @@
       
       <tr>
         <td class="strong"><a href="#f0981a5f77f235faf25ae8ca599bcbab8d938e67" class="src_link" title="app/models/establishment.rb">app/models/establishment.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>31</td>
-        <td>20</td>
-        <td>20</td>
-        <td>0</td>
-        <td>31.1</td>
+        <td class="yellow strong">86.67 %</td>
+        <td>49</td>
+        <td>30</td>
+        <td>26</td>
+        <td>4</td>
+        <td>21.9</td>
       </tr>
       
       <tr>
@@ -207,7 +207,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>144.2</td>
+        <td>129.6</td>
       </tr>
       
       <tr>
@@ -482,12 +482,12 @@
       
       <tr>
         <td class="strong"><a href="#fa0b4964030c0d86c5e1fa62b7a037f883b91a11" class="src_link" title="spec/helpers/application_helper_spec.rb">spec/helpers/application_helper_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>25</td>
-        <td>16</td>
-        <td>16</td>
-        <td>0</td>
-        <td>1.9</td>
+        <td class="red strong">30.0 %</td>
+        <td>14</td>
+        <td>10</td>
+        <td>3</td>
+        <td>7</td>
+        <td>0.3</td>
       </tr>
       
       <tr>
@@ -523,9 +523,9 @@
       <tr>
         <td class="strong"><a href="#feec00e69cb39452f5636304cef4ce46d80a3b7c" class="src_link" title="spec/models/establishment_spec.rb">spec/models/establishment_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>4</td>
-        <td>2</td>
-        <td>2</td>
+        <td>15</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -913,7 +913,7 @@
         <li class="covered" data-hits="3" data-linenumber="26">
           <span class="hits">3</span>
           
-          <code class="ruby">    @rate_array = populate_rate_array(@ratings)</code>
+          <code class="ruby">    @rate_array = @establishment.populate_rate_array(@ratings)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -2507,10 +2507,10 @@
         <div class="source_table" id="b6fe386adb75e57421bf52a5a3ff4daab9a29bf1">
   <div class="header">
     <h3>app/helpers/application_helper.rb</h3>
-    <h4><span class="yellow">81.82 %</span> covered</h4>
+    <h4><span class="red">75.0 %</span> covered</h4>
     <div>
-      <b>33</b> relevant lines. 
-      <span class="green"><b>27</b> lines covered</span> and
+      <b>24</b> relevant lines. 
+      <span class="green"><b>18</b> lines covered</span> and
       <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
@@ -2635,91 +2635,91 @@
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">  def checking_if_rating_is_visible</code>
+          <code class="ruby">  def checking_if_rating_is_visible(rating)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">    if @rating.rating_date != nil and @rating.visible</code>
+          <code class="ruby">    if rating.rating_date != nil and rating.visible</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def returning_date(rating)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="26">
-          
-          
-          <code class="ruby">    return rating.rating_date.strftime(&quot;%d/%m/%Y&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def description_exists(rating)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="30">
-          
-          
-          <code class="ruby">    if rating.description != nil &amp;&amp; !(rating.description.blank?)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
           <code class="ruby">      return true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def returning_date(rating)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
+          
+          <code class="ruby">    return rating.rating_date.strftime(&quot;%d/%m/%Y&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def description_exists(rating)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="31">
+          
+          
+          <code class="ruby">    if rating.description != nil &amp;&amp; !(rating.description.blank?)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
+          <code class="ruby">      return true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
@@ -2731,4018 +2731,3898 @@
         <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">  def populate_rate_array(ratings)</code>
+          <code class="ruby">  def flash_message</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="37">
           <span class="hits">6</span>
           
-          <code class="ruby">    rate_array = []</code>
+          <code class="ruby">    messages = &quot;&quot;</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="38">
           <span class="hits">6</span>
           
-          <code class="ruby">    ratings.each do |rating|</code>
-        </li>
-      
-        <li class="covered" data-hits="18" data-linenumber="39">
-          <span class="hits">18</span>
-          
-          <code class="ruby">      if rating.average_rating &lt; 1.8</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="40">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        rate_array.push([rating,&quot;Péssimo&quot;])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">      elsif rating.average_rating &lt; 2.6</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="42">
-          
-          
-          <code class="ruby">        rate_array.push([rating,&quot;Ruim&quot;])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">      elsif rating.average_rating &lt; 3.4</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="44">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        rate_array.push([rating,&quot;Regular&quot;])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">      elsif rating.average_rating &lt; 4.2</code>
-        </li>
-      
-        <li class="covered" data-hits="12" data-linenumber="46">
-          <span class="hits">12</span>
-          
-          <code class="ruby">        rate_array.push([rating,&quot;Bom&quot;])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="48">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        rate_array.push([rating,&quot;Ótimo&quot;])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="52">
-          <span class="hits">6</span>
-          
-          <code class="ruby">    return rate_array</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def flash_message</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="57">
-          <span class="hits">6</span>
-          
-          <code class="ruby">    messages = &quot;&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="58">
-          <span class="hits">6</span>
-          
           <code class="ruby">    [:notice, :info, :warning, :error].each {|type|</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="59">
+        <li class="covered" data-hits="24" data-linenumber="39">
           <span class="hits">24</span>
           
           <code class="ruby">      if flash[type]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="40">
           
           
           <code class="ruby">        messages += &quot;#{flash[type]}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">    }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="64">
+        <li class="covered" data-hits="6" data-linenumber="44">
           <span class="hits">6</span>
           
           <code class="ruby">    messages</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
           <code class="ruby">  def get_bad_word</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="69">
+        <li class="covered" data-hits="11" data-linenumber="49">
           <span class="hits">11</span>
           
           <code class="ruby">    bad_words = [&quot;babaca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">      &quot;babacÊo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">      &quot;babacão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">      &quot;babacaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">      &quot;babacas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">      &quot;b a b a c a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">      &quot;b a b a c a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">      &quot;b_a_b_a_c_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">      &quot;b_a_b_a_c_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">      &quot;bagos&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">      &quot;bago&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">      &quot;b a g o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">      &quot;b a g o s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">      &quot;b_a_g_o_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">      &quot;br‘_ulio&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">      &quot;bráulio&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">      &quot;br‘_ulho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">      &quot;bráulho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">      &quot;braulho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">      &quot;barraco&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">      &quot;barracos&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">      &quot;bicha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">      &quot;bixa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">      &quot;bixinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">      &quot;bixona&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">      &quot;bixola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">      &quot;bichola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">      &quot;benga&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">      &quot;bichona&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">      &quot;b i x a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
           <code class="ruby">      &quot;b i c h a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">      &quot;b_i_x_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="101">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">      &quot;b_i_c_h_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">      &quot;b i c h o n a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="never" data-hits="" data-linenumber="83">
           
           
           <code class="ruby">      &quot;b_i_c_h_o_n_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">      &quot;bimbada&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="105">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">      &quot;bimbadinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="106">
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby">      &quot;bimbadas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="107">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby">      &quot;boceta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="never" data-hits="" data-linenumber="88">
           
           
           <code class="ruby">      &quot;b o c e t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="109">
+        <li class="never" data-hits="" data-linenumber="89">
           
           
           <code class="ruby">      &quot;b_o_c_e_t_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby">      &quot;b_o_c_e_t_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby">      &quot;bo ce ta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby">      &quot;bocetas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="113">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">      &quot;buceta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="114">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby">      &quot;bu ce ta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="115">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby">      &quot;bucetas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="116">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby">      &quot;b u c e t a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="117">
+        <li class="never" data-hits="" data-linenumber="97">
           
           
           <code class="ruby">      &quot;b u c e t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="118">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">      &quot;b_u_c_e_t_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="119">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">      &quot;b_u_c_e_t_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="120">
+        <li class="never" data-hits="" data-linenumber="100">
           
           
           <code class="ruby">      &quot;boga&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="121">
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby">      &quot;bogas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="122">
+        <li class="never" data-hits="" data-linenumber="102">
           
           
           <code class="ruby">      &quot;boiola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="123">
+        <li class="never" data-hits="" data-linenumber="103">
           
           
           <code class="ruby">      &quot;boiolas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="124">
+        <li class="never" data-hits="" data-linenumber="104">
           
           
           <code class="ruby">      &quot;b o i o l a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="125">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby">      &quot;b o i o l a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="126">
+        <li class="never" data-hits="" data-linenumber="106">
           
           
           <code class="ruby">      &quot;b_o_i_o_l_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="107">
           
           
           <code class="ruby">      &quot;b_o_i_o_l_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="never" data-hits="" data-linenumber="108">
           
           
           <code class="ruby">      &quot;b_o_l_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="129">
+        <li class="never" data-hits="" data-linenumber="109">
           
           
           <code class="ruby">      &quot;b_o_l_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="never" data-hits="" data-linenumber="110">
           
           
           <code class="ruby">      &quot;b o l a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="131">
+        <li class="never" data-hits="" data-linenumber="111">
           
           
           <code class="ruby">      &quot;boquete&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="132">
+        <li class="never" data-hits="" data-linenumber="112">
           
           
           <code class="ruby">      &quot;boquetes&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="133">
+        <li class="never" data-hits="" data-linenumber="113">
           
           
           <code class="ruby">      &quot;boquetÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="134">
+        <li class="never" data-hits="" data-linenumber="114">
           
           
           <code class="ruby">      &quot;boquetão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="135">
+        <li class="never" data-hits="" data-linenumber="115">
           
           
           <code class="ruby">      &quot;boquetaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="136">
+        <li class="never" data-hits="" data-linenumber="116">
           
           
           <code class="ruby">      &quot;b o q u e t e&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="137">
+        <li class="never" data-hits="" data-linenumber="117">
           
           
           <code class="ruby">      &quot;b o q u e t e s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="138">
+        <li class="never" data-hits="" data-linenumber="118">
           
           
           <code class="ruby">      &quot;b_o_q_u_e_t_e&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="139">
+        <li class="never" data-hits="" data-linenumber="119">
           
           
           <code class="ruby">      &quot;b_o_q_u_e_t_e_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="140">
+        <li class="never" data-hits="" data-linenumber="120">
           
           
           <code class="ruby">      &quot;boquetera&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="141">
+        <li class="never" data-hits="" data-linenumber="121">
           
           
           <code class="ruby">      &quot;boqueteira&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="142">
+        <li class="never" data-hits="" data-linenumber="122">
           
           
           <code class="ruby">      &quot;boquetero&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="143">
+        <li class="never" data-hits="" data-linenumber="123">
           
           
           <code class="ruby">      &quot;boqueteiro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="144">
+        <li class="never" data-hits="" data-linenumber="124">
           
           
           <code class="ruby">      &quot;b o q u e t e i r a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="145">
+        <li class="never" data-hits="" data-linenumber="125">
           
           
           <code class="ruby">      &quot;b o q u e t e i r o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="146">
+        <li class="never" data-hits="" data-linenumber="126">
           
           
           <code class="ruby">      &quot;b o s t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="147">
+        <li class="never" data-hits="" data-linenumber="127">
           
           
           <code class="ruby">      &quot;b o s t a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="never" data-hits="" data-linenumber="128">
           
           
           <code class="ruby">      &quot;b_o_s_t_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="149">
+        <li class="never" data-hits="" data-linenumber="129">
           
           
           <code class="ruby">      &quot;b_o_s_t_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="150">
+        <li class="never" data-hits="" data-linenumber="130">
           
           
           <code class="ruby">      &quot;brocha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="151">
+        <li class="never" data-hits="" data-linenumber="131">
           
           
           <code class="ruby">      &quot;bronha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="152">
+        <li class="never" data-hits="" data-linenumber="132">
           
           
           <code class="ruby">      &quot;bronhas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="153">
+        <li class="never" data-hits="" data-linenumber="133">
           
           
           <code class="ruby">      &quot;b r o n h a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="154">
+        <li class="never" data-hits="" data-linenumber="134">
           
           
           <code class="ruby">      &quot;b r o n h a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="155">
+        <li class="never" data-hits="" data-linenumber="135">
           
           
           <code class="ruby">      &quot;b_r_o_n_h_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="156">
+        <li class="never" data-hits="" data-linenumber="136">
           
           
           <code class="ruby">      &quot;b_r_o_n_h_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="157">
+        <li class="never" data-hits="" data-linenumber="137">
           
           
           <code class="ruby">      &quot;broxar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="never" data-hits="" data-linenumber="138">
           
           
           <code class="ruby">      &quot;broxas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="159">
+        <li class="never" data-hits="" data-linenumber="139">
           
           
           <code class="ruby">      &quot;broxa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="160">
+        <li class="never" data-hits="" data-linenumber="140">
           
           
           <code class="ruby">      &quot;broxinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="161">
+        <li class="never" data-hits="" data-linenumber="141">
           
           
           <code class="ruby">      &quot;broxÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="162">
+        <li class="never" data-hits="" data-linenumber="142">
           
           
           <code class="ruby">      &quot;broxão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="163">
+        <li class="never" data-hits="" data-linenumber="143">
           
           
           <code class="ruby">      &quot;brocha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="164">
+        <li class="never" data-hits="" data-linenumber="144">
           
           
           <code class="ruby">      &quot;b r o x a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="165">
+        <li class="never" data-hits="" data-linenumber="145">
           
           
           <code class="ruby">      &quot;b r o x a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="166">
+        <li class="never" data-hits="" data-linenumber="146">
           
           
           <code class="ruby">      &quot;b_r_o_x_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="167">
+        <li class="never" data-hits="" data-linenumber="147">
           
           
           <code class="ruby">      &quot;b_r_o_x_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="168">
+        <li class="never" data-hits="" data-linenumber="148">
           
           
           <code class="ruby">      &quot;b u n d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="169">
+        <li class="never" data-hits="" data-linenumber="149">
           
           
           <code class="ruby">      &quot;b u n d a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="170">
+        <li class="never" data-hits="" data-linenumber="150">
           
           
           <code class="ruby">      &quot;b_u_n_d_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="171">
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby">      &quot;b_u_n_d_a_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="172">
+        <li class="never" data-hits="" data-linenumber="152">
           
           
           <code class="ruby">      &quot;bundÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="173">
+        <li class="never" data-hits="" data-linenumber="153">
           
           
           <code class="ruby">      &quot;bundão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="174">
+        <li class="never" data-hits="" data-linenumber="154">
           
           
           <code class="ruby">      &quot;bundaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="175">
+        <li class="never" data-hits="" data-linenumber="155">
           
           
           <code class="ruby">      &quot;caba_„o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="176">
+        <li class="never" data-hits="" data-linenumber="156">
           
           
           <code class="ruby">      &quot;cabaço&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="177">
+        <li class="never" data-hits="" data-linenumber="157">
           
           
           <code class="ruby">      &quot;c a b a ç o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="178">
+        <li class="never" data-hits="" data-linenumber="158">
           
           
           <code class="ruby">      &quot;c a b a _„ o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="179">
+        <li class="never" data-hits="" data-linenumber="159">
           
           
           <code class="ruby">      &quot;c_a_b_a__„_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="180">
+        <li class="never" data-hits="" data-linenumber="160">
           
           
           <code class="ruby">      &quot;c_a_b_a_ç_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="181">
+        <li class="never" data-hits="" data-linenumber="161">
           
           
           <code class="ruby">      &quot;ca ba _„o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="182">
+        <li class="never" data-hits="" data-linenumber="162">
           
           
           <code class="ruby">      &quot;ca ba ço&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="183">
+        <li class="never" data-hits="" data-linenumber="163">
           
           
           <code class="ruby">      &quot;caba _„o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="184">
+        <li class="never" data-hits="" data-linenumber="164">
           
           
           <code class="ruby">      &quot;caba ço&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="185">
+        <li class="never" data-hits="" data-linenumber="165">
           
           
           <code class="ruby">      &quot;ca ba_„o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="186">
+        <li class="never" data-hits="" data-linenumber="166">
           
           
           <code class="ruby">      &quot;ca baço&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="187">
+        <li class="never" data-hits="" data-linenumber="167">
           
           
           <code class="ruby">      &quot;caba_„Í_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="188">
+        <li class="never" data-hits="" data-linenumber="168">
           
           
           <code class="ruby">      &quot;cabação&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="189">
+        <li class="never" data-hits="" data-linenumber="169">
           
           
           <code class="ruby">      &quot;cabassÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="190">
+        <li class="never" data-hits="" data-linenumber="170">
           
           
           <code class="ruby">      &quot;cabassão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="191">
+        <li class="never" data-hits="" data-linenumber="171">
           
           
           <code class="ruby">      &quot;cabasso&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="192">
+        <li class="never" data-hits="" data-linenumber="172">
           
           
           <code class="ruby">      &quot;cabrÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="193">
+        <li class="never" data-hits="" data-linenumber="173">
           
           
           <code class="ruby">      &quot;cabrão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="194">
+        <li class="never" data-hits="" data-linenumber="174">
           
           
           <code class="ruby">      &quot;cabrona&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="195">
+        <li class="never" data-hits="" data-linenumber="175">
           
           
           <code class="ruby">      &quot;caceta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="196">
+        <li class="never" data-hits="" data-linenumber="176">
           
           
           <code class="ruby">      &quot;c a c e t e&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="197">
+        <li class="never" data-hits="" data-linenumber="177">
           
           
           <code class="ruby">      &quot;cacete&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="198">
+        <li class="never" data-hits="" data-linenumber="178">
           
           
           <code class="ruby">      &quot;c a c e t e s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="199">
+        <li class="never" data-hits="" data-linenumber="179">
           
           
           <code class="ruby">      &quot;cacetes&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="200">
+        <li class="never" data-hits="" data-linenumber="180">
           
           
           <code class="ruby">      &quot;c_a_c_e_t_e&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="201">
+        <li class="never" data-hits="" data-linenumber="181">
           
           
           <code class="ruby">      &quot;cacetÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="202">
+        <li class="never" data-hits="" data-linenumber="182">
           
           
           <code class="ruby">      &quot;cacetão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="203">
+        <li class="never" data-hits="" data-linenumber="183">
           
           
           <code class="ruby">      &quot;cacetinho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="204">
+        <li class="never" data-hits="" data-linenumber="184">
           
           
           <code class="ruby">      &quot;cacetudo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="205">
+        <li class="never" data-hits="" data-linenumber="185">
           
           
           <code class="ruby">      &quot;cacetuda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="206">
+        <li class="never" data-hits="" data-linenumber="186">
           
           
           <code class="ruby">      &quot;cu de rola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="207">
+        <li class="never" data-hits="" data-linenumber="187">
           
           
           <code class="ruby">      &quot;cafetÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="208">
+        <li class="never" data-hits="" data-linenumber="188">
           
           
           <code class="ruby">      &quot;cafetão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="209">
+        <li class="never" data-hits="" data-linenumber="189">
           
           
           <code class="ruby">      &quot;caguei&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="210">
+        <li class="never" data-hits="" data-linenumber="190">
           
           
           <code class="ruby">      &quot;c_a_g_a_r&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="211">
+        <li class="never" data-hits="" data-linenumber="191">
           
           
           <code class="ruby">      &quot;cagan_„a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="212">
+        <li class="never" data-hits="" data-linenumber="192">
           
           
           <code class="ruby">      &quot;cagança&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="213">
+        <li class="never" data-hits="" data-linenumber="193">
           
           
           <code class="ruby">      &quot;cagativo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="214">
+        <li class="never" data-hits="" data-linenumber="194">
           
           
           <code class="ruby">      &quot;calhorda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="215">
+        <li class="never" data-hits="" data-linenumber="195">
           
           
           <code class="ruby">      &quot;carcamano&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="216">
+        <li class="never" data-hits="" data-linenumber="196">
           
           
           <code class="ruby">      &quot;caralho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="217">
+        <li class="never" data-hits="" data-linenumber="197">
           
           
           <code class="ruby">      &quot;cara_„as&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="218">
+        <li class="never" data-hits="" data-linenumber="198">
           
           
           <code class="ruby">      &quot;caraças&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="219">
+        <li class="never" data-hits="" data-linenumber="199">
           
           
           <code class="ruby">      &quot;coraca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="220">
+        <li class="never" data-hits="" data-linenumber="200">
           
           
           <code class="ruby">      &quot;casseta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="221">
+        <li class="never" data-hits="" data-linenumber="201">
           
           
           <code class="ruby">      &quot;cassetudo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="222">
+        <li class="never" data-hits="" data-linenumber="202">
           
           
           <code class="ruby">      &quot;cassetÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="223">
+        <li class="never" data-hits="" data-linenumber="203">
           
           
           <code class="ruby">      &quot;cassetão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="224">
+        <li class="never" data-hits="" data-linenumber="204">
           
           
           <code class="ruby">      &quot;cassetaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="225">
+        <li class="never" data-hits="" data-linenumber="205">
           
           
           <code class="ruby">      &quot;c h i f r e&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="226">
+        <li class="never" data-hits="" data-linenumber="206">
           
           
           <code class="ruby">      &quot;c_h_i_f_r_e&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="227">
+        <li class="never" data-hits="" data-linenumber="207">
           
           
           <code class="ruby">      &quot;chifrÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="228">
+        <li class="never" data-hits="" data-linenumber="208">
           
           
           <code class="ruby">      &quot;chifrão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="229">
+        <li class="never" data-hits="" data-linenumber="209">
           
           
           <code class="ruby">      &quot;choto&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="230">
+        <li class="never" data-hits="" data-linenumber="210">
           
           
           <code class="ruby">      &quot;chupisco&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="231">
+        <li class="never" data-hits="" data-linenumber="211">
           
           
           <code class="ruby">      &quot;chupisca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="232">
+        <li class="never" data-hits="" data-linenumber="212">
           
           
           <code class="ruby">      &quot;c h u p a d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="233">
+        <li class="never" data-hits="" data-linenumber="213">
           
           
           <code class="ruby">      &quot;c h u p a d a s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="234">
+        <li class="never" data-hits="" data-linenumber="214">
           
           
           <code class="ruby">      &quot;c_h_u_p_a_d_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="235">
+        <li class="never" data-hits="" data-linenumber="215">
           
           
           <code class="ruby">      &quot;chibil&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="236">
+        <li class="never" data-hits="" data-linenumber="216">
           
           
           <code class="ruby">      &quot;chibiu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="237">
+        <li class="never" data-hits="" data-linenumber="217">
           
           
           <code class="ruby">      &quot;chibio&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="238">
+        <li class="never" data-hits="" data-linenumber="218">
           
           
           <code class="ruby">      &quot;chupa rola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="239">
+        <li class="never" data-hits="" data-linenumber="219">
           
           
           <code class="ruby">      &quot;chuparola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="240">
+        <li class="never" data-hits="" data-linenumber="220">
           
           
           <code class="ruby">      &quot;chupa_rola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="241">
+        <li class="never" data-hits="" data-linenumber="221">
           
           
           <code class="ruby">      &quot;chupÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="242">
+        <li class="never" data-hits="" data-linenumber="222">
           
           
           <code class="ruby">      &quot;chupão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="243">
+        <li class="never" data-hits="" data-linenumber="223">
           
           
           <code class="ruby">      &quot;chupaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="244">
+        <li class="never" data-hits="" data-linenumber="224">
           
           
           <code class="ruby">      &quot;chuparinho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="245">
+        <li class="never" data-hits="" data-linenumber="225">
           
           
           <code class="ruby">      &quot;koko&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="246">
+        <li class="never" data-hits="" data-linenumber="226">
           
           
           <code class="ruby">      &quot;kok_„ñ&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="247">
+        <li class="never" data-hits="" data-linenumber="227">
           
           
           <code class="ruby">      &quot;kokô&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="248">
+        <li class="never" data-hits="" data-linenumber="228">
           
           
           <code class="ruby">      &quot;cocozÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="249">
+        <li class="never" data-hits="" data-linenumber="229">
           
           
           <code class="ruby">      &quot;cocozão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="250">
+        <li class="never" data-hits="" data-linenumber="230">
           
           
           <code class="ruby">      &quot;coc_„ñ&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="251">
+        <li class="never" data-hits="" data-linenumber="231">
           
           
           <code class="ruby">      &quot;cocô&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="252">
+        <li class="never" data-hits="" data-linenumber="232">
           
           
           <code class="ruby">      &quot;cocozÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="253">
+        <li class="never" data-hits="" data-linenumber="233">
           
           
           <code class="ruby">      &quot;cocozão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="254">
+        <li class="never" data-hits="" data-linenumber="234">
           
           
           <code class="ruby">      &quot;coiso&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="255">
+        <li class="never" data-hits="" data-linenumber="235">
           
           
           <code class="ruby">      &quot;coisar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="256">
+        <li class="never" data-hits="" data-linenumber="236">
           
           
           <code class="ruby">      &quot;colhÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="257">
+        <li class="never" data-hits="" data-linenumber="237">
           
           
           <code class="ruby">      &quot;colhão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="258">
+        <li class="never" data-hits="" data-linenumber="238">
           
           
           <code class="ruby">      &quot;colhudo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="259">
+        <li class="never" data-hits="" data-linenumber="239">
           
           
           <code class="ruby">      &quot;colhÍ_es&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="260">
+        <li class="never" data-hits="" data-linenumber="240">
           
           
           <code class="ruby">      &quot;colhões&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="261">
+        <li class="never" data-hits="" data-linenumber="241">
           
           
           <code class="ruby">      &quot;c o m e&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="262">
+        <li class="never" data-hits="" data-linenumber="242">
           
           
           <code class="ruby">      &quot;c o m e r&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="263">
+        <li class="never" data-hits="" data-linenumber="243">
           
           
           <code class="ruby">      &quot;cona&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="264">
+        <li class="never" data-hits="" data-linenumber="244">
           
           
           <code class="ruby">      &quot;c o r n o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="265">
+        <li class="never" data-hits="" data-linenumber="245">
           
           
           <code class="ruby">      &quot;c_o_r_n_o_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="266">
+        <li class="never" data-hits="" data-linenumber="246">
           
           
           <code class="ruby">      &quot;cr‘_pula&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="267">
+        <li class="never" data-hits="" data-linenumber="247">
           
           
           <code class="ruby">      &quot;crápula&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="268">
+        <li class="never" data-hits="" data-linenumber="248">
           
           
           <code class="ruby">      &quot;cricri&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="269">
+        <li class="never" data-hits="" data-linenumber="249">
           
           
           <code class="ruby">      &quot;cripentolha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="270">
+        <li class="never" data-hits="" data-linenumber="250">
           
           
           <code class="ruby">      &quot;cus&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="271">
+        <li class="never" data-hits="" data-linenumber="251">
           
           
           <code class="ruby">      &quot;c u&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="272">
+        <li class="never" data-hits="" data-linenumber="252">
           
           
           <code class="ruby">      &quot;c_u&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="273">
+        <li class="never" data-hits="" data-linenumber="253">
           
           
           <code class="ruby">      &quot;c_u_s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="274">
+        <li class="never" data-hits="" data-linenumber="254">
           
           
           <code class="ruby">      &quot;ku&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="275">
+        <li class="never" data-hits="" data-linenumber="255">
           
           
           <code class="ruby">      &quot;k_u&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="276">
+        <li class="never" data-hits="" data-linenumber="256">
           
           
           <code class="ruby">      &quot;k h no muro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="277">
+        <li class="never" data-hits="" data-linenumber="257">
           
           
           <code class="ruby">      &quot;kh&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="278">
+        <li class="never" data-hits="" data-linenumber="258">
           
           
           <code class="ruby">      &quot;khr&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="279">
+        <li class="never" data-hits="" data-linenumber="259">
           
           
           <code class="ruby">      &quot;curra&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="280">
+        <li class="never" data-hits="" data-linenumber="260">
           
           
           <code class="ruby">      &quot;currar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="281">
+        <li class="never" data-hits="" data-linenumber="261">
           
           
           <code class="ruby">      &quot;currada&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="282">
+        <li class="never" data-hits="" data-linenumber="262">
           
           
           <code class="ruby">      &quot;cuzÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="283">
+        <li class="never" data-hits="" data-linenumber="263">
           
           
           <code class="ruby">      &quot;cuzão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="284">
+        <li class="never" data-hits="" data-linenumber="264">
           
           
           <code class="ruby">      &quot;cuzao&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="285">
+        <li class="never" data-hits="" data-linenumber="265">
           
           
           <code class="ruby">      &quot;cuzaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="286">
+        <li class="never" data-hits="" data-linenumber="266">
           
           
           <code class="ruby">      &quot;c_u_z_Í__o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="287">
+        <li class="never" data-hits="" data-linenumber="267">
           
           
           <code class="ruby">      &quot;c_u_z_ã_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="288">
+        <li class="never" data-hits="" data-linenumber="268">
           
           
           <code class="ruby">      &quot;c_u_z_a_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="289">
+        <li class="never" data-hits="" data-linenumber="269">
           
           
           <code class="ruby">      &quot;d a r&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="290">
+        <li class="never" data-hits="" data-linenumber="270">
           
           
           <code class="ruby">      &quot;d_a_r&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="291">
+        <li class="never" data-hits="" data-linenumber="271">
           
           
           <code class="ruby">      &quot;deflorar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="292">
+        <li class="never" data-hits="" data-linenumber="272">
           
           
           <code class="ruby">      &quot;desflorar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="293">
+        <li class="never" data-hits="" data-linenumber="273">
           
           
           <code class="ruby">      &quot;descaba_„ar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="294">
+        <li class="never" data-hits="" data-linenumber="274">
           
           
           <code class="ruby">      &quot;descabaçar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="295">
+        <li class="never" data-hits="" data-linenumber="275">
           
           
           <code class="ruby">      &quot;descaba_„o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="296">
+        <li class="never" data-hits="" data-linenumber="276">
           
           
           <code class="ruby">      &quot;descabaço&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="297">
+        <li class="never" data-hits="" data-linenumber="277">
           
           
           <code class="ruby">      &quot;desgra_„a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="298">
+        <li class="never" data-hits="" data-linenumber="278">
           
           
           <code class="ruby">      &quot;desgraça&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="299">
+        <li class="never" data-hits="" data-linenumber="279">
           
           
           <code class="ruby">      &quot;enchedor de saco&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="300">
+        <li class="never" data-hits="" data-linenumber="280">
           
           
           <code class="ruby">      &quot;encrenca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="301">
+        <li class="never" data-hits="" data-linenumber="281">
           
           
           <code class="ruby">      &quot;enrabar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="302">
+        <li class="never" data-hits="" data-linenumber="282">
           
           
           <code class="ruby">      &quot;enrabada&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="303">
+        <li class="never" data-hits="" data-linenumber="283">
           
           
           <code class="ruby">      &quot;enrabado&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="304">
+        <li class="never" data-hits="" data-linenumber="284">
           
           
           <code class="ruby">      &quot;entesar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="305">
+        <li class="never" data-hits="" data-linenumber="285">
           
           
           <code class="ruby">      &quot;escrota&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="306">
+        <li class="never" data-hits="" data-linenumber="286">
           
           
           <code class="ruby">      &quot;escroto&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="307">
+        <li class="never" data-hits="" data-linenumber="287">
           
           
           <code class="ruby">      &quot;e s c r o t o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="308">
+        <li class="never" data-hits="" data-linenumber="288">
           
           
           <code class="ruby">      &quot;e_s_c_r_o_t_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="309">
+        <li class="never" data-hits="" data-linenumber="289">
           
           
           <code class="ruby">      &quot;escrotÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="310">
+        <li class="never" data-hits="" data-linenumber="290">
           
           
           <code class="ruby">      &quot;escrotão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="311">
+        <li class="never" data-hits="" data-linenumber="291">
           
           
           <code class="ruby">      &quot;escrotinho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="312">
+        <li class="never" data-hits="" data-linenumber="292">
           
           
           <code class="ruby">      &quot;estuprador de&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="313">
+        <li class="never" data-hits="" data-linenumber="293">
           
           
           <code class="ruby">      &quot;estupradora&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="314">
+        <li class="never" data-hits="" data-linenumber="294">
           
           
           <code class="ruby">      &quot;estupro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="315">
+        <li class="never" data-hits="" data-linenumber="295">
           
           
           <code class="ruby">      &quot;filha da puta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="316">
+        <li class="never" data-hits="" data-linenumber="296">
           
           
           <code class="ruby">      &quot;filho_da_puta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="317">
+        <li class="never" data-hits="" data-linenumber="297">
           
           
           <code class="ruby">      &quot;filhadaputa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="318">
+        <li class="never" data-hits="" data-linenumber="298">
           
           
           <code class="ruby">      &quot;filho da puta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="319">
+        <li class="never" data-hits="" data-linenumber="299">
           
           
           <code class="ruby">      &quot;filhodaputa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="320">
+        <li class="never" data-hits="" data-linenumber="300">
           
           
           <code class="ruby">      &quot;filhodeumaputa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="321">
+        <li class="never" data-hits="" data-linenumber="301">
           
           
           <code class="ruby">      &quot;filhadeumaputa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="322">
+        <li class="never" data-hits="" data-linenumber="302">
           
           
           <code class="ruby">      &quot;filha de uma putanheiro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="323">
+        <li class="never" data-hits="" data-linenumber="303">
           
           
           <code class="ruby">      &quot;filho de uma puta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="324">
+        <li class="never" data-hits="" data-linenumber="304">
           
           
           <code class="ruby">      &quot;filho de um arronque&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="325">
+        <li class="never" data-hits="" data-linenumber="305">
           
           
           <code class="ruby">      &quot;filho de um marronque&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="326">
+        <li class="never" data-hits="" data-linenumber="306">
           
           
           <code class="ruby">      &quot;fiof‘¢&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="327">
+        <li class="never" data-hits="" data-linenumber="307">
           
           
           <code class="ruby">      &quot;fiofó&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="328">
+        <li class="never" data-hits="" data-linenumber="308">
           
           
           <code class="ruby">      &quot;fiofoh&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="329">
+        <li class="never" data-hits="" data-linenumber="309">
           
           
           <code class="ruby">      &quot;phiopho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="330">
+        <li class="never" data-hits="" data-linenumber="310">
           
           
           <code class="ruby">      &quot;f i o f o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="331">
+        <li class="never" data-hits="" data-linenumber="311">
           
           
           <code class="ruby">      &quot;fiofo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="332">
+        <li class="never" data-hits="" data-linenumber="312">
           
           
           <code class="ruby">      &quot;fiof_„ñ&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="333">
+        <li class="never" data-hits="" data-linenumber="313">
           
           
           <code class="ruby">      &quot;fiofó&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="334">
+        <li class="never" data-hits="" data-linenumber="314">
           
           
           <code class="ruby">      &quot;fiofÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="335">
+        <li class="never" data-hits="" data-linenumber="315">
           
           
           <code class="ruby">      &quot;fiofão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="336">
+        <li class="never" data-hits="" data-linenumber="316">
           
           
           <code class="ruby">      &quot;fiofinho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="337">
+        <li class="never" data-hits="" data-linenumber="317">
           
           
           <code class="ruby">      &quot;foda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="338">
+        <li class="never" data-hits="" data-linenumber="318">
           
           
           <code class="ruby">      &quot;f o d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="339">
+        <li class="never" data-hits="" data-linenumber="319">
           
           
           <code class="ruby">      &quot;f_o_d_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="340">
+        <li class="never" data-hits="" data-linenumber="320">
           
           
           <code class="ruby">      &quot;fodÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="341">
+        <li class="never" data-hits="" data-linenumber="321">
           
           
           <code class="ruby">      &quot;fodão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="342">
+        <li class="never" data-hits="" data-linenumber="322">
           
           
           <code class="ruby">      &quot;foda-se!&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="343">
+        <li class="never" data-hits="" data-linenumber="323">
           
           
           <code class="ruby">      &quot;fodedor&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="344">
+        <li class="never" data-hits="" data-linenumber="324">
           
           
           <code class="ruby">      &quot;fudedor&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="345">
+        <li class="never" data-hits="" data-linenumber="325">
           
           
           <code class="ruby">      &quot;fuck&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="346">
+        <li class="never" data-hits="" data-linenumber="326">
           
           
           <code class="ruby">      &quot;fodedor&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="347">
+        <li class="never" data-hits="" data-linenumber="327">
           
           
           <code class="ruby">      &quot;foder&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="348">
+        <li class="never" data-hits="" data-linenumber="328">
           
           
           <code class="ruby">      &quot;fuder&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="349">
+        <li class="never" data-hits="" data-linenumber="329">
           
           
           <code class="ruby">      &quot;f_u_d_e_r&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="350">
+        <li class="never" data-hits="" data-linenumber="330">
           
           
           <code class="ruby">      &quot;f o d e r&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="351">
+        <li class="never" data-hits="" data-linenumber="331">
           
           
           <code class="ruby">      &quot;f_o_d_e_r&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="352">
+        <li class="never" data-hits="" data-linenumber="332">
           
           
           <code class="ruby">      &quot;foder-se&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="353">
+        <li class="never" data-hits="" data-linenumber="333">
           
           
           <code class="ruby">      &quot;se foder&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="354">
+        <li class="never" data-hits="" data-linenumber="334">
           
           
           <code class="ruby">      &quot;se fuder&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="355">
+        <li class="never" data-hits="" data-linenumber="335">
           
           
           <code class="ruby">      &quot;fodido&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="356">
+        <li class="never" data-hits="" data-linenumber="336">
           
           
           <code class="ruby">      &quot;f r e s c o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="357">
+        <li class="never" data-hits="" data-linenumber="337">
           
           
           <code class="ruby">      &quot;f_r_e_s_c_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="358">
+        <li class="never" data-hits="" data-linenumber="338">
           
           
           <code class="ruby">      &quot;frescÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="359">
+        <li class="never" data-hits="" data-linenumber="339">
           
           
           <code class="ruby">      &quot;frescão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="360">
+        <li class="never" data-hits="" data-linenumber="340">
           
           
           <code class="ruby">      &quot;g_a_l_i_n_h_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="361">
+        <li class="never" data-hits="" data-linenumber="341">
           
           
           <code class="ruby">      &quot;g a l i n h a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="362">
+        <li class="never" data-hits="" data-linenumber="342">
           
           
           <code class="ruby">      &quot;garanhÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="363">
+        <li class="never" data-hits="" data-linenumber="343">
           
           
           <code class="ruby">      &quot;garanhão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="364">
+        <li class="never" data-hits="" data-linenumber="344">
           
           
           <code class="ruby">      &quot;gilete&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="365">
+        <li class="never" data-hits="" data-linenumber="345">
           
           
           <code class="ruby">      &quot;gloques&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="366">
+        <li class="never" data-hits="" data-linenumber="346">
           
           
           <code class="ruby">      &quot;grelo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="367">
+        <li class="never" data-hits="" data-linenumber="347">
           
           
           <code class="ruby">      &quot;jeba&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="368">
+        <li class="never" data-hits="" data-linenumber="348">
           
           
           <code class="ruby">      &quot;j e b a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="369">
+        <li class="never" data-hits="" data-linenumber="349">
           
           
           <code class="ruby">      &quot;m a m i l o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="370">
+        <li class="never" data-hits="" data-linenumber="350">
           
           
           <code class="ruby">      &quot;m_a_m_i_l_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="371">
+        <li class="never" data-hits="" data-linenumber="351">
           
           
           <code class="ruby">      &quot;mamilÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="372">
+        <li class="never" data-hits="" data-linenumber="352">
           
           
           <code class="ruby">      &quot;mamilão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="373">
+        <li class="never" data-hits="" data-linenumber="353">
           
           
           <code class="ruby">      &quot;mamilao&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="374">
+        <li class="never" data-hits="" data-linenumber="354">
           
           
           <code class="ruby">      &quot;mamilaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="375">
+        <li class="never" data-hits="" data-linenumber="355">
           
           
           <code class="ruby">      &quot;machÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="376">
+        <li class="never" data-hits="" data-linenumber="356">
           
           
           <code class="ruby">      &quot;machão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="377">
+        <li class="never" data-hits="" data-linenumber="357">
           
           
           <code class="ruby">      &quot;machona&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="378">
+        <li class="never" data-hits="" data-linenumber="358">
           
           
           <code class="ruby">      &quot;machorra&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="379">
+        <li class="never" data-hits="" data-linenumber="359">
           
           
           <code class="ruby">      &quot;maxorra&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="380">
+        <li class="never" data-hits="" data-linenumber="360">
           
           
           <code class="ruby">      &quot;maxoha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="381">
+        <li class="never" data-hits="" data-linenumber="361">
           
           
           <code class="ruby">      &quot;m a c h o r r a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="382">
+        <li class="never" data-hits="" data-linenumber="362">
           
           
           <code class="ruby">      &quot;machuda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="383">
+        <li class="never" data-hits="" data-linenumber="363">
           
           
           <code class="ruby">      &quot;man_„_&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="384">
+        <li class="never" data-hits="" data-linenumber="364">
           
           
           <code class="ruby">      &quot;mané&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="385">
+        <li class="never" data-hits="" data-linenumber="365">
           
           
           <code class="ruby">      &quot;manezÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="386">
+        <li class="never" data-hits="" data-linenumber="366">
           
           
           <code class="ruby">      &quot;manezão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="387">
+        <li class="never" data-hits="" data-linenumber="367">
           
           
           <code class="ruby">      &quot;manzapo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="388">
+        <li class="never" data-hits="" data-linenumber="368">
           
           
           <code class="ruby">      &quot;mars‘_pio&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="389">
+        <li class="never" data-hits="" data-linenumber="369">
           
           
           <code class="ruby">      &quot;marsápio&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="390">
+        <li class="never" data-hits="" data-linenumber="370">
           
           
           <code class="ruby">      &quot;marmita&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="391">
+        <li class="never" data-hits="" data-linenumber="371">
           
           
           <code class="ruby">      &quot;marica&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="392">
+        <li class="never" data-hits="" data-linenumber="372">
           
           
           <code class="ruby">      &quot;mariquinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="393">
+        <li class="never" data-hits="" data-linenumber="373">
           
           
           <code class="ruby">      &quot;marikinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="394">
+        <li class="never" data-hits="" data-linenumber="374">
           
           
           <code class="ruby">      &quot;maricon&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="395">
+        <li class="never" data-hits="" data-linenumber="375">
           
           
           <code class="ruby">      &quot;m a r i c a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="396">
+        <li class="never" data-hits="" data-linenumber="376">
           
           
           <code class="ruby">      &quot;m_a_r_i_c_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="397">
+        <li class="never" data-hits="" data-linenumber="377">
           
           
           <code class="ruby">      &quot;maricas&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="398">
+        <li class="never" data-hits="" data-linenumber="378">
           
           
           <code class="ruby">      &quot;m e r d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="399">
+        <li class="never" data-hits="" data-linenumber="379">
           
           
           <code class="ruby">      &quot;m_e_r_d_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="400">
+        <li class="never" data-hits="" data-linenumber="380">
           
           
           <code class="ruby">      &quot;merdinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="401">
+        <li class="never" data-hits="" data-linenumber="381">
           
           
           <code class="ruby">      &quot;merda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="402">
+        <li class="never" data-hits="" data-linenumber="382">
           
           
           <code class="ruby">      &quot;merdoso&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="403">
+        <li class="never" data-hits="" data-linenumber="383">
           
           
           <code class="ruby">      &quot;mete&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="404">
+        <li class="never" data-hits="" data-linenumber="384">
           
           
           <code class="ruby">      &quot;m i j o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="405">
+        <li class="never" data-hits="" data-linenumber="385">
           
           
           <code class="ruby">      &quot;m_i_j_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="406">
+        <li class="never" data-hits="" data-linenumber="386">
           
           
           <code class="ruby">      &quot;mijÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="407">
+        <li class="never" data-hits="" data-linenumber="387">
           
           
           <code class="ruby">      &quot;mijão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="408">
+        <li class="never" data-hits="" data-linenumber="388">
           
           
           <code class="ruby">      &quot;mijentinho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="409">
+        <li class="never" data-hits="" data-linenumber="389">
           
           
           <code class="ruby">      &quot;mijento&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="410">
+        <li class="never" data-hits="" data-linenumber="390">
           
           
           <code class="ruby">      &quot;minette&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="411">
+        <li class="never" data-hits="" data-linenumber="391">
           
           
           <code class="ruby">      &quot;nhanha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="412">
+        <li class="never" data-hits="" data-linenumber="392">
           
           
           <code class="ruby">      &quot;obrar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="413">
+        <li class="never" data-hits="" data-linenumber="393">
           
           
           <code class="ruby">      &quot;ovo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="414">
+        <li class="never" data-hits="" data-linenumber="394">
           
           
           <code class="ruby">      &quot;o v o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="415">
+        <li class="never" data-hits="" data-linenumber="395">
           
           
           <code class="ruby">      &quot;pajoÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="416">
+        <li class="never" data-hits="" data-linenumber="396">
           
           
           <code class="ruby">      &quot;pajoão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="417">
+        <li class="never" data-hits="" data-linenumber="397">
           
           
           <code class="ruby">      &quot;paijoÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="418">
+        <li class="never" data-hits="" data-linenumber="398">
           
           
           <code class="ruby">      &quot;paijoão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="419">
+        <li class="never" data-hits="" data-linenumber="399">
           
           
           <code class="ruby">      &quot;panasca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="420">
+        <li class="never" data-hits="" data-linenumber="400">
           
           
           <code class="ruby">      &quot;panaca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="421">
+        <li class="never" data-hits="" data-linenumber="401">
           
           
           <code class="ruby">      &quot;paquete&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="422">
+        <li class="never" data-hits="" data-linenumber="402">
           
           
           <code class="ruby">      &quot;p a u&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="423">
+        <li class="never" data-hits="" data-linenumber="403">
           
           
           <code class="ruby">      &quot;p_a_u&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="424">
+        <li class="never" data-hits="" data-linenumber="404">
           
           
           <code class="ruby">      &quot;pal&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="425">
+        <li class="never" data-hits="" data-linenumber="405">
           
           
           <code class="ruby">      &quot;p a l&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="426">
+        <li class="never" data-hits="" data-linenumber="406">
           
           
           <code class="ruby">      &quot;p_a_l&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="427">
+        <li class="never" data-hits="" data-linenumber="407">
           
           
           <code class="ruby">      &quot;pau-no-cu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="428">
+        <li class="never" data-hits="" data-linenumber="408">
           
           
           <code class="ruby">      &quot;paunocu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="429">
+        <li class="never" data-hits="" data-linenumber="409">
           
           
           <code class="ruby">      &quot;pau no cu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="430">
+        <li class="never" data-hits="" data-linenumber="410">
           
           
           <code class="ruby">      &quot;pau_no_cu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="431">
+        <li class="never" data-hits="" data-linenumber="411">
           
           
           <code class="ruby">      &quot;pau no ku&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="432">
+        <li class="never" data-hits="" data-linenumber="412">
           
           
           <code class="ruby">      &quot;pecunhaba&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="433">
+        <li class="never" data-hits="" data-linenumber="413">
           
           
           <code class="ruby">      &quot;ped_&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="434">
+        <li class="never" data-hits="" data-linenumber="414">
           
           
           <code class="ruby">      &quot;pedó&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="435">
+        <li class="never" data-hits="" data-linenumber="415">
           
           
           <code class="ruby">      &quot;peitola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="436">
+        <li class="never" data-hits="" data-linenumber="416">
           
           
           <code class="ruby">      &quot;p e i t o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="437">
+        <li class="never" data-hits="" data-linenumber="417">
           
           
           <code class="ruby">      &quot;p e i t o s&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="438">
+        <li class="never" data-hits="" data-linenumber="418">
           
           
           <code class="ruby">      &quot;peitÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="439">
+        <li class="never" data-hits="" data-linenumber="419">
           
           
           <code class="ruby">      &quot;peitão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="440">
+        <li class="never" data-hits="" data-linenumber="420">
           
           
           <code class="ruby">      &quot;pela saco&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="441">
+        <li class="never" data-hits="" data-linenumber="421">
           
           
           <code class="ruby">      &quot;pela_saco&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="442">
+        <li class="never" data-hits="" data-linenumber="422">
           
           
           <code class="ruby">      &quot;pelasaco&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="443">
+        <li class="never" data-hits="" data-linenumber="423">
           
           
           <code class="ruby">      &quot;peripat_„_tica&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="444">
+        <li class="never" data-hits="" data-linenumber="424">
           
           
           <code class="ruby">      &quot;peripatótica&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="445">
+        <li class="never" data-hits="" data-linenumber="425">
           
           
           <code class="ruby">      &quot;peripatótico&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="446">
+        <li class="never" data-hits="" data-linenumber="426">
           
           
           <code class="ruby">      &quot;peripat_„_tico&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="447">
+        <li class="never" data-hits="" data-linenumber="427">
           
           
           <code class="ruby">      &quot;pentelheira&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="448">
+        <li class="never" data-hits="" data-linenumber="428">
           
           
           <code class="ruby">      &quot;p e n t e l h o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="449">
+        <li class="never" data-hits="" data-linenumber="429">
           
           
           <code class="ruby">      &quot;p_e_n_t_e_l_h_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="450">
+        <li class="never" data-hits="" data-linenumber="430">
           
           
           <code class="ruby">      &quot;peroba&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="451">
+        <li class="never" data-hits="" data-linenumber="431">
           
           
           <code class="ruby">      &quot;pica&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="452">
+        <li class="never" data-hits="" data-linenumber="432">
           
           
           <code class="ruby">      &quot;p i c a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="453">
+        <li class="never" data-hits="" data-linenumber="433">
           
           
           <code class="ruby">      &quot;pi ca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="454">
+        <li class="never" data-hits="" data-linenumber="434">
           
           
           <code class="ruby">      &quot;pika&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="455">
+        <li class="never" data-hits="" data-linenumber="435">
           
           
           <code class="ruby">      &quot;pik&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="456">
+        <li class="never" data-hits="" data-linenumber="436">
           
           
           <code class="ruby">      &quot;p i k&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="457">
+        <li class="never" data-hits="" data-linenumber="437">
           
           
           <code class="ruby">      &quot;pi k&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="458">
+        <li class="never" data-hits="" data-linenumber="438">
           
           
           <code class="ruby">      &quot;p ik&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="459">
+        <li class="never" data-hits="" data-linenumber="439">
           
           
           <code class="ruby">      &quot;p ica&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="460">
+        <li class="never" data-hits="" data-linenumber="440">
           
           
           <code class="ruby">      &quot;pic a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="461">
+        <li class="never" data-hits="" data-linenumber="441">
           
           
           <code class="ruby">      &quot;p_ica&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="462">
+        <li class="never" data-hits="" data-linenumber="442">
           
           
           <code class="ruby">      &quot;pic_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="463">
+        <li class="never" data-hits="" data-linenumber="443">
           
           
           <code class="ruby">      &quot;p_i_c_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="464">
+        <li class="never" data-hits="" data-linenumber="444">
           
           
           <code class="ruby">      &quot;pi_„a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="465">
+        <li class="never" data-hits="" data-linenumber="445">
           
           
           <code class="ruby">      &quot;piça&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="466">
+        <li class="never" data-hits="" data-linenumber="446">
           
           
           <code class="ruby">      &quot;p i _„ a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="467">
+        <li class="never" data-hits="" data-linenumber="447">
           
           
           <code class="ruby">      &quot;p i ç a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="468">
+        <li class="never" data-hits="" data-linenumber="448">
           
           
           <code class="ruby">      &quot;p_i__„_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="469">
+        <li class="never" data-hits="" data-linenumber="449">
           
           
           <code class="ruby">      &quot;p_i_ç_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="470">
+        <li class="never" data-hits="" data-linenumber="450">
           
           
           <code class="ruby">      &quot;pi _„a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="471">
+        <li class="never" data-hits="" data-linenumber="451">
           
           
           <code class="ruby">      &quot;pi ça&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="472">
+        <li class="never" data-hits="" data-linenumber="452">
           
           
           <code class="ruby">      # &quot;pi_„a balÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="473">
+        <li class="never" data-hits="" data-linenumber="453">
           
           
           <code class="ruby">      &quot;pissa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="474">
+        <li class="never" data-hits="" data-linenumber="454">
           
           
           <code class="ruby">      &quot;picha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="475">
+        <li class="never" data-hits="" data-linenumber="455">
           
           
           <code class="ruby">      &quot;piriquita&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="476">
+        <li class="never" data-hits="" data-linenumber="456">
           
           
           <code class="ruby">      &quot;piroca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="477">
+        <li class="never" data-hits="" data-linenumber="457">
           
           
           <code class="ruby">      &quot;p i r o c a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="478">
+        <li class="never" data-hits="" data-linenumber="458">
           
           
           <code class="ruby">      &quot;pirocÍ£o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="479">
+        <li class="never" data-hits="" data-linenumber="459">
           
           
           <code class="ruby">      &quot;pirocão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="480">
+        <li class="never" data-hits="" data-linenumber="460">
           
           
           <code class="ruby">      &quot;pirocaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="481">
+        <li class="never" data-hits="" data-linenumber="461">
           
           
           <code class="ruby">      &quot;pirocao&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="482">
+        <li class="never" data-hits="" data-linenumber="462">
           
           
           <code class="ruby">      &quot;p i r o c a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="483">
+        <li class="never" data-hits="" data-linenumber="463">
           
           
           <code class="ruby">      &quot;pirocudo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="484">
+        <li class="never" data-hits="" data-linenumber="464">
           
           
           <code class="ruby">      &quot;pirocuda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="485">
+        <li class="never" data-hits="" data-linenumber="465">
           
           
           <code class="ruby">      &quot;pogobol mental&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="486">
+        <li class="never" data-hits="" data-linenumber="466">
           
           
           <code class="ruby">      &quot;porra&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="487">
+        <li class="never" data-hits="" data-linenumber="467">
           
           
           <code class="ruby">      &quot;porrinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="488">
+        <li class="never" data-hits="" data-linenumber="468">
           
           
           <code class="ruby">      &quot;porrÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="489">
+        <li class="never" data-hits="" data-linenumber="469">
           
           
           <code class="ruby">      &quot;porrão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="490">
+        <li class="never" data-hits="" data-linenumber="470">
           
           
           <code class="ruby">      &quot;p o r r a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="491">
+        <li class="never" data-hits="" data-linenumber="471">
           
           
           <code class="ruby">      &quot;p_o_r_r_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="492">
+        <li class="never" data-hits="" data-linenumber="472">
           
           
           <code class="ruby">      &quot;poha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="493">
+        <li class="never" data-hits="" data-linenumber="473">
           
           
           <code class="ruby">      &quot;p o h a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="494">
+        <li class="never" data-hits="" data-linenumber="474">
           
           
           <code class="ruby">      &quot;purra&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="495">
+        <li class="never" data-hits="" data-linenumber="475">
           
           
           <code class="ruby">      &quot;p_„ñrra&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="496">
+        <li class="never" data-hits="" data-linenumber="476">
           
           
           <code class="ruby">      &quot;púrra&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="497">
+        <li class="never" data-hits="" data-linenumber="477">
           
           
           <code class="ruby">      &quot;pora&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="498">
+        <li class="never" data-hits="" data-linenumber="478">
           
           
           <code class="ruby">      &quot;porra louca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="499">
+        <li class="never" data-hits="" data-linenumber="479">
           
           
           <code class="ruby">      &quot;priquita&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="500">
+        <li class="never" data-hits="" data-linenumber="480">
           
           
           <code class="ruby">      &quot;priquito&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="501">
+        <li class="never" data-hits="" data-linenumber="481">
           
           
           <code class="ruby">      &quot;punheta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="502">
+        <li class="never" data-hits="" data-linenumber="482">
           
           
           <code class="ruby">      &quot;punhetinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="503">
+        <li class="never" data-hits="" data-linenumber="483">
           
           
           <code class="ruby">      &quot;punhetudo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="504">
+        <li class="never" data-hits="" data-linenumber="484">
           
           
           <code class="ruby">      &quot;p u n h e t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="505">
+        <li class="never" data-hits="" data-linenumber="485">
           
           
           <code class="ruby">      &quot;p_u_n_h_e_t_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="506">
+        <li class="never" data-hits="" data-linenumber="486">
           
           
           <code class="ruby">      &quot;punheteira&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="507">
+        <li class="never" data-hits="" data-linenumber="487">
           
           
           <code class="ruby">      &quot;punheteiro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="508">
+        <li class="never" data-hits="" data-linenumber="488">
           
           
           <code class="ruby">      &quot;puta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="509">
+        <li class="never" data-hits="" data-linenumber="489">
           
           
           <code class="ruby">      &quot;p u t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="510">
+        <li class="never" data-hits="" data-linenumber="490">
           
           
           <code class="ruby">      &quot;p_u_t_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="511">
+        <li class="never" data-hits="" data-linenumber="491">
           
           
           <code class="ruby">      &quot;pu ta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="512">
+        <li class="never" data-hits="" data-linenumber="492">
           
           
           <code class="ruby">      &quot;put a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="513">
+        <li class="never" data-hits="" data-linenumber="493">
           
           
           <code class="ruby">      &quot;putinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="514">
+        <li class="never" data-hits="" data-linenumber="494">
           
           
           <code class="ruby">      &quot;putona&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="515">
+        <li class="never" data-hits="" data-linenumber="495">
           
           
           <code class="ruby">      &quot;puto&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="516">
+        <li class="never" data-hits="" data-linenumber="496">
           
           
           <code class="ruby">      &quot;putÍ£o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="517">
+        <li class="never" data-hits="" data-linenumber="497">
           
           
           <code class="ruby">      &quot;putão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="518">
+        <li class="never" data-hits="" data-linenumber="498">
           
           
           <code class="ruby">      &quot;putaum&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="519">
+        <li class="never" data-hits="" data-linenumber="499">
           
           
           <code class="ruby">      &quot;putao&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="520">
+        <li class="never" data-hits="" data-linenumber="500">
           
           
           <code class="ruby">      &quot;putamerda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="521">
+        <li class="never" data-hits="" data-linenumber="501">
           
           
           <code class="ruby">      &quot;puta merda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="522">
+        <li class="never" data-hits="" data-linenumber="502">
           
           
           <code class="ruby">      &quot;putanheiro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="523">
+        <li class="never" data-hits="" data-linenumber="503">
           
           
           <code class="ruby">      &quot;puta que o pariu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="524">
+        <li class="never" data-hits="" data-linenumber="504">
           
           
           <code class="ruby">      &quot;puta_que_pariu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="525">
+        <li class="never" data-hits="" data-linenumber="505">
           
           
           <code class="ruby">      &quot;p_u_t_a_q_u_e_p_a_r_i_u&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="526">
+        <li class="never" data-hits="" data-linenumber="506">
           
           
           <code class="ruby">      &quot;puta_que_pariu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="527">
+        <li class="never" data-hits="" data-linenumber="507">
           
           
           <code class="ruby">      &quot;puta_que_pario&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="528">
+        <li class="never" data-hits="" data-linenumber="508">
           
           
           <code class="ruby">      &quot;puta que pariu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="529">
+        <li class="never" data-hits="" data-linenumber="509">
           
           
           <code class="ruby">      &quot;puta que pario&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="530">
+        <li class="never" data-hits="" data-linenumber="510">
           
           
           <code class="ruby">      &quot;puta que o pario&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="531">
+        <li class="never" data-hits="" data-linenumber="511">
           
           
           <code class="ruby">      &quot;putaquepariu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="532">
+        <li class="never" data-hits="" data-linenumber="512">
           
           
           <code class="ruby">      &quot;putaquepario&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="533">
+        <li class="never" data-hits="" data-linenumber="513">
           
           
           <code class="ruby">      &quot;putaqueopariu&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="534">
+        <li class="never" data-hits="" data-linenumber="514">
           
           
           <code class="ruby">      &quot;putaqueopario&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="535">
+        <li class="never" data-hits="" data-linenumber="515">
           
           
           <code class="ruby">      &quot;puteiro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="536">
+        <li class="never" data-hits="" data-linenumber="516">
           
           
           <code class="ruby">      &quot;p u t e i r o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="537">
+        <li class="never" data-hits="" data-linenumber="517">
           
           
           <code class="ruby">      &quot;putzgrila&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="538">
+        <li class="never" data-hits="" data-linenumber="518">
           
           
           <code class="ruby">      &quot;putz grila&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="539">
+        <li class="never" data-hits="" data-linenumber="519">
           
           
           <code class="ruby">      &quot;puts grila&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="540">
+        <li class="never" data-hits="" data-linenumber="520">
           
           
           <code class="ruby">      &quot;putsgrila&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="541">
+        <li class="never" data-hits="" data-linenumber="521">
           
           
           <code class="ruby">      &quot;quenga&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="542">
+        <li class="never" data-hits="" data-linenumber="522">
           
           
           <code class="ruby">      &quot;kenga&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="543">
+        <li class="never" data-hits="" data-linenumber="523">
           
           
           <code class="ruby">      &quot;rabo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="544">
+        <li class="never" data-hits="" data-linenumber="524">
           
           
           <code class="ruby">      &quot;rabeta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="545">
+        <li class="never" data-hits="" data-linenumber="525">
           
           
           <code class="ruby">      &quot;r a b o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="546">
+        <li class="never" data-hits="" data-linenumber="526">
           
           
           <code class="ruby">      &quot;r_a_b_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="547">
+        <li class="never" data-hits="" data-linenumber="527">
           
           
           <code class="ruby">      &quot;rameira&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="548">
+        <li class="never" data-hits="" data-linenumber="528">
           
           
           <code class="ruby">      &quot;rola&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="549">
+        <li class="never" data-hits="" data-linenumber="529">
           
           
           <code class="ruby">      &quot;r_„ñla&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="550">
+        <li class="never" data-hits="" data-linenumber="530">
           
           
           <code class="ruby">      &quot;rôla&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="551">
+        <li class="never" data-hits="" data-linenumber="531">
           
           
           <code class="ruby">      &quot;r o l a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="552">
+        <li class="never" data-hits="" data-linenumber="532">
           
           
           <code class="ruby">      &quot;rosca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="553">
+        <li class="never" data-hits="" data-linenumber="533">
           
           
           <code class="ruby">      &quot;r_o_s_c_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="554">
+        <li class="never" data-hits="" data-linenumber="534">
           
           
           <code class="ruby">      &quot;rosca frouxa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="555">
+        <li class="never" data-hits="" data-linenumber="535">
           
           
           <code class="ruby">      &quot;roscafrouxa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="556">
+        <li class="never" data-hits="" data-linenumber="536">
           
           
           <code class="ruby">      &quot;roscafroucha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="557">
+        <li class="never" data-hits="" data-linenumber="537">
           
           
           <code class="ruby">      &quot;rosca froxa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="558">
+        <li class="never" data-hits="" data-linenumber="538">
           
           
           <code class="ruby">      &quot;rosca frocha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="559">
+        <li class="never" data-hits="" data-linenumber="539">
           
           
           <code class="ruby">      &quot;rosca froucha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="560">
+        <li class="never" data-hits="" data-linenumber="540">
           
           
           <code class="ruby">      &quot;rosca_froucha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="561">
+        <li class="never" data-hits="" data-linenumber="541">
           
           
           <code class="ruby">      &quot;rosca_froxa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="562">
+        <li class="never" data-hits="" data-linenumber="542">
           
           
           <code class="ruby">      &quot;rosca_frouxa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="563">
+        <li class="never" data-hits="" data-linenumber="543">
           
           
           <code class="ruby">      &quot;rosqueirada&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="564">
+        <li class="never" data-hits="" data-linenumber="544">
           
           
           <code class="ruby">      &quot;saqueta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="565">
+        <li class="never" data-hits="" data-linenumber="545">
           
           
           <code class="ruby">      &quot;sacanear&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="566">
+        <li class="never" data-hits="" data-linenumber="546">
           
           
           <code class="ruby">      &quot;sacote&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="567">
+        <li class="never" data-hits="" data-linenumber="547">
           
           
           <code class="ruby">      &quot;sacÍ£o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="568">
+        <li class="never" data-hits="" data-linenumber="548">
           
           
           <code class="ruby">      &quot;sacão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="569">
+        <li class="never" data-hits="" data-linenumber="549">
           
           
           <code class="ruby">      &quot;sacudo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="570">
+        <li class="never" data-hits="" data-linenumber="550">
           
           
           <code class="ruby">      &quot;saqueira&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="571">
+        <li class="never" data-hits="" data-linenumber="551">
           
           
           <code class="ruby">      &quot;s_a_c_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="572">
+        <li class="never" data-hits="" data-linenumber="552">
           
           
           <code class="ruby">      &quot;s a c o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="573">
+        <li class="never" data-hits="" data-linenumber="553">
           
           
           <code class="ruby">      &quot;s a f a d o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="574">
+        <li class="never" data-hits="" data-linenumber="554">
           
           
           <code class="ruby">      &quot;s a f a d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="575">
+        <li class="never" data-hits="" data-linenumber="555">
           
           
           <code class="ruby">      &quot;safadinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="576">
+        <li class="never" data-hits="" data-linenumber="556">
           
           
           <code class="ruby">      &quot;safadÍ£o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="577">
+        <li class="never" data-hits="" data-linenumber="557">
           
           
           <code class="ruby">      &quot;safadão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="578">
+        <li class="never" data-hits="" data-linenumber="558">
           
           
           <code class="ruby">      &quot;safadinho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="579">
+        <li class="never" data-hits="" data-linenumber="559">
           
           
           <code class="ruby">      &quot;sangalho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="580">
+        <li class="never" data-hits="" data-linenumber="560">
           
           
           <code class="ruby">      &quot;sapatÍ£o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="581">
+        <li class="never" data-hits="" data-linenumber="561">
           
           
           <code class="ruby">      &quot;sapatão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="582">
+        <li class="never" data-hits="" data-linenumber="562">
           
           
           <code class="ruby">      &quot;sapatinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="583">
+        <li class="never" data-hits="" data-linenumber="563">
           
           
           <code class="ruby">      &quot;siririca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="584">
+        <li class="never" data-hits="" data-linenumber="564">
           
           
           <code class="ruby">      &quot;s i r i r i c a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="585">
+        <li class="never" data-hits="" data-linenumber="565">
           
           
           <code class="ruby">      &quot;s_i_r_i_r_i_c_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="586">
+        <li class="never" data-hits="" data-linenumber="566">
           
           
           <code class="ruby">      &quot;suruba&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="587">
+        <li class="never" data-hits="" data-linenumber="567">
           
           
           <code class="ruby">      &quot;sirigaita&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="588">
+        <li class="never" data-hits="" data-linenumber="568">
           
           
           <code class="ruby">      &quot;sexo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="589">
+        <li class="never" data-hits="" data-linenumber="569">
           
           
           <code class="ruby">      &quot;s e x o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="590">
+        <li class="never" data-hits="" data-linenumber="570">
           
           
           <code class="ruby">      &quot;secso&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="591">
+        <li class="never" data-hits="" data-linenumber="571">
           
           
           <code class="ruby">      &quot;sekso&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="592">
+        <li class="never" data-hits="" data-linenumber="572">
           
           
           <code class="ruby">      &quot;sesso&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="593">
+        <li class="never" data-hits="" data-linenumber="573">
           
           
           <code class="ruby">      &quot;secho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="594">
+        <li class="never" data-hits="" data-linenumber="574">
           
           
           <code class="ruby">      &quot;cexo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="595">
+        <li class="never" data-hits="" data-linenumber="575">
           
           
           <code class="ruby">      &quot;cecso&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="596">
+        <li class="never" data-hits="" data-linenumber="576">
           
           
           <code class="ruby">      &quot;s_e_x_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="597">
+        <li class="never" data-hits="" data-linenumber="577">
           
           
           <code class="ruby">      &quot;sexo selvagem&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="598">
+        <li class="never" data-hits="" data-linenumber="578">
           
           
           <code class="ruby">      &quot;tabacudo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="599">
+        <li class="never" data-hits="" data-linenumber="579">
           
           
           <code class="ruby">      &quot;t a r a d o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="600">
+        <li class="never" data-hits="" data-linenumber="580">
           
           
           <code class="ruby">      &quot;taradÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="601">
+        <li class="never" data-hits="" data-linenumber="581">
           
           
           <code class="ruby">      &quot;taradinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="602">
+        <li class="never" data-hits="" data-linenumber="582">
           
           
           <code class="ruby">      &quot;taradinho&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="603">
+        <li class="never" data-hits="" data-linenumber="583">
           
           
           <code class="ruby">      &quot;tarraqueta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="604">
+        <li class="never" data-hits="" data-linenumber="584">
           
           
           <code class="ruby">      &quot;tesÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="605">
+        <li class="never" data-hits="" data-linenumber="585">
           
           
           <code class="ruby">      &quot;tesão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="606">
+        <li class="never" data-hits="" data-linenumber="586">
           
           
           <code class="ruby">      &quot;tta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="607">
+        <li class="never" data-hits="" data-linenumber="587">
           
           
           <code class="ruby">      &quot;t t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="608">
+        <li class="never" data-hits="" data-linenumber="588">
           
           
           <code class="ruby">      &quot;t e t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="609">
+        <li class="never" data-hits="" data-linenumber="589">
           
           
           <code class="ruby">      &quot;t_e_t_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="610">
+        <li class="never" data-hits="" data-linenumber="590">
           
           
           <code class="ruby">      &quot;tetÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="611">
+        <li class="never" data-hits="" data-linenumber="591">
           
           
           <code class="ruby">      &quot;tetão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="612">
+        <li class="never" data-hits="" data-linenumber="592">
           
           
           <code class="ruby">      &quot;toba&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="613">
+        <li class="never" data-hits="" data-linenumber="593">
           
           
           <code class="ruby">      &quot;tobaco&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="614">
+        <li class="never" data-hits="" data-linenumber="594">
           
           
           <code class="ruby">      &quot;t r a n s a r&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="615">
+        <li class="never" data-hits="" data-linenumber="595">
           
           
           <code class="ruby">      &quot;t r a n s a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="616">
+        <li class="never" data-hits="" data-linenumber="596">
           
           
           <code class="ruby">      &quot;traveco&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="617">
+        <li class="never" data-hits="" data-linenumber="597">
           
           
           <code class="ruby">      &quot;transinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="618">
+        <li class="never" data-hits="" data-linenumber="598">
           
           
           <code class="ruby">      &quot;trepada&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="619">
+        <li class="never" data-hits="" data-linenumber="599">
           
           
           <code class="ruby">      &quot;trepadinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="620">
+        <li class="never" data-hits="" data-linenumber="600">
           
           
           <code class="ruby">      &quot;trepar&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="621">
+        <li class="never" data-hits="" data-linenumber="601">
           
           
           <code class="ruby">      &quot;tric_„ñ e croch_&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="622">
+        <li class="never" data-hits="" data-linenumber="602">
           
           
           <code class="ruby">      &quot;tricô e crochê&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="623">
+        <li class="never" data-hits="" data-linenumber="603">
           
           
           <code class="ruby">      &quot;trottoir&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="624">
+        <li class="never" data-hits="" data-linenumber="604">
           
           
           <code class="ruby">      &quot;vaca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="625">
+        <li class="never" data-hits="" data-linenumber="605">
           
           
           <code class="ruby">      &quot;v_a_g_i_n_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="626">
+        <li class="never" data-hits="" data-linenumber="606">
           
           
           <code class="ruby">      &quot;v a g i n a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="627">
+        <li class="never" data-hits="" data-linenumber="607">
           
           
           <code class="ruby">      &quot;vaginÍ_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="628">
+        <li class="never" data-hits="" data-linenumber="608">
           
           
           <code class="ruby">      &quot;vaginão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="629">
+        <li class="never" data-hits="" data-linenumber="609">
           
           
           <code class="ruby">      &quot;vagininha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="630">
+        <li class="never" data-hits="" data-linenumber="610">
           
           
           <code class="ruby">      &quot;v_a_c_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="631">
+        <li class="never" data-hits="" data-linenumber="611">
           
           
           <code class="ruby">      &quot;vaivem&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="632">
+        <li class="never" data-hits="" data-linenumber="612">
           
           
           <code class="ruby">      &quot;vai vem&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="633">
+        <li class="never" data-hits="" data-linenumber="613">
           
           
           <code class="ruby">      &quot;veado&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="634">
+        <li class="never" data-hits="" data-linenumber="614">
           
           
           <code class="ruby">      &quot;viado&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="635">
+        <li class="never" data-hits="" data-linenumber="615">
           
           
           <code class="ruby">      &quot;v_e_a_d_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="636">
+        <li class="never" data-hits="" data-linenumber="616">
           
           
           <code class="ruby">      &quot;v_i_a_d_o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="637">
+        <li class="never" data-hits="" data-linenumber="617">
           
           
           <code class="ruby">      &quot;xana&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="638">
+        <li class="never" data-hits="" data-linenumber="618">
           
           
           <code class="ruby">      &quot;x_a_n_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="639">
+        <li class="never" data-hits="" data-linenumber="619">
           
           
           <code class="ruby">      &quot;x a n a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="640">
+        <li class="never" data-hits="" data-linenumber="620">
           
           
           <code class="ruby">      &quot;xaninha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="641">
+        <li class="never" data-hits="" data-linenumber="621">
           
           
           <code class="ruby">      &quot;xanosa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="642">
+        <li class="never" data-hits="" data-linenumber="622">
           
           
           <code class="ruby">      &quot;xavasca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="643">
+        <li class="never" data-hits="" data-linenumber="623">
           
           
           <code class="ruby">      &quot;xereca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="644">
+        <li class="never" data-hits="" data-linenumber="624">
           
           
           <code class="ruby">      &quot;xeca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="645">
+        <li class="never" data-hits="" data-linenumber="625">
           
           
           <code class="ruby">      &quot;x e c a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="646">
+        <li class="never" data-hits="" data-linenumber="626">
           
           
           <code class="ruby">      &quot;x_e_c_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="647">
+        <li class="never" data-hits="" data-linenumber="627">
           
           
           <code class="ruby">      &quot;xereca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="648">
+        <li class="never" data-hits="" data-linenumber="628">
           
           
           <code class="ruby">      &quot;shereca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="649">
+        <li class="never" data-hits="" data-linenumber="629">
           
           
           <code class="ruby">      &quot;chereca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="650">
+        <li class="never" data-hits="" data-linenumber="630">
           
           
           <code class="ruby">      &quot;xerequinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="651">
+        <li class="never" data-hits="" data-linenumber="631">
           
           
           <code class="ruby">      &quot;xexeca&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="652">
+        <li class="never" data-hits="" data-linenumber="632">
           
           
           <code class="ruby">      &quot;xoxolteiro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="653">
+        <li class="never" data-hits="" data-linenumber="633">
           
           
           <code class="ruby">      &quot;xota&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="654">
+        <li class="never" data-hits="" data-linenumber="634">
           
           
           <code class="ruby">      &quot;x o t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="655">
+        <li class="never" data-hits="" data-linenumber="635">
           
           
           <code class="ruby">      &quot;x_o_t_a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="656">
+        <li class="never" data-hits="" data-linenumber="636">
           
           
           <code class="ruby">      &quot;xo ta&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="657">
+        <li class="never" data-hits="" data-linenumber="637">
           
           
           <code class="ruby">      &quot;xot a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="658">
+        <li class="never" data-hits="" data-linenumber="638">
           
           
           <code class="ruby">      &quot;xoxota&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="659">
+        <li class="never" data-hits="" data-linenumber="639">
           
           
           <code class="ruby">      &quot;x o x o t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="660">
+        <li class="never" data-hits="" data-linenumber="640">
           
           
           <code class="ruby">      &quot;xoxotinha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="661">
+        <li class="never" data-hits="" data-linenumber="641">
           
           
           <code class="ruby">      &quot;x o x o t i n h a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="662">
+        <li class="never" data-hits="" data-linenumber="642">
           
           
           <code class="ruby">      &quot;xoxotona&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="663">
+        <li class="never" data-hits="" data-linenumber="643">
           
           
           <code class="ruby">      &quot;x o x o t o n a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="664">
+        <li class="never" data-hits="" data-linenumber="644">
           
           
           <code class="ruby">      &quot;xoxoteira&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="665">
+        <li class="never" data-hits="" data-linenumber="645">
           
           
           <code class="ruby">      &quot;x o x o t e i r a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="666">
+        <li class="never" data-hits="" data-linenumber="646">
           
           
           <code class="ruby">      &quot;xoxoteiro&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="667">
+        <li class="never" data-hits="" data-linenumber="647">
           
           
           <code class="ruby">      &quot;x o x o t e i r o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="668">
+        <li class="never" data-hits="" data-linenumber="648">
           
           
           <code class="ruby">      &quot;a r a n h a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="669">
+        <li class="never" data-hits="" data-linenumber="649">
           
           
           <code class="ruby">      &quot;traidora&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="670">
+        <li class="never" data-hits="" data-linenumber="650">
           
           
           <code class="ruby">      &quot;t r a i d o r a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="671">
+        <li class="never" data-hits="" data-linenumber="651">
           
           
           <code class="ruby">      &quot;falsa&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="672">
+        <li class="never" data-hits="" data-linenumber="652">
           
           
           <code class="ruby">      &quot;inìtil&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="673">
+        <li class="never" data-hits="" data-linenumber="653">
           
           
           <code class="ruby">      &quot;idiota&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="674">
+        <li class="never" data-hits="" data-linenumber="654">
           
           
           <code class="ruby">      &quot;piranha&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="675">
+        <li class="never" data-hits="" data-linenumber="655">
           
           
           <code class="ruby">      &quot;p i r a n h a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="676">
+        <li class="never" data-hits="" data-linenumber="656">
           
           
           <code class="ruby">      &quot;vagabunda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="677">
+        <li class="never" data-hits="" data-linenumber="657">
           
           
           <code class="ruby">      &quot;v a g a b u n d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="678">
+        <li class="never" data-hits="" data-linenumber="658">
           
           
           <code class="ruby">      &quot;retardada&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="679">
+        <li class="never" data-hits="" data-linenumber="659">
           
           
           <code class="ruby">      &quot;r e t a r d a d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="680">
+        <li class="never" data-hits="" data-linenumber="660">
           
           
           <code class="ruby">      &quot;boticˆrio lixo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="681">
+        <li class="never" data-hits="" data-linenumber="661">
           
           
           <code class="ruby">      &quot;boticário lixo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="682">
+        <li class="never" data-hits="" data-linenumber="662">
           
           
           <code class="ruby">      &quot;traidora&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="683">
+        <li class="never" data-hits="" data-linenumber="663">
           
           
           <code class="ruby">      &quot;sapata&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="684">
+        <li class="never" data-hits="" data-linenumber="664">
           
           
           <code class="ruby">      &quot;s a p a t a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="685">
+        <li class="never" data-hits="" data-linenumber="665">
           
           
           <code class="ruby">      &quot;sapatÜo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="686">
+        <li class="never" data-hits="" data-linenumber="666">
           
           
           <code class="ruby">      &quot;sapatão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="687">
+        <li class="never" data-hits="" data-linenumber="667">
           
           
           <code class="ruby">      &quot;preto sujo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="688">
+        <li class="never" data-hits="" data-linenumber="668">
           
           
           <code class="ruby">      &quot;nego&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="689">
+        <li class="never" data-hits="" data-linenumber="669">
           
           
           <code class="ruby">      &quot;machorra&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="690">
+        <li class="never" data-hits="" data-linenumber="670">
           
           
           <code class="ruby">      &quot;m a c h o r r a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="691">
+        <li class="never" data-hits="" data-linenumber="671">
           
           
           <code class="ruby">      &quot;machorrão&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="692">
+        <li class="never" data-hits="" data-linenumber="672">
           
           
           <code class="ruby">      &quot;m a c h o r r ã o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="693">
+        <li class="never" data-hits="" data-linenumber="673">
           
           
           <code class="ruby">      &quot;bunda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="694">
+        <li class="never" data-hits="" data-linenumber="674">
           
           
           <code class="ruby">      &quot;b u n d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="695">
+        <li class="never" data-hits="" data-linenumber="675">
           
           
           <code class="ruby">      &quot;fdp&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="696">
+        <li class="never" data-hits="" data-linenumber="676">
           
           
           <code class="ruby">      &quot;gordo&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="697">
+        <li class="never" data-hits="" data-linenumber="677">
           
           
           <code class="ruby">      &quot;gorda&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="698">
+        <li class="never" data-hits="" data-linenumber="678">
           
           
           <code class="ruby">      &quot;g o r d a&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="699">
+        <li class="never" data-hits="" data-linenumber="679">
           
           
           <code class="ruby">      &quot;g o r d o&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="700">
+        <li class="never" data-hits="" data-linenumber="680">
           
           
           <code class="ruby">      &quot;f d p&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="701">
+        <li class="never" data-hits="" data-linenumber="681">
           
           
           <code class="ruby">      &quot;pnc&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="702">
+        <li class="never" data-hits="" data-linenumber="682">
           
           
           <code class="ruby">      &quot;p n c&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="703">
+        <li class="never" data-hits="" data-linenumber="683">
           
           
           <code class="ruby">      &quot;feminazi&quot;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="704">
+        <li class="never" data-hits="" data-linenumber="684">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="705">
+        <li class="never" data-hits="" data-linenumber="685">
           
           
           <code class="ruby">  end</code>
@@ -7259,11 +7139,11 @@
         <div class="source_table" id="f0981a5f77f235faf25ae8ca599bcbab8d938e67">
   <div class="header">
     <h3>app/models/establishment.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">86.67 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>30</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -7450,7 +7330,115 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def populate_rate_array(ratings)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="32">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    rate_array = []</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="33">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    ratings.each do |rating|</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="34">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      if rating.average_rating &lt; 1.8</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="35">
+          
+          
+          <code class="ruby">        rate_array.push([rating,&quot;Péssimo&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">      elsif rating.average_rating &lt; 2.6</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
+          
+          <code class="ruby">        rate_array.push([rating,&quot;Ruim&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">      elsif rating.average_rating &lt; 3.4</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
+          
+          <code class="ruby">        rate_array.push([rating,&quot;Regular&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">      elsif rating.average_rating &lt; 4.2</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="41">
+          <span class="hits">12</span>
+          
+          <code class="ruby">        rate_array.push([rating,&quot;Bom&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">        rate_array.push([rating,&quot;Ótimo&quot;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="46">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    return rate_array</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">end</code>
@@ -7522,14 +7510,14 @@
           <code class="ruby">  def average_rating</code>
         </li>
       
-        <li class="covered" data-hits="158" data-linenumber="9">
-          <span class="hits">158</span>
+        <li class="covered" data-hits="142" data-linenumber="9">
+          <span class="hits">142</span>
           
           <code class="ruby">    all_ratings = [self.woman, self.lgbtqia, self.race, self.disability, self.elder, self.obese]</code>
         </li>
       
-        <li class="covered" data-hits="1106" data-linenumber="10">
-          <span class="hits">1106</span>
+        <li class="covered" data-hits="994" data-linenumber="10">
+          <span class="hits">994</span>
           
           <code class="ruby">    all_ratings.delete_if {|rating| rating == nil}</code>
         </li>
@@ -7540,8 +7528,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="158" data-linenumber="12">
-          <span class="hits">158</span>
+        <li class="covered" data-hits="142" data-linenumber="12">
+          <span class="hits">142</span>
           
           <code class="ruby">    if(all_ratings.empty?)</code>
         </li>
@@ -7558,8 +7546,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="157" data-linenumber="15">
-          <span class="hits">157</span>
+        <li class="covered" data-hits="141" data-linenumber="15">
+          <span class="hits">141</span>
           
           <code class="ruby">    return (all_ratings.sum/all_ratings.length).round(1) #media parcial</code>
         </li>
@@ -19661,11 +19649,11 @@
         <div class="source_table" id="fa0b4964030c0d86c5e1fa62b7a037f883b91a11">
   <div class="header">
     <h3>spec/helpers/application_helper_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">30.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>10</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>7</b> lines missed.</span>
     </div>
   </div>
   
@@ -19696,44 +19684,44 @@
           <code class="ruby">  before :each do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="5">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
           
           <code class="ruby">    @est1 = Establishment.create!(name:&quot;Teste&quot;, address:&quot;Logo Ali&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;321&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="6">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
           
           <code class="ruby">    @r1 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="7">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
           
           <code class="ruby">    @ratings1 = [@r1, @r1]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
           
           <code class="ruby">    @r3 = Rating.create!(woman: 3.0,race: 3.0, lgbtqia: 3.0, disability: 3.0, elder: 3.0, obese: 3.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="9">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
           
           <code class="ruby">    @ratings3 = [@r3, @r3]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="10">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
           
           <code class="ruby">    @r5 = Rating.create!(woman: 5.0,race: 5.0, lgbtqia: 5.0, disability: 5.0, elder: 5.0, obese: 5.0, name: &quot;Teste&quot;, cpf: &quot;123456&quot;, email: &quot;teste&quot;, phone: &quot;teste&quot;, rating_date:&quot;04/04/04&quot;, establishment_id: @est1.id, moderated: true)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="11">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
           
           <code class="ruby">    @ratings5 = [@r5, @r5]</code>
         </li>
@@ -19750,73 +19738,7 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;expect to populate rate result with ratings and pessimo&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="15">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(populate_rate_array(@ratings1)).to eq([[@r1, &quot;Péssimo&quot;], [@r1, &quot;Péssimo&quot;]])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;expect to populate rate result with rating and regular&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(populate_rate_array(@ratings3)).to eq([[@r3, &quot;Regular&quot;], [@r3, &quot;Regular&quot;]])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;expect to populate with rating and otimo&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(populate_rate_array(@ratings5)).to eq([[@r5, &quot;Ótimo&quot;], [@r5, &quot;Ótimo&quot;]])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -20095,8 +20017,8 @@
     <h3>spec/models/establishment_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -20122,7 +20044,73 @@
           <code class="ruby">RSpec.describe Establishment, type: :model do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect to populate rate result with ratings and pessimo&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(populate_rate_array(@ratings1)).to eq([[@r1, &quot;Péssimo&quot;], [@r1, &quot;Péssimo&quot;]])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect to populate rate result with rating and regular&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(populate_rate_array(@ratings3)).to eq([[@r3, &quot;Regular&quot;], [@r3, &quot;Regular&quot;]])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;expect to populate with rating and otimo&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(populate_rate_array(@ratings5)).to eq([[@r5, &quot;Ótimo&quot;], [@r5, &quot;Ótimo&quot;]])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">end</code>
