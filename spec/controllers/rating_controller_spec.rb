@@ -66,10 +66,32 @@ RSpec.describe RatingsController, type: :controller do
           email: "teste",
           phone: "teste",
           rating_date:"06/06/06",
+          description: "",
           establishment_id: @est1.id
         }
       }
-      expect(flash[:notice]).to eq("Avaliação feita com sucesso")
+      expect(flash[:notice]).to eq("Avaliação feita com sucesso!")
+    end
+
+    it "expect to flash notice when the rating is created" do
+      post :create, {placeId:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", accepted_terms: true, rating:
+        {
+          woman: 4.0,
+          race: 4.0,
+          lgbtqia: 4.0,
+          disability: 4.0,
+          elder: 4.0,
+          obese: 4.0,
+          name: "Teste",
+          cpf: "123456",
+          email: "teste",
+          phone: "teste",
+          rating_date:"06/06/06",
+          description: "opa",
+          establishment_id: @est1.id
+        }
+      }
+      expect(flash[:notice]).to eq("Avaliação feita com sucesso! Sua avaliação ira passar pela moderação.")
     end
 
     it "expect to flash notice when using bad words" do

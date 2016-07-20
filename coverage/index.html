@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-19T14:16:03-03:00">2016-07-19T14:16:03-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-20T15:31:14-03:00">2016-07-20T15:31:14-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">94.22%</span></span>
+    (<span class="covered_percent"><span class="green">94.55%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.12
+         5.13
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>675</b> relevant lines. 
-    <span class="green"><b>636</b> lines covered</span> and
-    <span class="red"><b>39</b> lines missed </span>
+    <b>679</b> relevant lines. 
+    <span class="green"><b>642</b> lines covered</span> and
+    <span class="red"><b>37</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#8bc99e2ccb0e15fabe6f90265fa977a31b2fe7b4" class="src_link" title="app/controllers/ratings_controller.rb">app/controllers/ratings_controller.rb</a></td>
-        <td class="red strong">65.75 %</td>
-        <td>131</td>
-        <td>73</td>
-        <td>48</td>
-        <td>25</td>
-        <td>1.7</td>
+        <td class="red strong">68.92 %</td>
+        <td>133</td>
+        <td>74</td>
+        <td>51</td>
+        <td>23</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -413,11 +413,11 @@
       <tr>
         <td class="strong"><a href="#0f461b8577d8196fb2a9f11bac797934d9c225f8" class="src_link" title="spec/controllers/rating_controller_spec.rb">spec/controllers/rating_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>114</td>
-        <td>43</td>
-        <td>43</td>
+        <td>136</td>
+        <td>46</td>
+        <td>46</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -547,7 +547,7 @@
         <td>21</td>
         <td>21</td>
         <td>0</td>
-        <td>6.3</td>
+        <td>6.4</td>
       </tr>
       
     </tbody>
@@ -1253,11 +1253,11 @@
         <div class="source_table" id="8bc99e2ccb0e15fabe6f90265fa977a31b2fe7b4">
   <div class="header">
     <h3>app/controllers/ratings_controller.rb</h3>
-    <h4><span class="red">65.75 %</span> covered</h4>
+    <h4><span class="red">68.92 %</span> covered</h4>
     <div>
-      <b>73</b> relevant lines. 
-      <span class="green"><b>48</b> lines covered</span> and
-      <span class="red"><b>25</b> lines missed.</span>
+      <b>74</b> relevant lines. 
+      <span class="green"><b>51</b> lines covered</span> and
+      <span class="red"><b>23</b> lines missed.</span>
     </div>
   </div>
   
@@ -1492,8 +1492,8 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="39">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="39">
+          <span class="hits">5</span>
           
           <code class="ruby">    if params[:accepted_terms]</code>
         </li>
@@ -1504,8 +1504,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="41">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="41">
+          <span class="hits">4</span>
           
           <code class="ruby">      if Obscenity.profane?(rating_params[:description])</code>
         </li>
@@ -1528,14 +1528,14 @@
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="45">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="45">
+          <span class="hits">3</span>
           
           <code class="ruby">        @rating = Rating.new(rating_params)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="46">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="46">
+          <span class="hits">3</span>
           
           <code class="ruby">        @establishment = Establishment.search_by_id(params[:placeId]).first</code>
         </li>
@@ -1546,14 +1546,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="48">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="48">
+          <span class="hits">3</span>
           
           <code class="ruby">        if(!(@rating.woman.nil? &amp;&amp; @rating.lgbtqia.nil? &amp;&amp; @rating.race.nil? &amp;&amp; @rating.disability.nil? &amp;&amp; @rating.elder.nil? &amp;&amp; @rating.obese.nil?))</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="49">
+          <span class="hits">3</span>
           
           <code class="ruby">          if(@establishment.nil?)</code>
         </li>
@@ -1576,20 +1576,20 @@
           <code class="ruby">          end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="53">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="53">
+          <span class="hits">3</span>
           
           <code class="ruby">          if @rating.description == &quot;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
-          
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
           
           <code class="ruby">            @rating.visible = true</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
-          
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
           
           <code class="ruby">            @rating.moderated = true</code>
         </li>
@@ -1606,370 +1606,370 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="58">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="58">
+          <span class="hits">3</span>
           
           <code class="ruby">          @rating.establishment_id = @establishment.id</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="59">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="59">
+          <span class="hits">3</span>
           
           <code class="ruby">          respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="60">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="60">
+          <span class="hits">3</span>
           
-          <code class="ruby">            if @rating.save</code>
+          <code class="ruby">            if @rating.save &amp;&amp; !(@rating.description==&quot;&quot;)</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="61">
           <span class="hits">4</span>
           
-          <code class="ruby">              format.html { redirect_to &quot;/perfil/#{@establishment.id}&quot;, notice: &#39;Avaliação feita com sucesso&#39; }</code>
+          <code class="ruby">              format.html { redirect_to &quot;/perfil/#{@establishment.id}&quot;, notice: &#39;Avaliação feita com sucesso! Sua avaliação ira passar pela moderação.&#39; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">            end</code>
+          <code class="ruby">            elsif @rating.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="covered" data-hits="2" data-linenumber="63">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">          end</code>
+          <code class="ruby">              format.html { redirect_to &quot;/perfil/#{@establishment.id}&quot;, notice: &#39;Avaliação feita com sucesso!&#39; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">            end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">          end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
           <code class="ruby">      respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="69">
+        <li class="covered" data-hits="2" data-linenumber="71">
           <span class="hits">2</span>
           
           <code class="ruby">        format.html { redirect_to root_path }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="74">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @rating.destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
+          <code class="ruby">  def destroy</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @rating.destroy</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="77">
+        <li class="covered" data-hits="2" data-linenumber="79">
           <span class="hits">2</span>
           
           <code class="ruby">      format.html { redirect_to ratings_url, notice: &#39;Rating was successfully destroyed.&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="81">
+        <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
           <code class="ruby">  def visible</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="82">
+        <li class="missed" data-hits="0" data-linenumber="84">
           
           
           <code class="ruby">    @rating = Rating.find(params[:rating_id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="84">
-          
-          
-          <code class="ruby">    if (@rating.visible == false)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="85">
-          
-          
-          <code class="ruby">      @rating.visible = true</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="86">
           
           
-          <code class="ruby">      @rating.moderated = true</code>
+          <code class="ruby">    if (@rating.visible == false)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="missed" data-hits="0" data-linenumber="87">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">      @rating.visible = true</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="88">
           
           
-          <code class="ruby">      @rating.visible = false</code>
+          <code class="ruby">      @rating.moderated = true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="90">
+          
+          
+          <code class="ruby">      @rating.visible = false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="91">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="91">
-          
-          
-          <code class="ruby">    respond_to do |format|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="92">
-          
-          
-          <code class="ruby">      if @rating.save</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="93">
           
           
-          <code class="ruby">        format.html { redirect_to admin_root_path, notice: &quot;Success!&quot; }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="95">
-          
-          
-          <code class="ruby">        format.html { redirect_to admin_root_path }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="96">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="97">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="98">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="100">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def moderated</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="101">
-          
-          
-          <code class="ruby">    @rating = Rating.find(params[:rating_id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="103">
-          
-          
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="104">
-          
-          
-          <code class="ruby">      if(@rating.moderated == false)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="105">
-          
-          
-          <code class="ruby">        @rating.moderated = true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="106">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="107">
-          
-          
-          <code class="ruby">        format.html { redirect_to admin_root_path, :flash =&gt; {:error =&gt; &quot;A avaliação já foi moderada anteriormente.&quot;} }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="109">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="110">
+        <li class="missed" data-hits="0" data-linenumber="94">
           
           
           <code class="ruby">      if @rating.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="111">
+        <li class="missed" data-hits="0" data-linenumber="95">
           
           
           <code class="ruby">        format.html { redirect_to admin_root_path, notice: &quot;Success!&quot; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="113">
+        <li class="missed" data-hits="0" data-linenumber="97">
           
           
           <code class="ruby">        format.html { redirect_to admin_root_path }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="114">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="115">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="116">
+        <li class="never" data-hits="" data-linenumber="100">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="117">
+        <li class="never" data-hits="" data-linenumber="101">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="118">
+        <li class="covered" data-hits="1" data-linenumber="102">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def moderated</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="103">
+          
+          
+          <code class="ruby">    @rating = Rating.find(params[:rating_id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="105">
+          
+          
+          <code class="ruby">    respond_to do |format|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="106">
+          
+          
+          <code class="ruby">      if(@rating.moderated == false)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="107">
+          
+          
+          <code class="ruby">        @rating.moderated = true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="109">
+          
+          
+          <code class="ruby">        format.html { redirect_to admin_root_path, :flash =&gt; {:error =&gt; &quot;A avaliação já foi moderada anteriormente.&quot;} }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="112">
+          
+          
+          <code class="ruby">      if @rating.save</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="113">
+          
+          
+          <code class="ruby">        format.html { redirect_to admin_root_path, notice: &quot;Success!&quot; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="115">
+          
+          
+          <code class="ruby">        format.html { redirect_to admin_root_path }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="116">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="118">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="119">
@@ -1981,70 +1981,82 @@
         <li class="covered" data-hits="1" data-linenumber="120">
           <span class="hits">1</span>
           
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="121">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="122">
+          <span class="hits">1</span>
+          
           <code class="ruby">  def set_rating</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="121">
+        <li class="covered" data-hits="1" data-linenumber="123">
           <span class="hits">1</span>
           
           <code class="ruby">    @rating = Rating.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="122">
+        <li class="never" data-hits="" data-linenumber="124">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="123">
+        <li class="never" data-hits="" data-linenumber="125">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="124">
+        <li class="covered" data-hits="1" data-linenumber="126">
           <span class="hits">1</span>
           
           <code class="ruby">  def set_client</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="125">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="14" data-linenumber="127">
+          <span class="hits">14</span>
           
           <code class="ruby">    @client = GooglePlaces::Client.new(G_PLACE_KEY)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="126">
+        <li class="never" data-hits="" data-linenumber="128">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="129">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="128">
+        <li class="covered" data-hits="1" data-linenumber="130">
           <span class="hits">1</span>
           
           <code class="ruby">  def rating_params</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="129">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="131">
+          <span class="hits">7</span>
           
           <code class="ruby">    params.require(:rating).permit(:woman, :lgbtqia, :race, :disability, :elder, :obese, :name, :cpf, :email, :phone, :rating_date, :establishment_id, :description)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="never" data-hits="" data-linenumber="132">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="131">
+        <li class="never" data-hits="" data-linenumber="133">
           
           
           <code class="ruby">end</code>
@@ -17401,8 +17413,8 @@
     <h3>spec/controllers/rating_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>43</b> relevant lines. 
-      <span class="green"><b>43</b> lines covered</span> and
+      <b>46</b> relevant lines. 
+      <span class="green"><b>46</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -17722,8 +17734,8 @@
           <code class="ruby">    before :each do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="53">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="53">
+          <span class="hits">4</span>
           
           <code class="ruby">      @est1 = Establishment.create!(name:&quot;Teste&quot;, address:&quot;Logo Ali&quot;, lat:&quot;0&quot;, lng:&quot;0&quot;, id_places:&quot;ChIJ-ZgW_AB5GZUR-LPwX7gPUNs&quot;)</code>
         </li>
@@ -17821,274 +17833,406 @@
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">          establishment_id: @est1.id</code>
+          <code class="ruby">          description: &quot;&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">        }</code>
+          <code class="ruby">          establishment_id: @est1.id</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
+          <code class="ruby">        }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
           <code class="ruby">      }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="73">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(flash[:notice]).to eq(&quot;Avaliação feita com sucesso&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(flash[:notice]).to eq(&quot;Avaliação feita com sucesso!&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="75">
           
-          <code class="ruby">    it &quot;expect to flash notice when using bad words&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
-          <code class="ruby">      post :create, {placeId:&quot;ChIJ-ZgW_AB5GZUR-LPwX7gPUNs&quot;, accepted_terms: true, rating:</code>
+          <code class="ruby">    it &quot;expect to flash notice when the rating is created&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        {</code>
+          <code class="ruby">      post :create, {placeId:&quot;ChIJ-ZgW_AB5GZUR-LPwX7gPUNs&quot;, accepted_terms: true, rating:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">          woman: 4.0,</code>
+          <code class="ruby">        {</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">          race: 4.0,</code>
+          <code class="ruby">          woman: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">          lgbtqia: 4.0,</code>
+          <code class="ruby">          race: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby">          disability: 4.0,</code>
+          <code class="ruby">          lgbtqia: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">          elder: 4.0,</code>
+          <code class="ruby">          disability: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby">          obese: 4.0,</code>
+          <code class="ruby">          elder: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby">          name: &quot;Teste&quot;,</code>
+          <code class="ruby">          obese: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby">          cpf: &quot;123456&quot;,</code>
+          <code class="ruby">          name: &quot;Teste&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby">          email: &quot;teste&quot;,</code>
+          <code class="ruby">          cpf: &quot;123456&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby">          phone: &quot;teste&quot;,</code>
+          <code class="ruby">          email: &quot;teste&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby">          rating_date:&quot;06/06/06&quot;,</code>
+          <code class="ruby">          phone: &quot;teste&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
-          <code class="ruby">          establishment_id: @est1.id,</code>
+          <code class="ruby">          rating_date:&quot;06/06/06&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">          description: &quot;grelo&quot;</code>
+          <code class="ruby">          description: &quot;opa&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby">        }</code>
+          <code class="ruby">          establishment_id: @est1.id</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
+          <code class="ruby">        }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
           <code class="ruby">      }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="93">
+        <li class="covered" data-hits="1" data-linenumber="94">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(flash[:notice]).to eq(&quot;* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(flash[:notice]).to eq(&quot;Avaliação feita com sucesso! Sua avaliação ira passar pela moderação.&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="96">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="96">
           
-          <code class="ruby">    it &quot;expect to render new when the rating is not created&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
-          <code class="ruby">      post :create,{placeId:&quot;ChIJ-ZgW_AB5GZUR-LPwX7gPUNs&quot;, rating:</code>
+          <code class="ruby">    it &quot;expect to flash notice when using bad words&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        {</code>
+          <code class="ruby">      post :create, {placeId:&quot;ChIJ-ZgW_AB5GZUR-LPwX7gPUNs&quot;, accepted_terms: true, rating:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
           
           
-          <code class="ruby">          woman: 4.0,</code>
+          <code class="ruby">        {</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="100">
           
           
-          <code class="ruby">          race: 4.0,</code>
+          <code class="ruby">          woman: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
           
           
-          <code class="ruby">          lgbtqia: 4.0,</code>
+          <code class="ruby">          race: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="102">
           
           
-          <code class="ruby">          disability: 4.0,</code>
+          <code class="ruby">          lgbtqia: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="103">
           
           
-          <code class="ruby">          elder: 4.0,</code>
+          <code class="ruby">          disability: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="104">
           
           
-          <code class="ruby">          obese: 4.0,</code>
+          <code class="ruby">          elder: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="105">
           
           
-          <code class="ruby">          name: &quot;Teste&quot;,</code>
+          <code class="ruby">          obese: 4.0,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="106">
           
           
-          <code class="ruby">          email: &quot;teste&quot;,</code>
+          <code class="ruby">          name: &quot;Teste&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
           
           
-          <code class="ruby">          phone: &quot;teste&quot;,</code>
+          <code class="ruby">          cpf: &quot;123456&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="108">
           
           
-          <code class="ruby">          rating_date:&quot;06/06/06&quot;,</code>
+          <code class="ruby">          email: &quot;teste&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="109">
           
           
-          <code class="ruby">        }</code>
+          <code class="ruby">          phone: &quot;teste&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="110">
           
           
-          <code class="ruby">      }</code>
+          <code class="ruby">          rating_date:&quot;06/06/06&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="111">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="111">
           
-          <code class="ruby">      expect(response).to redirect_to(root_path)</code>
+          
+          <code class="ruby">          establishment_id: @est1.id,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">          description: &quot;grelo&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="113">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">        }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">      }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="115">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(flash[:notice]).to eq(&quot;* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="116">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="118">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;expect to render new when the rating is not created&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="119">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      post :create,{placeId:&quot;ChIJ-ZgW_AB5GZUR-LPwX7gPUNs&quot;, rating:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="120">
+          
+          
+          <code class="ruby">        {</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="121">
+          
+          
+          <code class="ruby">          woman: 4.0,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
+          
+          
+          <code class="ruby">          race: 4.0,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby">          lgbtqia: 4.0,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="124">
+          
+          
+          <code class="ruby">          disability: 4.0,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="125">
+          
+          
+          <code class="ruby">          elder: 4.0,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="126">
+          
+          
+          <code class="ruby">          obese: 4.0,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby">          name: &quot;Teste&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="128">
+          
+          
+          <code class="ruby">          email: &quot;teste&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby">          phone: &quot;teste&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="130">
+          
+          
+          <code class="ruby">          rating_date:&quot;06/06/06&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="131">
+          
+          
+          <code class="ruby">        }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby">      }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="133">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to redirect_to(root_path)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="134">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="135">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="136">
           
           
           <code class="ruby">end</code>
@@ -20662,8 +20806,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="65">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="37" data-linenumber="65">
+          <span class="hits">37</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :transaction</code>
         </li>
@@ -20722,8 +20866,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="75">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="37" data-linenumber="75">
+          <span class="hits">37</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -20758,8 +20902,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="36" data-linenumber="81">
-          <span class="hits">36</span>
+        <li class="covered" data-hits="37" data-linenumber="81">
+          <span class="hits">37</span>
           
           <code class="ruby">   DatabaseCleaner.clean</code>
         </li>
