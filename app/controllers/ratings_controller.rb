@@ -4,10 +4,6 @@ class RatingsController < ApplicationController
   include ApplicationHelper
   require 'concept.rb'
 
-  def index
-    @ratings = Rating.all
-  end
-
   def show
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
     @spot = @client.spot(@rating.establishment.id_places)
