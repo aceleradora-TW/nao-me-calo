@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if !notice.nil? %>
+<div class="alert-success text-center col-lg-offset-4 col-lg-4">
+  <%= notice %>
+</div>
+<% end %>
 <div class ="col-lg-8 col-lg-offset-2 ">
   <div class ="col-lg-12 padding-bottom">
     <div class='row'>
