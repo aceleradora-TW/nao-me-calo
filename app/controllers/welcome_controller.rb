@@ -19,8 +19,8 @@ class WelcomeController < ApplicationController
     end
     @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
 
-    @worst_places = set_concept_for_welcome
-    @best_places = @worst_places.reverse
+    @worst_places = generate_ranking.take(5)
+    @best_places = generate_ranking.reverse.take(5)
 
     time = Time.now
     if time.hour > 1

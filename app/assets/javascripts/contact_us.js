@@ -100,15 +100,18 @@ $(document).ready(function(){
     var count = 0;
     var textLowerCase = text.val().toLowerCase().split(" ");
     for(var i = 0; i <= badwords.length; i++){
-      if(textLowerCase.indexOf(badwords[i]) !== -1 ){
-        count++;
+      for(j=0; j <= textLowerCase.length; j++){
+        if(textLowerCase[j] == badwords[i]){
+          count++;
+          break;
+        }
       }
     }
     badWordsErrorsContact(count, text);
   }
 
   function badWordsErrorsContact(count, text){
-    if(count>0){
+    if(count > 1){
       errorsContact["messageEvaluate"] = true;
       text.addClass("error");
       $('#messageAlertTextObscenity' ).removeClass("hidden");

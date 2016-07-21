@@ -49,18 +49,20 @@ $(document).ready(function(){
   function hasBadWords(text){
 
     var count = 0;
-    var textLowerCase = text.val().toLowerCase();
+    var textLowerCase = text.val().toLowerCase().split(" ");
     for(var i = 0; i <= badwords.length; i++){
-      if(textLowerCase.indexOf(badwords[i]) !== -1 ){
-        count++;
-        break;
+      for(j=0; j <= textLowerCase.length; j++){
+        if(textLowerCase[j] == badwords[i]){
+          count++;
+          break;
+        }
       }
     }
     badWordsErrors(count, text);
   }
 
   function badWordsErrors(count, text){
-    var hasError = (count === 1);
+    var hasError = (count > 1);
     if(hasError){
       errors['description'] = hasError;
       text.addClass('errorBorder');

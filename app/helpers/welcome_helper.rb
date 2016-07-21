@@ -11,7 +11,7 @@ module WelcomeHelper
     end
   end
 
-  def set_concept_for_ranking
+  def generate_ranking
     array = Ranking.generate_array_ranking(@establishments)
     places = []
     array.each do |establishment|
