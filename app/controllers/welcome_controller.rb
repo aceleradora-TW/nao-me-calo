@@ -19,7 +19,7 @@ class WelcomeController < ApplicationController
     end
     @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
 
-    @worst_places = set_concept
+    @worst_places = set_concept_for_welcome
     @best_places = @worst_places.reverse
 
     time = Time.now

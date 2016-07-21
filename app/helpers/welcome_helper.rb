@@ -1,23 +1,24 @@
 module WelcomeHelper
 
-  def set_concept
+  def set_concept_for_welcome
     array = Ranking.generate_array_ranking(@establishments)
     places = []
     array.take(5).each do |establishment|
       places << [establishment[0], establishment[1]]
     end
     places.each do |place|
-      if place[1] < 1.8
-        place[1] = "Péssimo"
-      elsif place[1] < 2.6
-        place[1] = "Ruim"
-      elsif place[1] < 3.4
-        place[1] = "Regular"
-      elsif place[1] < 4.2
-        place[1] = "Bom"
-      else
-        place[1] = "Ótimo"
-      end
+      place[1] = Concept.determine_concept(place[1])
+    end
+  end
+
+  def set_concept_for_ranking
+    array = Ranking.generate_array_ranking(@establishments)
+    places = []
+    array.each do |establishment|
+      places << [establishment[0], establishment[1]]
+    end
+    places.each do |place|
+      place[1] = Concept.determine_concept(place[1])
     end
   end
 end

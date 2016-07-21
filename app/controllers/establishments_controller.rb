@@ -32,7 +32,7 @@ class EstablishmentsController < ApplicationController
     @establishment_hash = {}
     @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
 
-    @worst_places = set_concept
+    @worst_places = set_concept_for_ranking
     @best_places = @worst_places.reverse
   end
 
