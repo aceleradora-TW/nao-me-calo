@@ -1,6 +1,6 @@
 <div class="nav-header-all hidden-xs visible-sm visible-md visible-lg">
 
-  <nav role="navigation" class="navbar navbar-static-top header-background-color">
+  <nav role="navigation" class="navbar navbar-static-top">
     <div class="container">
 
        <div class="header-logo">
@@ -15,7 +15,7 @@
         </button>
       </div>
       <div class="header-links" id="navbar-menu-collapse">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav header-links-color">
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
           <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Apoio Legal", dicas_path %></li>
           <li><a href="/ranking">Ranking</a></li>

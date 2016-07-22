@@ -5,11 +5,11 @@
 
   &-image{
     width: 100%;
-    height: 509px;
-    background-image: url('../assets/picture_boy_megaphone2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 449px;
     border-bottom: 2px solid $textColor;
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/picture_girl_header.jpg');
+    background-size: cover;
+    background-position: 0px;
   }
 
   &-logo{
@@ -46,9 +46,10 @@
     text-align: center;
     position: relative;
     float: left;
-    color: $brandColor;
-    padding: 100px 213px;
+    color: #FFFFFF;
+    padding: 100px 125px;
     width: 100%;
+    text-shadow: 2px 2px #312D2D;
   }
 
 }

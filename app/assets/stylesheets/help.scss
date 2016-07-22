@@ -2,16 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "_variables.scss";
+
 .hold-link-help > a:hover, a:visited,a:link {
   color: $brandColor;
   background-color: rgba(0,0,0,0) !important;
 }
-.hold-link-title-help > a{
-  color: #000;
-  background-color: rgba(0,0,0,0);
-  text-decoration: none;
-}
 
+.header-links-color {
+  & a:hover, a:visited, a:link {
+    color: #E4E4E4;
+    background-color: rgba(0,0,0,0) !important;
+  }
+
+}
+.hold-link-title-help {
+  & a{
+    color: #000;
+    background-color: rgba(0,0,0,0);
+    text-decoration: none;
+  }
+}
 .paragraph{
   padding-left: 25px;
 }

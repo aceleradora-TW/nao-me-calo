@@ -5,7 +5,7 @@
   &-button{
     width: 30px;
     height: 30px;
-    background: $brandColor;
+    background: #E2E2E2;
     position: absolute;
     top: 10px;
     left: 6px;
@@ -26,22 +26,25 @@
     font-size: 100%;
     text-align: center;
     position: relative;
-    color:$brandColor;
-    padding-top: 13%;
-    margin: 0% 25% 0% 10%;
+    padding: 13%;
+    margin: 0% 25% 0% 0%;
     font-weight: bold;
+    color: #FFFFFF;
+    width: 100%;
+    text-shadow: 2px 2px #312D2D;
   }
 
   &-image{
-    background-image: url('picture_boy_megaphone2.jpg');
-    padding-bottom: 25px;
-    height: 186px;
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/picture_girl_header.jpg');
     background-size: cover;
+    height: 186px;
+    padding-bottom: 25px;
+    background-position: 0px;
   }
 
   &-links{
     display: none;
-    background: $brandColor;
+    background: $textColor;
     position: absolute;
     top: 0px;
     width: 100%;
@@ -51,10 +54,10 @@
       margin: 0;
       padding: 0;
       & li{
-        border-bottom: 1px solid darken($brandColor, 10%);
+        border-bottom: 1px solid darken(#565454, 10%);
         padding: 10px 15px;
         & a{
-          color: #ffffff;
+          color: #565454;
         }
       }
     }
