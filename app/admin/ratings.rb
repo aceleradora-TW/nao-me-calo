@@ -16,7 +16,7 @@ ActiveAdmin.register Rating do
     id_column
     column :moderated
     column :establishment_id
-    column :description
+    column  :description 
     column :average_rating
     column :rating_date
     column :visible

@@ -3,7 +3,7 @@ Rails.application.configure do
   G_PLACE_KEY = "AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8"
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_mailer.default_url_options = { host: 'naomecalotw-staging.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'naomecalotw-test.herokuapp.com' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
