@@ -19,7 +19,7 @@
     </div>
     <div class="center-element" >
       <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
-      <%= submit_tag "Avaliar", :class => 'btn btn-danger' %>
+      <%= submit_tag "Avaliar", :class => 'btn btn-success' %>
       <%= hidden_field_tag 'placeId' , @establishment.id_places %>
       <% end %>
 
