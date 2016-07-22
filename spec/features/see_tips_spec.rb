@@ -3,7 +3,7 @@ require "rails_helper"
 feature "See tips", js: true do
   scenario "Click button of tips" do
     visit '/'
-    click_link 'Dicas'
+    click_link 'Apoio Legal'
     expect(page).to have_content 'Sofri discriminação: e agora?'
     sleep 5
     click_on 'VIOLÊNCIA DOMÉSTICA'
