@@ -101,6 +101,12 @@
   width: 60px;
   height: 26px;
   color: white;
+
+  &-active{
+    border-color: #2a7d45;
+    background-color: #2a7d45;
+  }
+
   border-color: $buttonExcellentColor;
   background-color: $buttonExcellentColor;
 }
@@ -116,8 +122,14 @@
   width: 60px;
   height: 26px;
   color: white;
+  &-active{
+    border-color: #c33131;
+    background-color: #c33131;
+  }
+
   border-color: $buttonDangerousColor;
   background-color: $buttonDangerousColor;
+
 }
 
 .share-text{
