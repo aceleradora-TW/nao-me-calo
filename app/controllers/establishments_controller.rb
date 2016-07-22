@@ -17,9 +17,7 @@ class EstablishmentsController < ApplicationController
     @ratings = []
 
     @establishment.ratings.each do |rating|
-      if rating.visible == true
         @ratings << rating
-      end
     end
     @ratings.reverse!
 

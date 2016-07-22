@@ -32,7 +32,6 @@
       <ul class="list-group" id="listLast5">
         <% @rate_array.each do |rating| %>
         <li>
-          <% if checking_if_rating_is_visible(rating[0])  %>
           <h4 class="size-h4 list-group-item list-show-style">
             <span class="text-field"><%= returning_date(rating[0])%></span>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
@@ -45,10 +44,13 @@
               </a>
             </div>
             <% if description_exists(rating[0])%>
+            <% if checking_if_rating_is_visible(rating[0])  %>
               <p id="breakline">Relato: <%= rating[0].description %></p>
+              <%else%>
+              <p id="breakline">Relato em moderação.</p>
+              <%end%>
             <% end %>
           </h4>
-          <%end%>
         </li>
         <% end %>
       </ul>
