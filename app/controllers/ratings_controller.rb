@@ -54,9 +54,9 @@ class RatingsController < ApplicationController
           @rating.establishment_id = @establishment.id
           respond_to do |format|
             if @rating.save && !(@rating.description=="")
-              format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso! Sua avaliação ira passar pela moderação.' }
+              format.html { redirect_to "/relato/#{@rating.id}", notice: 'Avaliação feita com sucesso! Sua avaliação ira passar pela moderação.' }
             elsif @rating.save
-              format.html { redirect_to "/perfil/#{@establishment.id}", notice: 'Avaliação feita com sucesso!' }
+              format.html { redirect_to "/relato/#{@rating.id}", notice: 'Avaliação feita com sucesso!' }
             end
           end
 
