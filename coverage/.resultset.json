@@ -2284,16 +2284,6 @@
       "/home/aluno6/Área de Trabalho/nao-me-calo/app/helpers/welcome_helper.rb": [
         1,
         null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
         null,
         1,
         8,
@@ -3250,15 +3240,13 @@
         43,
         43,
         149,
-        148,
-        null,
         null,
         null,
         43,
         null,
         null,
         1,
-        132,
+        30,
         30,
         102,
         null,
@@ -3326,6 +3314,6 @@
         null
       ]
     },
-    "timestamp": 1469191130
+    "timestamp": 1469192985
   }
 }
