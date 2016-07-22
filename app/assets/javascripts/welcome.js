@@ -197,6 +197,20 @@ function initAutocomplete () {
 
     $("#lowerFontSizeButton").click(lowerFontSize);
 
+    $(".ranking-best").click(activeBestButton);
+
+    $(".ranking-worst").click(activeWorstButton);
+
+    function activeBestButton(){
+      $(".ranking-worst").removeClass("ranking-worst-active");
+      $(".ranking-best").addClass("ranking-best-active");
+    }
+
+    function activeWorstButton(){
+      $(".ranking-worst").addClass("ranking-worst-active");
+      $(".ranking-best").removeClass("ranking-best-active");
+    }
+
     function switchListBest(){
       if($('#bottom5').is(":visible")){
         $('#top5').show();
