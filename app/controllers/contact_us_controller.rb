@@ -1,6 +1,6 @@
 class ContactUsController < ApplicationController
   include ApplicationHelper
-  
+
   def index
   end
 
@@ -11,7 +11,7 @@ class ContactUsController < ApplicationController
     @name = params[:name]
     ContactUs.welcome_email(@name, @email, @subject, @message).deliver_now
     respond_to do |format|
-      format.html { redirect_to "/faleconosco", notice: 'Mensagem enviada com sucesso!' }
+      format.html { redirect_to faleconosco_path, notice: 'Mensagem enviada com sucesso!' }
     end
   end
 
