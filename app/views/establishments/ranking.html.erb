@@ -1,13 +1,3 @@
-<div id="share-buttons" align"middle" class="row paragraph order-space text-center">
-  <span class="share-text paragraph text-bold">Clique nos botões abaixo para compartilhar este ranking!</span>
-  <br>
-  <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/ranking" target="_blank">
-    <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
-  </a>
-  <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/ranking/&amp;text=<%= @share_text %>&amp;hashtags=naomecalo" target="_blank">
-    <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
-  </a>
-</div>
 <div align="center" class="row paragraph order-space">
   Ordenar ranking por:
 </div>
@@ -16,7 +6,7 @@
   <span> | </span>
   <a href="#" id='worstPlacesButton' ><label class="ranking-worst">Péssimo</label></a>
 </div>
-<div class="col-lg-8 col-lg-offset-2" id="top5">
+<div class="ranking-list" id="top5">
   <ul class="list-group">
     <% @best_places.each do |establishment, average| %>
     <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
@@ -32,7 +22,7 @@
     </ul>
   </div>
 
-  <div class="col-lg-8 col-lg-offset-2" id="bottom5">
+  <div class="ranking-list" id="bottom5">
     <ul class="list-group">
       <% @worst_places.each do |establishment, average| %>
       <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
@@ -46,4 +36,16 @@
         </a>
         <% end %>
       </ul>
+
+    </div>
+
+    <div id="share-buttons" align"middle" class="row paragraph order-space text-center">
+      <span class="share-text paragraph text-bold">Clique nos botões abaixo para compartilhar este ranking!</span>
+      <br>
+      <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/ranking" target="_blank">
+        <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
+      </a>
+      <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/ranking/&amp;text=<%= @share_text %>&amp;hashtags=naomecalo" target="_blank">
+        <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
+      </a>
     </div>
