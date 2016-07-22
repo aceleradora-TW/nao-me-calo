@@ -21,6 +21,23 @@
 }
 
 
+.evaluate-div{
+  text-align: center;
+  margin: 50px 0px 50px;
+  &-button{
+    background-color: #F8F8FF;
+    border-radius: 6px;
+    border: 2px solid;
+    cursor: pointer;
+    font-weight: bold;
+    border-color: $brandColor;
+    &:hover {
+      color: white;
+      background-color: $brandColor;
+    }
+  }
+}
+
 #breakline{
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;

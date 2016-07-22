@@ -17,9 +17,10 @@
     <div class='row'>
       <h5 class='size-h5 text-center'><%= @spot.formatted_address %></h5>
     </div>
-    <div class="center-element" >
+    <div class="evaluate-div" >
+      <h3>Clique aqui para avaliar o local.</h3>
       <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
-      <%= submit_tag "Avaliar", :class => 'btn btn-success' %>
+      <%= submit_tag "Avaliar", :class => 'btn evaluate-div-button' %>
       <%= hidden_field_tag 'placeId' , @establishment.id_places %>
       <% end %>
 
