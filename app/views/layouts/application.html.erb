@@ -8,21 +8,21 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 
   <% if params[:controller] == 'establishments' && params[:action] == 'ranking'%>
-    <link rel="canonical" href="http://naomecalotw-staging.herokuapp.com/">
+    <link rel="canonical" href="http://naomecalotw-test.herokuapp.com/">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:title" content="Ranking de estabelecimentos" >
     <meta property="og:site_name" content="Nao me calo">
-    <meta property="og:url" content="http://naomecalotw-staging.herokuapp.com/ranking/" >
+    <meta property="og:url" content="http://naomecalotw-test.herokuapp.com/ranking/" >
     <meta property="og:description" content="Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos" >
     <meta property="og:image" content="" >
     <meta property="og:type" content="website" >
     <meta property="og:locale" content="pt_BR" >
   <% else %>
-    <link rel="canonical" href="http://naomecalotw-staging.herokuapp.com/">
+    <link rel="canonical" href="http://naomecalotw-test.herokuapp.com/">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:title" content="<%= !@rating.nil? ? !@rating.establishment.nil? ? @rating.establishment.name : 'Não Me Calo' : 'Nao Me Calo'%>" >
     <meta property="og:site_name" content="Nao me calo">
-    <meta property="og:url" content="<%= !@rating.nil? ? !@rating.establishment.nil? ? 'http://naomecalotw-staging.herokuapp.com/relato/'+@rating.id.to_s+'' : 'http://naomecalotw-staging.herokuapp.com/' : 'http://naomecalotw-staging.herokuapp.com/' %>" >
+    <meta property="og:url" content="<%= !@rating.nil? ? !@rating.establishment.nil? ? 'http://naomecalotw-test.herokuapp.com/relato/'+@rating.id.to_s+'' : 'http://naomecalotw-staging.herokuapp.com/' : 'http://naomecalotw-staging.herokuapp.com/' %>" >
     <meta property="og:description" content="<%= !@rating.nil? ? @rating.description : 'Conheça o site Não Me Calo' %>" >
     <meta property="og:image" content="" >
     <meta property="og:type" content="website" >
