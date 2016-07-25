@@ -1,8 +1,10 @@
 errorsContact = {emailEvaluateContact: true, messageEvaluate: true, nameEvaluateContact: false}
 
 $(document).ready(function(){
+
   initialize();
 
+  var dots = 0;
 
   $('#emailEvaluateContact').focusout(function(){
     checkMailContact();
@@ -24,8 +26,24 @@ $(document).ready(function(){
     $('#buttonDisable').attr('disabled', false);
   }
 
+  function loadDots(){
+    if(dots < 3){
+      $('#buttonDisable').val($('#buttonDisable').val() + ".");
+      dots++;
+    } else {
+      $('#buttonDisable').val("Aguarde");
+      dots = 0;
+    }
+  }
+
   $('#messageEvaluate').keyup(function(){
     countChars($('#messageEvaluate'),500,'limitCharContact');
+  });
+
+  $('#form-contact').submit(function(){
+    disableButton();
+    $('#buttonDisable').val("Aguarde");
+    setInterval(loadDots, 600);
   });
 
   function initialize(){

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-
+  var dots = 0;
 
   $('#phoneEvaluate').mask('(99) 9999-9999');
   $('#dateEvaluate').mask('99/99/9999');
@@ -45,6 +45,19 @@ $(document).ready(function(){
     $('.radio-button').removeAttr('checked');
   });
 
+  $('#new_rating').submit(function(){
+    $('#submitButton').attr('disabled', true);
+    $('#submitButton').val("Aguarde");
+    setInterval(function(){
+      if(dots < 3){
+        $('#submitButton').val($('#submitButton').val() + ".");
+        dots++;
+      } else {
+        $('#submitButton').val("Aguarde");
+        dots = 0;
+      }
+    }, 600);
+  })
 
   function hasBadWords(text){
 

@@ -1,11 +1,13 @@
 <div class="container">
-    <%= flash[:notice] %>
+    <% if !notice.nil? %>
+      <div class="alert alert-success text-center"> <%= notice %> </div>
+    <% end %>
   <div class="row">
     <h2 class="size-h2 text-center">Fale conosco!</h2>
   </div>
     <div class='row'>
     <div class="col-lg-offset-3 col-lg-6">
-      <div class="form-group">
+      <div class="form-group" id="form-contact">
         <%= form_tag("/enviar", :method => "post") do %>
           <div class="field">
           <b>Preencha os campos marcados com</b> <span class="red-text"> *</span>
