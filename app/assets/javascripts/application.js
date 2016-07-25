@@ -19,3 +19,4 @@
 //= require ratings
 //= require contact_us
 //= require establishments
+//= require ranking

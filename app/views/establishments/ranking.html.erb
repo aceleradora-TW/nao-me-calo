@@ -8,26 +8,11 @@
 </div>
 
 <div class="ranking-list" id="top5">
-  <ul class="list-group">
+  <ul class="list-group list-ranking-best">
     <% @best_places.each do |establishment, average| %>
-    <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
-      <h4 class="size-h4 list-group-item-heading">
-        <%= establishment.name %>
-        <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
-        </h4>
-        <p class="list-group-item-text">
-          <%= establishment.address %>
-        </p>
-      </a>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="ranking-list" id="bottom5">
-    <ul class="list-group">
-      <% @worst_places.each do |establishment, average| %>
+    <li>
       <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
-        <h4 class="list-group-item-heading">
+        <h4 class="size-h4 list-group-item-heading">
           <%= establishment.name %>
           <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
           </h4>
@@ -35,11 +20,33 @@
             <%= establishment.address %>
           </p>
         </a>
+      </li>
+
+      <% end %>
+    </ul>
+    <a class="show-more-button" id="showMoreBest">Ver mais</a>
+  </div>
+
+  <div class="ranking-list" id="bottom5">
+    <ul class="list-group list-ranking-worst">
+      <% @worst_places.each do |establishment, average| %>
+      <li>
+        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
+          <h4 class="list-group-item-heading">
+            <%= establishment.name %>
+            <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
+            </h4>
+            <p class="list-group-item-text">
+              <%= establishment.address %>
+            </p>
+          </a>
+        </li>
+
         <% end %>
       </ul>
+      <a class="show-more-button" id="showMoreWorst">Ver mais</a>
 
     </div>
-    <a class="show-more-button" id="showFiveButton">Ver mais</a>
 
     <div id="share-buttons" align="center" class="row order-space text-center">
       <span class="share-text text-bold">Clique nos botões abaixo para compartilhar este ranking!</span>
