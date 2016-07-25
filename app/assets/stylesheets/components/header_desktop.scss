@@ -19,8 +19,9 @@
   }
 
   &-links{
-    position: relative;
-    float: right;
+    margin: auto;
+    width: 850px;
+    padding: 20px 0 0 0;
 
     & ul{
       margin: 0px;
@@ -34,8 +35,8 @@
         border-radius: 5px;
 
         & a{
-            color: white;
-            text-decoration: none;
+          color: white;
+          text-decoration: none;
         }
 
         &.active {
@@ -64,7 +65,7 @@
   }
 
   &--all{
-    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/picture_girl_header.jpg');
+    background: url('../assets/picture_girl_header.gif');
     background-size: cover;
     height: 108px;
     background-repeat: no-repeat;
@@ -72,7 +73,18 @@
     border-bottom: 2px solid $textColor;
 
     & .headerDesktop-logo{
-      top: 10px;
+      top: 22px;
+
+      & img{
+        width: 62px;
+        height: 61px;
+      }
+    }
+
+    & .headerDesktop-links{
+      margin: auto;
+      width: 850px;
+      padding: 0;
     }
   }
 
