@@ -16,7 +16,9 @@ ActiveAdmin.register Rating do
     id_column
     column :moderated
     column :establishment_id
-    column  :description 
+    column "Description" do |rating|
+      truncate(rating.description, :omision => "...", :length => 20)
+    end
     column :average_rating
     column :rating_date
     column :visible
