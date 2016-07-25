@@ -35,7 +35,8 @@
   }
 
   &-image{
-    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/picture_girl_header.jpg');
+    background: url('../assets/picture_girl_header.gif');
+    background-repeat: no-repeat;
     background-size: cover;
     height: 186px;
     padding-bottom: 25px;
