@@ -31,10 +31,10 @@
         <div class="search-input">
           <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
           <div class="input-group">
-            <input type="text" class="form-control noEnterSubmit" aria-label="Campo para avaliar local"  placeholder="Avalie um local" id="evaluateField">
+            <input type="text" class="form-control noEnterSubmit searches-fields" aria-label="Campo para avaliar local"  placeholder="Avalie um local" id="evaluateField">
             <span class="input-group-btn">
-              <button type="submit" class="btn search-inputButton">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              <button type="submit" class="btn search-inputButton rate fade">
+                <span>&nbsp &nbsp Avaliar&nbsp &nbsp</span>
               </button>
             </span>
           </div>
@@ -52,10 +52,10 @@
         <div class="search-input">
           <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Campo para buscar local para visitar" placeholder="Busque um local para visitar" id="searchField">
+            <input type="text" class="form-control searches-fields" aria-label="Campo para buscar local para visitar" placeholder="Busque um local para visitar" id="searchField" autofocus="">
             <span class="input-group-btn">
-              <button type="submit" class="btn search-inputButton">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              <button type="submit" class="btn search-inputButton rate fade" id="search-btn">
+                <span>Pesquisar</span>
               </button>
             </span>
           </div>
@@ -67,74 +67,85 @@
   </div>
   <div class="col-md-5 col-lg-offset-1">
     <div align="center" class="row paragraph order-space">
-      Ordenar ranking por:
+      Ordenar ranking por...
     </div>
     <div align="center" class="ranking-buttons row paragraph">
-      <a name="ranking" href="/#ranking" id='bestPlacesButton' ><label class="ranking-best ranking-best-active">Ótimo</label></a>
+
+      <a name="ranking" href="/#ranking" id='bestPlacesButton' ><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> melhores</a>
       <span> | </span>
-      <a href="/#ranking" id='worstPlacesButton' ><label class="ranking-worst">Péssimo</label></a>
+      <a href="/#ranking" id='worstPlacesButton' >Piores <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></a>
 
-    </div>
-    <div class="col-md-12" id="top5">
-      <ul class="list-group">
-        <% @best_places.each do |establishment, average| %>
-        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
-          <h4 class="size-h4 list-group-item-heading">
-            <%= establishment.name %>
-            <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
-            </h4>
-            <p class="list-group-item-text">
-              <%= establishment.address %>
-            </p>
-          </a>
-          <% end %>
-        </ul>
       </div>
-
-
-      <div class="col-md-12" id="bottom5">
+      <div class="col-md-12" id="top5">
         <ul class="list-group">
-          <% @worst_places.each do |establishment, average| %>
+          <% @best_places.each do |establishment, average| %>
           <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
             <h4 class="size-h4 list-group-item-heading">
               <%= establishment.name %>
-              <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>          </h4>
-                <p class="list-group-item-text">
-                  <%= establishment.address %>
-                </p>
-              </a>
-              <% end %>
-            </ul>
-          </div>
+              <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>
+              </h4>
+              <p class="list-group-item-text">
+                <%= establishment.address %>
+              </p>
+            </a>
+            <% end %>
+          </ul>
         </div>
 
-        <a name="mapa" >
 
-          <div class="row">
-            <div class="col-md-5 mapa">
-              <div class="row">
-                <div class="col-md-8">
-                  <input id="map_search" type="text" class="form-control" aria-label="Busque um local"  placeholder="Busque um local" >
-                </input>
-              </div><!-- /.row-->
+        <div class="col-md-12" id="bottom5">
+          <ul class="list-group">
+            <% @worst_places.each do |establishment, average| %>
+            <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
+              <h4 class="size-h4 list-group-item-heading">
+                <%= establishment.name %>
+                <span class="grade-on-list "><label class="concept <%= set_average_style(average) %>"><%= average %></label>          </h4>
+                  <p class="list-group-item-text">
+                    <%= establishment.address %>
+                  </p>
+                </a>
+                <% end %>
+              </ul>
             </div>
-          </a>
+            <div id="share-buttons" align="center">
+              <p class="share-text">Clique nos botões abaixo para compartilhar este ranking!</p>
+              <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-staging.herokuapp.com/ranking" target="_blank">
+                <img src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook" />
+              </a>
+              <a href="https://twitter.com/share?url=http://naomecalotw-staging.herokuapp.com/ranking/&amp;text=<%= @share_text %>&amp;hashtags=naomecalo" target="_blank">
+                <img src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
+              </a>
+            </div>
+            <a href="/ranking">Ver mais</a>
+          </div>
 
+          <a name="mapa" >
 
-          <div id="map" class="hidden-xs visible-lg visible-md visible-sm">map</div>
-          <p class="pin-subtitle text-bold hidden-xs visible-lg visible-md visible-sm" align="center">
-            <img src="http://www.googlemapsmarkers.com/v1/O/E03535"/>
-            <span>Péssimo</span>
-            <img src="http://www.googlemapsmarkers.com/v1/O/FF6633/"/>
-            <span>Ruim</span>
-            <img src="http://www.googlemapsmarkers.com/v1/O/FFBD14/"/>
-            <span>Regular</span>
-            <img src="http://www.googlemapsmarkers.com/v1/O/99CC00/"/>
-            <span>Bom</span>
-            <img src="http://www.googlemapsmarkers.com/v1/O/329853/"/>
-            <span>Ótimo</span>
-          </p>
-        </div>
-      </div>
+            <div class="row">
+              <div class="col-md-5 mapa">
+                <div class="row">
+                  <div class="col-md-8">
+                    <input id="map_search" type="text" class="form-control" aria-label="Busque um local"  placeholder="Busque um local" >
+                  </input>
+                </div><!-- /.row-->
+              </div>
+            </a>
+            <div id="map" class="hidden-xs visible-lg visible-md visible-sm">map</div>
+            <p class="text-bold hidden-xs visible-lg visible-md visible-sm">
+              <div class="col-md-12">
+                <img src="http://www.googlemapsmarkers.com/v1/O/E03535"/>
+                <span>Péssimo</span>
+                <img src="http://www.googlemapsmarkers.com/v1/O/FF6633/"/>
+                <span>Ruim</span>
+                <img src="http://www.googlemapsmarkers.com/v1/O/FFBD14/"/>
+                <span>Regular</span>
+                <img src="http://www.googlemapsmarkers.com/v1/O/99CC00/"/>
+                <span>Bom</span>
+                <img src="http://www.googlemapsmarkers.com/v1/O/329853/"/>
+                <span>Ótimo</span>
+                <div class="col-md-2" id="bottom5">
+                </p>
+              </div>
+            </div>
 
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8&signed_in=true&libraries=places&callback=initAutocomplete"async defer></script>

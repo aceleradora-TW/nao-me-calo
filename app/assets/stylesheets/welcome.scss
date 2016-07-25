@@ -6,22 +6,23 @@
 @import "./components/header_mobile.scss";
 @import "./components/header_desktop.scss";
 
-
 .grade-on-list{
   float:right;
 }
 
-.pin-subtitle {
-  margin-top: 6px;
+body{
+  // padding-top: 60px;
+  // padding-bottom: 40px;
+
 }
 
-// .body{
-//   padding-top: 60px;
-//   padding-bottom: 40px;
-// }
 #map_search {
   margin-top: 10px;
   width:50%;
+}
+
+.searches-fields{
+  border: 1px solid rgba(0, 0, 0, 0.36);
 }
 
 #map {
@@ -33,6 +34,33 @@
 #hero{
   background: red;
 }
+
+#bestPlacesButton{
+  color: #329853;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+// #search-btn:hover{
+//   box-shadow: 8px 1px 16px 6px;
+// }
+
+#worstPlacesButton{
+  color: rgb(224, 53, 53);
+  font-size: 120%;
+  font-weight: bold;
+}
+.fade {
+  opacity: 1;
+  transition: box-shadow .20s ease-in-out;
+  -moz-transition: box-shadow .20s ease-in-out;
+  -webkit-transition: box-shadow .20s ease-in-out;
+}
+
+.fade:hover {
+  box-shadow: 8px 1px 16px 6px;
+}
+
 .ranking-buttons{
   margin-top: 3px;
   margin-bottom: 10px;
@@ -159,4 +187,17 @@
 
 .size-h5{
   font-size:100%
+}
+button.btn.search-inputButton.rate {
+  background-color: #674a18;
+  color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  margin-left: auto;
+}
+
+.search-input {
+  background: radial-gradient(#828282, #e2e2e2, rgba(252, 248, 227, 0.22));
+  padding: 4% 11% 6% 10%;
+  margin: 1% 1% 1% 2%;
+  border-radius: 2%;
 }
