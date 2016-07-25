@@ -7,6 +7,8 @@ $(document).ready(function(){
   $('#cpfEvaluate').mask('999.999.999-99');
   $('#submitButton').prop('disabled', true);
 
+  $('[data-toggle="tooltip"]').tooltip();
+
   errors = {cpfEvaluate: false, rating: true, dateEvaluate: false, description: false};
 
   if ( $('[type="date"]').prop('type') !== 'date' ) {
