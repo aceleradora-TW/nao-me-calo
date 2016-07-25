@@ -9,7 +9,5 @@ feature "See tips", js: true do
     click_on 'VIOLÊNCIA DOMÉSTICA'
     expect(page).to have_content 'VIOLÊNCIA DOMÉSTICA'
     sleep 5
-    visit '/'
-    sleep 5
   end
 end
