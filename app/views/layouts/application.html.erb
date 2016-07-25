@@ -36,11 +36,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <% if params[:controller] == 'welcome' && params[:action] == 'index'%>
     <%= render 'layouts/header_home' %>
   <% else %>
     <%= render 'layouts/header_all' %>
   <% end %>
+
   <section>
     <div id="buttons-enhance">
       <%= submit_tag "A+", :class =>"btn btn-warning form-group", :id =>"upperFontSizeButton" %>

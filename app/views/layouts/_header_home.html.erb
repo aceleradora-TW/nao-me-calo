@@ -1,38 +1,39 @@
 <!-- DESKTOP  -->
-<div class="headerDesktop hidden-xs visible-sm visible-md visible-lg">
-  <div class="headerDesktop-image">
-    <nav role="navigation" class="navbar navbar-static-top">
-      <div class="container">
+<div class="hidden-xs visible-sm visible-md visible-lg">
+  <div class="headerDesktop">
+    <div class="headerDesktop-image">
+      <nav role="navigation" class="navbar navbar-static-top">
+        <div class="container">
 
-        <div class="header-logo ">
-          <a href="/"><%= image_tag("logo.png", size: "90x90",:id => "img_logo_site", :alt => "Logo do site, imagem de uma mulher mostrando a força no braço") %></a>
-        </div>
+          <div class="headerDesktop-logo ">
+            <a href="/"><%= image_tag("logo.png", size: "90x90",:id => "img_logo_site", :alt => "Logo do site, imagem de uma mulher mostrando a força no braço") %></a>
+          </div>
 
-        <div class="header-links" >
-          <ul class="nav navbar-nav header-links-color">
-            <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
-            <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Apoio Legal", dicas_path %></li>
-            <li class="<%= 'active' if current_page?(ranking_path) %>"><%= link_to "Ranking", ranking_path %></li>
-            <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Fale conosco", faleconosco_path%></li>
-          </ul>
-        </div>
-        <div class="headerDesktop-text">
-          <p class="headerDesktop-text-title"> DEIXE SEU RELATO</p>
-          <p> Veja relatos sobre opressão e avalie os estabelecimentos de sua cidade</p>
-          <!-- <p> Veja relatos sobre opressão nos locais de sua cidade e faça sua avaliação</p> -->
+          <div class="headerDesktop-links" >
+            <ul>
+              <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+              <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Apoio Legal", dicas_path %></li>
+              <li class="<%= 'active' if current_page?(ranking_path) %>"><%= link_to "Ranking", ranking_path %></li>
+              <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Fale conosco", faleconosco_path%></li>
+            </ul>
+          </div>
+          <div class="headerDesktop-text">
+            <div class="headerDesktop-title"> DEIXE SEU RELATO</div>
+            <p>Veja relatos sobre opressão e avalie os estabelecimentos de sua cidade</p>
           </div>
         </div>
       </nav>
 
     </div>
   </div>
+</div>
 
 
-  <!-- MOBILE -->
+<!-- MOBILE -->
 
 
-  <div class="visible-xs hidden-sm hidden-md hidden-lg border-header-mobile">
-
+<div class="visible-xs hidden-sm hidden-md hidden-lg">
+  <div class="headerMobile">
     <div class="headerMobile-image">
       <div class="headerMobile-text">
         <p>
@@ -55,3 +56,4 @@
     </div>
 
   </div>
+</div>

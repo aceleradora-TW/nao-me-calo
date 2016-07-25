@@ -2,7 +2,6 @@
 
 .headerDesktop{
 
-
   &-image{
     width: 100%;
     height: 449px;
@@ -15,7 +14,6 @@
 
   &-logo{
     position: absolute;
-    background-image: url('logo.jpg');
     top: 35px;
     left: 60px;
   }
@@ -33,6 +31,17 @@
 
       & li{
         padding: 13px 62px;
+        border-radius: 5px;
+
+        & a{
+            color: white;
+            text-decoration: none;
+        }
+
+        &.active {
+          background-color: rgba(190, 190, 190, 0.23);
+          font-weight: bold;
+        }
       }
     }
   }
@@ -48,8 +57,22 @@
     padding: 100px 125px;
     width: 100%;
     text-shadow: 2px 2px #312D2D;
-    &-title{
-      font-size: 38px !important;
+  }
+
+  &-title{
+    font-size: 38px;
+  }
+
+  &--all{
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/picture_girl_header.jpg');
+    background-size: cover;
+    height: 108px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border-bottom: 2px solid $textColor;
+
+    & .headerDesktop-logo{
+      top: 10px;
     }
   }
 
