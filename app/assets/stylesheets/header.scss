@@ -18,7 +18,7 @@
 
   &-links{
     float:right;
-    margin: 15px 30% 0 10%;
+    margin: 15px 10% 0 10%;
     position: absolute;
     top: 8px;
     right: 10px;
@@ -27,8 +27,13 @@
     & li{
       padding: 0px 30px;
       border-radius: 9px;
+      margin-left: 80px;
 
       &.active {
+        background-color: rgba(190, 190, 190, 0.23);
+        font-weight: bold;
+      }
+      &:hover {
         background-color: rgba(190, 190, 190, 0.23);
         font-weight: bold;
       }
