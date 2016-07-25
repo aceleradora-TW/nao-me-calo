@@ -31,6 +31,17 @@ ActiveAdmin.register Rating do
   end
 
   show do
-    attributes_table :moderated, :visible, :name, :average_rating, :cpf, :email, :phone, :description
+    attributes_table do
+      row :moderated
+      row :visible
+      row :name
+      row :average_rating
+      row :cpf
+      row :email
+      row :phone
+      row "Description" do |rating|
+        word_wrap(rating.description, :line_width => 10)
+      end
+    end
   end
 end
