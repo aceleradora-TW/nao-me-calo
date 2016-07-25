@@ -9,12 +9,7 @@ class Establishment < ActiveRecord::Base
   pg_search_scope :search_by_id, :against => :id_places
 
   def has_more_than_2_ratings?
-    total_ratings_moderated = 0
-    self.ratings.each do |rating|
-        total_ratings_moderated += 1
-    end
-
-    return total_ratings_moderated > 2
+    return self.ratings.size > 2
   end
 
   def calculate_average

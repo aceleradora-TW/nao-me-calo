@@ -65,7 +65,7 @@ $(document).ready(function(){
     var textLowerCase = text.val().toLowerCase().split(" ");
     for(var i = 0; i <= badwords.length; i++){
       for(j=0; j <= textLowerCase.length; j++){
-        if(textLowerCase[j] == badwords[i]){
+        if(textLowerCase[j] === badwords[i]){
           count++;
           break;
         }

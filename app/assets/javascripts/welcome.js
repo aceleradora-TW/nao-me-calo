@@ -255,7 +255,7 @@ function initAutocomplete () {
 
     function checkOffset(){
       var buttons = $('#buttons-enhance');
-      if(buttons.scrollTop()==0)
+      if(buttons.scrollTop() === 0)
         buttons.css({'position': 'absolute', "bottom": "125px", "left": "6px"});
       if($(document).scrollTop() + window.innerHeight < $('footer').offset().top)
         buttons.css({'position': 'fixed', "bottom": "2px", "left": "6px"});
