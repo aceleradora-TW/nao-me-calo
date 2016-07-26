@@ -89,12 +89,14 @@
   border-radius: 6px;
   background-color: #F8F8FF;
   border: 1px solid;
-  border-color: $thirdColor;
+  border-color: $textColor;
   color: #565656;
   font-weight: bold;
+
   &:hover{
-    background-color: $thirdColor;
-    color: white;
+    border: 2px solid;
+    border-color: #5F5858;
+    color: #5F5858;
   }
 }
 
