@@ -15,7 +15,8 @@
  *= require_self
  */
  @import "_variables.scss";
-
+ $small-square-size: 25px;
+ $large-square-size: 40px;
 #buttons-enhance{
   // margin-left: 2%;
   // margin-bottom: 2%;
@@ -51,4 +52,14 @@ body {
 .check-box-contact{
   position: relative !important;
   top: 3px !important;
+}
+
+.small-square-share-button{
+  width: $small-square-size;
+  height: $small-square-size;
+}
+
+.large-square-share-button{
+  width: $large-square-size;
+  height: $large-square-size;
 }
