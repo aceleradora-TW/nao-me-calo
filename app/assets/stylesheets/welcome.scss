@@ -42,6 +42,12 @@ body{
   cursor: pointer;
 }
 
+.Order-btn-pressed{
+  font-size: 140%;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
 // #search-btn:hover{
 //   box-shadow: 8px 1px 16px 6px;
 // }

@@ -6,7 +6,6 @@ $(document).ready(function(){
   $('#dateEvaluate').mask('99/99/9999');
   $('#cpfEvaluate').mask('999.999.999-99');
   $('#submitButton').prop('disabled', true);
-
   $('[data-toggle="tooltip"]').tooltip();
 
   errors = {cpfEvaluate: false, rating: true, dateEvaluate: false, description: false};
@@ -241,6 +240,21 @@ $(document).ready(function(){
       var count =  limit  - box.val().length;
       document.getElementById(fieldspan).innerHTML = 'Caracteres restantes: ' + count;
     }
+
+    $("#bestPlacesButton").click(function(){
+      $(this).addClass('Order-btn-pressed');
+      $(this).css('font-size', '145%');
+      $('#worstPlacesButton').removeClass('Order-btn-pressed');
+      $('#worstPlacesButton').css('font-size', '120%');
+
+    });
+
+    $("#worstPlacesButton").click(function(){
+      $(this).addClass('Order-btn-pressed');
+      $(this).css('font-size', '145%');
+      $('#bestPlacesButton').removeClass('Order-btn-pressed');
+      $('#bestPlacesButton').css('font-size', '120%');
+    });
 
   });
 
