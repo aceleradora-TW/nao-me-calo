@@ -1,0 +1,54 @@
+@import "_variables.scss";
+
+.header{
+  margin: 0 0 40px 0;
+
+  &-text{
+    margin: 15% 15% 0 15%;
+    color: $brandColor;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    font-style: italic;
+    opacity:1 !important;
+  	-moz-opacity: 1 !important;
+  	filter: alpha(opacity=100) !important;
+  }
+
+  &-links{
+    float:right;
+    margin: 15px 30% 0 10%;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+
+
+    & li{
+      padding: 0px 30px;
+      border-radius: 9px;
+
+      &.active {
+        background-color: rgba(190, 190, 190, 0.23);
+        font-weight: bold;
+      }
+    }
+
+    & a{
+      color: #907979;
+    }
+  }
+  &.header-logo{
+    position: absolute;
+     top: 8px;
+     left: 16px;
+  }
+}
+
+  .nav-header-all{
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/picture_girl_header.jpg');
+    background-size: cover;
+    height: 108px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border-bottom: 2px solid $textColor;
+    }

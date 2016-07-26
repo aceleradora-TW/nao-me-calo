@@ -27,12 +27,16 @@
     font-size: 100%;
     text-align: center;
     position: relative;
-    padding: 13%;
+    padding: 10%;
     margin: 0% 25% 0% 0%;
     font-weight: bold;
     color: #FFFFFF;
     width: 100%;
     text-shadow: 2px 2px #312D2D;
+
+  }
+  &-title{
+    font-size: 20px;
   }
 
   &-image{
