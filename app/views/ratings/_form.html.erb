@@ -267,7 +267,7 @@
     </div>
   </div>
   <div id="cpfAlert", class="field has-mask">
-    <%= f.label :cpf,  :class => "text-uppercase"%><span class="red-text"> *</span>
+    <%= f.label :cpf,  :class => "text-uppercase"%><span class="red-text"> *</span><img src="https://cdn.pbrd.co/images/I3QyMMde.vnd.microsoft.icon" height="25" width="25" data-toggle="tooltip" data-placement="right" title="Precisamos armazenar seu CPF por 6 meses de acordo com o Marco Civil da Internet">
     <p id="cpfAlertText", class="hidden">Por favor, digite um CPF válido.</p>
     <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
   </div>
