@@ -261,6 +261,21 @@ function initAutocomplete () {
         buttons.css({'position': 'fixed', "bottom": "2px", "left": "6px"});
     }
 
+    $("#bestPlacesButton").click(function(){
+      $(this).addClass('Order-btn-pressed');
+      $(this).css('font-size', '145%');
+      $('#worstPlacesButton').removeClass('Order-btn-pressed');
+      $('#worstPlacesButton').css('font-size', '120%');
+
+    });
+
+    $("#worstPlacesButton").click(function(){
+      $(this).addClass('Order-btn-pressed');
+      $(this).css('font-size', '145%');
+      $('#bestPlacesButton').removeClass('Order-btn-pressed');
+      $('#bestPlacesButton').css('font-size', '120%');
+    });
+
     $('#bestPlacesButton').click(function(){
       switchListBest();
     })

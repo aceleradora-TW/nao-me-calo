@@ -241,21 +241,6 @@ $(document).ready(function(){
       document.getElementById(fieldspan).innerHTML = 'Caracteres restantes: ' + count;
     }
 
-    $("#bestPlacesButton").click(function(){
-      $(this).addClass('Order-btn-pressed');
-      $(this).css('font-size', '145%');
-      $('#worstPlacesButton').removeClass('Order-btn-pressed');
-      $('#worstPlacesButton').css('font-size', '120%');
-
-    });
-
-    $("#worstPlacesButton").click(function(){
-      $(this).addClass('Order-btn-pressed');
-      $(this).css('font-size', '145%');
-      $('#bestPlacesButton').removeClass('Order-btn-pressed');
-      $('#bestPlacesButton').css('font-size', '120%');
-    });
-
   });
 
   function checking(inputId, exp){
