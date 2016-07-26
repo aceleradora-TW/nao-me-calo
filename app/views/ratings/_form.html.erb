@@ -15,10 +15,10 @@
   <p id="alert" class="text-center">Erro, os campos com * são obrigatórios!</p>
 </div>
 
-<h3>Avalie de acordo com o acontecimento, como o local tratou o(s) grupo(s) abaixo:</h3>
+  <p class="ratings-subtitle text-center">Avalie de acordo com o acontecimento como o local tratou o(s) grupo(s) abaixo:</p>
 
 <input type="hidden" id="placeId" name="placeId" value="<%= @placeId %>" readonly="readyonly">
-<div class="col-lg-12 no-padding-left padding-bottom">
+<div class="col-lg-6 padding-bottom rating-box">
   <span class="red-text">Não é necessário marcar todos*</span>
   <br>
   <br>
@@ -27,7 +27,7 @@
       <%= f.label 'Mulher', :class => "text-style-radios" %>
       <div class ="row paragraph-ratings">
         <span alt="Daremos notas no estabelecimento, de um a cinco. Um para péssimo, dois para ruim, três para regular, quatro para bom, cinco para ótimo.">
-          <ul class="ratings">
+          <ul class="ratings field">
             <li class="rating">
               <%= f.radio_button :woman, "1", :class => "radio-button", aria: {label: "Péssimo"}  %>
               <%= f.label :woman, :class => "rating-dangerous", :value => "1" do %>
@@ -256,38 +256,41 @@
     </div>
   </div>
 
-  <b>Preencha os campos marcados com</b> <span class="red-text"> *</span>
-  <br>
-  <br>
-  <div class="form-group">
-    <div id="nameAlert" class="field has-mask">
-      <%= f.label "nome" %>
-      <p id="nameAlertText", class="hidden">Por favor, digite um nome válido.</p>
-      <%= f.text_field :name, :class => "form-control form-textfield", :id => "nameEvaluate", aria: {label: "Nome"} %>
+  <div class="rating-box col-lg-6">
+    <b>Preencha os campos marcados com</b> <span class="red-text"> *</span>
+    <br>
+    <br>
+    <div class="form-group">
+      <div id="nameAlert" class="field has-mask">
+        <%= f.label "nome" %>
+        <p id="nameAlertText", class="hidden">Por favor, digite um nome válido.</p>
+        <%= f.text_field :name, :class => "form-control form-textfield", :id => "nameEvaluate", aria: {label: "Nome"} %>
+      </div>
+    <div id="cpfAlert", class="field has-mask padding-top">
+      <%= f.label "CPF",  :class => "text-uppercase"%><span class="red-text"> *</span><img src="https://cdn.pbrd.co/images/I3QyMMde.vnd.microsoft.icon" height="25" width="25" data-toggle="tooltip" data-placement="right" title="Precisamos armazenar seu CPF por 6 meses de acordo com o Marco Civil da Internet">
+      <p id="cpfAlertText", class="hidden">Por favor, digite um CPF válido.</p>
+      <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
+    </div>
+    <div class="field padding-top">
+      <%= f.label "E-mail"%>
+      <p id="emailAlertText", class="hidden">Por favor, digite um email válido.</p>
+      <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailEvaluate", aria: {label: "email"}  %>
+    </div>
+    <div class="field has-mask padding-top">
+      <%= f.label "telefone"%>
+      <%= f.text_field :phone, :class => "form-control form-textfield", :id => "phoneEvaluate", aria: {label: "Telefone"}  %>
+    </div>
+    <div  id="dateAlert" class="field has-mask padding-top" >
+      <%= f.label 'Data do Acontecimento' %><span class="red-text"> *</span>
+      <p id="dateAlertText", class="hidden alertText">Por favor, digite uma data válida</p>
+      <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
     </div>
   </div>
-  <div id="cpfAlert", class="field has-mask">
-    <%= f.label :cpf,  :class => "text-uppercase"%><span class="red-text"> *</span><img src="https://cdn.pbrd.co/images/I3QyMMde.vnd.microsoft.icon" height="25" width="25" data-toggle="tooltip" data-placement="right" title="Precisamos armazenar seu CPF por 6 meses de acordo com o Marco Civil da Internet">
-    <p id="cpfAlertText", class="hidden">Por favor, digite um CPF válido.</p>
-    <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
-  </div>
-  <div class="field">
-    <%= f.label "E-mail"%>
-    <p id="emailAlertText", class="hidden">Por favor, digite um email válido.</p>
-    <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailEvaluate", aria: {label: "email"}  %>
-  </div>
-  <div class="field has-mask">
-    <%= f.label "telefone"%>
-    <%= f.text_field :phone, :class => "form-control form-textfield", :id => "phoneEvaluate", aria: {label: "Telefone"}  %>
-  </div>
-  <div  id="dateAlert" class="field has-mask" >
-    <%= f.label 'Data do Acontecimento' %><span class="red-text"> *</span>
-    <p id="dateAlertText", class="hidden alertText">Por favor, digite uma data válida</p>
-    <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
-  </div>
+</div>
 
+<div class="col-lg-12">
   <div id="descriptionAlert", class="field has-mask">
-    <div class="field">
+    <div class="field padding-top">
       <%= f.label "Descrição do relato" %>
       <p id="descriptionAlertText", class="hidden alertText">Seu texto contém palavras ofensivas, por favor corrija</p>
       <%= f.text_area :description, rows: 5, :maxlength => 500, :class => "form-control", :id => "ratingDescription", aria: {label: "Descrição"}  %>
@@ -301,6 +304,7 @@
   <div class="actions text-center">
     <%= f.submit 'Enviar avaliação', :class => "btn btn-primary", :id => "submitButton", aria: {label: "Botão de enviar"} %>
   </div>
+</div>
 
   <script>
 

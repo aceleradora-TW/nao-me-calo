@@ -7,6 +7,16 @@
   width: 250px;
 }
 
+.ratings-subtitle{
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+// .padding-tags{
+//   padding-left: 30px !important;
+// }
+
 .error {
   border: 1px dashed red;
 }
@@ -36,16 +46,25 @@
 
 .paragraph-ratings{
   padding-left: 15px;
+  padding-top: 1px;
 }
 
-.padding-bottom{
-  padding-top: 10px;
+.padding-top{
+  padding-top: 15px;
 }
+
+// .rating-box{
+//   border: 1px solid #A9A9A9;
+//   border-radius: 5px;
+//   padding-right: 1px !important;
+//   background-color:	#FFFFF0;
+//   height: 477px;
+// }
 
 .ratings {
   list-style: none;
   margin: 0;
-  padding: 0;
+  // padding: 0;
 }
 
 .rating {
@@ -54,6 +73,7 @@
   position: relative;
   width: 60px;
   margin-right: 3px;
+  // padding-right: 20px !important;
 }
 
 .btn-field-clean{
@@ -207,4 +227,5 @@ input[type="radio"]:checked + .rating-excellent {
 }
 .text-style-radios{
   font-weight: normal !important;
+
 }
