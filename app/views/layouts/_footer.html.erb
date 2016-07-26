@@ -1,20 +1,41 @@
-<div id="footer-div">
-  <footer class="footer footer-class navbar-fixed-bottom">
-    <div class="container">
-      <p class="text-center footer-text">Não me Calo - Copyright 2016. Todos os direitos reservados.</p>
-        <p id="text-compartilhar">Compartilhamento</p>
-        <div id="button-facebook">
-          <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-test.herokuapp.com/" target="_blank">
-            <img src="/assets/facebook_icon" alt="Facebook" />
-          </a>
+<!-- Desktop-->
+<div class="hidden-xs visible-sm visible-md visible-lg">
+  <nav class="footerDesktop">
+    <footer class="footerDesktop-container">
+      <div class="col-lg-6 col-mg-6 alinhamento-footer">
+        <span class="footerDesktop-titulo">Não me Calo - Copyright 2016. Todos os direitos reservados.</span>
+      </div>
+      <div class="col-lg-6 col-mg-6 alinhamento-footer">
+        <span class="footerDesktop-compartilhar">Compartilhamento</span>
+        <div class=footerDesktop-facebook>
+          <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-test.herokuapp.com/" target="_blank"></a>
+          <img src="./assets/facebook_icon.png" alt="Botão para compartilhar o site no Facebook" >
         </div>
         <%@share_aplication_text = "Conheça o site Não me Calo"%>
-        <div id="button-twitter">
-          <a href="https://twitter.com/share?url=http://naomecalotw-test.herokuapp.com/&amp;text=<%= @share_aplication_text %>&amp;hashtags=naomecalo" target="_blank">
-            <img src="/assets/twitter_icon" alt="Twitter" />
-          </a>
+        <div class="footerDesktop-twitter">
+          <a href="https://twitter.com/share?url=http://naomecalotw-test.herokuapp.com/&amp;text=<%= @share_aplication_text %>&amp;hashtags=naomecalo" target="_blank"></a>
+          <img src="./assets/twitter_icon.png" alt="Botão para compartilhar o site no Twitter" >
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </nav>
+</div>
+
+
+<!-- MOBILE -->
+<div class="visible-xs hidden-sm hidden-md hidden-lg">
+  <nav class="footerMobile">
+    <footer class="footerMobile-container">
+      <div class="footerMobile-titulo">Não me Calo - Copyright 2016. Todos os direitos reservados.</div>
+      <div class="footerMobile-compartilhar">Compartilhamento</div>
+      <div class=footerMobile-socialRedes>
+        <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-test.herokuapp.com/" target="_blank"></a>
+        <img src="./assets/facebook_icon.png" alt="Botão para compartilhar o site no Facebook" >
+        <a href="https://twitter.com/share?url=http://naomecalotw-test.herokuapp.com/&amp;text=<%= @share_aplication_text %>&amp;hashtags=naomecalo" target="_blank"></a>
+        <img src="./assets/twitter_icon.png" alt="Botão para compartilhar o site no Twitter" >
+      </div>
+      <%@share_aplication_text = "Conheça o site Não me Calo"%>
+
+    </footer>
+  </nav>
 </div>

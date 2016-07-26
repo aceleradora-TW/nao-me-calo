@@ -1,0 +1,25 @@
+@import "_variables.scss";
+
+.footerMobile{
+  background-color: #2e2e2e;
+
+  &-container{
+    color:white;
+    padding-bottom: 90px;
+  }
+  &-titulo{
+    text-align: center;
+    padding-top: 25px
+  }
+  &-compartilhar{
+    text-align: center;
+    padding-top: 20px;
+  }
+  &-socialRedes{
+    text-align: center;
+    margin-top: 12px;
+  }
+  &-socialRedes img{
+    height: 32px;
+  }
+}

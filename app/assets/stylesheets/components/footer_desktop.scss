@@ -1,0 +1,29 @@
+@import "_variables.scss";
+
+.footerDesktop{
+  background-color: #2e2e2e;
+  margin-top: 2%;
+  height: 147px;
+  padding: 50px;
+
+  &-container{
+    color:white;
+}
+  &-titulo{
+    padding-left:221px;
+  }
+  &-compartilhar{
+    float: right;
+    padding-right: 130px;
+  }
+  &-facebook img{
+    padding: 0 0 0 374px;
+    height: 25px;
+    margin: 5px 2px;
+  }
+  &-twitter img{
+    padding: 0 0 0 374px;
+    height: 25px;
+    margin: 5px 2px;
+  }
+}
