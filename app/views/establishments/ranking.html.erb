@@ -24,10 +24,12 @@
 
       <% end %>
     </ul>
+    <div align="center">
     <a class="show-more-button" id="showMoreBest">Ver mais</a>
   </div>
+  </div>
 
-  <div class="ranking-list" id="bottom5">
+  <div class="ranking-list" id="bottom5" text-align="center">
     <ul class="list-group list-ranking-worst">
       <% @worst_places.each do |establishment, average| %>
       <li>
@@ -44,8 +46,9 @@
 
         <% end %>
       </ul>
+      <div align="center">
       <a class="show-more-button" id="showMoreWorst">Ver mais</a>
-
+    </div>
     </div>
 
     <div id="share-buttons" align="center" class="row order-space text-center">
