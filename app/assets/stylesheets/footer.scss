@@ -14,16 +14,25 @@
 }
 .footer-text{
   padding-top: 3px;
+  color: white;
 }
 #footer-div{
   margin-top:200px;
 }
 
-#share-buttons img {
-  width: 30px;
-  padding: 5px;
-  border: 0;
-  box-shadow: 0;
-  margin-left: auto;
-  margin-right: auto
+#button-facebook img{
+  float: right;
+  height: 20px;
+  margin: -30px 29px
+}
+
+#button-twitter img{
+  float: right;
+  height: 20px;
+  margin: 0px 29px;
+}
+
+#text-compartilhar{
+  margin: -29px 0px 40px 1020px;
+  color: white;
 }
