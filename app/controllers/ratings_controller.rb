@@ -1,8 +1,10 @@
+include ApplicationHelper
+require 'concept.rb'
+
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
   before_action :set_client, only: [:new, :create]
-  include ApplicationHelper
-  require 'concept.rb'
+  before_action :set_by_rating_id, only: [:moderated, :visible]
 
   def show
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
@@ -55,7 +57,7 @@ class RatingsController < ApplicationController
           respond_to do |format|
             if @rating.save
               @rating.description.empty? ? notice = "Avaliação feita com sucesso!" : notice = "Avaliação feita com sucesso! Sua avaliação ira passar pela moderação."
-             format.html { redirect_to "/relato/#{@rating.id}", notice: notice }
+              format.html { redirect_to "/relato/#{@rating.id}", notice: notice }
             end
           end
 
@@ -68,16 +70,7 @@ class RatingsController < ApplicationController
     end
   end
 
-  def destroy
-    @rating.destroy
-    respond_to do |format|
-      format.html { redirect_to ratings_url, notice: 'Rating was successfully destroyed.' }
-    end
-  end
-
   def visible
-    @rating = Rating.find(params[:rating_id])
-
     if (@rating.visible == false)
       @rating.visible = true
       @rating.moderated = true
@@ -95,8 +88,6 @@ class RatingsController < ApplicationController
   end
 
   def moderated
-    @rating = Rating.find(params[:rating_id])
-
     respond_to do |format|
       if(@rating.moderated == false)
         @rating.moderated = true
@@ -116,6 +107,10 @@ class RatingsController < ApplicationController
 
   def set_rating
     @rating = Rating.find(params[:id])
+  end
+
+  def set_by_rating_id
+    @rating = Rating.find(params[:rating_id])
   end
 
   def set_client

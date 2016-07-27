@@ -1,10 +1,11 @@
+include ApplicationHelper
+include WelcomeHelper
+include RatingsHelper
+require 'ranking.rb'
+require 'concept.rb'
+
 class WelcomeController < ApplicationController
   before_action :set_client, only: [:index, :search]
-  include ApplicationHelper
-  include WelcomeHelper
-  include RatingsHelper
-  require 'ranking.rb'
-  require 'concept.rb'
 
   def index
     @establishments = Establishment.all

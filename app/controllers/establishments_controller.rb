@@ -1,9 +1,10 @@
+include ApplicationHelper
+include WelcomeHelper
+require 'concept.rb'
+
 class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: [:show, :edit, :update, :destroy]
   before_action :set_client, only: [:show]
-  include ApplicationHelper
-  include WelcomeHelper
-  require 'concept.rb'
 
   def index
     @establishments = Establishment.all

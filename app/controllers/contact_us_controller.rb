@@ -1,5 +1,6 @@
+include ApplicationHelper
+
 class ContactUsController < ApplicationController
-  include ApplicationHelper
 
   def index
   end
