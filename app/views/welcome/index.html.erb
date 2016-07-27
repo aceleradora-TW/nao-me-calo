@@ -1,6 +1,7 @@
 
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
+
 <% if !flash[:error].nil? %>
 <div class="alert alert-danger">
   <p id="alert" class="text-center">
@@ -18,6 +19,7 @@
   var pin_map = "<%=@pin_map%>";
   var average_pin_map = "<%=@rating_welcome%>";
   </script>
+  <h1 id="text-without-javascript" class="error-text"><br>Você está acessando o site com o javascript desligado, algumas funções do site podem não funcionar corretamente</h1>
 
 
 

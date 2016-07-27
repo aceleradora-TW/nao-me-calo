@@ -178,11 +178,13 @@ function initAutocomplete () {
     }
   }
 
+
   function initLists(){
     $('#bottom5').hide();
   }
 
   $(document).ready(function(){
+      $('#text-without-javascript').hide();
 
     openHeaderMobile();
 
