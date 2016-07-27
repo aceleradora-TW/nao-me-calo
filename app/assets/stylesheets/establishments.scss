@@ -2,12 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "_variables.scss";
+
 .text-field{
   font-size: 60%;
 }
 
 .order-space{
   text-align: center;
+  margin-top: 20px;
 }
 
 .list-show-style{
@@ -22,11 +24,6 @@
 .ranking-list{
   padding: 0% 20% 0% 20%;
 }
-
-.ranking-list-buttons{
-  text-align: center;
-}
-
 
 .evaluate-div{
   text-align: center;
@@ -45,18 +42,14 @@
   }
 }
 
+.margin-left{
+  margin-left: 40px;
+}
+
 #breakline{
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-break: break-all;
-}
-
-li{
-  list-style-type: none;
-}
-
-.margin_left{
-  margin-left: 40px;
 }

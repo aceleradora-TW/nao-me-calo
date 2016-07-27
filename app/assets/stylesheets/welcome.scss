@@ -12,36 +12,8 @@
   float:right;
 }
 
-body{
-  // padding-top: 60px;
-  // padding-bottom: 40px;
-
-}
-
-#map_search {
-  margin-top: 10px;
-  width:50%;
-}
-
 .searches-fields{
   border: 1px solid rgba(0, 0, 0, 0.36);
-}
-
-#map {
-  height: 400px;
-  border-radius: 6px;
-  margin: 0 10px 0px 10px;
-}
-
-#hero{
-  background: red;
-}
-
-#bestPlacesButton{
-  color: #329853;
-  font-size: 120%;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .Order-btn-pressed{
@@ -50,27 +22,17 @@ body{
   cursor: pointer;
   text-decoration: underline;
 }
-// #search-btn:hover{
-//   box-shadow: 8px 1px 16px 6px;
-// }
 
-#worstPlacesButton{
-  color: rgb(224, 53, 53);
-  font-size: 120%;
-  font-weight: bold;
-  cursor: pointer;
-}
 .fade {
   opacity: 1;
   transition: box-shadow .20s ease-in-out;
   -moz-transition: box-shadow .20s ease-in-out;
   -webkit-transition: box-shadow .20s ease-in-out;
-}
 
-.fade:hover {
-  box-shadow: 8px 1px 16px 6px;
+  &:hover {
+    box-shadow: 8px 1px 16px 6px;
+  }
 }
-
 .ranking-buttons{
   margin-top: 3px;
   margin-bottom: 10px;
@@ -124,52 +86,6 @@ body{
   }
 }
 
-.order-space{
-  margin-top: 20px;
-}
-.ranking-best{
-  text-align: center;
-  padding-top: 4px;
-  background-color: inherit;
-  border-radius: 4px;
-  border: 1px solid;
-  cursor: pointer;
-  font-family: Arial;
-  font-size: 12px;
-  width: 60px;
-  height: 26px;
-  color: white;
-
-  &-active{
-    border-color: #036f26;
-    background-color: #036f26;
-  }
-
-  border-color: $buttonExcellentColor;
-  background-color: $buttonExcellentColor;
-}
-.ranking-worst{
-  text-align: center;
-  padding-top: 4px;
-  background-color: inherit;
-  border-radius: 4px;
-  border: 1px solid;
-  cursor: pointer;
-  font-family: Arial;
-  font-size: 12px;
-  width: 60px;
-  height: 26px;
-  color: white;
-  &-active{
-    border-color: #b30000;
-    background-color: #b30000;
-  }
-
-  border-color: $buttonDangerousColor;
-  background-color: $buttonDangerousColor;
-
-}
-
 .share-text{
   color: $brandColor;
   font-style: italic;
@@ -211,4 +127,33 @@ button.btn.search-inputButton.rate {
   margin: 1% 1% 1% 2%;
   border-radius: 2%;
 
+}
+
+#bestPlacesButton{
+  color: #329853;
+  font-size: 120%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#map_search {
+  margin-top: 10px;
+  width:50%;
+}
+
+#map {
+  height: 400px;
+  border-radius: 6px;
+  margin: 0 10px 0px 10px;
+}
+
+#hero{
+  background: red;
+}
+
+#worstPlacesButton{
+  color: rgb(224, 53, 53);
+  font-size: 120%;
+  font-weight: bold;
+  cursor: pointer;
 }

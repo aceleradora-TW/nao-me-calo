@@ -1,25 +1,23 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require jquery-ui
- *= require_tree .
- *= require_self
- */
- @import "_variables.scss";
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require jquery-ui
+*= require_tree .
+*= require_self
+*/
+@import "_variables.scss";
 
-#buttons-enhance{
-  // margin-left: 2%;
-  // margin-bottom: 2%;
-  margin: 0 0 2% 2%;
+body {
+  display: table;
 }
 
 body, html {
@@ -27,27 +25,38 @@ body, html {
   width: 100%;
   position:relative;
 }
+
+li{
+  list-style-type: none;
+}
+
 .padding-bottom{
   padding-bottom: 20px !important;
 }
-body {
-  display: table;
-}
+
 .center-element{
   margin:0 auto;
   display:table;
 }
+
 .btn-danger{
   background-color: $thirdColor !important;
   border-color: $textColor !important;
 }
+
 .btn-success{
   background-color: $brandColor !important;
   border-color: $textColor !important;
 }
+
 .text-area {
-    resize: none;
+  resize: none;
 }
+
+.red-text{
+  color: red;
+}
+
 .check-box-contact{
   position: relative !important;
   top: 3px !important;
@@ -62,6 +71,12 @@ body {
   width: $large-square-size;
   height: $large-square-size;
 }
+
 .container-fluid{
   min-height: 532px;
+
+
+#buttons-enhance{
+  margin: 0 0 2% 2%;
+
 }

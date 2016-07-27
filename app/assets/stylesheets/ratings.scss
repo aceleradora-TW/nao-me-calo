@@ -3,6 +3,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "_variables.scss";
+
 .form-textfield {
   width: 250px;
 }
@@ -12,10 +13,6 @@
   margin-top: 40px;
   margin-bottom: 10px;
 }
-
-// .padding-tags{
-//   padding-left: 30px !important;
-// }
 
 .error {
   border: 1px dashed red;
@@ -29,28 +26,13 @@
   text-transform: uppercase !important;
 }
 
-.error-border {
-  border-color: red;
-  border-style: dashed;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-.no-padding-left {
-  padding-left: 0px !important;
-}
-
-.red-text{
-  color: red;
-}
-
 .paragraph-ratings{
   padding-left: 0px;
   padding-top: 1px;
 }
 
-.padding-top{
-  padding-top: 15px;
+.field{
+  padding-top: 3px;
 }
 
 .info-icon{
@@ -81,7 +63,7 @@
   margin-right: 6px;
 }
 
-.btn-field-clean{
+.clean-fields-button{
   width: auto;
   height: 26px;
   font-family: Arial;
@@ -132,11 +114,7 @@ label .radio-text {
   display: inline-block;
   margin-top: 3px;
   color: #565656 !important;
-  // &:hover {
-  //   color: white !important;
-  // }
-
-}
+ }
 
 .rating-dangerous {
   border-color: $buttonDangerousColor;
@@ -165,7 +143,6 @@ input[type="radio"]:checked + .rating-dangerous {
       color: white !important;
     }
   }
-
 }
 
 input[type="radio"]:checked + .rating-bad {
@@ -222,10 +199,6 @@ input[type="radio"]:checked + .rating-good {
   }
 }
 
-.error-message{
-  color: red;
-}
-
 input[type="radio"]:checked + .rating-excellent {
   background-color: $buttonExcellentColor;
   .radio-text{
@@ -234,5 +207,8 @@ input[type="radio"]:checked + .rating-excellent {
 }
 .text-style-radios{
   font-weight: normal !important;
+}
 
+#rating-options {
+  padding-left: 0px !important;
 }

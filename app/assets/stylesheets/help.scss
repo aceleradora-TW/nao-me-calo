@@ -8,13 +8,6 @@
   background-color: rgba(0,0,0,0) !important;
 }
 
-.header-links-color {
-  & a:hover, a:visited, a:link {
-    color: #E4E4E4;
-    background-color: rgba(0,0,0,0) !important;
-  }
-
-}
 .hold-link-title-help {
   & a{
     color: #000;
@@ -22,6 +15,7 @@
     text-decoration: none;
   }
 }
+
 .paragraph{
   padding-left: 25px;
 }
