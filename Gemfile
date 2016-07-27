@@ -17,8 +17,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 #Esta gem, é responsavel, pelo sistema de rating
 gem 'ratyrate'
-#Gem para tasks com timing
-gem 'whenever'
 
 
 gem 'browser'

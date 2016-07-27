@@ -6,6 +6,7 @@ require 'concept.rb'
 
 class WelcomeController < ApplicationController
   before_action :set_client, only: [:index, :search]
+  before_action :clean_CPF_from_db_six_months, only: [:index]
 
   def index
     @establishments = Establishment.all
@@ -44,6 +45,10 @@ class WelcomeController < ApplicationController
 
   def set_client
     @client = GooglePlaces::Client.new(G_PLACE_KEY)
+  end
+
+  def clean_CPF_from_db_six_months
+    clean_CPF_from_db
   end
 
   def get_color_and_pin_concept(rating)
