@@ -1,7 +1,7 @@
 @import "_variables.scss";
 
 .footerDesktop{
-  background-color: #2e2e2e;
+  background-color: #737373;
   margin-top: 2%;
   height: 147px;
   padding: 50px;
@@ -13,10 +13,10 @@
     padding-left:15%;
 
   }
-  &-compartilhar{
-    float: right;
-    padding-right: 130px;
-  }
+  // &-compartilhar{
+  //   float: right;
+  //   padding-right: 130px;
+  // }
   &-facebook img{
     padding: 0 0 0 374px;
     height: 25px;
