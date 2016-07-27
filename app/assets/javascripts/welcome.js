@@ -193,17 +193,7 @@ function initAutocomplete () {
     initLists();
     checkOffset();
     checkMobileEnhanceButtons();
-    // mobile();
-    //
-    // function mobile(){
-    //   if(isMobile){
-    //     $('.footerMobile').hide();
-    //     $('.footerDesktop').show();
-    //   }else{
-    //     $('.footerMobile').show();
-    //     $('.footerDesktop').hide();
-    //   }
-    // }
+
 
     var actualFontSize = 14
     $("#upperFontSizeButton").click(upperFontSize);
