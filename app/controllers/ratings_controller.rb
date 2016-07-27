@@ -34,7 +34,7 @@ class RatingsController < ApplicationController
   end
 
   def create
-    if params[:accepted_terms]
+    if params[:accepted_terms] and params[:rating_date] and params[:cpf]
 
       if Obscenity.profane?(rating_params[:description])
         redirect_to controller: :ratings, action: :new, placeId: params[:placeId]

@@ -184,6 +184,8 @@ function initAutocomplete () {
 
   $(document).ready(function(){
 
+    $('#text-without-javascript').hide();
+
     openHeaderMobile();
 
     var isMobile = window.matchMedia("only screen and (max-width: 760px)");
