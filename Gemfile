@@ -17,7 +17,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 #Esta gem, é responsavel, pelo sistema de rating
 gem 'ratyrate'
-#Esta gem, é responsavel, pelo sistema de rating
+#Gem para tasks com timing
+gem 'whenever'
+
 
 gem 'browser'
 # Use jquery as the JavaScript library

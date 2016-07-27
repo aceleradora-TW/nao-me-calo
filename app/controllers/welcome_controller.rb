@@ -22,11 +22,6 @@ class WelcomeController < ApplicationController
 
     @worst_places = generate_ranking.take(5)
     @best_places = generate_ranking.reverse.take(5)
-
-    time = Time.now
-    if time.hour > 1
-      clean_CPF_from_db
-    end
   end
 
   def search
