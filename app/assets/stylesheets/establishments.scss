@@ -37,10 +37,10 @@
     border: 2px solid;
     cursor: pointer;
     font-weight: bold;
-    border-color: $brandColor;
+    border-color: $thirdColor;
     &:hover {
       color: white;
-      background-color: $brandColor;
+      background-color: $thirdColor;
     }
   }
 }
