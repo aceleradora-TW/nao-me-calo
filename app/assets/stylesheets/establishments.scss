@@ -14,6 +14,9 @@
 
 .list-show-style{
   color: $brandColor !important;
+  padding-bottom: 10px;
+  min-height: 70px;
+  background-color: #f8f8ff;
 }
 
 .show-more-button{
@@ -52,4 +55,10 @@
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-break: break-all;
+}
+.flag-establishment{
+  -ms-transform: scale(2,2); /* IE 9 */
+    -webkit-transform: scale(2,2); /* Safari */
+    transform: scale(2,2);
+    margin-top: -27px;
 }

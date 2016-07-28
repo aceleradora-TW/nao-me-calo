@@ -48,42 +48,68 @@
 }
 
 .concept {
-  text-align: center;
-  padding-top: 6px;
-  background-color: inherit;
-  border-radius: 4px;
-  border: 1px solid;
-  cursor: pointer;
-  font-family: Arial;
-  font-size: 12px;
-  width: 60px;
-  height: 26px;
   top: -1px;
+  right: 10px;
   margin-right: 3px;
+  display: inline-block;
+  height: 42px;
+  width: 56px;
+  position: absolute;
+  padding-top: 14px;
   color: white;
+  font-weight: bold;
+  text-align: center;
+  font-family: Arial;
+  font-size: 13px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;
   &-dangerous {
-    border-color: $buttonDangerousColor;
     background-color: $buttonDangerousColor;
   }
   &-bad {
-    border-color: $buttonBadColor;
     background-color: $buttonBadColor;
   }
   &-regular {
-    border-color: $buttonRegularColor;
     background-color: $buttonRegularColor;
   }
   &-good {
-    border-color: $buttonGoodColor;
     background-color: $buttonGoodColor;
   }
   &-excellent{
-    border-color: $buttonExcellentColor;
     background-color: $buttonExcellentColor;
   }
   &-pointer-nill-events{
     pointer-events: none;
   }
+}
+.concept:before{
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  height: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  top: 42px;
+  width: 0;
+}
+.concept-dangerous:before {
+  border-top: 10px solid $buttonDangerousColor;
+}
+.concept-bad:before {
+  border-top: 10px solid $buttonBadColor;
+}
+.concept-regular:before {
+  border-top: 10px solid $buttonRegularColor;
+}
+.concept-good:before {
+  border-top: 10px solid $buttonGoodColor;
+}
+.concept-excellent:before {
+  border-top: 10px solid $buttonExcellentColor;
 }
 
 .share-text{
@@ -156,4 +182,8 @@ button.btn.search-inputButton.rate {
   font-size: 120%;
   font-weight: bold;
   cursor: pointer;
+}
+.address-padding{
+  padding-right: 70px;
+  padding-bottom: 5px;
 }
