@@ -2,6 +2,6 @@ function openHeaderMobile(){
 
 
   $('.headerMobile-button').click(function(){
-    $('.headerMobile-links').toggle();
+    $('.headerMobile-links').slideToggle('slow')
   })
 }
