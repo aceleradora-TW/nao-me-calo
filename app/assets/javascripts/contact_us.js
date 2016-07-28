@@ -1,10 +1,41 @@
 errorsContact = {emailEvaluateContact: true, messageEvaluate: true, nameEvaluateContact: false}
 
 $(document).ready(function(){
-
   initialize();
-
+   patternLinks();
   var dots = 0;
+
+  function patternLinks(){
+      $('#abuse-first').click(function(){
+          $('.abuse-article').fadeOut(200);
+          $('#article-1').fadeIn(200);
+      });
+
+      $('#abuse-second').click(function(){
+          $('.abuse-article').fadeOut(200);
+          $('#article-2').fadeIn(200);
+      });
+
+      $('#abuse-three').click(function(){
+          $('.abuse-article').fadeOut(200);
+          $('#article-3').fadeIn(200);
+      });
+
+      $('#abuse-four').click(function(){
+          $('.abuse-article').fadeOut(200);
+          $('#article-4').fadeIn(200);
+      });
+
+      $('#abuse-five').click(function(){
+          $('.abuse-article').fadeOut(200);
+          $('#article-5').fadeIn(200);
+      });
+
+      $('#abuse-six').click(function(){
+          $('.abuse-article').fadeOut(200);
+          $('#article-6').fadeIn(200);
+      });
+ }
 
   $('#emailEvaluateContact').focusout(function(){
     checkMailContact();
@@ -145,5 +176,7 @@ $(document).ready(function(){
       checkMessage();
     }
   }
+
+
 
 });

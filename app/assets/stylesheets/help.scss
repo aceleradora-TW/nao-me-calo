@@ -19,3 +19,20 @@
 .paragraph{
   padding-left: 25px;
 }
+
+.arrow-icon{
+  height: 17px;
+  width: 17px;
+  display: inline-block;
+  position: relative;
+  background-color: darken($brandColor , 5%);
+  -webkit-mask: url(../assets/arrow.svg) no-repeat 50% 50%;
+  mask: url(../assets/arrow.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  top: 3px;
+  left: 10px;
+}
+.abuse-article{
+  display: none;
+}
