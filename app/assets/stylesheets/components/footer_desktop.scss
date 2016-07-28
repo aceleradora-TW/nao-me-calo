@@ -1,29 +1,18 @@
 @import "_variables.scss";
 
-.footerDesktop{
+.footer-desktop{
   background-color: #737373;
   margin-top: 2%;
-  height: 147px;
-  padding: 50px;
-
+  height: 100px;
   &-container{
     color:white;
 }
-  &-titulo{
-    padding-left:15%;
 
+  &-align{
+    text-align: center;
   }
-  // &-compartilhar{
-  //   float: right;
-  //   padding-right: 130px;
-  // }
-  &-facebook img{
-    padding: 0 0 0 374px;
-    height: 25px;
-    margin: 5px 2px;
-  }
-  &-twitter img{
-    padding: 0 0 0 374px;
+
+  &-share img{
     height: 25px;
     margin: 5px 2px;
   }
@@ -34,5 +23,5 @@
 }
 
 .marginTopShare{
-  margin-top: -17px;
+  margin-top: 25px;
 }
