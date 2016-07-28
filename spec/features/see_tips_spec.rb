@@ -6,7 +6,7 @@ feature "See tips", js: true do
     click_link 'Apoio Legal'
     expect(page).to have_content 'Sofri discriminação: e agora?'
     sleep 5
-    click_on 'VIOLÊNCIA DOMÉSTICA'
+    find_by_id('violencia').click
     expect(page).to have_content 'VIOLÊNCIA DOMÉSTICA'
     sleep 5
   end
