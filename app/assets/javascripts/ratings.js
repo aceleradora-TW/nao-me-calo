@@ -11,7 +11,7 @@ $(document).ready(function(){
   errors = {cpfEvaluate: false, rating: true, dateEvaluate: false, description: false};
 
   if ( $('[type="date"]').prop('type') !== 'date' ) {
-      $('[type="date"]').datepicker();
+    $('[type="date"]').datepicker();
   }
 
   $('#emailEvaluate').focusout(function(){
@@ -23,10 +23,18 @@ $(document).ready(function(){
   });
 
   $('#cpfEvaluate').focusout(function(){
+    isInvalidCPF();
+  });
+
+  $('#cpfEvaluate').keyup(function(){
     reviewCPF();
   });
 
   $('#dateEvaluate').focusout(function(){
+    isInvalidDate();
+  });
+
+  $('#dateEvaluate').keyup(function(){
     reviewDate();
   });
 
@@ -35,11 +43,12 @@ $(document).ready(function(){
   });
 
   $('#ratingDescription').focusout(function(){
-    hasBadWords($('#ratingDescription'));
+    isInvalidMessage();
   });
 
   $('#ratingDescription').keyup(function(){
     countChars($('#ratingDescription'),500,'limitChar');
+    hasBadWords($('#ratingDescription'));
   });
 
   $('#clearButton').click(function(){
@@ -93,6 +102,15 @@ $(document).ready(function(){
     }
   }
 
+  function isInvalidMessage(){
+    if(errors['description']){
+      $('#ratingDescription').addClass('errorBorder');
+      $('#descriptionAlertText').removeClass('hidden');
+      $('#descriptionAlert').addClass('text-field-error');
+      showMessage();
+    }
+  }
+
   function showMessage(){
     var checkedRadioButton = !$('.radio-button').is(':checked')
     if (checkedRadioButton){
@@ -115,19 +133,29 @@ $(document).ready(function(){
     var teste = $('#cpfEvaluate').val().split('.').join('').split('-').join('');
     var erro = CPFTest(teste);
     if(erro) {
+
+      errors['cpfEvaluate'] = true;
+      showMessage();
+    } else {
+
+      errors['cpfEvaluate'] = false;
+      $('#cpfEvaluate').removeClass('error');
+      $('#cpfAlertText').addClass('hidden');
+      $('#cpfAlert').removeClass('text-field-error');
+      showMessage();
+
+    }
+  }
+
+  function isInvalidCPF(){
+    if(errors['cpfEvaluate']){
       $('#cpfEvaluate').addClass('error');
       $('#cpfAlert').removeClass('hidden');
       $('#cpfAlert').addClass('text-field-error');
       $('#cpfAlertText').removeClass('hidden');
-      errors['cpfEvaluate'] = true;
-      showMessage();
-    } else {
-      $('#cpfEvaluate').removeClass('error');
-      $('#cpfAlertText').addClass('hidden');
-      $('#cpfAlert').removeClass('text-field-error')
-      errors['cpfEvaluate'] = false;
       showMessage();
     }
+
   }
 
   function CPFTest(strCPF){
@@ -161,9 +189,7 @@ $(document).ready(function(){
     ratingDate = parseInt(ratingDate.substring(0,2), 10) + (parseInt(ratingDate.substring(3,5), 10) * 30) + (parseInt(ratingDate.substring(6), 10) * 365);
 
     if (((today < ratingDate) || (ratingDate <730000)) || $('#dateEvaluate').val() === '__/__/____' || $('#dateEvaluate').val() === '' || !$('#dateEvaluate').val().match(regExPattern)){
-      $('#dateEvaluate').addClass('error');
-      $('#dateAlert').addClass('text-field-error');
-      $('#dateAlertText').removeClass('hidden');
+
       errors['dateEvaluate'] = true;
       showMessage();
     } else {
@@ -173,6 +199,16 @@ $(document).ready(function(){
       errors['dateEvaluate'] = false;
       showMessage();
     }
+  }
+
+  function isInvalidDate(){
+    if(errors['dateEvaluate']){
+      $('#dateEvaluate').addClass('error');
+      $('#dateAlert').addClass('text-field-error');
+      $('#dateAlertText').removeClass('hidden');
+      showMessage();
+    }
+
   }
 
   function isNull(parameter){
