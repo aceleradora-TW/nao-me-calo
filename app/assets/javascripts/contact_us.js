@@ -177,6 +177,4 @@ $(document).ready(function(){
     }
   }
 
-
-
 });
