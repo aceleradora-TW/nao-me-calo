@@ -31,12 +31,26 @@ $(document).ready(function(){
       });
  }
 
+
+
+ $('#messageEvaluate').keyup(function(){
+   hasBadWordsContact();
+ })
+
   $('#emailEvaluateContact').focusout(function(){
+    isInvalidMail();
+  });
+
+  $('#emailEvaluateContact').keyup(function(){
     checkMailContact();
   });
 
+  $('#messageEvaluate').keyup(function(){
+    hasBadWordsContact();
+  });
+
   $('#messageEvaluate').focusout(function(){
-    hasBadWordsContact($('#messageEvaluate'));
+    isInvalidMessage();
   });
 
   $('#nameEvaluateContact').focusout(function(){
@@ -90,12 +104,18 @@ $(document).ready(function(){
     var emailExp = /^(([^<>()\[\]\\.,;:=/{}+!\s@"]+(\.[^<>()\[\]\\.,;:=/{}+!\s@]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var emailInput = $('#emailEvaluateContact').val();
     if (!emailInput.match(emailExp) || emailInput === "" ){
-      errorFoundContact('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact');
       errorsContact["emailEvaluateContact"] = true;
       initialize();
     }else{
-      errorNotFoundContact('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact')
+      errorNotFoundContact('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact');
       errorsContact["emailEvaluateContact"] = false;
+      initialize();
+    }
+  }
+
+  function isInvalidMail(){
+    if(errorsContact["emailEvaluateContact"]){
+      errorFoundContact('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact');
       initialize();
     }
   }
@@ -114,19 +134,6 @@ $(document).ready(function(){
     }
   }
 
-  function checkMessage(){
-    var message = $('#messageEvaluate').val();
-    if (message === ""){
-      errorFoundContact('#messageEvaluate', '#messageAlertText', '#messageAlert');
-      errorsContact["messageEvaluate"] = true;
-      initialize();
-    }else{
-      errorNotFoundContact('#messageEvaluate', '#messageAlertText', '#messageAlert')
-      errorsContact["messageEvaluate"] = false;
-      initialize();
-    }
-  }
-
   function errorFoundContact(textAreaId, alertTextId, alertDivId){
     $(textAreaId).addClass("error");
     $(alertTextId).removeClass("hidden");
@@ -139,7 +146,8 @@ $(document).ready(function(){
     $(alertDivId).removeClass("text-field-error");
   }
 
-  function hasBadWordsContact(text){
+  function hasBadWordsContact(){
+    var text = $('#messageEvaluate');
     var count = 0;
     var textLowerCase = text.val().toLowerCase().split(" ");
     for(var i = 0; i <= badwords.length; i++){
@@ -170,5 +178,23 @@ $(document).ready(function(){
       checkMessage();
     }
   }
+
+    function checkMessage(){
+      var message = $('#messageEvaluate').val();
+      if (message === ""){
+        errorsContact["messageEvaluate"] = true;
+        initialize();
+      }else{
+        errorNotFoundContact('#messageEvaluate', '#messageAlertText', '#messageAlert')
+        errorsContact["messageEvaluate"] = false;
+        initialize();
+      }
+    }
+
+    function isInvalidMessage(){
+      if(errorsContact["messageEvaluate"]){
+        errorFoundContact('#messageEvaluate', '#messageAlertText', '#messageAlert');
+      }
+    }
 
 });
