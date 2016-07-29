@@ -7,33 +7,27 @@ $(document).ready(function(){
 
   function patternLinks(){
       $('#abuse-first').click(function(){
-          $('.abuse-article').fadeOut(200);
-          $('#article-1').fadeIn(200);
+        $('#article-1').fadeToggle("slow");
       });
 
       $('#abuse-second').click(function(){
-          $('.abuse-article').fadeOut(200);
-          $('#article-2').fadeIn(200);
+          $('#article-2').fadeToggle("slow");
       });
 
       $('#abuse-three').click(function(){
-          $('.abuse-article').fadeOut(200);
-          $('#article-3').fadeIn(200);
+          $('#article-3').fadeToggle("slow");
       });
 
       $('#abuse-four').click(function(){
-          $('.abuse-article').fadeOut(200);
-          $('#article-4').fadeIn(200);
+          $('#article-4').fadeToggle("slow");
       });
 
       $('#abuse-five').click(function(){
-          $('.abuse-article').fadeOut(200);
-          $('#article-5').fadeIn(200);
+          $('#article-5').fadeToggle("slow");
       });
 
       $('#abuse-six').click(function(){
-          $('.abuse-article').fadeOut(200);
-          $('#article-6').fadeIn(200);
+          $('#article-6').fadeToggle("slow");
       });
  }
 
