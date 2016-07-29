@@ -64,7 +64,7 @@ RSpec.describe RatingsController, type: :controller do
           establishment_id: @est1.id
         }
       }
-      expect(flash[:notice]).to eq("Avaliação feita com sucesso! Sua avaliação ira passar pela moderação.")
+      expect(flash[:notice]).to eq("Avaliação feita com sucesso! Sua avaliação irá passar pela moderação.")
     end
 
     it "expect to flash notice when using bad words" do
