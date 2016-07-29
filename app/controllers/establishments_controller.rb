@@ -29,7 +29,7 @@ class EstablishmentsController < ApplicationController
   def ranking
     @establishments = Establishment.all
     @establishment_hash = {}
-    @share_text = "Veja o ranking dos estabelecimentos mais e menos amigaveis para oprimidos"
+    @share_text = "Veja o ranking dos estabelecimentos mais e menos amigáveis para oprimidos"
 
     @worst_places = generate_ranking
     @best_places = @worst_places.reverse

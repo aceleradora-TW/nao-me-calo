@@ -16,7 +16,7 @@ feature "Send email" do # , :js => true do
     fill_in 'email', :with => 'johngmail.com'
     fill_in 'subject', :with => 'Some subject'
     fill_in 'message', :with => 'Some mesage'
-    expect(page).to have_content 'Por favor, digite um Email válido.'
+    expect(page).to have_content 'Por favor, digite um e-mail válido.'
   end
 
   scenario "message with ofensive words" do

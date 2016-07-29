@@ -273,7 +273,7 @@
     </div>
     <div class="field padding-top">
       <%= f.label "E-mail"%>
-      <p id="emailAlertText", class="hidden">Por favor, digite um email válido.</p>
+      <p id="emailAlertText", class="hidden">Por favor, digite um e-mail válido.</p>
       <%= f.text_field :email, :class => "form-control form-textfield", :id => "emailEvaluate", aria: {label: "email"}  %>
     </div>
     <div class="field has-mask padding-top">
@@ -300,7 +300,7 @@
   <span id="limitChar">Caracteres restantes: 500</span>
   <div class='field text-center'>
     <input type="checkbox" name="accepted_terms" id="terms" unchecked>
-    <label for="terms">Aceito os <a href="/termos" target="_blank">termos e condições de uso!</a></label>
+    <label for="terms">Aceito os <a href="/termos" target="_blank">termos e condições de uso.</a></label>
   </div>
   <div class="actions text-center">
     <%= f.submit 'Enviar avaliação', :class => "btn btn-primary submit-button-size", :id => "submitButton", aria: {label: "Botão de enviar"} %>
