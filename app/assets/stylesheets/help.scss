@@ -9,10 +9,20 @@
   text-decoration: underline;
 }
 
+
 .list-group{
   & a{
     color: #525252;
     text-decoration: none;
+  }
+}
+
+.text-help-list{
+  color: $brandColor;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover{
+    color: $brandColor;
   }
 }
 
