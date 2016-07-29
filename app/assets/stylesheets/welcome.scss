@@ -120,6 +120,7 @@
   font-style: italic;
   text-align: center;
 }
+
 .mapa{
   margin-top: 81px;
 }
@@ -156,6 +157,14 @@ button.btn.search-inputButton.rate {
   margin: 1% 1% 1% 2%;
   border-radius: 2%;
 
+}
+.map {
+  margin-top: -20px;
+  &-title {
+    text-align: center;
+    font-style: italic;
+    padding-bottom: 15px;
+  }
 }
 
 .legend-map {
