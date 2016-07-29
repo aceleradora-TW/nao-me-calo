@@ -6,6 +6,20 @@
 .hold-link-help > a:hover, a:visited,a:link {
   color: $brandColor;
   background-color: rgba(0,0,0,0) !important;
+  text-decoration: underline;
+}
+
+.list-group{
+  & a{
+    color: $textColor;
+    text-decoration: none;
+  }
+}
+
+#share-buttons{
+  & span{
+    color: $textColor;
+  }
 }
 
 .hold-link-title-help {
