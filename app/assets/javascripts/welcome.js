@@ -97,6 +97,7 @@ function initAutocomplete () {
   function fillName(){
     var place = autocomplete.getPlace();
     $('#placeId').val(place.place_id);
+    location.replace("../avaliar?utf8=✓&placeId="+ place.place_id);
   }
 
   function fillSearch(){
