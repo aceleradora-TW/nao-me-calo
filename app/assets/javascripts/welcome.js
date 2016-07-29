@@ -97,12 +97,13 @@ function initAutocomplete () {
   function fillName(){
     var place = autocomplete.getPlace();
     $('#placeId').val(place.place_id);
-    location.replace("../avaliar?utf8=✓&placeId="+ place.place_id);
+    $('#rate-btn').click();
   }
 
   function fillSearch(){
     var place = searchBox.getPlace();
     $('#placeId2').val(place.place_id);
+    $('#search-btn').click();
   }
 
   function geolocate() {
