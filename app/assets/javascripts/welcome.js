@@ -163,10 +163,10 @@ function initAutocomplete () {
       var contentString = '<div id="content">'+
       '<a href="/perfil/' + locate[4].toString() + '">';
 
-      if (locate[7]) {
-        contentString = contentString + '<h4><label class="concept ' + locate[6].toString() + '">' + locate[5].toString() + '</label></h4>'
-      }
-      contentString = contentString + '<h3 id="firstHeading" class="text-center">'+ locate[0].toString() +'</h3>'+
+      // if (locate[7]) {
+      // }
+      contentString = contentString + '<h4><label class="concept ' + locate[6].toString() + '">' + locate[5].toString() + '</label></h4>'
+      contentString = contentString + '<h3 id="firstHeading" class="text-center spacing-concept-pin">'+ locate[0].toString() +'</h3>' +
       '<div id="bodyContent"></a>'+
       '</div>'+
       '</div>';
