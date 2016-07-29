@@ -155,6 +155,37 @@ button.btn.search-inputButton.rate {
 
 }
 
+.legend-map {
+  display: inline-block;
+  width: 25px;
+  height: 12px;
+  margin: 1px 0;
+  border: 1px solid black;
+  color: black;
+  font-size: 100%;
+  text-align: center;
+
+  &-dangerous{
+    background-color: $buttonDangerousColor;
+  }
+  &-bad{
+    background-color: $buttonBadColor;
+  }
+  &-regular{
+    background-color: $buttonRegularColor;
+  }
+  &-good{
+    background-color: $buttonGoodColor;
+  }
+  &-excellent{
+    background-color: $buttonExcellentColor;
+  }
+}
+
+.text-legend {
+  padding-right: 5px;
+}
+
 #bestPlacesButton{
   color: #329853;
   font-size: 120%;
