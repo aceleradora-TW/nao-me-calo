@@ -8,10 +8,30 @@
   width: 250px;
 }
 
+
+.btn-field-clean{
+  width: auto;
+  height: 26px;
+  font-family: Arial;
+  font-size: 12px;
+  border-radius: 6px;
+  background-color: #F8F8FF;
+  border: 1px solid;
+  border-color: $textColor;
+  color: #565656;
+  font-weight: bold;
+
+  &:hover{
+    border: 2px solid;
+    border-color: #5F5858;
+    color: #5F5858;
+  }
+}
+
 .rating-show-style{
-    color: $textDefault !important;
-    padding-bottom: 10px;
-    background-color: #f8f8ff;
+  color: $textDefault !important;
+  padding-bottom: 10px;
+  background-color: #f8f8ff;
 }
 .ratings-subtitle{
   font-size: 22px;
@@ -128,7 +148,7 @@ label .radio-text {
   display: inline-block;
   margin-top: 3px;
   color: #565656 !important;
- }
+}
 
 .rating-dangerous {
   border-color: $buttonDangerousColor;
