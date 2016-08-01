@@ -40,12 +40,13 @@
   }
 
   &-image{
+    width: 100%;
+    height: 186px;
+    border-bottom: 2px solid $textColor;
     background: url('../assets/picture_girl_header.gif');
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 186px;
-    padding-bottom: 25px;
-    background-position: 0px;
+    background-size: 430px;
+    background-position: 50% 25%;
   }
 
   &-links{
