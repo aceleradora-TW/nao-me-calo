@@ -14,9 +14,11 @@
 .share-buttons-color{
   -webkit-filter: grayscale(85%);
   filter: grayscale(85%);
+  filter: gray;
   &:hover{
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
+    filter: none;
   }
 }
 .list-show-style{
