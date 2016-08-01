@@ -20,3 +20,4 @@
 //= require contact_us
 //= require establishments
 //= require ranking
+//= require help
