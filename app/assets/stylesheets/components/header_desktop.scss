@@ -25,16 +25,18 @@
 
     & ul{
       margin: 0px;
+
       list-style: none;
       display: inline-flex;
       padding: 31px;
       float:right;
 
       & li{
-        padding: 13px 62px;
+        padding: 13px 58px 13px 58px;
         border-radius: 5px;
 
         & a{
+          text-align: center;
           color: white;
           text-decoration: none;
           font-size: 16px;
