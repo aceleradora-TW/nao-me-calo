@@ -12,10 +12,12 @@
   margin-top: 20px;
 }
 .share-buttons-color{
-  -webkit-filter: grayscale(85%);
-  filter: url(../assets/gray.svg#grayscale);
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  filter: gray;
   &:hover{
-    -webkit-filter: grayscale(0%);
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
     filter: none;
   }
 }
