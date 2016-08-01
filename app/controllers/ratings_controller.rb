@@ -38,7 +38,7 @@ class RatingsController < ApplicationController
 
       if Obscenity.profane?(rating_params[:description])
         redirect_to controller: :ratings, action: :new, placeId: params[:placeId]
-        flash[:notice] = "* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *"
+        flash[:notice] = "* Você usou palavras de baixo calão, por favor, preencha o formulário novamente *"
       else
         @rating = Rating.new(rating_params)
         @establishment = Establishment.search_by_id(params[:placeId]).first
