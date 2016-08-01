@@ -65,8 +65,9 @@
       <div class="field">
         <%= f.label 'LGBTQIA', :class => "text-style-radios text-uppercase" %>
         <% if browser.chrome?%>
-        <%else%>
-        <span data-toggle="tooltip" data-placement="right" title="Lésbicas, Gays, Bissexuais, Transgêneros, Travestis, Queer, Intersexuais, Assexuais e/ou Simpatizantes">
+          <span class="info-icon" data-toggle="tooltip" data-placement="right" title="Lésbicas, Gays, Bissexuais, Transgêneros, Travestis, Queer, Intersexuais, Assexuais e/ou Simpatizantes"></span>
+        <%else%> os outros, data-toggle,
+          <span data-toggle="tooltip" data-placement="right" title="Lésbicas, Gays, Bissexuais, Transgêneros, Travestis, Queer, Intersexuais, Assexuais e/ou Simpatizantes">
           <img id="info-icon" class="information-icon" src="../assets/information-icon.png"/>
         </span>
         <%end%>
@@ -275,6 +276,7 @@
     <div id="cpfAlert", class="field has-mask padding-top">
       <%= f.label "CPF",  :class => "text-uppercase"%><span class="red-text"> *</span>
       <% if browser.chrome?%>
+        <span class="info-icon" data-toggle="tooltip" data-placement="right" title="Precisamos armazenar seu CPF por 6 meses de acordo com o Marco Civil da Internet"></span>
       <%else%>
         <span data-toggle="tooltip" data-placement="right" title="Precisamos armazenar seu CPF por 6 meses de acordo com o Marco Civil da Internet">
           <img id="info-icon" class="information-icon" src="../assets/information-icon.png"/>
@@ -295,6 +297,7 @@
     <div  id="dateAlert" class="field has-mask padding-top" >
       <%= f.label 'Data do Acontecimento' %><span class="red-text"> *</span>
       <% if browser.chrome?%>
+        <span class="info-icon" data-toggle="tooltip" data-placement="right" title="Neste campo você deve preencher com a data em que ocorreu o fato"></span>
       <%else%>
       <span data-toggle="tooltip" data-placement="right" title="Neste campo você deve preencher com a data em que ocorreu o fato">
         <img id="info-icon" class="information-icon" src="../assets/information-icon.png"/>
