@@ -7,6 +7,10 @@
   font-size: 60%;
 }
 
+.floated{
+  font-size: 0px;
+}
+
 .order-space{
   text-align: center;
   margin-top: 20px;
@@ -23,6 +27,11 @@
     filter: none;
   }
 }
+
+.spacing-to-share-button {
+  margin-right: 7px;
+}
+
 .list-show-style{
   padding-bottom: 10px;
   height: 110px;
