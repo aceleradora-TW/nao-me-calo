@@ -236,6 +236,7 @@ function initAutocomplete () {
       if(actualFontSize>min){
         actualFontSize = actualFontSize-2;
         $("body").css("font-size", actualFontSize + "px");
+        $(".menu").css("font-size", actualFontSize + "px");
       }
     }
 
@@ -244,6 +245,7 @@ function initAutocomplete () {
       if(actualFontSize<max){
         actualFontSize = actualFontSize+2;
         $("body").css("font-size", actualFontSize + "px");
+        $(".menu").css("font-size", actualFontSize + "px");
       }
     }
 
