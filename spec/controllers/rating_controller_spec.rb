@@ -85,7 +85,7 @@ RSpec.describe RatingsController, type: :controller do
           description: "grelo"
         }
       }
-      expect(flash[:notice]).to eq("* Você usou palavras de baixo calão, por favor, preencha o formulario novamente *")
+      expect(flash[:notice]).to eq("* Você usou palavras de baixo calão, por favor, preencha o formulário novamente *")
     end
 
     it "expect to render new when the rating is not created" do
