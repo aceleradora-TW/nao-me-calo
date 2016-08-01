@@ -79,7 +79,7 @@
         <ul class="list-group">
           <% @best_places.each do |establishment, average| %>
           <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
-            <h4 class="size-h4 list-group-item-heading">
+            <h4 class="size-h4 list-group-item-heading address-padding">
               <%= establishment.name %>
               <span class="grade-on-list "><label class="concept <%= set_average_style(average) %> concept-pointer "><%= average %></label>
               </h4>
@@ -95,7 +95,7 @@
           <ul class="list-group">
             <% @worst_places.each do |establishment, average| %>
             <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
-              <h4 class="size-h4 list-group-item-heading">
+              <h4 class="size-h4 list-group-item-heading address-padding">
                 <%= establishment.name %>
                 <span class="grade-on-list "><label class="concept <%= set_average_style(average) %> concept-pointer"><%= average %></label>          </h4>
                   <p class="list-group-item-text address-padding">

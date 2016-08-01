@@ -35,7 +35,7 @@
           <% @worst_places.each do |establishment, average| %>
           <li>
             <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
-              <h4 class="list-group-item-heading">
+              <h4 class="list-group-item-heading address-padding">
                 <%= establishment.name %>
                 <span class="grade-on-list "><label class="concept <%= set_average_style(average) %> concept-pointer"><%= average %></label>
                 </h4>
