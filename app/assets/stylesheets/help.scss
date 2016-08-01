@@ -49,35 +49,40 @@
   padding-left: 25px;
 }
 
+.arrow-icon-png{
+  height: 31px;
+width: 28px;
+display: inline-block;
+position: relative;
+left: 10px;
+margin: 6px 12px 4px -4px;
+}
+
+
 .arrow-icon{
-  height: 22px;
-  width: 21px;
+  height: 31px;
+  width: 27px;
   display: inline-block;
   position: relative;
   background-color: darken($brandColor , 5%);
   -webkit-mask: url(../assets/arrow.svg) no-repeat 50% 50%;
-  mask: url(../assets/arrow.svg) no-repeat 50% 50%;
   -webkit-mask-size: cover;
-  mask-size: cover;
   top: 3px;
   left: 10px;
-  margin: 7px 17px -4px 0px;
-
+  margin: 7px 17px -10px 0px;
 }
 
 .arrow1-icon{
-  height: 22px;
-  width: 21px;
+  height: 31px;
+  width: 27px;
   display: inline-block;
   position: relative;
   background-color: darken($brandColor , 5%);
   -webkit-mask: url(../assets/arrow-1.svg) no-repeat 50% 50%;
-  mask: url(../assets/arrow-1.svg) no-repeat 50% 50%;
   -webkit-mask-size: cover;
-  mask-size: cover;
   top: 3px;
   left: 10px;
-  margin: 7px 17px -4px 0px;
+  margin: 7px 17px -10px 0px;
 }
 .abuse-article{
   display:none;
