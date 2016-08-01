@@ -63,7 +63,13 @@
       </div>
 
       <div class="field">
-        <%= f.label 'LGBTQIA', :class => "text-style-radios text-uppercase" %><span class="info-icon" data-toggle="tooltip" data-placement="right" title="Lésbicas, Gays, Bissexuais, Transgêneros, Travestis, Queer, Intersexuais, Assexuais e/ou Simpatizantes"></span>
+        <%= f.label 'LGBTQIA', :class => "text-style-radios text-uppercase" %>
+        <% if browser.chrome?%>
+        <%else%>
+        <span data-toggle="tooltip" data-placement="right" title="Lésbicas, Gays, Bissexuais, Transgêneros, Travestis, Queer, Intersexuais, Assexuais e/ou Simpatizantes">
+          <img id="info-icon" class="information-icon" src="../assets/information-icon.png"/>
+        </span>
+        <%end%>
         <div class ="row paragraph-ratings">
           <ul class="ratings">
             <li class="rating">
@@ -267,7 +273,13 @@
         <%= f.text_field :name, :class => "form-control form-textfield", :id => "nameEvaluate", aria: {label: "Nome"} %>
       </div>
     <div id="cpfAlert", class="field has-mask padding-top">
-      <%= f.label "CPF",  :class => "text-uppercase"%><span class="red-text"> *</span><span class="info-icon" data-toggle="tooltip" data-placement="right" title="Precisamos armazenar seu CPF por 6 meses de acordo com o Marco Civil da Internet"></span>
+      <%= f.label "CPF",  :class => "text-uppercase"%><span class="red-text"> *</span>
+      <% if browser.chrome?%>
+      <%else%>
+        <span data-toggle="tooltip" data-placement="right" title="Precisamos armazenar seu CPF por 6 meses de acordo com o Marco Civil da Internet">
+          <img id="info-icon" class="information-icon" src="../assets/information-icon.png"/>
+        </span>
+      <%end%>
       <p id="cpfAlertText", class="hidden">Por favor, digite um CPF válido.</p>
       <%= f.text_field :cpf, :class => "form-control form-textfield", :id => "cpfEvaluate", aria: {label: "cpf"}  %>
     </div>
@@ -281,7 +293,13 @@
       <%= f.text_field :phone, :class => "form-control form-textfield", :id => "phoneEvaluate", aria: {label: "Telefone"}  %>
     </div>
     <div  id="dateAlert" class="field has-mask padding-top" >
-      <%= f.label 'Data do Acontecimento' %><span class="red-text"> *</span><span class="info-icon" data-toggle="tooltip" data-placement="right" title="Neste campo você deve preencher com a data em que ocorreu o fato"></span>
+      <%= f.label 'Data do Acontecimento' %><span class="red-text"> *</span>
+      <% if browser.chrome?%>
+      <%else%>
+      <span data-toggle="tooltip" data-placement="right" title="Neste campo você deve preencher com a data em que ocorreu o fato">
+        <img id="info-icon" class="information-icon" src="../assets/information-icon.png"/>
+      </span>
+      <%end%>
       <!-- <div class ="row paragraph-ratings"> -->
       <p id="dateAlertText", class="hidden alertText">Por favor, digite uma data válida</p>
       <%= f.text_field :rating_date, :id => "dateEvaluate", selected: Date.today, min: 5.months.ago, max: 0.day.from_now, :class => "form-control form-textfield", aria: {label: "Data do evento"} %>
