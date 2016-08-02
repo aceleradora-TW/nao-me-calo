@@ -96,14 +96,31 @@ function initAutocomplete () {
 
   function fillName(){
     var place = autocomplete.getPlace();
-    $('#placeId').val(place.place_id);
-    $('#rate-btn').click();
+    var isPlaceNull = place==null;
+    if(isPlaceNull){
+      notFindPlaceMessage()
+    }
+    else{
+      $('#placeId').val(place.place_id)
+      $('#rate-btn').click()
+    }
+  }
+
+  function notFindPlaceMessage(){
+    $("#not-exist-place").removeClass('hidden');
   }
 
   function fillSearch(){
     var place = searchBox.getPlace();
-    $('#placeId2').val(place.place_id);
-    $('#search-btn').click();
+    var isPlaceNull = place==null;
+    if(isPlaceNull){
+      notFindPlaceMessage();
+    }
+    else{
+      $('#placeId2').val(place.place_id);
+      $('#search-btn').click();
+    }
+
   }
 
   function geolocate() {
@@ -211,6 +228,8 @@ function initAutocomplete () {
       $(".ranking-worst").removeClass("ranking-worst-active");
       $(".ranking-best").addClass("ranking-best-active");
     }
+
+
 
     function activeWorstButton(){
       $(".ranking-worst").addClass("ranking-worst-active");

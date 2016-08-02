@@ -13,6 +13,7 @@ class WelcomeController < ApplicationController
     @establishment_hash = {}
     @pinsForMap = []
     @establishments.each do |establishment|
+
       if establishment.has_more_than_2_ratings?
         @establishment_hash[establishment] = establishment.calculate_average
         @color_and_rating = get_color_and_pin_concept(@establishment_hash[establishment])

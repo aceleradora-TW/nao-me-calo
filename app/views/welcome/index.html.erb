@@ -21,6 +21,11 @@
 
   <h1 id="text-without-javascript" class="error-text"><br>Você está acessando o site com o javascript desligado, algumas funções do site podem não funcionar corretamente</h1>
 
+
+  <div class="hidden alert alert-danger text-center" id="not-exist-place">
+    <p>Campo preenchido de forma incorreta.</p>
+  </div>
+
   <div class="row order-space">
 
     <div class="col-lg-4  col-lg-offset-2">
@@ -43,6 +48,8 @@
       <%= hidden_field_tag 'placeId', :class => 'place-id-placeholder' %>
       <% end %>
     </div>
+
+
 
     <div class="col-lg-4">
       <div class="search search-place">
