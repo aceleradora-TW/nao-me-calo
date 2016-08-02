@@ -27,7 +27,6 @@
         </span>
       </div>
       </div>
-
     </div>
     <div class="evaluate-div" >
       <h3>Clique abaixo para avaliar o local.</h3>
@@ -47,8 +46,19 @@
           <h4 class="size-h4 list-group-item list-show-style">
             <span class="text-field"><b>Data da avaliação:</b> <%= returning_date(rating[0])%></span>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
-            <% if checking_if_rating_is_visible(rating[0])  %>
-            <p class="address-padding" id="breakline"><%= description_exists(rating[0]) ? "Relato: " + rating[0].description[0...50] : "Esta avaliação não possui relato." %><% if rating[0].description.length > 25 %> <a href="../relato/<%= rating[0].id%>"> Ver mais...</a> <%end%></p>
+             <% if checking_if_rating_is_visible(rating[0])  %>
+            <% if description_exists(rating[0])  %>
+            <p class="address-padding">
+              Relato: <%= truncate(rating[0].description, length: 60) %>
+            </p>
+            <%elsif%>
+            <p class="address-padding margin-bottom-to-share-button">
+              Esta avaliação não possui relato.
+            </p>
+            <%end%>
+            <% if rating[0].description.length > 25 %>
+            <a href="../relato/<%= rating[0].id%>"> Ver mais.. </a>
+            <%end%>
             <div id="share-buttons" align="right">
               <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-test.herokuapp.com/relato/<%= rating[0].id %>" target="_blank">
                 <img class="small-square-share-button share-buttons-color" src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook"  />
@@ -59,7 +69,8 @@
             </div>
             <%else%>
             <p id="breakline">Relato em moderação.</p>
-            <%end%>
+
+             <%end%>
           </h4>
         </li>
         <% end %>
