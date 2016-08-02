@@ -72,9 +72,14 @@
 
             <div class="visible-xs hidden-sm hidden-md hidden-lg"> <!--div mobile -->
               <div class="col-xs-offset-1 description-padding">
-                <a href="../relato/<%= rating[0].id%>"> Ver relato</a>
+                <% if description_exists(rating[0])  %>
+                <a href="../relato/<%= rating[0].id%>">Ver relato</a>
+                <% else %>
+                Esta avaliação não possui relato.
+                <% end %>
               </div>
             </div>
+
 
             <div id="share-buttons" align="right">
               <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-test.herokuapp.com/relato/<%= rating[0].id %>" target="_blank">
@@ -89,6 +94,7 @@
           <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
             <p id="breakline">Relato em moderação.</p>
           </div>
+
           <div class="visible-xs hidden-sm hidden-md hidden-lg"> <!--div mobile -->
             <div class="row col-xs-offset-1">
               <p class="description-padding" id="breakline">Relato em <br>moderação.</p>
@@ -105,5 +111,4 @@
 
     </div>
   </div>
-</div>
 </div>
