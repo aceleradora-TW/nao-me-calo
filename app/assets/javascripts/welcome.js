@@ -214,11 +214,18 @@ function initAutocomplete () {
     checkOffset();
     checkMobileEnhanceButtons();
     hideMapIfIsMobile();
+    changingTopOfFlagWhenIsMobile();
 
     function hideMapIfIsMobile(){
       if(isMobile.matches){
         $("#map-mobile").css("display", "none");
         $("#link-to-ranking").css("margin-bottom", "10px");
+      }
+    }
+
+    function changingTopOfFlagWhenIsMobile(){
+      if(isMobile.matches){
+        $('.concept:before').css("top", "36px");
       }
     }
 
