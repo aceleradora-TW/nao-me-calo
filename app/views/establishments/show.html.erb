@@ -20,14 +20,15 @@
       <div class='row'>
         <h5 class='size-h5 text-center'><%= @spot.formatted_address %></h5>
 
-      <div class="visible-xs hidden-sm hidden-md hidden-lg text-center"> <!--div mobile -->
-        <span class="col-lg-2">
-      </h1>
+        <div class="visible-xs hidden-sm hidden-md hidden-lg text-center"> <!--div mobile -->
+          <span class="col-lg-2">
+          </h1>
           <% if @rating_concept != nil %> <label class="flag-establishment concept concept-pointer-nill-events  <%= set_average_style(@rating_concept) %>"><%= @rating_concept %></label><% end %>
         </span>
       </div>
       </div>
     </div>
+
     <div class="evaluate-div" >
       <h3>Clique abaixo para avaliar o local.</h3>
       <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
@@ -36,17 +37,26 @@
       <% end %>
 
     </div>
-    <div class="col-lg-10 col-lg-offset-1 text-center">
-      <h2 class="size-h2">Últimas avaliações</h2>
-    </div>
-    <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-      <ul class="list-group" id="listLast5">
-        <% @rate_array.each do |rating| %>
-        <li>
-          <h4 class="size-h4 list-group-item list-show-style">
+
+
+  <div class="col-lg-10 col-lg-offset-1 text-center">
+    <h2 class="size-h2">Últimas avaliações</h2>
+  </div>
+  <div class="col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+    <ul class="list-group" id="listLast5">
+      <% @rate_array.each do |rating| %>
+      <li>
+        <h4 class="size-h4 list-group-item list-show-style">
+          <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
             <span class="text-field"><b>Data da avaliação:</b> <%= returning_date(rating[0])%></span>
+          </div>
+          <div div class="visible-xs hidden-sm hidden-md hidden-lg"> <!--div mobile -->
+            <span class="text-field col-xs-8"><b>Data da avaliação:</b> <%= returning_date(rating[0])%></span>
+          </div>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
              <% if checking_if_rating_is_visible(rating[0])  %>
+
+             <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
             <% if description_exists(rating[0])  %>
             <p class="address-padding">
               Relato: <%= truncate(rating[0].description, length: 60) %>
@@ -59,6 +69,14 @@
             <% if rating[0].description.length > 25 %>
             <a href="../relato/<%= rating[0].id%>"> Ver mais.. </a>
             <%end%>
+            </div>
+
+            <div class="visible-xs hidden-sm hidden-md hidden-lg"> <!--div mobile -->
+              <div class="col-xs-offset-1 description-padding">
+                <a href="../relato/<%= rating[0].id%>"> Ver relato</a>
+              </div>
+            </div>
+
             <div id="share-buttons" align="right">
               <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-test.herokuapp.com/relato/<%= rating[0].id %>" target="_blank">
                 <img class="small-square-share-button share-buttons-color" src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook"  />
@@ -66,18 +84,26 @@
               <a href="https://twitter.com/share?url=http://naomecalotw-test.herokuapp.com/relato/<%=rating[0].id %>/&amp;text=<%= rating[0].description.slice(0..80)%> ... &amp;hashtags=naomecalo" target="_blank">
                 <img class="small-square-share-button share-buttons-color grayscale" src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter"  />
               </a>
-            </div>
-            <%else%>
-            <p id="breakline">Relato em moderação.</p>
 
-             <%end%>
-          </h4>
-        </li>
-        <% end %>
-      </ul>
-      <div id="show-more">
-        <a class="show-more-button" id="showFiveButton">Ver mais</a>
-      </div>
+          <%else%>
+
+          <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
+            <p id="breakline">Relato em moderação.</p>
+          </div>
+          <div class="visible-xs hidden-sm hidden-md hidden-lg"> <!--div mobile -->
+            <div class="row col-xs-offset-1">
+              <p class="description-padding" id="breakline">Relato em <br>moderação.</p>
+            </div>
+          </div>
+          <%end%>
+        </h4>
+      </li>
+      <% end %>
+    </ul>
+    <div align="center">
+      <a class="show-more-button" id="showFiveButton">Ver mais</a>
+    </div>
     </div>
   </div>
+</div>
 </div>
