@@ -213,7 +213,14 @@ function initAutocomplete () {
     initLists();
     checkOffset();
     checkMobileEnhanceButtons();
+    hideMapIfIsMobile();
 
+    function hideMapIfIsMobile(){
+      if(isMobile.matches){
+        $("#map-mobile").css("display", "none");
+        $("#link-to-ranking").css("margin-bottom", "10px");
+      }
+    }
 
     var actualFontSize = 14
     $("#upperFontSizeButton").click(upperFontSize);
