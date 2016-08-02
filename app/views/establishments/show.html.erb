@@ -8,9 +8,10 @@
     <div class='row'>
         <h1 class='size-h1 text-center'>
           <p><%= @text%></p>
-          <%= image_tag(@spot.icon, size: "30x30") %>
-          <%= @spot.name %>
-          <% if @rating_concept != nil %> <label class="flag-establishment concept concept-pointer-nill-events  <%= set_average_style(@rating_concept) %>"><%= @rating_concept %></label><% end %>
+          <span class="col-lg-offset-2 col-lg-8"><%= @spot.name %></span>
+          <span class="col-lg-2">
+            <% if @rating_concept != nil %> <label class="flag-establishment concept concept-pointer-nill-events  <%= set_average_style(@rating_concept) %>"><%= @rating_concept %></label><% end %>
+          </span>
         </h1>
     </div>
     <div class='row'>

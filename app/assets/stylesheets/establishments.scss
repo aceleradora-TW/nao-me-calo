@@ -76,6 +76,8 @@
   word-break: break-all;
 }
 .flag-establishment{
+  position: static !important;
+  right: -2% !important;
   -ms-transform: scale(1.4,1.4); /* IE 9 */
     -webkit-transform: scale(1.4,1.4); /* Safari */
     transform: scale(1.4,1.4);
