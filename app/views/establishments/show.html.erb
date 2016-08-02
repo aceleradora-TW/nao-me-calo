@@ -55,20 +55,19 @@
           </div>
             <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
              <% if checking_if_rating_is_visible(rating[0])  %>
-
              <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
-            <% if description_exists(rating[0])  %>
-            <p class="address-padding">
-              Relato: <%= truncate(rating[0].description, length: 60) %>
-            </p>
-            <%elsif%>
-            <p class="address-padding margin-bottom-to-share-button">
-              Esta avaliação não possui relato.
-            </p>
-            <%end%>
-            <% if rating[0].description.length > 25 %>
-            <a href="../relato/<%= rating[0].id%>"> Ver mais.. </a>
-            <%end%>
+               <% if description_exists(rating[0])  %>
+                   <p class="address-padding margin-bottom-to-share-button">
+                     Relato: <%= truncate(rating[0].description, length: 60) %>
+                   </p>
+                   <% if rating[0].description.length > 25 %>
+                   <a href="../relato/<%= rating[0].id%>"> Ver mais.. </a>
+                   <%end%>
+               <%elsif%>
+                   <p class="address-padding margin-bottom-to-share-button">
+                     Esta avaliação não possui relato.
+                   </p>
+               <%end%>
             </div>
 
             <div class="visible-xs hidden-sm hidden-md hidden-lg"> <!--div mobile -->
@@ -84,7 +83,7 @@
               <a href="https://twitter.com/share?url=http://naomecalotw-test.herokuapp.com/relato/<%=rating[0].id %>/&amp;text=<%= rating[0].description.slice(0..80)%> ... &amp;hashtags=naomecalo" target="_blank">
                 <img class="small-square-share-button share-buttons-color grayscale" src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter"  />
               </a>
-
+            </div>
           <%else%>
 
           <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
@@ -103,6 +102,7 @@
     <div align="center">
       <a class="show-more-button" id="showFiveButton">Ver mais</a>
     </div>
+
     </div>
   </div>
 </div>
