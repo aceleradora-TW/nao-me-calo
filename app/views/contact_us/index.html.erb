@@ -1,17 +1,17 @@
 <div class="align-footer">
-    <% if !notice.nil? %>
-      <div class="alert alert-success text-center"> <%= notice %> </div>
-    <% end %>
+  <% if !notice.nil? %>
+  <div class="alert alert-success text-center"> <%= notice %> </div>
+  <% end %>
   <div class="row">
     <h2 class="size-h2 text-center">Contato</h2>
   </div>
-    <div class='row'>
+  <div class='row'>
     <div class="col-lg-offset-3 col-lg-6">
       <div class="form-group" id="form-contact">
         <%= form_tag("/enviar", :method => "post") do %>
-          <div class="field">
-          <b>Preencha os campos marcados com</b> <span class="red-text"> *</span>
-          </div>
+        <div class="field">
+          <b>São obrigatórios os campos com </b> <span class="red-text"> * </span>
+        </div>
         <div class='field' id="nameAlertContact">
           <%= label_tag 'Nome:' %>
           <p id="nameAlertTextContact", class="hidden">Por favor, digite um nome válido.</p>
@@ -28,13 +28,13 @@
         </div>
         <div class='field'id="messageAlert">
           <%= label_tag 'Mensagem:' %><span class="red-text"> *</span>
-            <p id="messageAlertText", class="hidden">Por favor, digite uma mensagem.</p>
-            <p id="messageAlertTextObscenity", class="hidden alertText">Seu texto contém palavras ofensivas, por favor corrija</p>
+          <p id="messageAlertText", class="hidden">Por favor, digite uma mensagem.</p>
+          <p id="messageAlertTextObscenity", class="hidden alertText">Seu texto contém palavras ofensivas, por favor corrija</p>
           <%= text_area_tag :message, nil, :maxlength => 500, :class => "form-control text-area", rows: 5 , aria: {label: "Mensagem"}, id:"messageEvaluate"%>
         </div>
         <span id="limitCharContact">Caracteres restantes: 500</span>
         <script>
-          var badwords = <%= get_bad_word.inspect.html_safe %>;
+        var badwords = <%= get_bad_word.inspect.html_safe %>;
         </script>
         <div class="field padding-bottom">
           <div class="text-center">
