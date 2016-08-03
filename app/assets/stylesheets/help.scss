@@ -4,7 +4,7 @@
 @import "_variables.scss";
 
 .hold-link-help > a:hover, a:visited,a:link {
-  color: $brandColor;
+  color: #49a59d;
   background-color: rgba(0,0,0,0) !important;
   text-decoration: underline;
 }
@@ -58,7 +58,7 @@ margin: 6px 12px 4px -4px;
 }
 
 
-.arrow-icon{  
+.arrow-icon{
   height: 27px;
   width: 27px;
   display: inline-block;
@@ -86,3 +86,15 @@ margin: 6px 12px 4px -4px;
 .abuse-article{
   display:none;
 }
+@media all and (max-width: 2048px) {
+  .help-list-style{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 9px;
+  }
+}
+  @media all and (max-width: 768px) {
+    .help-list-style{
+      padding-left: 15px;
+    }
+  }
