@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "_variables.scss";
 
-.hold-link-help > a:hover, a:visited,a:link {
+.hold-link-help > a:hover, a:visited,a:link,a:focus {
   color: #49a59d;
   background-color: rgba(0,0,0,0) !important;
   text-decoration: underline;
