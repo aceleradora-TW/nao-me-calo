@@ -1,6 +1,7 @@
 <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
   <% if description_exists(rating)  %>
-    <p class="address-padding margin-bottom-to-share-button">
+
+    <p class="address-padding margin-bottom-to-share-button breakline">
       Relato: <%= shorten_description(rating.description) %>
     </p>
     <% if description_have_minimun_lenght?(rating) %>
