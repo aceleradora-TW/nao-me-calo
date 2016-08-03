@@ -7,8 +7,7 @@
   <div class ="col-lg-12 padding-bottom">
     <div class='row'>
       <h1 class='size-h1 text-center'>
-        <span class="col-lg-offset-2 col-lg-8"><%= @spot.name %></span>
-
+        <span class="col-lg-offset-2 col-lg-8"><%= image_tag(@spot.icon, size: "30x30") %> <%= @spot.name %></span>
         <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
           <span class="col-lg-2">
             <% if @rating_concept != nil %> <label class="flag-establishment concept concept-pointer-nill-events  <%= set_average_style(@rating_concept) %>"><%= @rating_concept %></label><% end %>
