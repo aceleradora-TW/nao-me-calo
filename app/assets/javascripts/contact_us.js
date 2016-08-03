@@ -15,7 +15,7 @@ $(document).ready(function(){
     isInvalidMail();
   });
 
-  $('#emailEvaluateContact').keyup(function(){
+  $('#emailEvaluateContact').on('input', function(){
     checkMailContact();
   });
 
@@ -77,12 +77,14 @@ $(document).ready(function(){
   function checkMailContact(){
     var emailExp = /^(([^<>()\[\]\\.,;:=/{}+!\s@"]+(\.[^<>()\[\]\\.,;:=/{}+!\s@]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var emailInput = $('#emailEvaluateContact').val();
-    if (!emailInput.match(emailExp) || emailInput === "" ){
+
+    if (!emailInput.match(emailExp) || emailInput === ""){
       errorsContact["emailEvaluateContact"] = true;
       initialize();
-    }else{
-      errorNotFoundContact('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact');
-      errorsContact["emailEvaluateContact"] = false;
+    }
+     else{
+       errorNotFoundContact('#emailEvaluateContact', '#emailAlertTextContact', '#emailAlertContact');
+     errorsContact["emailEvaluateContact"] = false;
       initialize();
     }
   }
