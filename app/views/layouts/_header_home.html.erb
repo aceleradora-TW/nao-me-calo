@@ -8,7 +8,7 @@
 
       <div class="headerDesktop-links" >
         <ul>
-          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => "menu"%></li>
+          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", "/", :class => "menu"%></li>
           <li class="<%= 'active' if current_page?(dicas_path) %>"><%= link_to "Apoio Legal", dicas_path, :class => "menu"%></li>
           <li class="<%= 'active' if current_page?(ranking_path) %>"><%= link_to "Ranking", ranking_path, :class => "menu"%></li>
           <li class="<%= 'active' if current_page?(faleconosco_path)%>"><%= link_to "Contato", faleconosco_path, :class => "menu"%></li>
