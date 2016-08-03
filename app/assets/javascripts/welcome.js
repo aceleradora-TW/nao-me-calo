@@ -208,7 +208,7 @@ function initAutocomplete () {
     $('#bestPlacesButton').css('font-size', '145%');
     openHeaderMobile();
 
-    var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+    var isMobile = window.matchMedia("only screen and (max-width: 1199px)");
 
     initLists();
     checkOffset();
