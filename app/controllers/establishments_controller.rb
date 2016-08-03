@@ -22,7 +22,7 @@ class EstablishmentsController < ApplicationController
     end
     @ratings.reverse!
 
-    @rate_array = @establishment.populate_rate_array(@ratings)
+    @ratings_array = @establishment.populate_rate_array(@ratings)
 
   end
 

@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "_variables.scss";
 
+.address-position {
+  float: left;
+  width: 100%;
+}
+
 .text-field{
   font-size: 60%;
 }

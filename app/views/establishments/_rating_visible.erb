@@ -1,0 +1,33 @@
+<div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
+  <% if description_exists(rating)  %>
+    <p class="address-padding margin-bottom-to-share-button">
+      Relato: <%= shorten_description(rating.description) %>
+    </p>
+    <% if description_have_minimun_lenght?(rating) %>
+    <a href="../relato/<%= rating.id%>"> Ver mais.. </a>
+    <%end%>
+  <%else%>
+  <p class="address-padding margin-bottom-to-share-button">
+    Esta avaliação não possui relato.
+  </p>
+  <%end%>
+</div>
+
+<div class="visible-xs hidden-sm hidden-md hidden-lg"> <!--div mobile -->
+  <div class="col-xs-offset-1 description-padding">
+    <% if description_exists(rating)  %>
+    <a href="../relato/<%= rating.id%>">Ver relato</a>
+    <% else %>
+    Esta avaliação não possui relato.
+    <% end %>
+  </div>
+</div>
+
+<div id="share-buttons" align="right">
+  <a href="http://www.facebook.com/sharer.php?u=http://naomecalotw-test.herokuapp.com/relato/<%= rating.id %>" target="_blank">
+    <img class="small-square-share-button share-buttons-color" src="https://whatswp.com/wp-content/uploads/2014/04/sh-150x150.png" alt="Facebook"  />
+  </a>
+  <a href="https://twitter.com/share?url=http://naomecalotw-test.herokuapp.com/relato/<%=rating.id %>/&amp;text=<%= rating.description.slice(0..80)%> ... &amp;hashtags=naomecalo" target="_blank">
+    <img class="small-square-share-button share-buttons-color grayscale" src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter"  />
+  </a>
+</div>
