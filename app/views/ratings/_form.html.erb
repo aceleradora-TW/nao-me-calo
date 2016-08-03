@@ -19,7 +19,7 @@
 
 <input type="hidden" id="placeId" name="placeId" value="<%= @placeId %>" readonly="readyonly">
 <div class="col-lg-6 padding-bottom rating-box">
-  <span class="red-text">Não é necessário marcar todos*</span>
+  <span class="red-text align-rating">Não é necessário marcar todos*</span>
   <br>
   <br>
   <div class="col-lg-12 no-padding-left" id="radio-button_id">
@@ -312,13 +312,13 @@
 
 <div class="col-lg-12">
   <div id="descriptionAlert", class="field has-mask">
-    <div class="field padding-top">
+    <div class="field padding-top align-rating" >
       <%= f.label "Descrição do relato" %>
       <p id="descriptionAlertText", class="hidden alertText">Seu texto contém palavras ofensivas, por favor corrija</p>
       <%= f.text_area :description, rows: 5, :maxlength => 500, :class => "form-control", :id => "ratingDescription", aria: {label: "Descrição"}  %>
+      <span id="limitChar">Caracteres restantes: 500</span>
     </div>
   </div>
-  <span id="limitChar">Caracteres restantes: 500</span>
   <div class='field text-center'>
     <input type="checkbox" name="accepted_terms" id="terms" unchecked>
     <label for="terms">Aceito os <a href="/termos" target="_blank">termos e condições de uso.</a></label>
