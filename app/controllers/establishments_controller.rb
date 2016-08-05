@@ -8,6 +8,7 @@ class EstablishmentsController < ApplicationController
 
   def index
     @establishments = Establishment.all
+    redirect_to root_path
   end
 
   def show
