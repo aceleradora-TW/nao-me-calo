@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get '/perfil/:id' => 'establishments#show'
 
+  get '/ranking/:city_input_ranking' => 'establishments#search'
+
   get '/ranking' => 'establishments#ranking'
 
   get '/dicas' => 'welcome#help'
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
   get '/avaliar' => 'ratings#new'
 
   get '/search' => 'welcome#search'
+
 
   get '/termos' => 'welcome#terms'
 

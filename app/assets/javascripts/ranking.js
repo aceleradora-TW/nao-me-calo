@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+$("#searchBtnRanking").click(function(){
+  var city_input_ranking = $('#searchFieldRanking').val();
+});
 
 
   var limitListBest = 5;

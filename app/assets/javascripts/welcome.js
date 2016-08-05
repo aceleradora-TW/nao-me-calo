@@ -120,7 +120,6 @@ function initAutocomplete () {
       $('#placeId2').val(place.place_id);
       $('#search-btn').click();
     }
-
   }
 
   function geolocate() {

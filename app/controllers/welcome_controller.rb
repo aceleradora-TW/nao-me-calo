@@ -9,14 +9,14 @@ class WelcomeController < ApplicationController
   before_action :clean_CPF_from_db_six_months, only: [:index]
 
   def index
-    @establishments = Establishment.all
-    @establishment_hash = {}
+    $establishments = Establishment.all
+    $establishment_hash = {}
     @pinsForMap = []
-    @establishments.each do |establishment|
+    $establishments.each do |establishment|
 
       if establishment.has_more_than_2_ratings?
-        @establishment_hash[establishment] = establishment.calculate_average
-        @color_and_rating = get_color_and_pin_concept(@establishment_hash[establishment])
+        $establishment_hash[establishment] = establishment.calculate_average
+        @color_and_rating = get_color_and_pin_concept($establishment_hash[establishment])
         @pinsForMap << [establishment.name, establishment.lat.to_f, establishment.lng.to_f, @color_and_rating[0], establishment.id, @color_and_rating[1], set_average_style(@color_and_rating[1]), establishment.has_more_than_2_ratings?]
       end
     end
@@ -27,12 +27,12 @@ class WelcomeController < ApplicationController
   end
 
   def search
-    @establishment = Establishment.search_by_id(params[:placeId2]).first
-    if(@establishment.nil?)
+    $establishment = Establishment.search_by_id(params[:placeId2]).first
+    if($establishment.nil?)
       $establishment = @client.spot(params[:placeId2])
       redirect_to root_path, :flash => { :error => "Lugar ainda não foi avaliado. Clique nessa mensagem para avalia-lo." }
     else
-      redirect_to @establishment
+      redirect_to $establishment
     end
   end
 

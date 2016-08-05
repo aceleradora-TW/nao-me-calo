@@ -41,19 +41,19 @@ class RatingsController < ApplicationController
         flash[:notice] = "* Você usou palavras de baixo calão, por favor, preencha o formulário novamente *"
       else
         @rating = Rating.new(rating_params)
-        @establishment = Establishment.search_by_id(params[:placeId]).first
+        $establishment = Establishment.search_by_id(params[:placeId]).first
 
         if(!(@rating.woman.nil? && @rating.lgbtqia.nil? && @rating.race.nil? && @rating.disability.nil? && @rating.elder.nil? && @rating.obese.nil?))
-          if(@establishment.nil?)
+          if($establishment.nil?)
             @place = @client.spot(params[:placeId])
-            @establishment = Establishment.create!(name: @place.name, address: @place.formatted_address, lat: @place.lat, lng: @place.lng, id_places: @place.place_id, city: @place.city)
+            $establishment = Establishment.create!(name: @place.name, address: @place.formatted_address, lat: @place.lat, lng: @place.lng, id_places: @place.place_id, city: @place.city)
           end
           if @rating.description == ""
             @rating.visible = true
             @rating.moderated = true
           end
 
-          @rating.establishment_id = @establishment.id
+          @rating.establishment_id = $establishment.id
           respond_to do |format|
             if @rating.save
               @rating.description.empty? ? notice = "Avaliação feita com sucesso!" : notice = "Avaliação feita com sucesso! Sua avaliação irá passar pela moderação."

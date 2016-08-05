@@ -32,7 +32,7 @@
     <h3>Clique abaixo para avaliar o local.</h3>
     <%= form_tag('/avaliar', :method => "get", :id => 'formEvaluate', :onsubmit => "fillName()") do %>
     <%= submit_tag "Avaliar", :class => 'btn evaluate-div-button' %>
-    <%= hidden_field_tag 'placeId' , @establishment.id_places %>
+    <%= hidden_field_tag 'placeId' , $establishment.id_places %>
     <% end %>
   </div>
 
