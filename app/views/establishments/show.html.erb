@@ -44,14 +44,14 @@
     <ul class="eliminate-padding-on-list" id="listLast5">
       <% @ratings_array.each do |rating| %>
       <li>
-        <h4 class="size-h4 list-group-item list-show-style">
+        <h4 class="size-h4 box-fix-size list-group-item list-show-style">
           <div class="hidden-xs visible-sm visible-md visible-lg"> <!--div desktop -->
             <span class="text-field"><b>Data da avaliação:</b> <%= returning_date(rating[0])%></span>
           </div>
           <div div class="visible-xs hidden-sm hidden-md hidden-lg"> <!--div mobile -->
             <span class="text-field col-xs-8 evaluate-date-mobile"><b>Data da avaliação:</b> <%= returning_date(rating[0])%></span>
           </div>
-          <p class="text-right text-data-rating"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
+          <p class="text-right"><label class="concept concept-pointer-nill-events <%= set_average_style(rating[1]) %>"><%= rating[1] %></label></p>
           <% if checking_if_rating_is_visible(rating[0])  %>
             <%= render partial: 'rating_visible', locals: {rating: rating[0]} %>
           <%else%>
