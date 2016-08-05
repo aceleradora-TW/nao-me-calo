@@ -1,25 +1,26 @@
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
 
-<div class="align-footer">
-  <div class="row order-space">
-    Ordenar ranking por:
-  </div>
-  <div class="ranking-buttons text-center">
-    <a name="ranking" id='bestPlacesButton' ><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Melhores</a>
-    <span> | </span>
-    <a id='worstPlacesButton' >Piores <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></a>
-    </div>
 
+<div class="row order-space">
+  Ordenar ranking por:
+</div>
+<div class="ranking-buttons text-center">
+  <a name="ranking" id='bestPlacesButton' ><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Melhores</a>
+  <span> | </span>
+  <a id='worstPlacesButton' >Piores <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></a>
+  </div>
+
+  <div class="col-lg-8 col-lg-offset-2 col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
     <div id="ranking-input">
       <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
-      <div class="input-group" align="center">
+      <div class="input-group col-lg-6 col-lg-offset-3 col-xs-12 col-lg-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
         <input type="text" class="form-control search-fields" aria-label="Campo para buscar local para visitar" placeholder="Busque um local para visitar" id="searchField" autofocus="">
-        <span class="input-group-btn">
+        <div class="input-group-btn">
           <button type="submit" class="btn search-inputButton rate fade" id="search-btn">
             <span>Pesquisar</span>
           </button>
-        </span>
+        </div>
       </div>
       <% end %>
     </div>
@@ -79,5 +80,6 @@
             <a href="https://twitter.com/share?url=http://naomecalotw-test.herokuapp.com/ranking/&amp;text=<%= @share_text %>&amp;hashtags=naomecalo" target="_blank">
               <img class="large-square-share-button" src="http://www.siamcomm.com/wp-content/uploads/2011/05/twitter.png" alt="Twitter" />
             </a>
+          </div>
         </div>
       </div>
