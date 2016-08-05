@@ -17,7 +17,7 @@ $(document).ready(function(){
     limitListBest = ( limitListBest + 5 <= sizeListBest) ? limitListBest + 5 : sizeListBest;
     $('.list-ranking-best li:lt(' + limitListBest + ')').show();
     $('html, body').animate({
-      scrollTop: $('.list-ranking-best li:lt(' + limitListBest + ')').offset().top
+      scrollTop: $('#showMoreBest').offset().top
     });
     hideListButtonRankingBest();
   });
@@ -26,7 +26,7 @@ $(document).ready(function(){
     limitListWorst = ( limitListWorst + 5 <= sizeListWorst) ? limitListWorst + 5 : sizeListWorst;
     $('.list-ranking-worst li:lt(' + limitListWorst + ')').show();
     $('html, body').animate({
-      scrollTop: $('.list-ranking-worst li:lt(' + limitListWorst + ')').offset().top
+      scrollTop: $('#showMoreWorst').offset().top
     });
     hideListButtonRankingWorst();
   });

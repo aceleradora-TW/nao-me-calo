@@ -11,10 +11,10 @@ $(document).ready(function(){
     $('#showFiveButton').click(function(){
       x = (x+5 <= size_li) ? x + 5 : size_li;
       $('#listLast5 li:lt(' + x + ')').show();
-      hideListButton();
       $('html, body').animate({
-        scrollTop: $('#listLast5 li:lt(' + x + ')').offset().top
+        scrollTop: $('#showFiveButton').offset().top
       });
+      hideListButton();
     });
 
     function hideListButton(){
