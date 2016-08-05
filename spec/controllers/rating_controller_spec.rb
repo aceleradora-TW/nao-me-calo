@@ -4,8 +4,8 @@ RSpec.describe RatingsController, type: :controller do
 
   describe "#new" do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")
-      @est2 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"123")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", city:"Porto Alegre")
+      @est2 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"123", city:"Porto Alegre")
     end
     it "expect @est1 to be a valid spot in google places" do
       get :new
@@ -23,7 +23,7 @@ RSpec.describe RatingsController, type: :controller do
 
   describe "#create" do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", city:"Porto Alegre")
     end
     it "expect to flash notice when the rating is created" do
       post :create, {placeId:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", accepted_terms: true, rating:

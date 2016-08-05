@@ -4,8 +4,8 @@ RSpec.describe EstablishmentsController, type: :controller do
 
   describe "#index" do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")
-      @est2 = Establishment.create!(name:"Teste2", address:"Logo Ali2", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", city:"Porto Alegre")
+      @est2 = Establishment.create!(name:"Teste2", address:"Logo Ali2", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", city:"Porto Alegre")
     end
 
     it "expect @establishments to be all Establishments" do
@@ -24,7 +24,7 @@ RSpec.describe EstablishmentsController, type: :controller do
 
   describe '#show' do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", city:"Porto Alegre")
       @r1 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
       @r2 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
       @r3 = Rating.create!(woman: 4.0, race: 4.0, lgbtqia: 4.0, disability: 4.0, elder: 4.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, visible: true, moderated: true)
@@ -52,7 +52,8 @@ RSpec.describe EstablishmentsController, type: :controller do
         address: "logo ali",
         lat: "0",
         lng: "0",
-        id_places: "321"
+        id_places: "321",
+        city: "Porto Alegre"
         }
       }
       expect(flash[:notice]).to eq("Establishment was successfully created.")
@@ -64,7 +65,8 @@ RSpec.describe EstablishmentsController, type: :controller do
         name: "Teste",
         lat: "0",
         lng: "0",
-        id_places: "321"
+        id_places: "321",
+        city: "Porto Alegre"
         }
       }
       expect(response).to render_template(:new)
@@ -73,7 +75,7 @@ RSpec.describe EstablishmentsController, type: :controller do
 
   describe '#destroy' do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321", city:"Porto Alegre")
     end
 
     it 'flash notice when establishment is destroyed' do

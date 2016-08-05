@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe WelcomeController, type: :controller do
   describe "#index" do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
-      @est2 = Establishment.create!(name:"Teste2", address:"Logo Ali2", lat:"0", lng:"0", id_places:"121")
-      @est3 = Establishment.create!(name:"Teste3", address:"Logo Ali3", lat:"0", lng:"0", id_places:"1212")
-      @est4 = Establishment.create!(name:"Teste4", address:"Logo Ali4", lat:"0", lng:"0", id_places:"1213")
-      @est5 = Establishment.create!(name:"Teste5", address:"Logo Ali5", lat:"0", lng:"0", id_places:"1212")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321", city:"Porto Alegre")
+      @est2 = Establishment.create!(name:"Teste2", address:"Logo Ali2", lat:"0", lng:"0", id_places:"121", city:"Porto Alegre")
+      @est3 = Establishment.create!(name:"Teste3", address:"Logo Ali3", lat:"0", lng:"0", id_places:"1212", city:"Porto Alegre")
+      @est4 = Establishment.create!(name:"Teste4", address:"Logo Ali4", lat:"0", lng:"0", id_places:"1213", city:"Porto Alegre")
+      @est5 = Establishment.create!(name:"Teste5", address:"Logo Ali5", lat:"0", lng:"0", id_places:"1212", city:"Porto Alegre")
       @r1 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
       @r12 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
       @r13 = Rating.create!(woman: 1.0,race: 1.0, lgbtqia: 1.0, disability: 1.0, elder: 1.0, obese: 1.0, name: "Teste", cpf: "123456", email: "teste", phone: "teste", rating_date:"04/04/04", establishment_id: @est1.id, moderated: true)
@@ -46,7 +46,7 @@ RSpec.describe WelcomeController, type: :controller do
 
   describe '#search' do
     before :each do
-      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321")
+      @est1 = Establishment.create!(name:"Teste", address:"Logo Ali", lat:"0", lng:"0", id_places:"321", city:"Porto Alegre")
     end
 
     it 'expect to redirect to establishment when passing a existing ID' do
