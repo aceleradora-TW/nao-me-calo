@@ -1,3 +1,6 @@
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+
+
 <div class="align-footer">
   <div class="row order-space">
     Ordenar ranking por:
@@ -7,6 +10,20 @@
     <span> | </span>
     <a id='worstPlacesButton' >Piores <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></a>
     </div>
+
+    <div id="ranking-input">
+      <%= form_tag('/search', :method => "get", :id => 'formSearch', :onsubmit => "fillSearch()") do %>
+      <div class="input-group" align="center">
+        <input type="text" class="form-control search-fields" aria-label="Campo para buscar local para visitar" placeholder="Busque um local para visitar" id="searchField" autofocus="">
+        <span class="input-group-btn">
+          <button type="submit" class="btn search-inputButton rate fade" id="search-btn">
+            <span>Pesquisar</span>
+          </button>
+        </span>
+      </div>
+      <% end %>
+    </div>
+
 
     <div class="ranking-list" id="top5">
       <ul class="list-group list-ranking-best">

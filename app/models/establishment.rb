@@ -3,6 +3,7 @@ class Establishment < ActiveRecord::Base
   validates :name, presence: true
   validates :address, presence: true
   validates :id_places, presence: true
+  validates :city, presence: true
   has_many :ratings
   accepts_nested_attributes_for :ratings
 

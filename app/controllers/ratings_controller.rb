@@ -46,7 +46,7 @@ class RatingsController < ApplicationController
         if(!(@rating.woman.nil? && @rating.lgbtqia.nil? && @rating.race.nil? && @rating.disability.nil? && @rating.elder.nil? && @rating.obese.nil?))
           if(@establishment.nil?)
             @place = @client.spot(params[:placeId])
-            @establishment = Establishment.create!(name: @place.name, address: @place.formatted_address, lat: @place.lat, lng: @place.lng, id_places: @place.place_id)
+            @establishment = Establishment.create!(name: @place.name, address: @place.formatted_address, lat: @place.lat, lng: @place.lng, id_places: @place.place_id, city: @place.city)
           end
           if @rating.description == ""
             @rating.visible = true

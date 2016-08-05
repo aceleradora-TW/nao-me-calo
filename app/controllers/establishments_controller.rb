@@ -25,6 +25,7 @@ class EstablishmentsController < ApplicationController
 
     @ratings_array = @establishment.populate_rate_array(@ratings)
 
+
   end
 
   def ranking
@@ -36,6 +37,15 @@ class EstablishmentsController < ApplicationController
     @best_places = @worst_places.reverse
   end
 
+  def search
+    @establishment = Establishment.search_by_id(params[:placeId2]).first
+    if(@establishment.nil?)
+      $establishment = @client.spot(params[:placeId2])
+      redirect_to root_path, :flash => { :error => "Lugar ainda não foi avaliado. Clique nessa mensagem para avalia-lo." }
+    else
+      redirect_to @establishment
+    end
+  end
 
   def new
     @establishment = Establishment.new

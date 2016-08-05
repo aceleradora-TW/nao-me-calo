@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+
+  var searchField = $('#searchField')[0];
+  var types = {types: ['establishment']};
+
+  searchBox = new google.maps.places.Autocomplete(searchField, types);
+
+  autocomplete.addListener('place_changed', fillName);
+  searchBox.addListener('place_changed', fillSearch);
+
   var limitListBest = 5;
   var sizeListBest = $(".list-ranking-best li").size();
   $('.list-ranking-best li:lt(' + sizeListBest + ')').hide();
