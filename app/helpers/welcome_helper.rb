@@ -2,7 +2,7 @@ module WelcomeHelper
 
 
   def generate_ranking
-    array = Ranking.generate_array_ranking($establishments)
+    array = Ranking.generate_array_ranking(@establishments)
     places = []
     array.each do |establishment|
       places << [establishment[0], establishment[1]]
@@ -13,7 +13,7 @@ module WelcomeHelper
   end
 
   def generate_ranking_with_filter(city)
-    array = Ranking.generate_array_ranking($establishments)
+    array = Ranking.generate_array_ranking(@establishments)
     places = []
     array.each do |establishment|
       if establishment[0].city == city

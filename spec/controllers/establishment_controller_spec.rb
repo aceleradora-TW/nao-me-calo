@@ -8,7 +8,7 @@ RSpec.describe EstablishmentsController, type: :controller do
       @est2 = Establishment.create!(name:"Teste2", address:"Logo Ali2", lat:"0", lng:"0", id_places:"ChIJ-ZgW_AB5GZUR-LPwX7gPUNs", city:"Porto Alegre")
     end
 
-    it "expect $establishments to be all Establishments" do
+    it "expect @establishments to be all Establishments" do
       get :index
       expect(assigns[:establishments]).to eq([@est1, @est2])
     end
@@ -16,7 +16,7 @@ RSpec.describe EstablishmentsController, type: :controller do
 
 
   describe "#new" do
-    it "expect $establishment to be a new Establishments" do
+    it "expect @establishment to be a new Establishments" do
       get :new
       expect(assigns[:establishment]).to be_a(Establishment)
     end
