@@ -8,6 +8,7 @@ class Establishment < ActiveRecord::Base
   accepts_nested_attributes_for :ratings
 
   pg_search_scope :search_by_id, :against => :id_places
+  pg_search_scope :search_by_city, :against => :city
 
   def has_more_than_2_ratings?
     return self.ratings.size > 2

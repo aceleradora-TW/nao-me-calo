@@ -1,7 +1,10 @@
 $(document).ready(function(){
 
-$("#searchBtnRanking").click(function(){
-  var city_input_ranking = $('#searchFieldRanking').val();
+$("#search-btn").click(function(){
+  $.get('/ranking', {
+    search: $('#searchField').val()
+  });
+  return false;
 });
 
 

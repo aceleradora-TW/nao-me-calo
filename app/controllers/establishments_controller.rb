@@ -3,7 +3,7 @@ include WelcomeHelper
 require 'concept.rb'
 
 class EstablishmentsController < ApplicationController
-  before_action :set_establishment, only: [:show, :edit, :update, :destroy, :search], except: :search
+  before_action :set_establishment, only: [:show, :edit, :update, :destroy, :search]
   before_action :set_client, only: [:show]
 
   def index
@@ -19,7 +19,7 @@ class EstablishmentsController < ApplicationController
     @ratings = []
 
     @establishment.ratings.each do |rating|
-        @ratings << rating
+      @ratings << rating
     end
     @ratings.reverse!
 
@@ -29,18 +29,24 @@ class EstablishmentsController < ApplicationController
   end
 
   def ranking
-    @establishments = Establishment.all
-    @establishment_hash = {}
+    if params[:search] != nil
+      @establishments = Establishment.search_by_city(params[:search])
+    elsif
+      @establishments = Establishment.all
+    end
+    # @establishment_hash = {}
     @share_text = "Veja o ranking dos estabelecimentos mais e menos amigáveis para oprimidos."
 
     @worst_places = generate_ranking
     @best_places = @worst_places.reverse
 
-  end
-
-  def search
-    render json: params[:city_input_ranking]
-
+    respond_to do |format|
+      if request.xhr?
+        format.js
+      else
+        format.html
+      end
+    end
   end
 
   def new

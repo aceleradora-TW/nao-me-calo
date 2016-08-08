@@ -1,0 +1,43 @@
+<div class="ranking-list" id="top5">
+  <ul class="list-group list-ranking-best">
+    <% @best_places.each do |establishment, average| %>
+    <li>
+      <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
+        <h4 class="size-h4 list-group-item-heading address-padding">
+          <%= establishment.name %>
+          <span class="grade-on-list "><label class="concept <%= set_average_style(average) %> concept-pointer"><%= average %></label>
+          </h4>
+          <p class="list-group-item-text address-padding">
+            <%= establishment.address %>
+          </p>
+        </a>
+      </li>
+
+      <% end %>
+    </ul>
+    <div align="center">
+      <a class="show-more-button" id="showMoreBest">Ver mais</a>
+    </div>
+  </div>
+
+  <div class="ranking-list" id="bottom5" text-align="center">
+    <ul class="list-group list-ranking-worst">
+      <% @worst_places.each do |establishment, average| %>
+      <li>
+        <a href="/perfil/<%= establishment.id %>" class="list-group-item welcome-list">
+          <h4 class="list-group-item-heading address-padding">
+            <%= establishment.name %>
+            <span class="grade-on-list "><label class="concept <%= set_average_style(average) %> concept-pointer"><%= average %></label>
+            </h4>
+            <p class="list-group-item-text address-padding">
+              <%= establishment.address %>
+            </p>
+          </a>
+        </li>
+
+        <% end %>
+      </ul>
+      <div align="center">
+        <a class="show-more-button" id="showMoreWorst">Ver mais</a>
+      </div>
+    </div>

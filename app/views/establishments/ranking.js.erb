@@ -1,0 +1,11 @@
+$('#rankingListAll').html("<%= escape_javascript render 'ranking_list' %>");
+  $('#bottom5').hide();
+  var limitListBest = 5;
+  var sizeListBest = $(".list-ranking-best li").size();
+  $('.list-ranking-best li:lt(' + sizeListBest + ')').hide();
+  $('.list-ranking-best li:lt(' + limitListBest + ')').show();
+
+  var limitListWorst = 5;
+  var sizeListWorst = $(".list-ranking-worst li").size();
+  $('.list-ranking-worst li:lt(' + sizeListWorst + ')').hide();
+  $('.list-ranking-worst li:lt(' + limitListWorst + ')').show();
