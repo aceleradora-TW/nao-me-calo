@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get '/perfil/:id' => 'establishments#show'
 
+  get '/search' => 'welcome#search'
+
   get '/dicas' => 'welcome#help'
 
   get '/avaliar' => 'ratings#new'
