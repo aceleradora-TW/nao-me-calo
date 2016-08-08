@@ -93,3 +93,12 @@
   }
 
 }
+@media all and (max-width: 800px) {
+  .headerDesktop{
+    & ul{
+      & li{
+        margin-left: -15px;
+      }
+    }
+  }
+}
