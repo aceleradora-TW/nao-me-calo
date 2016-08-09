@@ -5,7 +5,7 @@ Rails.application.configure do
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
   # and recreated between test runs. Don't rely on the data there!
-  G_PLACE_KEY = "AIzaSyAJ6NOTnj_jq6jQ0vZPtosWhvoLnoLGlm8"
+  G_PLACE_KEY = "AIzaSyAr1tsRiNhjTSSTamqCFMTpIctBJsMbsVA"
 
   config.cache_classes = true
 
