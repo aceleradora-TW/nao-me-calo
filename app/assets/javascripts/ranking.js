@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
-$("#search-btn").click(function(){
-  $.get('/ranking', {
-    search: $('#searchField').val()
-  });
-  return false;
-});
+// $("#search-btn").click(function(){
+//   $.get('/ranking', {
+//     search: $('#searchField').val()
+//   });
+//   return false;
+// });
 
 
   var limitListBest = 5;
