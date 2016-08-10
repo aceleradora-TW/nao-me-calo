@@ -34,8 +34,7 @@ class EstablishmentsController < ApplicationController
     elsif
       @establishments = Establishment.all
     end
-    # @establishment_hash = {}
-    @share_text = "Veja o ranking dos estabelecimentos mais e menos amigáveis para oprimidos."
+    @share_text = "Confira o ranking dos estabelecimentos mais ou menos amigáveis para grupos oprimidos"
 
     @worst_places = generate_ranking
     @best_places = @worst_places.reverse
