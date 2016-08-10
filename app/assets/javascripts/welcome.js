@@ -96,30 +96,14 @@ function initAutocomplete () {
 
   function fillName(){
     var place = autocomplete.getPlace();
-    var isPlaceNull = place==null;
-    if(isPlaceNull){
-      notFindPlaceMessage()
-    }
-    else{
-      $('#placeId').val(place.place_id)
-      $('#rate-btn').click()
-    }
-  }
-
-  function notFindPlaceMessage(){
-    $("#not-exist-place").removeClass('hidden');
+    $('#placeId').val(place.place_id);
+    $('#rate-btn').click();
   }
 
   function fillSearch(){
     var place = searchBox.getPlace();
-    var isPlaceNull = place==null;
-    if(isPlaceNull){
-      notFindPlaceMessage();
-    }
-    else{
-      $('#placeId2').val(place.place_id);
-      $('#search-btn').click();
-    }
+    $('#placeId2').val(place.place_id);
+    $('#search-btn').click();
   }
 
   function geolocate() {
@@ -200,6 +184,7 @@ function initAutocomplete () {
     $('#bottom5').hide();
   }
 
+
   $(document).ready(function(){
 
     $('#text-without-javascript').hide();
@@ -241,8 +226,6 @@ function initAutocomplete () {
       $(".ranking-worst").removeClass("ranking-worst-active");
       $(".ranking-best").addClass("ranking-best-active");
     }
-
-
 
     function activeWorstButton(){
       $(".ranking-worst").addClass("ranking-worst-active");
@@ -296,9 +279,9 @@ function initAutocomplete () {
     function checkOffset(){
       var buttons = $('#buttons-enhance');
       if(buttons.scrollTop() === 0)
-        buttons.css({'position': 'absolute', "bottom": "125px", "left": "6px"});
+      buttons.css({'position': 'absolute', "bottom": "125px", "left": "6px"});
       if($(document).scrollTop() + window.innerHeight < $('footer').offset().top)
-        buttons.css({'position': 'fixed', "bottom": "2px", "left": "6px"});
+      buttons.css({'position': 'fixed', "bottom": "2px", "left": "6px"});
     }
 
     $("#bestPlacesButton").click(function(){
